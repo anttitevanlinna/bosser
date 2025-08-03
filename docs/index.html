@@ -222,7 +222,9 @@
         // Load articles from the index
         async function loadArticles() {
             try {
-                const response = await fetch('./data/articles_index.json');
+                // Add cache busting parameter
+                const cacheBuster = new Date().getTime();
+                const response = await fetch(`./data/articles_index.json?v=${cacheBuster}`);
                 const data = await response.json();
                 
                 // Update stats
@@ -236,8 +238,9 @@
                 
             } catch (error) {
                 console.error('Error loading articles:', error);
-                // Fallback - show the single article we know exists
-                showFallbackArticle();
+                console.log('Falling back to showing existing articles...');
+                // Fallback - show the articles we know exist
+                showFallbackArticles();
             }
         }
 
@@ -287,24 +290,90 @@
             }
         }
 
-        function showFallbackArticle() {
+        function showFallbackArticles() {
             const container = document.getElementById('articles-container');
-            container.innerHTML = `
-                <article class="article-card">
-                    <a href="./articles/ai-and-certainty-dont-mix.html" class="article-title">
-                        AI and certainty don't mix
-                    </a>
-                    <div class="article-meta">
-                        <span class="meta-tag">📖 3 min read</span>
-                        <span class="meta-tag">📝 4647 chars</span>
-                        <span class="meta-tag">📅 2025</span>
-                    </div>
-                    <div class="article-excerpt">
-                        Exploring why the inherent uncertainty in AI systems mirrors the unpredictability that has always existed in product development and business strategy. A deep dive into embracing variability as a feature, not a bug.
-                    </div>
-                    <a href="./articles/ai-and-certainty-dont-mix.html" class="read-more">Read Article →</a>
-                </article>
-            `;
+            const articles = [
+                {
+                    title: 'AI and certainty don\'t mix',
+                    slug: 'ai-and-certainty-dont-mix',
+                    excerpt: 'Exploring why the inherent uncertainty in AI systems mirrors the unpredictability that has always existed in product development and business strategy.',
+                    readingTime: 3,
+                    contentLength: 4647
+                },
+                {
+                    title: 'Skating where the puck is going',
+                    slug: 'skating-where-the-puck-is-going',
+                    excerpt: 'Making bets for future - Proactive positioning. Exploring AI strategy through sports metaphors and Wayne Gretzky\'s famous quote.',
+                    readingTime: 4,
+                    contentLength: 5973
+                },
+                {
+                    title: 'Evals is the new black',
+                    slug: 'evals-is-the-new-black',
+                    excerpt: 'Not knowing beforehand is OK. Exploring AI evaluations, the genie and lion tamer metaphor, and embracing uncertainty in product development.',
+                    readingTime: 2,
+                    contentLength: 3233
+                },
+                {
+                    title: 'Visioning',
+                    slug: 'visioning',
+                    excerpt: 'Strategic planning and future thinking in an uncertain world.',
+                    readingTime: 6,
+                    contentLength: 8661
+                },
+                {
+                    title: 'AI and Agile 2.0',
+                    slug: 'ai-and-agile-20',
+                    excerpt: 'How AI is transforming agile methodologies and product development practices.',
+                    readingTime: 3,
+                    contentLength: 4094
+                },
+                {
+                    title: 'Time to rethink your knowledge management',
+                    slug: 'time-to-rethink-your-knowledge-management',
+                    excerpt: 'Modern approaches to organizing and leveraging organizational knowledge.',
+                    readingTime: 3,
+                    contentLength: 4878
+                },
+                {
+                    title: 'Inputs to Strategy',
+                    slug: 'inputs-to-strategy',
+                    excerpt: 'Essential elements that inform strategic decision-making processes.',
+                    readingTime: 2,
+                    contentLength: 3112
+                },
+                {
+                    title: 'Imagination feeds off on examples',
+                    slug: 'imagination-feeds-off-on-examples',
+                    excerpt: 'How concrete examples fuel creative thinking and innovation.',
+                    readingTime: 2,
+                    contentLength: 3626
+                }
+            ];
+            
+            container.innerHTML = articles.map(article => {
+                return `
+                    <article class="article-card">
+                        <a href="./articles/${article.slug}.html" class="article-title">
+                            ${article.title}
+                        </a>
+                        <div class="article-meta">
+                            <span class="meta-tag">📖 ${article.readingTime} min read</span>
+                            <span class="meta-tag">📝 ${article.contentLength} chars</span>
+                            <span class="meta-tag">📅 2025</span>
+                        </div>
+                        <div class="article-excerpt">
+                            ${article.excerpt}
+                        </div>
+                        <a href="./articles/${article.slug}.html" class="read-more">Read Article →</a>
+                    </article>
+                `;
+            }).join('');
+            
+            // Update stats
+            document.getElementById('article-count').textContent = articles.length;
+            const totalWords = Math.round(articles.reduce((sum, article) => sum + article.contentLength, 0) / 5);
+            document.getElementById('total-words').textContent = totalWords;
         }
 
         // Load articles when page loads
