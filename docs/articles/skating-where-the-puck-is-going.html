@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skating where the puck is going - Antti Tevanlinna</title>
+    <meta name="description" content="Making bets for future - Proactive positioning. Exploring AI strategy through sports metaphors and Wayne Gretzky's famous quote about skating to where the puck will be.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Skating where the puck is going">
+    <meta property="og:description" content="Making bets for future - Proactive positioning. Exploring AI strategy through sports metaphors and Wayne Gretzky's famous quote.">
+    <meta property="og:author" content="Antti Tevanlinna">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .article {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0066cc;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 0.95rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .original-article-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .original-article-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f8f9fa;
+            color: #0066cc;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid #e9ecef;
+            transition: all 0.2s ease;
+        }
+
+        .original-article-link a:hover {
+            background: #0066cc;
+            color: white;
+            border-color: #0066cc;
+            transform: translateY(-1px);
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            color: #0066cc;
+            border-left: 4px solid #0066cc;
+            padding-left: 20px;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            color: #333;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content blockquote {
+            margin: 30px 0;
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-left: 5px solid #0066cc;
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #555;
+        }
+
+        .article-content strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: #0066cc;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .article-footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #0066cc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .author-details h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .author-details p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .article {
+                padding: 30px 25px;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .author-info {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-progress" id="reading-progress"></div>
+    
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Articles</a>
+        
+        <article class="article">
+            <header class="article-header">
+                <h1 class="article-title">Skating where the puck is going</h1>
+                <p class="article-subtitle">Making bets for future - Proactive positioning</p>
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <span>👤</span>
+                        <span>Antti Tevanlinna</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>📅</span>
+                        <span>2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>📖</span>
+                        <span>4 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>📝</span>
+                        <span>5,973 chars</span>
+                    </div>
+                </div>
+                
+                <div class="original-article-link">
+                    <a href="#" target="_blank" rel="noopener">
+                        📎 View original article on LinkedIn
+                    </a>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <p>I have been working with AI and grappling with the future of AI. You might have guessed this from the few vision-related articles I've recently written. AI is a great example of trying to work with the future vision without the real control of the events that will unfold.</p>
+
+                <p>I'm sure you see the trend of AI. There is plenty of talk and hype. Most people now believe it is going to change how we do products in the future.</p>
+
+                <p>Nobody knows exactly how the AI and the future will be.</p>
+
+                <p>The pace of development is very high. The amount of players and companies developing AI is huge. A majority of companies is frantically trying to figure out the future.</p>
+
+                <p>The technology leaders change. Every quarter brings notable advances, tools and new protocols. Some of the cool new technologies (MCP is my current favourite) allow us to try and peek into the future.</p>
+
+                <p>Anything can then happen in the future, is there point in making any preparations?</p>
+
+                <h2>Hockey, football and tactics</h2>
+
+                <p>I've played football for my whole youth. We didn't call the system of playing to win as strategy. It was called tactics. Funny enough those words are pretty much the same in the context of team sports. The strategy in sports involves a way to positioning the team for optimal scoring, while balancing for defensive posture at the same time.</p>
+
+                <p>Some of the tactics are really simple in football. A defenseman kicks a long ball and everybody runs up the field fast. This concentrates more players up the field. That in turn creates chances of both the ball bouncing your way and having local player number advantages. These effects are just some of the many.</p>
+
+                <p>Some of the tactics are quite elaborate. For instance creating an offside trap in football is actually quite counter-intuitive but often workable.</p>
+
+                <p>All of the tactics involves uncertainty still. The ball will not bounce predictably. Your own kicks may just badly fail. The opposition may come with better plays.</p>
+
+                <p>Yet: tactics is about making choices on how to play to optimise together the chances of winning. (Meta: business parallel anyone?)</p>
+
+                <h2>Smartest players skate where the puck might likely be soon</h2>
+
+                <p>Then we finally come to skating where the puck will be. The full quote by Wayne Gretzky is:</p>
+
+                <blockquote>
+                    "<strong>I skate to where the puck is going to be</strong>, not where it has been".
+                </blockquote>
+
+                <p>I find some more depth in this. To score a goal in hockey or football is incredible hard. You have to beat the odds and the opposition. Often by just putting the normal effort, you get not much anywhere in scoring. You have to get very lucky or you have to get everything just right at the right time.</p>
+
+                <p>To score, you look for the rare occasion where you can have the upper hand. Even the best scorers fail more than half of the attempts at scoring (I think they succeed only 10-20% of the attempts.) To get the chances to score, you have to be in the goal-scoring zone at the right time. Then somebody usually has to pass you the puck or the ball. You cannot stay in the same good spot all the time. The defence would always come and mark you. So, you have to keep moving.</p>
+
+                <p>The best scorers predict where the puck will be. They will not always be the right. They put in the hard work to create themselves chances of being in the right place at the right time.</p>
+
+                <p>The best players, in a way, create their own luck and success.</p>
+
+                <p>The best players predict the future and make many attempts at connecting with the future.</p>
+
+                <h2>Where will the AI puck be?</h2>
+
+                <p>I certainly don't know where the future will be in 6 months from now. What I predict is that we have the first semi-capable software development agents in our use. But we will notice the old ways we have done everything except coding are holding us back.</p>
+
+                <p>I predict we will start looking into agents doing significant part of user and technical research. I'm finding it plausible that you can more and more just pour documents into LLMs and create valid synthesis and analysis. This in turn allows for interesting generative avenues for scenario work.</p>
+
+                <p>I hazard a guess that the ultra-fast cycle I've pretty much only seen in gaming industry will become the norm. AI helps in making development faster. But it will not directly solve the ultimate question of knowing what the customers will pay for. You will still need to get to market to know what will really work. The change is that you can focus more on that.</p>
+
+                <p>Those enter the AI-infused development cycle early will hold early mover advantage. The technology is rapidly changing. Some of the new aspects of LLMs and generative work will however persist. We will learn to cope with the fascinating non-predetermined output of AI.</p>
+
+                <p>I don't know where the puck will be in 6 months. The best you can do is to create your own belief of the future. Then you watch how the world unfolds. That positions you best react and catch the puck most often.</p>
+
+                <h2>Preparation before understanding</h2>
+
+                <p>I thought I was done with the article, but then one more connection became my focus.</p>
+
+                <blockquote>
+                    "Dans les champs de l'observation le hasard ne favorise que les esprits prepares - Where observation is concerned, chance favours only the prepared mind" - Pasteur
+                </blockquote>
+
+                <p>I've so learned about this with AI. This new field just throws my old skills off. I don't often know what is right and wrong. What is hype and what is real.</p>
+
+                <p>Preparation is training your mind with the basics. Preparation is trying out many technologies. Preparation is working through scenarios and worries. Preparation is the hard work that often feels like it might not be simply obviously right. You look into the future and create a narrative of the vision. Then you work more and create the second narrative. And you iterate.</p>
+
+                <p>The narratives you create is guaranteed to be somewhat off. You will be wrong. You may be partially right too. You create future understanding nonetheless.</p>
+
+                <p>The key is building your thinking and mental models.</p>
+
+                <p><strong>In many ways, those mental models in your memory are still the human foundation of future success.</strong></p>
+            </div>
+
+            <footer class="article-footer">
+                <div class="author-info">
+                    <div class="author-avatar">AT</div>
+                    <div class="author-details">
+                        <h3>Antti Tevanlinna</h3>
+                        <p>Insights on AI, Product Management & Business Strategy</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/anttitevanlinna/bosser" target="_blank">GitHub</a>
+                </div>
+            </footer>
+        </article>
+    </div>
+
+    <script>
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.article-content');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight;
+            const winHeight = window.innerHeight;
+            const scrollPercent = scrollTop / (docHeight - winHeight);
+            const scrollPercentRounded = Math.round(scrollPercent * 100);
+            
+            document.getElementById('reading-progress').style.width = scrollPercentRounded + '%';
+        });
+    </script>
+</body>
+</html>

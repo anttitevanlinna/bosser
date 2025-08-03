@@ -1,14 +1,22 @@
 {
-  "total_articles": 1,
-  "last_updated": "2025-08-03T08:46:17.099075",
+  "total_articles": 2,
+  "last_updated": "2025-08-03T09:31:28.903981",
   "articles": [
+    {
+      "title": "Skating where the puck is going",
+      "slug": "skating-where-the-puck-is-going",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 5973,
+      "processed_at": "2025-08-03T09:31:28.797607"
+    },
     {
       "title": "Ai and certainty don’t mix",
       "slug": "ai-and-certainty-dont-mix",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 4647,
-      "processed_at": "2025-08-03T08:46:17.068143"
+      "processed_at": "2025-08-03T09:31:28.875276"
     }
   ]
 }
