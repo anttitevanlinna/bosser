@@ -3,7 +3,7 @@ title: "Ai and certainty don’t mix"
 url: Unknown URL
 author: Antti Tevanlinna
 publish_date: Unknown date
-processed_at: 2025-08-03T09:34:42.996558
+processed_at: 2025-08-03T09:37:07.110471
 source_file: ai-and-certainty-dont-mix.html
 content_length: 4647
 slug: ai-and-certainty-dont-mix

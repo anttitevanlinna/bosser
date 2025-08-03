@@ -3,7 +3,7 @@ title: "Skating where the puck is going"
 url: Unknown URL
 author: Antti Tevanlinna
 publish_date: Unknown date
-processed_at: 2025-08-03T09:34:42.920425
+processed_at: 2025-08-03T09:37:07.028311
 source_file: Skating where the puck is going _ LinkedIn.html
 content_length: 5973
 slug: skating-where-the-puck-is-going

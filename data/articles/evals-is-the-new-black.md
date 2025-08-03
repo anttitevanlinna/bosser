@@ -3,7 +3,7 @@ title: "Evals is the new black"
 url: Unknown URL
 author: Antti Tevanlinna
 publish_date: Unknown date
-processed_at: 2025-08-03T09:34:42.843664
+processed_at: 2025-08-03T09:37:06.688725
 source_file: Evals is the new black _ LinkedIn.html
 content_length: 3233
 slug: evals-is-the-new-black
