@@ -199,6 +199,14 @@ pip3 install -r requirements.txt
 - **Progressive enhancement** - site works without JavaScript
 - **Mobile-first** responsive design approach
 
+## 📄 License
+
+- **Code & Website**: MIT License - Free to use, modify, and distribute
+- **Article Content**: Creative Commons BY 4.0 - Free to share and adapt with attribution
+- **Copyright**: © 2025 Antti Tevanlinna
+
+See [LICENSE](LICENSE) file for full details.
+
 ---
 
 *Last updated: August 3, 2025*
