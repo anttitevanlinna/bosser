@@ -1,0 +1,4 @@
+# Required packages for the LinkedIn Article Organizer
+beautifulsoup4>=4.12.0
+markdownify>=0.11.6
+pathlib
