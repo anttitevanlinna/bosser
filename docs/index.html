@@ -30,6 +30,7 @@
             color: var(--text-primary);
             line-height: 1.6;
             font-size: 16px;
+            overflow-x: hidden; /* Prevent horizontal scroll from particle animation */
         }
 
         .container {
@@ -103,7 +104,7 @@
         .hero-content {
             max-width: 640px;
             position: relative;
-            z-index: 2;
+            z-index: 10; /* Ensure text stays above particles */
         }
 
         .hero-subtitle {
@@ -412,14 +413,15 @@
         /* Hero Visual Element - Particle Animation */
         .hero-visual {
             position: absolute;
-            right: 3%; /* Move back into viewport but with enough space */
-            top: 50%;
-            transform: translateY(-50%);
-            width: 500px; /* Increased width to accommodate full arrow */
-            height: 350px;
-            z-index: 1;
-            opacity: 0.8;
+            right: -5%; /* Optimal positioning */
+            top: 0; /* Align with hero top */
+            width: 700px; /* Keep width but move left */
+            height: 100%; /* Full hero height plus extension */
+            min-height: 100vh; /* At least full viewport height */
+            z-index: 0; /* Behind text content */
+            opacity: 0.6; /* Reduced opacity since it's behind text */
             pointer-events: none; /* Don't interfere with text selection */
+            overflow: hidden; /* Prevent expanding page width */
         }
 
         .particle-container {
@@ -431,8 +433,8 @@
 
         .particle {
             position: absolute;
-            width: 3px;
-            height: 3px;
+            width: 4.5px; /* 50% larger (3px * 1.5) */
+            height: 4.5px; /* 50% larger (3px * 1.5) */
             background: var(--accent);
             border-radius: 50%;
             transition: all 4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -443,24 +445,24 @@
             box-shadow: 0 0 6px var(--accent);
         }
 
-        /* Particle variations */
+        /* Particle variations - all 50% larger */
         .particle:nth-child(3n) {
             background: rgba(255, 107, 53, 0.7);
-            width: 2px;
-            height: 2px;
+            width: 3px; /* 50% larger (2px * 1.5) */
+            height: 3px; /* 50% larger (2px * 1.5) */
         }
 
         .particle:nth-child(5n) {
             background: rgba(255, 107, 53, 0.9);
-            width: 4px;
-            height: 4px;
-            box-shadow: 0 0 8px rgba(255, 107, 53, 0.5);
+            width: 6px; /* 50% larger (4px * 1.5) */
+            height: 6px; /* 50% larger (4px * 1.5) */
+            box-shadow: 0 0 12px rgba(255, 107, 53, 0.5); /* Larger glow too */
         }
 
         .particle:nth-child(7n) {
             background: rgba(255, 255, 255, 0.6);
-            width: 1px;
-            height: 1px;
+            width: 1.5px; /* 50% larger (1px * 1.5) */
+            height: 1.5px; /* 50% larger (1px * 1.5) */
         }
         @media (max-width: 768px) {
             .nav-links {
@@ -482,10 +484,11 @@
 
         @media (max-width: 1024px) {
             .hero-visual {
-                right: 1%;
-                width: 350px;
-                height: 280px;
-                opacity: 0.6;
+                right: -5%; /* Match desktop positioning */
+                width: 500px; /* Wider for tablets */
+                height: 100%; /* Full hero height */
+                min-height: 100vh; /* At least full viewport */
+                opacity: 0.5; /* More subtle on smaller screens */
             }
 
             .statements {
@@ -535,7 +538,7 @@
         <div class="nav-container">
             <div style="display: flex; align-items: center;">
                 <a href="#" class="logo">Bosser</a>
-                <span class="nav-version">v3.3</span>
+                <span class="nav-version">v3.8</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -701,12 +704,12 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Bosser - Antti Tevanlinna. Making progress every day in complex settings.</p>
-            <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 8px;">Cache version: 3.3</p>
+            <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 8px;">Cache version: 3.8</p>
         </div>
     </footer>
 
     <!-- JavaScript Files -->
-    <script src="./js/articles.js?v=3.3"></script>
-    <script src="./js/particle-animation.js?v=3.3"></script>
+    <script src="./js/articles.js?v=3.8"></script>
+    <script src="./js/particle-animation.js?v=3.8"></script>
 </body>
 </html>
