@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrow Shape Test</title>
+    <style>
+        body { background: #0a0a0a; padding: 50px; }
+        .container { 
+            width: 600px; 
+            height: 400px; 
+            background: #1a1a1a; 
+            position: relative; 
+            border: 1px solid #333;
+            margin: 20px 0;
+        }
+        .particle { 
+            position: absolute; 
+            width: 2px; 
+            height: 2px; 
+            background: #ff6b35; 
+            border-radius: 50%; 
+        }
+        h2 { color: #ff6b35; font-family: Arial; }
+        p { color: #b3b3b3; font-family: Arial; }
+    </style>
+</head>
+<body>
+    <h2>Arrow Shape Test</h2>
+    <p>Testing the new arrow coordinates:</p>
+    <div class="container" id="test-container"></div>
+    
+    <script>
+        // Test arrow generation
+        function generateArrowShaft() {
+            const shaft = [];
+            const shaftRows = [0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53];
+            
+            shaftRows.forEach(y => {
+                for (let x = 0.15; x <= 0.65; x += 0.015) {
+                    shaft.push({x, y});
+                }
+            });
+            
+            return shaft;
+        }
+
+        function generateArrowHead() {
+            const head = [];
+            const tipX = 0.85;
+            const baseX = 0.65;
+            const centerY = 0.5;
+            const headHeight = 0.15;
+            
+            const steps = 20;
+            for (let i = 0; i <= steps; i++) {
+                const progress = i / steps;
+                const x = baseX + (tipX - baseX) * progress;
+                
+                const topY = centerY - headHeight * (1 - progress);
+                head.push({x, y: topY});
+                
+                const bottomY = centerY + headHeight * (1 - progress);
+                head.push({x, y: bottomY});
+                
+                if (progress < 0.8) {
+                    const fillSteps = Math.floor(headHeight * 2 * (1 - progress * 0.5) / 0.02);
+                    for (let j = 1; j < fillSteps; j++) {
+                        const fillY = topY + (bottomY - topY) * (j / fillSteps);
+                        head.push({x, y: fillY});
+                    }
+                }
+            }
+            
+            return head;
+        }
+
+        // Render the arrow
+        const container = document.getElementById('test-container');
+        const arrowPositions = [...generateArrowShaft(), ...generateArrowHead()];
+        
+        console.log(`Generated ${arrowPositions.length} arrow particles`);
+        
+        arrowPositions.forEach(pos => {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = (pos.x * container.offsetWidth) + 'px';
+            particle.style.top = (pos.y * container.offsetHeight) + 'px';
+            container.appendChild(particle);
+        });
+    </script>
+    
+    <p>If this looks like a proper arrow pointing right, the fix worked!</p>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shape Test - Manual Toggle</title>
+    <style>
+        body { 
+            background: #0a0a0a; 
+            padding: 50px; 
+            font-family: Arial, sans-serif;
+        }
+        
+        .controls {
+            margin-bottom: 30px;
+        }
+        
+        button {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+        
+        button:hover {
+            background: #ff8555;
+        }
+        
+        .info {
+            color: #b3b3b3;
+            margin-bottom: 20px;
+        }
+        
+        .current-shape {
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .container { 
+            width: 500px; 
+            height: 350px; 
+            background: #1a1a1a; 
+            position: relative; 
+            border: 2px solid #333;
+            margin: 20px 0;
+        }
+        
+        .particle { 
+            position: absolute; 
+            width: 3px; 
+            height: 3px; 
+            background: #ff6b35; 
+            border-radius: 50%;
+            transition: all 4s cubic-bezier(0.4, 0, 0.2, 1); /* Extended for arrow formation */
+        }
+        
+        /* Particle variations like in main site */
+        .particle:nth-child(3n) {
+            background: rgba(255, 107, 53, 0.7);
+            width: 2px;
+            height: 2px;
+        }
+
+        .particle:nth-child(5n) {
+            background: rgba(255, 107, 53, 0.9);
+            width: 4px;
+            height: 4px;
+            box-shadow: 0 0 8px rgba(255, 107, 53, 0.5);
+        }
+
+        .particle:nth-child(7n) {
+            background: rgba(255, 255, 255, 0.6);
+            width: 1px;
+            height: 1px;
+        }
+        
+        .particle.glow {
+            box-shadow: 0 0 6px #ff6b35;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: #ff6b35;">Shape Particle Test - Manual + Animation</h2>
+    
+    <div class="controls">
+        <button onclick="nextShape()">Next Shape</button>
+        <button onclick="showShape('arrow')">Arrow</button>
+        <button onclick="showShape('cloud')">Cloud</button>
+        <button onclick="showShape('brain')">Brain</button>
+        <br><br>
+        <button onclick="startAnimation()" id="start-btn">Start Morph</button>
+        <button onclick="stopAnimation()" id="stop-btn">Stop Animation</button>
+        <button onclick="toggleAnimation()" id="toggle-btn">Toggle Animation</button>
+    </div>
+    
+    <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+        <!-- Static Panel -->
+        <div style="flex: 1; min-width: 400px;">
+            <h3 style="color: #ff6b35;">Static Panel - Exact Coordinates</h3>
+            <div class="current-shape" id="static-shape">Current: Cloud</div>
+            <div class="info">Container: 500px × 350px | Particles: <span id="static-count">0</span></div>
+            <div class="container" id="static-container"></div>
+        </div>
+        
+        <!-- Animated Panel -->
+        <div style="flex: 1; min-width: 400px;">
+            <h3 style="color: #ff6b35;">Animated Panel - Morphing</h3>
+            <div class="current-shape" id="animated-shape">Current: Cloud</div>
+            <div class="info">Container: 500px × 350px | Particles: <span id="animated-count">240</span></div>
+            <div class="container" id="animated-container"></div>
+        </div>
+    </div>
+    
+    <div class="info">
+        <strong>Instructions:</strong><br>
+        • Click "Next Shape" to cycle through Cloud → Brain → Arrow<br>
+        • Or click specific shape buttons<br>
+        • No animations - instant shape changes<br>
+        • Watch for particles being cut off at edges<br>
+        <br>
+        <span style="color: #666; font-size: 0.75rem;">Debug: Test page v3.4</span>
+    </div>
+    
+    <script>
+        // Use coordinates that fit within container bounds
+        function generateArrowShaft() {
+            const shaft = [];
+            const shaftRows = [0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53];
+            
+            shaftRows.forEach(y => {
+                for (let x = 0.15; x <= 0.60; x += 0.015) { // Stop at 0.60 to leave room for head
+                    shaft.push({x, y});
+                }
+            });
+            
+            return shaft;
+        }
+
+        function generateArrowHead() {
+            const head = [];
+            const tipX = 0.75; // Further reduced to prevent clipping
+            const baseX = 0.60; // Connect to shaft end
+            const centerY = 0.5;
+            const headHeight = 0.10; // Even smaller
+            
+            const steps = 12; // Fewer steps for smaller head
+            for (let i = 0; i <= steps; i++) {
+                const progress = i / steps;
+                const x = baseX + (tipX - baseX) * progress;
+                
+                const topY = centerY - headHeight * (1 - progress);
+                head.push({x, y: topY});
+                
+                const bottomY = centerY + headHeight * (1 - progress);
+                head.push({x, y: bottomY});
+                
+                if (progress < 0.8) {
+                    const fillSteps = Math.floor(headHeight * 2 * (1 - progress * 0.5) / 0.02);
+                    for (let j = 1; j < fillSteps; j++) {
+                        const fillY = topY + (bottomY - topY) * (j / fillSteps);
+                        head.push({x, y: fillY});
+                    }
+                }
+            }
+            
+            return head;
+        }
+
+        function getShapeDefinitions() {
+            return {
+                arrow: [...generateArrowShaft(), ...generateArrowHead()],
+                
+                cloud: [
+                    // Cloud formation - organic, flowing
+                    {x: 0.3, y: 0.4}, {x: 0.35, y: 0.42}, {x: 0.4, y: 0.38}, {x: 0.45, y: 0.4}, {x: 0.5, y: 0.36},
+                    {x: 0.55, y: 0.38}, {x: 0.6, y: 0.4}, {x: 0.65, y: 0.42}, {x: 0.7, y: 0.4}, {x: 0.25, y: 0.45},
+                    {x: 0.3, y: 0.5}, {x: 0.35, y: 0.52}, {x: 0.4, y: 0.5}, {x: 0.45, y: 0.48}, {x: 0.5, y: 0.5},
+                    {x: 0.55, y: 0.52}, {x: 0.6, y: 0.5}, {x: 0.65, y: 0.48}, {x: 0.7, y: 0.5}, {x: 0.75, y: 0.45},
+                    {x: 0.28, y: 0.55}, {x: 0.32, y: 0.58}, {x: 0.38, y: 0.6}, {x: 0.42, y: 0.58}, {x: 0.48, y: 0.6},
+                    {x: 0.52, y: 0.62}, {x: 0.58, y: 0.6}, {x: 0.62, y: 0.58}, {x: 0.68, y: 0.6}, {x: 0.72, y: 0.55},
+                    {x: 0.33, y: 0.35}, {x: 0.37, y: 0.37}, {x: 0.43, y: 0.33}, {x: 0.47, y: 0.35}, {x: 0.53, y: 0.31},
+                    {x: 0.57, y: 0.33}, {x: 0.63, y: 0.35}, {x: 0.67, y: 0.37}, {x: 0.73, y: 0.35}, {x: 0.22, y: 0.48},
+                    {x: 0.26, y: 0.52}, {x: 0.31, y: 0.47}, {x: 0.36, y: 0.49}, {x: 0.41, y: 0.45}, {x: 0.46, y: 0.47},
+                    {x: 0.51, y: 0.49}, {x: 0.56, y: 0.47}, {x: 0.61, y: 0.45}, {x: 0.66, y: 0.47}, {x: 0.71, y: 0.49},
+                    {x: 0.29, y: 0.62}, {x: 0.34, y: 0.64}, {x: 0.39, y: 0.66}, {x: 0.44, y: 0.64}, {x: 0.49, y: 0.66},
+                    {x: 0.54, y: 0.68}, {x: 0.59, y: 0.66}, {x: 0.64, y: 0.64}, {x: 0.69, y: 0.66}, {x: 0.74, y: 0.62}
+                ],
+                
+                brain: [
+                    // Brain formation - neural network pattern
+                    {x: 0.4, y: 0.3}, {x: 0.45, y: 0.32}, {x: 0.5, y: 0.3}, {x: 0.55, y: 0.32}, {x: 0.6, y: 0.3},
+                    {x: 0.35, y: 0.38}, {x: 0.42, y: 0.4}, {x: 0.5, y: 0.38}, {x: 0.58, y: 0.4}, {x: 0.65, y: 0.38},
+                    {x: 0.3, y: 0.45}, {x: 0.38, y: 0.48}, {x: 0.45, y: 0.5}, {x: 0.5, y: 0.45}, {x: 0.55, y: 0.5},
+                    {x: 0.62, y: 0.48}, {x: 0.7, y: 0.45}, {x: 0.35, y: 0.55}, {x: 0.42, y: 0.58}, {x: 0.48, y: 0.6},
+                    {x: 0.52, y: 0.58}, {x: 0.58, y: 0.6}, {x: 0.65, y: 0.55}, {x: 0.4, y: 0.65}, {x: 0.45, y: 0.68},
+                    {x: 0.5, y: 0.7}, {x: 0.55, y: 0.68}, {x: 0.6, y: 0.65}, {x: 0.25, y: 0.5}, {x: 0.75, y: 0.5},
+                    {x: 0.38, y: 0.28}, {x: 0.43, y: 0.26}, {x: 0.48, y: 0.28}, {x: 0.53, y: 0.26}, {x: 0.58, y: 0.28},
+                    {x: 0.32, y: 0.36}, {x: 0.37, y: 0.34}, {x: 0.47, y: 0.36}, {x: 0.53, y: 0.34}, {x: 0.63, y: 0.36},
+                    {x: 0.28, y: 0.43}, {x: 0.33, y: 0.41}, {x: 0.43, y: 0.43}, {x: 0.53, y: 0.41}, {x: 0.68, y: 0.43},
+                    {x: 0.33, y: 0.53}, {x: 0.38, y: 0.51}, {x: 0.46, y: 0.53}, {x: 0.54, y: 0.51}, {x: 0.67, y: 0.53},
+                    {x: 0.38, y: 0.63}, {x: 0.43, y: 0.61}, {x: 0.47, y: 0.63}, {x: 0.53, y: 0.61}, {x: 0.58, y: 0.63},
+                    {x: 0.27, y: 0.48}, {x: 0.73, y: 0.48}, {x: 0.29, y: 0.52}, {x: 0.71, y: 0.52}, {x: 0.5, y: 0.25}
+                ]
+            };
+        }
+
+        let currentShapeIndex = 0;
+        const shapeNames = ['cloud', 'brain', 'arrow'];
+        
+        // Two separate containers
+        const staticContainer = document.getElementById('static-container');
+        const animatedContainer = document.getElementById('animated-container');
+        
+        let animationInterval = null;
+        let animatedParticles = [];
+        let animationMode = false;
+
+        // Static Panel Functions (no animation, exact coordinates)
+        function showStaticShape(shapeName) {
+            staticContainer.innerHTML = '';
+            
+            const shapes = getShapeDefinitions();
+            const positions = shapes[shapeName];
+            
+            // Create particles for exact positions
+            positions.forEach((pos, index) => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                if (index % 10 === 0) particle.classList.add('glow');
+                
+                // Position particle at exact coordinates - NO ANIMATION
+                particle.style.left = (pos.x * staticContainer.offsetWidth) + 'px';
+                particle.style.top = (pos.y * staticContainer.offsetHeight) + 'px';
+                particle.style.transition = 'none'; // No animation for static
+                
+                staticContainer.appendChild(particle);
+            });
+            
+            // Update UI
+            document.getElementById('static-shape').textContent = `Static: ${shapeName.charAt(0).toUpperCase() + shapeName.slice(1)}`;
+            document.getElementById('static-count').textContent = positions.length;
+            
+            console.log(`Static ${shapeName}: ${positions.length} particles`);
+        }
+
+        // Animated Panel Functions (with morphing animation)  
+        function createAnimatedParticles(particleCount = 240) {
+            animatedContainer.innerHTML = '';
+            animatedParticles = [];
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                if (i % 10 === 0) particle.classList.add('glow');
+                
+                // Ensure CSS transition is applied
+                particle.style.transition = 'all 4s cubic-bezier(0.4, 0, 0.2, 1)';
+                
+                animatedContainer.appendChild(particle);
+                animatedParticles.push(particle);
+            }
+        }
+
+        function morphAnimatedToShape(shapeName) {
+            const shapes = getShapeDefinitions();
+            const targetPositions = shapes[shapeName];
+            
+            // Create enough particles for the largest shape (arrow = 303)
+            if (animatedParticles.length === 0) {
+                const maxParticles = Math.max(
+                    shapes.arrow.length,
+                    shapes.cloud.length, 
+                    shapes.brain.length
+                );
+                createAnimatedParticles(maxParticles);
+            }
+            
+            animatedParticles.forEach((particle, index) => {
+                const target = targetPositions[index % targetPositions.length]; // Use modulo for smaller shapes
+                
+                // NO JITTER for testing - use exact coordinates
+                const finalX = target.x * animatedContainer.offsetWidth;
+                const finalY = target.y * animatedContainer.offsetHeight;
+                
+                particle.style.left = finalX + 'px';
+                particle.style.top = finalY + 'px';
+                
+                // Staggered animation for wave effect
+                particle.style.transitionDelay = (index * 20) + 'ms';
+            });
+            
+            // Update UI
+            document.getElementById('animated-shape').textContent = `Animated: ${shapeName.charAt(0).toUpperCase() + shapeName.slice(1)}`;
+            document.getElementById('animated-count').textContent = animatedParticles.length; // Show total particle count
+            
+            console.log(`Animated ${shapeName}: morphing 240 particles`);
+        }
+
+        function showShape(shapeName) {
+            // Update both panels
+            showStaticShape(shapeName);
+            
+            stopAnimation();
+            animationMode = false;
+            morphAnimatedToShape(shapeName);
+            
+            currentShapeIndex = shapeNames.indexOf(shapeName);
+        }
+
+        function nextShape() {
+            currentShapeIndex = (currentShapeIndex + 1) % shapeNames.length;
+            showShape(shapeNames[currentShapeIndex]);
+        }
+
+        function startAnimation() {
+            if (animationInterval) return; // Already running
+            
+            animationMode = true;
+            // Start animation with current shape - this will create the right number of particles
+            morphAnimatedToShape(shapeNames[currentShapeIndex]);
+            
+            animationInterval = setInterval(() => {
+                currentShapeIndex = (currentShapeIndex + 1) % shapeNames.length;
+                showStaticShape(shapeNames[currentShapeIndex]); // Update static panel
+                morphAnimatedToShape(shapeNames[currentShapeIndex]); // Animate right panel
+            }, 10000); // 10 seconds to give arrow more time to form
+            
+            console.log('Animation started - both panels will update');
+        }
+
+        function stopAnimation() {
+            if (animationInterval) {
+                clearInterval(animationInterval);
+                animationInterval = null;
+                animationMode = false;
+                console.log('Animation stopped');
+            }
+        }
+
+        function toggleAnimation() {
+            if (animationInterval) {
+                stopAnimation();
+            } else {
+                startAnimation();
+            }
+        }
+
+        // Initialize with cloud
+        showShape('cloud');
+    </script>
+</body>
+</html>

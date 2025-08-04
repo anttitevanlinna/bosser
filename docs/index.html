@@ -36,6 +36,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+            overflow: visible; /* Allow particles to extend beyond container */
         }
 
         /* Navigation */
@@ -57,6 +58,13 @@
             padding: 20px 24px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+        
+        .nav-version {
+            color: #666;
+            font-size: 0.75rem;
+            margin-left: 12px;
+            opacity: 0.8;
         }
 
         .logo {
@@ -89,6 +97,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            overflow: visible; /* Allow particle animation to extend beyond section */
         }
 
         .hero-content {
@@ -403,20 +412,21 @@
         /* Hero Visual Element - Particle Animation */
         .hero-visual {
             position: absolute;
-            right: 5%;
+            right: 3%; /* Move back into viewport but with enough space */
             top: 50%;
             transform: translateY(-50%);
-            width: 500px;
-            height: 400px;
+            width: 500px; /* Increased width to accommodate full arrow */
+            height: 350px;
             z-index: 1;
             opacity: 0.8;
+            pointer-events: none; /* Don't interfere with text selection */
         }
 
         .particle-container {
             width: 100%;
             height: 100%;
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* Allow particles to show even if slightly outside */
         }
 
         .particle {
@@ -425,7 +435,7 @@
             height: 3px;
             background: var(--accent);
             border-radius: 50%;
-            transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 4s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0.8;
         }
 
@@ -463,6 +473,19 @@
 
             .hero-title {
                 font-size: 2.5rem;
+            }
+
+            .hero-visual {
+                display: none; /* Hide particles on mobile to prevent overlap */
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-visual {
+                right: 1%;
+                width: 350px;
+                height: 280px;
+                opacity: 0.6;
             }
 
             .statements {
@@ -510,7 +533,10 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Bosser</a>
+            <div style="display: flex; align-items: center;">
+                <a href="#" class="logo">Bosser</a>
+                <span class="nav-version">v3.3</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -675,271 +701,12 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Bosser - Antti Tevanlinna. Making progress every day in complex settings.</p>
+            <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 8px;">Cache version: 3.3</p>
         </div>
     </footer>
 
-    <script>
-        // Load articles
-        async function loadArticles() {
-            try {
-                const response = await fetch('./data/articles_index.json');
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                
-                const container = document.getElementById('articles-container');
-                container.innerHTML = data.articles.slice(0, 6).map(article => createArticleCard(article)).join('');
-                
-            } catch (error) {
-                console.error('Error loading articles:', error);
-                console.log('Falling back to hardcoded articles...');
-                showFallbackArticles();
-            }
-        }
-
-        function createArticleCard(article) {
-            const excerpt = getExcerpt(article.title);
-            const readingTime = Math.max(1, Math.round((article.content_length || 0) / 250));
-            
-            return `
-                <article class="article-card">
-                    <div class="article-meta">
-                        <span>${readingTime} min read</span>
-                        <span>${formatDate(article.publish_date)}</span>
-                    </div>
-                    <a href="./articles/${article.slug}.html" class="article-title">
-                        ${article.title}
-                    </a>
-                    <div class="article-excerpt">
-                        ${excerpt}
-                    </div>
-                    <a href="./articles/${article.slug}.html" class="read-more">Read Article</a>
-                </article>
-            `;
-        }
-
-        function getExcerpt(title) {
-            const excerpts = {
-                "ai-and-certainty-dont-mix": "Exploring why the inherent uncertainty in AI systems mirrors the unpredictability that has always existed in product development and business strategy.",
-                "skating-where-the-puck-is-going": "Strategic positioning for the future. Applying Wayne Gretzky's famous insight to AI strategy and business transformation.",
-                "evals-is-the-new-black": "The genie and lion tamer metaphor for embracing uncertainty in AI product development. Not knowing beforehand is perfectly okay.",
-                "visioning": "Strategic planning and future thinking in an uncertain world. Building shared understanding of direction and purpose.",
-                "ai-and-agile-20": "How AI is fundamentally transforming agile methodologies and product development practices for the next decade.",
-                "time-to-rethink-your-knowledge-management": "Modern approaches to organizing and leveraging organizational knowledge in the AI era."
-            };
-            
-            const slug = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[-\s]+/g, '-');
-            return excerpts[slug] || "Strategic insights for navigating complexity and driving meaningful progress in challenging environments.";
-        }
-
-        function formatDate(dateString) {
-            if (!dateString || dateString === 'Unknown date') {
-                return '2025';
-            }
-            try {
-                return new Date(dateString).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'short' 
-                });
-            } catch {
-                return dateString;
-            }
-        }
-
-        function showFallbackArticles() {
-            const articles = [
-                { title: 'AI and certainty don\'t mix', slug: 'ai-and-certainty-dont-mix', readingTime: 3, contentLength: 4647 },
-                { title: 'Skating where the puck is going', slug: 'skating-where-the-puck-is-going', readingTime: 4, contentLength: 5973 },
-                { title: 'Evals is the new black', slug: 'evals-is-the-new-black', readingTime: 2, contentLength: 3233 },
-                { title: 'Visioning', slug: 'visioning', readingTime: 6, contentLength: 8661 },
-                { title: 'AI and Agile 2.0', slug: 'ai-and-agile-20', readingTime: 3, contentLength: 4094 },
-                { title: 'Time to rethink your knowledge management', slug: 'time-to-rethink-your-knowledge-management', readingTime: 3, contentLength: 4878 }
-            ];
-            
-            const container = document.getElementById('articles-container');
-            container.innerHTML = articles.map(article => {
-                const excerpt = getExcerpt(article.title);
-                return `
-                    <article class="article-card">
-                        <div class="article-meta">
-                            <span>${article.readingTime} min read</span>
-                            <span>2025</span>
-                        </div>
-                        <a href="./articles/${article.slug}.html" class="article-title">
-                            ${article.title}
-                        </a>
-                        <div class="article-excerpt">
-                            ${excerpt}
-                        </div>
-                        <a href="./articles/${article.slug}.html" class="read-more">Read Article</a>
-                    </article>
-                `;
-            }).join('');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            loadArticles();
-            initParticleAnimation();
-        });
-
-        // Particle Animation System
-        function initParticleAnimation() {
-            const container = document.getElementById('particle-container');
-            if (!container) return;
-
-            const particles = [];
-            const particleCount = 240;
-            
-            // Create particles
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                if (i % 10 === 0) particle.classList.add('glow');
-                container.appendChild(particle);
-                particles.push(particle);
-            }
-
-            // Shape definitions (relative to container center)
-            const shapes = {
-                cloud: [
-                    // Cloud formation - organic, flowing (doubled positions)
-                    {x: 0.3, y: 0.4}, {x: 0.35, y: 0.42}, {x: 0.4, y: 0.38}, {x: 0.45, y: 0.4}, {x: 0.5, y: 0.36},
-                    {x: 0.55, y: 0.38}, {x: 0.6, y: 0.4}, {x: 0.65, y: 0.42}, {x: 0.7, y: 0.4}, {x: 0.25, y: 0.45},
-                    {x: 0.3, y: 0.5}, {x: 0.35, y: 0.52}, {x: 0.4, y: 0.5}, {x: 0.45, y: 0.48}, {x: 0.5, y: 0.5},
-                    {x: 0.55, y: 0.52}, {x: 0.6, y: 0.5}, {x: 0.65, y: 0.48}, {x: 0.7, y: 0.5}, {x: 0.75, y: 0.45},
-                    {x: 0.28, y: 0.55}, {x: 0.32, y: 0.58}, {x: 0.38, y: 0.6}, {x: 0.42, y: 0.58}, {x: 0.48, y: 0.6},
-                    {x: 0.52, y: 0.62}, {x: 0.58, y: 0.6}, {x: 0.62, y: 0.58}, {x: 0.68, y: 0.6}, {x: 0.72, y: 0.55},
-                    // Additional cloud positions
-                    {x: 0.33, y: 0.35}, {x: 0.37, y: 0.37}, {x: 0.43, y: 0.33}, {x: 0.47, y: 0.35}, {x: 0.53, y: 0.31},
-                    {x: 0.57, y: 0.33}, {x: 0.63, y: 0.35}, {x: 0.67, y: 0.37}, {x: 0.73, y: 0.35}, {x: 0.22, y: 0.48},
-                    {x: 0.26, y: 0.52}, {x: 0.31, y: 0.47}, {x: 0.36, y: 0.49}, {x: 0.41, y: 0.45}, {x: 0.46, y: 0.47},
-                    {x: 0.51, y: 0.49}, {x: 0.56, y: 0.47}, {x: 0.61, y: 0.45}, {x: 0.66, y: 0.47}, {x: 0.71, y: 0.49},
-                    {x: 0.29, y: 0.62}, {x: 0.34, y: 0.64}, {x: 0.39, y: 0.66}, {x: 0.44, y: 0.64}, {x: 0.49, y: 0.66},
-                    {x: 0.54, y: 0.68}, {x: 0.59, y: 0.66}, {x: 0.64, y: 0.64}, {x: 0.69, y: 0.66}, {x: 0.74, y: 0.62}
-                ],
-                brain: [
-                    // Brain formation - neural network pattern (doubled)
-                    {x: 0.4, y: 0.3}, {x: 0.45, y: 0.32}, {x: 0.5, y: 0.3}, {x: 0.55, y: 0.32}, {x: 0.6, y: 0.3},
-                    {x: 0.35, y: 0.38}, {x: 0.42, y: 0.4}, {x: 0.5, y: 0.38}, {x: 0.58, y: 0.4}, {x: 0.65, y: 0.38},
-                    {x: 0.3, y: 0.45}, {x: 0.38, y: 0.48}, {x: 0.45, y: 0.5}, {x: 0.5, y: 0.45}, {x: 0.55, y: 0.5},
-                    {x: 0.62, y: 0.48}, {x: 0.7, y: 0.45}, {x: 0.35, y: 0.55}, {x: 0.42, y: 0.58}, {x: 0.48, y: 0.6},
-                    {x: 0.52, y: 0.58}, {x: 0.58, y: 0.6}, {x: 0.65, y: 0.55}, {x: 0.4, y: 0.65}, {x: 0.45, y: 0.68},
-                    {x: 0.5, y: 0.7}, {x: 0.55, y: 0.68}, {x: 0.6, y: 0.65}, {x: 0.25, y: 0.5}, {x: 0.75, y: 0.5},
-                    // Additional brain neural connections
-                    {x: 0.38, y: 0.28}, {x: 0.43, y: 0.26}, {x: 0.48, y: 0.28}, {x: 0.53, y: 0.26}, {x: 0.58, y: 0.28},
-                    {x: 0.32, y: 0.36}, {x: 0.37, y: 0.34}, {x: 0.47, y: 0.36}, {x: 0.53, y: 0.34}, {x: 0.63, y: 0.36},
-                    {x: 0.28, y: 0.43}, {x: 0.33, y: 0.41}, {x: 0.43, y: 0.43}, {x: 0.53, y: 0.41}, {x: 0.68, y: 0.43},
-                    {x: 0.33, y: 0.53}, {x: 0.38, y: 0.51}, {x: 0.46, y: 0.53}, {x: 0.54, y: 0.51}, {x: 0.67, y: 0.53},
-                    {x: 0.38, y: 0.63}, {x: 0.43, y: 0.61}, {x: 0.47, y: 0.63}, {x: 0.53, y: 0.61}, {x: 0.58, y: 0.63},
-                    {x: 0.27, y: 0.48}, {x: 0.73, y: 0.48}, {x: 0.29, y: 0.52}, {x: 0.71, y: 0.52}, {x: 0.5, y: 0.25}
-                ],
-                arrow: [
-                    // Arrow shaft - main horizontal lines (5 rows for thickness)
-                    {x: 0.15, y: 0.48}, {x: 0.17, y: 0.48}, {x: 0.19, y: 0.48}, {x: 0.21, y: 0.48}, {x: 0.23, y: 0.48},
-                    {x: 0.25, y: 0.48}, {x: 0.27, y: 0.48}, {x: 0.29, y: 0.48}, {x: 0.31, y: 0.48}, {x: 0.33, y: 0.48},
-                    {x: 0.35, y: 0.48}, {x: 0.37, y: 0.48}, {x: 0.39, y: 0.48}, {x: 0.41, y: 0.48}, {x: 0.43, y: 0.48},
-                    {x: 0.45, y: 0.48}, {x: 0.47, y: 0.48}, {x: 0.49, y: 0.48}, {x: 0.51, y: 0.48}, {x: 0.53, y: 0.48},
-                    {x: 0.55, y: 0.48}, {x: 0.57, y: 0.48}, {x: 0.59, y: 0.48}, {x: 0.61, y: 0.48}, {x: 0.63, y: 0.48},
-                    {x: 0.65, y: 0.48}, {x: 0.67, y: 0.48}, {x: 0.69, y: 0.48}, {x: 0.71, y: 0.48}, {x: 0.73, y: 0.48},
-                    
-                    {x: 0.15, y: 0.49}, {x: 0.17, y: 0.49}, {x: 0.19, y: 0.49}, {x: 0.21, y: 0.49}, {x: 0.23, y: 0.49},
-                    {x: 0.25, y: 0.49}, {x: 0.27, y: 0.49}, {x: 0.29, y: 0.49}, {x: 0.31, y: 0.49}, {x: 0.33, y: 0.49},
-                    {x: 0.35, y: 0.49}, {x: 0.37, y: 0.49}, {x: 0.39, y: 0.49}, {x: 0.41, y: 0.49}, {x: 0.43, y: 0.49},
-                    {x: 0.45, y: 0.49}, {x: 0.47, y: 0.49}, {x: 0.49, y: 0.49}, {x: 0.51, y: 0.49}, {x: 0.53, y: 0.49},
-                    {x: 0.55, y: 0.49}, {x: 0.57, y: 0.49}, {x: 0.59, y: 0.49}, {x: 0.61, y: 0.49}, {x: 0.63, y: 0.49},
-                    {x: 0.65, y: 0.49}, {x: 0.67, y: 0.49}, {x: 0.69, y: 0.49}, {x: 0.71, y: 0.49}, {x: 0.73, y: 0.49},
-                    
-                    {x: 0.15, y: 0.5}, {x: 0.17, y: 0.5}, {x: 0.19, y: 0.5}, {x: 0.21, y: 0.5}, {x: 0.23, y: 0.5},
-                    {x: 0.25, y: 0.5}, {x: 0.27, y: 0.5}, {x: 0.29, y: 0.5}, {x: 0.31, y: 0.5}, {x: 0.33, y: 0.5},
-                    {x: 0.35, y: 0.5}, {x: 0.37, y: 0.5}, {x: 0.39, y: 0.5}, {x: 0.41, y: 0.5}, {x: 0.43, y: 0.5},
-                    {x: 0.45, y: 0.5}, {x: 0.47, y: 0.5}, {x: 0.49, y: 0.5}, {x: 0.51, y: 0.5}, {x: 0.53, y: 0.5},
-                    {x: 0.55, y: 0.5}, {x: 0.57, y: 0.5}, {x: 0.59, y: 0.5}, {x: 0.61, y: 0.5}, {x: 0.63, y: 0.5},
-                    {x: 0.65, y: 0.5}, {x: 0.67, y: 0.5}, {x: 0.69, y: 0.5}, {x: 0.71, y: 0.5}, {x: 0.73, y: 0.5},
-                    
-                    {x: 0.15, y: 0.51}, {x: 0.17, y: 0.51}, {x: 0.19, y: 0.51}, {x: 0.21, y: 0.51}, {x: 0.23, y: 0.51},
-                    {x: 0.25, y: 0.51}, {x: 0.27, y: 0.51}, {x: 0.29, y: 0.51}, {x: 0.31, y: 0.51}, {x: 0.33, y: 0.51},
-                    {x: 0.35, y: 0.51}, {x: 0.37, y: 0.51}, {x: 0.39, y: 0.51}, {x: 0.41, y: 0.51}, {x: 0.43, y: 0.51},
-                    {x: 0.45, y: 0.51}, {x: 0.47, y: 0.51}, {x: 0.49, y: 0.51}, {x: 0.51, y: 0.51}, {x: 0.53, y: 0.51},
-                    {x: 0.55, y: 0.51}, {x: 0.57, y: 0.51}, {x: 0.59, y: 0.51}, {x: 0.61, y: 0.51}, {x: 0.63, y: 0.51},
-                    {x: 0.65, y: 0.51}, {x: 0.67, y: 0.51}, {x: 0.69, y: 0.51}, {x: 0.71, y: 0.51}, {x: 0.73, y: 0.51},
-                    
-                    {x: 0.15, y: 0.52}, {x: 0.17, y: 0.52}, {x: 0.19, y: 0.52}, {x: 0.21, y: 0.52}, {x: 0.23, y: 0.52},
-                    {x: 0.25, y: 0.52}, {x: 0.27, y: 0.52}, {x: 0.29, y: 0.52}, {x: 0.31, y: 0.52}, {x: 0.33, y: 0.52},
-                    {x: 0.35, y: 0.52}, {x: 0.37, y: 0.52}, {x: 0.39, y: 0.52}, {x: 0.41, y: 0.52}, {x: 0.43, y: 0.52},
-                    {x: 0.45, y: 0.52}, {x: 0.47, y: 0.52}, {x: 0.49, y: 0.52}, {x: 0.51, y: 0.52}, {x: 0.53, y: 0.52},
-                    {x: 0.55, y: 0.52}, {x: 0.57, y: 0.52}, {x: 0.59, y: 0.52}, {x: 0.61, y: 0.52}, {x: 0.63, y: 0.52},
-                    {x: 0.65, y: 0.52}, {x: 0.67, y: 0.52}, {x: 0.69, y: 0.52}, {x: 0.71, y: 0.52}, {x: 0.73, y: 0.52},
-                    
-                    // Arrow head - top diagonal
-                    {x: 0.74, y: 0.3}, {x: 0.75, y: 0.32}, {x: 0.76, y: 0.34}, {x: 0.77, y: 0.36}, {x: 0.78, y: 0.38},
-                    {x: 0.79, y: 0.4}, {x: 0.8, y: 0.42}, {x: 0.81, y: 0.44}, {x: 0.82, y: 0.46}, {x: 0.83, y: 0.48},
-                    {x: 0.84, y: 0.49}, {x: 0.85, y: 0.5}, 
-                    
-                    // Arrow head - bottom diagonal
-                    {x: 0.74, y: 0.7}, {x: 0.75, y: 0.68}, {x: 0.76, y: 0.66}, {x: 0.77, y: 0.64}, {x: 0.78, y: 0.62},
-                    {x: 0.79, y: 0.6}, {x: 0.8, y: 0.58}, {x: 0.81, y: 0.56}, {x: 0.82, y: 0.54}, {x: 0.83, y: 0.52},
-                    {x: 0.84, y: 0.51},
-                    
-                    // Arrow head fill - multiple internal lines
-                    {x: 0.75, y: 0.35}, {x: 0.76, y: 0.37}, {x: 0.77, y: 0.39}, {x: 0.78, y: 0.41}, {x: 0.79, y: 0.43},
-                    {x: 0.8, y: 0.45}, {x: 0.81, y: 0.47}, {x: 0.82, y: 0.49}, {x: 0.75, y: 0.65}, {x: 0.76, y: 0.63},
-                    {x: 0.77, y: 0.61}, {x: 0.78, y: 0.59}, {x: 0.79, y: 0.57}, {x: 0.8, y: 0.55}, {x: 0.81, y: 0.53},
-                    {x: 0.76, y: 0.4}, {x: 0.77, y: 0.42}, {x: 0.78, y: 0.44}, {x: 0.79, y: 0.46}, {x: 0.8, y: 0.48},
-                    {x: 0.76, y: 0.6}, {x: 0.77, y: 0.58}, {x: 0.78, y: 0.56}, {x: 0.79, y: 0.54}, {x: 0.8, y: 0.52},
-                    {x: 0.77, y: 0.45}, {x: 0.78, y: 0.47}, {x: 0.79, y: 0.49}, {x: 0.77, y: 0.55}, {x: 0.78, y: 0.53}
-                ]
-            };
-
-            let currentShapeIndex = 0;
-            const shapeNames = ['cloud', 'brain', 'arrow'];
-            
-            function getRandomPositions(count) {
-                const positions = [];
-                for (let i = 0; i < count; i++) {
-                    positions.push({
-                        x: 0.2 + Math.random() * 0.6,
-                        y: 0.3 + Math.random() * 0.4
-                    });
-                }
-                return positions;
-            }
-
-            function morphToShape(shapeName) {
-                const targetPositions = shapes[shapeName] || getRandomPositions(particleCount);
-                const containerRect = container.getBoundingClientRect();
-                
-                particles.forEach((particle, index) => {
-                    const target = targetPositions[index % targetPositions.length];
-                    const randomOffset = {
-                        x: (Math.random() - 0.5) * 0.05,
-                        y: (Math.random() - 0.5) * 0.05
-                    };
-                    
-                    const finalX = (target.x + randomOffset.x) * containerRect.width;
-                    const finalY = (target.y + randomOffset.y) * containerRect.height;
-                    
-                    particle.style.left = finalX + 'px';
-                    particle.style.top = finalY + 'px';
-                    
-                    // Add slight delay for wave effect
-                    particle.style.transitionDelay = (index * 20) + 'ms';
-                });
-            }
-
-            function nextShape() {
-                currentShapeIndex = (currentShapeIndex + 1) % shapeNames.length;
-                morphToShape(shapeNames[currentShapeIndex]);
-            }
-
-            // Initialize with first shape
-            morphToShape(shapeNames[0]);
-            
-            // Cycle through shapes
-            setInterval(nextShape, 4000); // Change shape every 4 seconds
-        }
-    </script>
+    <!-- JavaScript Files -->
+    <script src="./js/articles.js?v=3.3"></script>
+    <script src="./js/particle-animation.js?v=3.3"></script>
 </body>
 </html>
