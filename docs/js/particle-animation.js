@@ -17,7 +17,7 @@ class ParticleAnimationSystem {
         this.transitionDuration = options.transitionDuration || 4000;
         this.shapeInterval = options.shapeInterval || 10000;
         this.currentShapeIndex = 0;
-        this.shapeNames = ['cloud', 'brain', 'arrow'];
+        this.shapeNames = ['cloud', 'constellation', 'arrow'];
         
         this.init();
     }
@@ -70,21 +70,79 @@ class ParticleAnimationSystem {
                 {x: 0.54, y: 0.68}, {x: 0.59, y: 0.66}, {x: 0.64, y: 0.64}, {x: 0.69, y: 0.66}, {x: 0.74, y: 0.62}
             ],
             
-            brain: [
-                // Brain formation - neural network pattern
-                {x: 0.4, y: 0.3}, {x: 0.45, y: 0.32}, {x: 0.5, y: 0.3}, {x: 0.55, y: 0.32}, {x: 0.6, y: 0.3},
-                {x: 0.35, y: 0.38}, {x: 0.42, y: 0.4}, {x: 0.5, y: 0.38}, {x: 0.58, y: 0.4}, {x: 0.65, y: 0.38},
-                {x: 0.3, y: 0.45}, {x: 0.38, y: 0.48}, {x: 0.45, y: 0.5}, {x: 0.5, y: 0.45}, {x: 0.55, y: 0.5},
-                {x: 0.62, y: 0.48}, {x: 0.7, y: 0.45}, {x: 0.35, y: 0.55}, {x: 0.42, y: 0.58}, {x: 0.48, y: 0.6},
-                {x: 0.52, y: 0.58}, {x: 0.58, y: 0.6}, {x: 0.65, y: 0.55}, {x: 0.4, y: 0.65}, {x: 0.45, y: 0.68},
-                {x: 0.5, y: 0.7}, {x: 0.55, y: 0.68}, {x: 0.6, y: 0.65}, {x: 0.25, y: 0.5}, {x: 0.75, y: 0.5},
-                // Neural connections
-                {x: 0.38, y: 0.28}, {x: 0.43, y: 0.26}, {x: 0.48, y: 0.28}, {x: 0.53, y: 0.26}, {x: 0.58, y: 0.28},
-                {x: 0.32, y: 0.36}, {x: 0.37, y: 0.34}, {x: 0.47, y: 0.36}, {x: 0.53, y: 0.34}, {x: 0.63, y: 0.36},
-                {x: 0.28, y: 0.43}, {x: 0.33, y: 0.41}, {x: 0.43, y: 0.43}, {x: 0.53, y: 0.41}, {x: 0.68, y: 0.43},
-                {x: 0.33, y: 0.53}, {x: 0.38, y: 0.51}, {x: 0.46, y: 0.53}, {x: 0.54, y: 0.51}, {x: 0.67, y: 0.53},
-                {x: 0.38, y: 0.63}, {x: 0.43, y: 0.61}, {x: 0.47, y: 0.63}, {x: 0.53, y: 0.61}, {x: 0.58, y: 0.63},
-                {x: 0.27, y: 0.48}, {x: 0.73, y: 0.48}, {x: 0.29, y: 0.52}, {x: 0.71, y: 0.52}, {x: 0.5, y: 0.25}
+            constellation: [
+                // MAJOR STAR CLUSTERS - Bright central stars in each strategic area
+                
+                // Top-left cluster: Strategic Thinking (4 major stars)
+                {x: 0.2, y: 0.25}, {x: 0.25, y: 0.28}, {x: 0.22, y: 0.32}, {x: 0.28, y: 0.3},
+                
+                // Top-right cluster: Market Analysis (4 major stars)
+                {x: 0.65, y: 0.2}, {x: 0.68, y: 0.25}, {x: 0.72, y: 0.22}, {x: 0.7, y: 0.28},
+                
+                // Center cluster: Core Strategy Hub (7 major stars - largest cluster)
+                {x: 0.45, y: 0.45}, {x: 0.5, y: 0.5}, {x: 0.55, y: 0.48}, {x: 0.48, y: 0.52}, 
+                {x: 0.52, y: 0.45}, {x: 0.47, y: 0.48}, {x: 0.53, y: 0.52},
+                
+                // Left cluster: Operational Insights (4 major stars)
+                {x: 0.15, y: 0.5}, {x: 0.18, y: 0.52}, {x: 0.2, y: 0.48}, {x: 0.22, y: 0.55},
+                
+                // Right cluster: Competitive Intelligence (4 major stars)  
+                {x: 0.75, y: 0.45}, {x: 0.78, y: 0.48}, {x: 0.72, y: 0.52}, {x: 0.8, y: 0.5},
+                
+                // Bottom-left cluster: Customer Insights (4 major stars)
+                {x: 0.25, y: 0.7}, {x: 0.28, y: 0.72}, {x: 0.22, y: 0.75}, {x: 0.3, y: 0.68},
+                
+                // Bottom-right cluster: Implementation Planning (4 major stars)
+                {x: 0.7, y: 0.75}, {x: 0.72, y: 0.72}, {x: 0.68, y: 0.78}, {x: 0.75, y: 0.7},
+                
+                // MESH NETWORK CONNECTIONS - Multiple pathways creating interconnected web
+                
+                // Primary connections to Center Strategy Hub (hub-and-spoke foundation)
+                {x: 0.3, y: 0.32}, {x: 0.36, y: 0.38}, {x: 0.42, y: 0.44}, // Top-left → Center
+                {x: 0.62, y: 0.3}, {x: 0.57, y: 0.37}, {x: 0.53, y: 0.44}, // Top-right → Center  
+                {x: 0.25, y: 0.51}, {x: 0.35, y: 0.49}, {x: 0.44, y: 0.47}, // Left → Center
+                {x: 0.56, y: 0.47}, {x: 0.65, y: 0.46}, {x: 0.74, y: 0.47}, // Center → Right
+                {x: 0.47, y: 0.55}, {x: 0.4, y: 0.64}, {x: 0.3, y: 0.69}, // Center → Bottom-left
+                {x: 0.53, y: 0.55}, {x: 0.61, y: 0.65}, {x: 0.68, y: 0.72}, // Center → Bottom-right
+                
+                // Direct cluster-to-cluster connections (creating mesh structure)
+                // Top row connections
+                {x: 0.32, y: 0.27}, {x: 0.45, y: 0.25}, {x: 0.58, y: 0.23}, // Top-left → Top-right
+                
+                // Left side connections  
+                {x: 0.18, y: 0.35}, {x: 0.19, y: 0.42}, {x: 0.21, y: 0.48}, // Top-left → Left
+                {x: 0.19, y: 0.58}, {x: 0.22, y: 0.64}, {x: 0.24, y: 0.68}, // Left → Bottom-left
+                
+                // Right side connections
+                {x: 0.68, y: 0.32}, {x: 0.72, y: 0.38}, {x: 0.74, y: 0.42}, // Top-right → Right
+                {x: 0.73, y: 0.58}, {x: 0.72, y: 0.65}, {x: 0.71, y: 0.7}, // Right → Bottom-right
+                
+                // Bottom row connections
+                {x: 0.32, y: 0.72}, {x: 0.45, y: 0.74}, {x: 0.58, y: 0.73}, // Bottom-left → Bottom-right
+                
+                // Diagonal mesh connections (creating web-like structure)
+                // Top-left to Right cluster
+                {x: 0.35, y: 0.35}, {x: 0.5, y: 0.4}, {x: 0.65, y: 0.44},
+                
+                // Top-right to Left cluster  
+                {x: 0.62, y: 0.32}, {x: 0.45, y: 0.4}, {x: 0.25, y: 0.48},
+                
+                // Top-left to Bottom-right (strategic execution diagonal)
+                {x: 0.32, y: 0.4}, {x: 0.45, y: 0.55}, {x: 0.58, y: 0.68},
+                
+                // Top-right to Bottom-left (market-customer diagonal)
+                {x: 0.58, y: 0.35}, {x: 0.45, y: 0.5}, {x: 0.32, y: 0.65},
+                
+                // Left to Bottom-right (operational-implementation arc)
+                {x: 0.25, y: 0.58}, {x: 0.4, y: 0.63}, {x: 0.55, y: 0.7},
+                
+                // Right to Bottom-left (competitive-customer arc)  
+                {x: 0.7, y: 0.58}, {x: 0.55, y: 0.63}, {x: 0.4, y: 0.68},
+                
+                // Additional mesh density - shorter connecting segments
+                {x: 0.35, y: 0.4}, {x: 0.4, y: 0.35}, {x: 0.6, y: 0.4}, {x: 0.65, y: 0.35}, // Upper mesh
+                {x: 0.35, y: 0.6}, {x: 0.4, y: 0.65}, {x: 0.6, y: 0.6}, {x: 0.65, y: 0.65}, // Lower mesh  
+                {x: 0.3, y: 0.4}, {x: 0.3, y: 0.6}, {x: 0.7, y: 0.4}, {x: 0.7, y: 0.6} // Side connectors
             ],
             
             arrow: [
@@ -162,7 +220,7 @@ class ParticleAnimationSystem {
             const maxParticles = Math.max(
                 shapes.arrow.length,
                 shapes.cloud.length, 
-                shapes.brain.length
+                shapes.constellation.length
             );
             this.createParticles(maxParticles);
         }
@@ -170,8 +228,8 @@ class ParticleAnimationSystem {
         this.particles.forEach((particle, index) => {
             const target = targetPositions[index % targetPositions.length];
             
-            // Reduce randomization for geometric shapes like arrow
-            const jitterAmount = shapeName === 'arrow' ? 0.01 : 0.05;
+            // Reduce randomization for geometric shapes like arrow and constellation
+            const jitterAmount = (shapeName === 'arrow' || shapeName === 'constellation') ? 0.01 : 0.05;
             const randomOffset = {
                 x: (Math.random() - 0.5) * jitterAmount,
                 y: (Math.random() - 0.5) * jitterAmount
@@ -259,10 +317,13 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Shape order:', window.particleSystem.shapeNames);
         console.log('Starting with shape:', window.particleSystem.shapeNames[0]);
         
-        // Debug arrow generation
+        // Debug shape generation
         const shapes = window.particleSystem.getShapeDefinitions();
+        console.log('Available shapes:', Object.keys(shapes));
         const arrowPositions = shapes.arrow;
+        const constellationPositions = shapes.constellation;
         console.log(`Arrow particles: ${arrowPositions.length}`);
+        console.log(`Constellation particles: ${constellationPositions.length}`);
         if (arrowPositions.length > 0) {
             const maxX = Math.max(...arrowPositions.map(p => p.x));
             const minX = Math.min(...arrowPositions.map(p => p.x));
