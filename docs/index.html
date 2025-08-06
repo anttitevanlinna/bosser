@@ -344,6 +344,280 @@
             color: var(--accent-hover);
         }
 
+        /* Comparison Matrix Section */
+        .comparison {
+            padding: 120px 0;
+            background: var(--bg-primary);
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2px;
+            max-width: 1200px;
+            margin: 48px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .comparison-side {
+            padding: 48px 40px;
+            min-height: 400px;
+        }
+
+        .comparison-traditional {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-right: 1px solid var(--border);
+        }
+
+        .comparison-bosser {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+            border-right: 1px solid var(--border);
+        }
+
+        .comparison-together {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0.1) 100%);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .comparison-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-bosser .comparison-title {
+            color: var(--accent);
+        }
+
+        .comparison-together .comparison-title {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .comparison-items {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            min-height: 72px;
+        }
+
+        .comparison-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .comparison-traditional .comparison-icon {
+            background: var(--text-muted);
+            color: var(--bg-primary);
+        }
+
+        .comparison-bosser .comparison-icon {
+            background: var(--accent);
+            color: white;
+        }
+
+        .comparison-text {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .comparison-traditional .comparison-text {
+            color: var(--text-secondary);
+        }
+
+        .comparison-bosser .comparison-text {
+            color: var(--text-primary);
+        }
+
+        .comparison-together .comparison-icon {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 0 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .comparison-together .comparison-text {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison {
+                padding: 80px 0;
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+                gap: 1px;
+            }
+
+            .comparison-traditional {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .comparison-bosser {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .comparison-side {
+                padding: 40px 32px;
+                min-height: auto;
+            }
+        }
+
+        /* Horizontal Timeline Styles */
+        .timeline-horizontal {
+            position: relative;
+            padding: 40px 0;
+            margin-top: 48px;
+        }
+
+        .timeline-line {
+            position: relative;
+            height: 4px;
+            background: var(--border);
+            margin: 60px 0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .timeline-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), rgba(255, 107, 53, 0.8));
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        .timeline-events {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            margin-top: -60px;
+            padding: 0 20px;
+        }
+
+        .timeline-event {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 180px;
+        }
+
+        .timeline-event.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-event-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--bg-secondary);
+            border: 4px solid var(--border);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.6s ease;
+        }
+
+        .timeline-event.active .timeline-event-dot {
+            border-color: var(--accent);
+            background: var(--accent);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            transform: scale(1.2);
+        }
+
+        .timeline-event-year {
+            font-size: 0.875rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-event-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .timeline-event-company {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .timeline-event-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 1024px) {
+            .timeline-events {
+                flex-direction: column;
+                gap: 40px;
+                align-items: center;
+                padding: 40px 20px;
+            }
+
+            .timeline-event {
+                max-width: 300px;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Contact Section */
         .contact {
             padding: 120px 0;
@@ -553,12 +827,20 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-subtitle">Intelligent Hard Work</div>
-                <h1 class="hero-title">Complex projects need someone who gets things moving</h1>
+                <h1 class="hero-title">The best strategies emerge from action, not analysis</h1>
                 <p class="hero-description">
-                    25 years leading strategic transformations, complex projects, and organizational change 
-                    at Finland's most demanding organizations.
+                    While others deliver analysis and plans, I conjure momentum. 25 years leading strategic transformations 
+                    at Finland's most demanding organizations through action, not bureaucracy.
                 </p>
-                <a href="#contact" class="cta-button">Start a Conversation</a>
+                <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+                    <a href="#contact" class="cta-button">Start a Conversation</a>
+                    <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank" rel="noopener" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        LinkedIn Profile
+                    </a>
+                </div>
             </div>
             
             <!-- Hero Particle Animation -->
@@ -574,36 +856,141 @@
         <div class="container">
             <div class="statement">
                 <div class="statement-number">01</div>
-                <h2 class="statement-title">We redefine what consultancy means</h2>
+                <h2 class="statement-title">I go first, so leaders can go forward</h2>
                 <p class="statement-description">
-                    Not bureaucratic processes or generic frameworks. Real progress on your most challenging initiatives. 
-                    Human-centered transformation that sticks.
+                    While others deliver analysis and plans, I take action to create momentum. Whatever it takes - 
+                    difficult conversations, strategic communication, breakthrough thinking - I lead by example 
+                    so internal leaders can build on that foundation.
                 </p>
             </div>
 
             <div class="statement">
                 <div class="statement-number">02</div>
-                <h2 class="statement-title">When others see problems, we see possibilities</h2>
+                <h2 class="statement-title">When others see problems, I see possibilities</h2>
                 <p class="statement-description">
-                    Complex, poorly-defined, business-critical projects are exactly where we thrive. 
+                    Complex, poorly-defined, business-critical projects are exactly where I thrive. 
                     Bringing clarity, momentum, and results to what seemed impossible.
                 </p>
             </div>
 
             <div class="statement">
                 <div class="statement-number">03</div>
+                <h2 class="statement-title">Framework-integrative, not framework-driven</h2>
+                <p class="statement-description">
+                    Deep strategic literacy across Playing to Win, Porter, Lean, Agile, and modern change management. 
+                    But frameworks serve the situation, not the other way around. Intelligence applied with craftsman-level judgment.
+                </p>
+            </div>
+
+            <div class="statement">
+                <div class="statement-number">04</div>
                 <h2 class="statement-title">The future belongs to those who prepare today</h2>
                 <p class="statement-description">
                     AI and rapid change demand new approaches to strategy, product thinking, and organizational agility. 
-                    We help you stay ahead of the curve.
+                    I help you stay ahead of the curve.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section-title">The Difference</h2>
+            
+            <div class="comparison-container">
+                <div class="comparison-side comparison-traditional">
+                    <div class="comparison-header">
+                        <div class="comparison-label">Traditional Consulting</div>
+                        <h3 class="comparison-title">Household Names</h3>
+                    </div>
+                    <div class="comparison-items">
+                        <div class="comparison-item">
+                            <div class="comparison-icon">⏱</div>
+                            <div class="comparison-text">6-month diagnostic phases before any action</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">📊</div>
+                            <div class="comparison-text">200-slide strategy decks and governance committees</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">👥</div>
+                            <div class="comparison-text">Teams of junior consultants with senior oversight</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">📋</div>
+                            <div class="comparison-text">Rigid frameworks and one-size-fits-all methodologies</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🏢</div>
+                            <div class="comparison-text">Bureaucratic processes and change management programs</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-side comparison-bosser">
+                    <div class="comparison-header">
+                        <div class="comparison-label">Bosser Approach</div>
+                        <h3 class="comparison-title">I Go First</h3>
+                    </div>
+                    <div class="comparison-items">
+                        <div class="comparison-item">
+                            <div class="comparison-icon">⚡</div>
+                            <div class="comparison-text">Action-first leadership - momentum from day one</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🎯</div>
+                            <div class="comparison-text">Strategic communication that drives real progress</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🏃</div>
+                            <div class="comparison-text">Direct access to 25+ years of expertise</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🧠</div>
+                            <div class="comparison-text">Framework-integrative, not framework-driven approach</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🚀</div>
+                            <div class="comparison-text">Big transformation, small bureaucracy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-side comparison-together">
+                    <div class="comparison-header">
+                        <div class="comparison-label">When We Believe Together</div>
+                        <h3 class="comparison-title">Action Creates Strategy</h3>
+                    </div>
+                    <div class="comparison-items">
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🎯</div>
+                            <div class="comparison-text">We discover breakthrough strategies through intelligent experimentation</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🏃‍♂️</div>
+                            <div class="comparison-text">Leaders develop confidence by taking action on real challenges</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🔄</div>
+                            <div class="comparison-text">We build organizational capability while solving immediate problems</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">⚡</div>
+                            <div class="comparison-text">Success compounds - each action creates momentum for the next</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon">🚀</div>
+                            <div class="comparison-text">Transformation becomes sustainable because it's internally driven</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">How We Work</h2>
+            <h2 class="section-title">How I Work</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <h3 class="service-title">Strategic Project Leadership</h3>
@@ -661,6 +1048,79 @@
                         One of Finland's leading transformation specialists. 
                         Deep experience in strategic change, product thinking, and organizational development.
                     </p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            View full career details on LinkedIn →
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full-width Career Timeline -->
+        <div class="timeline-horizontal" style="width: 100%; padding: 60px 0; margin: 0; margin-top: 80px;">
+            <div class="timeline-line" style="max-width: 1400px; margin: 0 auto;">
+                <div class="timeline-progress" id="timeline-progress"></div>
+            </div>
+            
+            <div class="timeline-events" id="timeline-events" style="max-width: 1400px; margin: 0 auto; margin-top: -60px;">
+                <div class="timeline-event" data-year="2003">
+                    <div class="timeline-event-dot"></div>
+                    <div class="timeline-event-year">2003</div>
+                    <div class="timeline-event-title">Research Foundation</div>
+                    <div class="timeline-event-company">University of Helsinki</div>
+                    <div class="timeline-event-desc">Published research on software engineering and testing tools</div>
+                </div>
+
+                <div class="timeline-event" data-year="2005">
+                    <div class="timeline-event-dot"></div>
+                    <div class="timeline-event-year">2005</div>
+                    <div class="timeline-event-title">Technical Mastery</div>
+                    <div class="timeline-event-company">F-Secure</div>
+                    <div class="timeline-event-desc">Software Engineer to Senior Manager, pioneering agile practices</div>
+                </div>
+
+                <div class="timeline-event" data-year="2016">
+                    <div class="timeline-event-dot"></div>
+                    <div class="timeline-event-year">2016</div>
+                    <div class="timeline-event-title">Product Leadership</div>
+                    <div class="timeline-event-company">F-Secure</div>
+                    <div class="timeline-event-desc">Senior Product Owner for global 10M+ business</div>
+                </div>
+
+                <div class="timeline-event" data-year="2017">
+                    <div class="timeline-event-dot"></div>
+                    <div class="timeline-event-year">2017</div>
+                    <div class="timeline-event-title">Enterprise Coaching</div>
+                    <div class="timeline-event-company">Nitor</div>
+                    <div class="timeline-event-desc">Transforming large Nordic companies into product thinking</div>
+                </div>
+
+                <div class="timeline-event" data-year="2019">
+                    <div class="timeline-event-dot"></div>
+                    <div class="timeline-event-year">2019</div>
+                    <div class="timeline-event-title">Scaling Success</div>
+                    <div class="timeline-event-company">Neste</div>
+                    <div class="timeline-event-desc">3 to 15 teams in 6 months, company-wide agile model</div>
+                </div>
+
+                <div class="timeline-event" data-year="2021">
+                    <div class="timeline-event-dot"></div>
+                    <div class="timeline-event-year">2021</div>
+                    <div class="timeline-event-title">Strategic Transformation</div>
+                    <div class="timeline-event-company">Posti Group</div>
+                    <div class="timeline-event-desc">Trained 200+ people, co-led corporate must-win battles</div>
+                </div>
+
+                <div class="timeline-event" data-year="2024">
+                    <div class="timeline-event-dot"></div>
+                    <div class="timeline-event-year">2024</div>
+                    <div class="timeline-event-title">Independent Mastery</div>
+                    <div class="timeline-event-company">Bosser</div>
+                    <div class="timeline-event-desc">Leading the biggest changes, making progress every day</div>
                 </div>
             </div>
         </div>
@@ -680,7 +1140,7 @@
             <h2>Ready to get things moving?</h2>
             <p>
                 Complex projects, strategic transformations, or organizational change. 
-                Let's discuss how we can create momentum on your most important initiatives.
+                Let's discuss how I can create momentum on your most important initiatives.
             </p>
             <a href="mailto:tevanlin@gmail.com" class="cta-button">Start a Conversation</a>
             
@@ -711,5 +1171,62 @@
     <!-- JavaScript Files -->
     <script src="./js/articles.js?v=4.1"></script>
     <script src="./js/particle-animation.js?v=4.1"></script>
+    <script>
+        // Horizontal Timeline Animation
+        function initTimeline() {
+            const timeline = document.getElementById('timeline-events');
+            const progress = document.getElementById('timeline-progress');
+            const events = timeline.querySelectorAll('.timeline-event');
+            
+            let currentIndex = 0;
+            let animationStarted = false;
+            
+            function animateTimeline() {
+                if (animationStarted) return;
+                animationStarted = true;
+                
+                // Start progress bar animation
+                progress.style.width = '100%';
+                
+                // Animate events one by one
+                events.forEach((event, index) => {
+                    setTimeout(() => {
+                        event.classList.add('animate');
+                        event.classList.add('active');
+                        
+                        // Remove active class from previous event
+                        if (index > 0) {
+                            events[index - 1].classList.remove('active');
+                        }
+                        
+                        // Keep the last event active
+                        if (index === events.length - 1) {
+                            setTimeout(() => {
+                                events.forEach(e => e.classList.add('active'));
+                            }, 500);
+                        }
+                    }, index * 800);
+                });
+            }
+            
+            // Intersection Observer for scroll-based animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animationStarted) {
+                        setTimeout(() => {
+                            animateTimeline();
+                        }, 200);
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+            
+            observer.observe(timeline);
+        }
+        
+        // Initialize timeline when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initTimeline);
+    </script>
 </body>
 </html>
