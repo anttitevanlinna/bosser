@@ -1,35 +1,15 @@
 {
   "total_articles": 10,
-  "last_updated": "2025-09-13T06:39:00.000Z",
+  "last_updated": "2025-09-13T09:27:00.000Z",
   "articles": [
-    {
-      "title": "Checking Assumptions: Knowing more over being right",
-      "slug": "checking-assumptions",
-      "url": "Unknown URL",
-      "publish_date": "2025-08-31",
-      "content_length": 5022,
-      "estimated_reading_time": "4 min",
-      "status": "published",
-      "source": "manual",
-      "processed_at": "2025-09-03T16:14:18.583Z",
-      "tags": [
-        "leadership",
-        "assumptions",
-        "communication",
-        "strategy"
-      ]
-    },
     {
       "title": "Ai and Agile 2.0",
       "slug": "ai-and-agile-20",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 4094,
-      "estimated_reading_time": "16 min",
-      "status": "published",
-      "source": "manual",
       "processed_at": "2025-08-03T09:37:06.880036",
-      "tags": []
+      "tags": ["AI", "Agile", "Future-Oriented"]
     },
     {
       "title": "Ai and certainty don't mix",
@@ -37,11 +17,19 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 4647,
-      "estimated_reading_time": "19 min",
-      "status": "published",
-      "source": "manual",
       "processed_at": "2025-08-03T09:37:07.110471",
-      "tags": []
+      "tags": ["AI", "Uncertainty", "Decision Making", "Strategy"]
+    },
+    {
+      "title": "Checking Assumptions: Knowing more over being right",
+      "slug": "checking-assumptions",
+      "url": "Unknown URL",
+      "publish_date": "2025-08-31",
+      "content_length": 5022,
+      "processed_at": "2025-09-03T16:14:18.583Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": ["Leadership", "Decision Making"]
     },
     {
       "title": "Evals is the new black",
@@ -49,11 +37,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 3233,
-      "estimated_reading_time": "13 min",
-      "status": "published",
-      "source": "manual",
       "processed_at": "2025-08-03T09:37:06.688725",
-      "tags": []
+      "tags": ["AI", "Product Development", "Uncertainty"]
     },
     {
       "title": "Imagination feeds off on examples",
@@ -61,11 +46,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 3626,
-      "estimated_reading_time": "15 min",
-      "status": "published",
-      "source": "manual",
       "processed_at": "2025-08-03T09:37:06.612087",
-      "tags": []
+      "tags": ["Strategy", "Innovation"]
     },
     {
       "title": "Inputs to Strategy",
@@ -73,11 +55,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 3112,
-      "estimated_reading_time": "12 min",
-      "status": "published",
-      "source": "manual",
       "processed_at": "2025-08-03T09:37:07.185217",
-      "tags": []
+      "tags": ["Strategy", "Decision Making"]
     },
     {
       "title": "Skating where the puck is going",
@@ -85,11 +64,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 5973,
-      "estimated_reading_time": "24 min",
-      "status": "published",
-      "source": "manual",
       "processed_at": "2025-08-03T09:37:07.028311",
-      "tags": []
+      "tags": ["Strategy", "AI", "Future-Oriented"]
     },
     {
       "title": "Time to rethink your knowledge management",
@@ -97,23 +73,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 4878,
-      "estimated_reading_time": "20 min",
-      "status": "published",
-      "source": "manual",
       "processed_at": "2025-08-03T09:37:07.269943",
-      "tags": []
-    },
-    {
-      "title": "Visioning",
-      "slug": "visioning",
-      "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 8661,
-      "estimated_reading_time": "35 min",
-      "status": "published",
-      "source": "manual",
-      "processed_at": "2025-08-03T09:37:06.765954",
-      "tags": []
+      "tags": ["AI", "Knowledge Management"]
     },
     {
       "title": "Picturing product ownership",
@@ -121,13 +82,21 @@
       "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/",
       "publish_date": "2023-05-25",
       "content_length": 1024,
+      "processed_at": "2025-09-13T09:27:00.000Z",
       "estimated_reading_time": "2 min",
       "status": "published",
-      "source": "manual",
-      "processed_at": "2025-09-13T09:27:00.000Z",
-      "tags": [],
       "cover_image": "/data/images/2023-05-24-picturing-product-ownership-image-0.jpg",
-      "has_images": true
+      "has_images": true,
+      "tags": ["Product Management", "Leadership"]
+    },
+    {
+      "title": "Visioning",
+      "slug": "visioning",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 8661,
+      "processed_at": "2025-08-03T09:37:06.765954",
+      "tags": ["Strategy", "Leadership", "Future-Oriented"]
     }
   ]
 }

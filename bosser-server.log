@@ -1,0 +1,688 @@
+
+> bosser-newsletter-automation@1.0.0 log-server
+> node log-server.js
+
+🚀 Bosser Log Server running on http://localhost:3001
+📊 View logs at: http://localhost:3001/logs
+🏠 Homepage at: http://localhost:3001/
+
+📡 Extension will send logs to: http://localhost:3001/bosser-logs
+
+⏳ Waiting for extension logs...
+[36m[7:53:42 PM] INFO    [0m Logger initialized
+  📊 Data: { sessionId: 'bosser-mfh2tv57-jt4z8jm9a' }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🤖 Code request: scrape for article (0 failures)
+📝 Serving strategy: LinkedIn Article Scraper v1
+[36m[7:54:00 PM] INFO    [0m Content script received scrapeCurrentArticle request
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:54:00 PM] INFO    [0m Requesting code for action: scrape on article
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:54:00 PM] INFO    [0m Received strategy: LinkedIn Article Scraper v1
+  📊 Data: { strategy: 'linkedin_article_v1', version: 1 }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:00 PM] ERROR   [0m Code execution failed for linkedin_article_v1
+  📊 Data: {
+  error: {
+    name: 'EvalError',
+    message: `Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at new Function (<anonymous>)\n' +
+      '    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at new Function (<anonymous>)
+    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🚨 Scraping failure reported: linkedin_article_v1
+   Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+   URL: https://www.linkedin.com/pulse/sources-competitive-advantage-antti-tevanlinna/?trackingId=TPlEnQs7RrCmGZfbDheNbw%3D%3D
+🤖 LLM: Analyzing failure and generating improved strategy
+   Failed selectors: {"titles":[{"selector":"h1","found":1,"visible":true,"sample":"Sources of competitive advantage"},{"selector":"h1.break-words","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"title\"]","found":0,"visible":false,"sample":null},{"selector":".article-title","found":0,"visible":false,"sample":null}],"content":[{"selector":".article-content","found":0,"visible":false,"sample":null},{"selector":".break-words","found":7,"visible":true,"sample":"Home"},{"selector":"article .break-words","found":2,"visible":true,"sample":"Consultant & CEO"},{"selector":"[data-test-id*=\"content\"]","found":0,"visible":false,"sample":null}],"authors":[{"selector":".feed-shared-actor__name","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"author\"]","found":0,"visible":false,"sample":null},{"selector":".author-name","found":0,"visible":false,"sample":null}],"editors":[{"selector":".ProseMirror","found":0,"visible":false,"sample":null},{"selector":"[contenteditable]","found":2,"visible":true,"sample":""},{"selector":"[role=\"textbox\"]","found":1,"visible":true,"sample":""}],"inputs":[{"selector":"input[type=\"text\"]","found":1,"visible":true,"sample":""},{"selector":"input[placeholder]","found":1,"visible":true,"sample":""},{"selector":"textarea","found":1,"visible":false,"sample":""}]}
+[36m[7:54:00 PM] INFO    [0m Failure reported to server
+  📊 Data: { message: 'Failure recorded for analysis' }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:00 PM] ERROR   [0m Action failed: scrape (attempt 1)
+  📊 Data: { error: {} }
+  🚨 Error: undefined
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:00 PM] ERROR   [0m Dynamic execution failed for scrape
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:00 PM] ERROR   [0m Scraping failed in content script
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:53:59 PM] INFO    [0m Logger initialized
+  📊 Data: { sessionId: 'bosser-mfh2u7ys-0583ybyrt' }
+  🌐 URL: /popup.html
+
+[36m[7:53:59 PM] INFO    [0m Popup initializing
+  📊 Data: { timestamp: '2025-09-12T16:53:59.381Z' }
+  🌐 URL: /popup.html
+
+[32m[7:53:59 PM] SUCCESS [0m Popup initialized successfully
+  📊 Data: { pageType: 'article', scrapedCount: 0 }
+  🌐 URL: /popup.html
+
+[36m[7:54:00 PM] INFO    [0m Starting dynamic article scraping
+  🌐 URL: /popup.html
+
+[36m[7:54:00 PM] INFO    [0m Status: Requesting scraping code from server...
+  📊 Data: { type: 'info' }
+  🌐 URL: /popup.html
+
+[36m[7:54:00 PM] INFO    [0m Status: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📊 Data: { type: 'error' }
+  🌐 URL: /popup.html
+
+[31m[7:54:00 PM] ERROR   [0m Dynamic scraping failed
+  📊 Data: { error: null }
+  🌐 URL: /popup.html
+
+🤖 Code request: scrape for article (1 failures)
+📝 Serving strategy: LinkedIn Article Scraper v1
+[36m[7:54:10 PM] INFO    [0m Content script received scrapeCurrentArticle request
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:54:10 PM] INFO    [0m Requesting code for action: scrape on article
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:54:10 PM] INFO    [0m Received strategy: LinkedIn Article Scraper v1
+  📊 Data: { strategy: 'linkedin_article_v1', version: 1 }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:10 PM] ERROR   [0m Code execution failed for linkedin_article_v1
+  📊 Data: {
+  error: {
+    name: 'EvalError',
+    message: `Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at new Function (<anonymous>)\n' +
+      '    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at new Function (<anonymous>)
+    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🚨 Scraping failure reported: linkedin_article_v1
+   Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+   URL: https://www.linkedin.com/pulse/sources-competitive-advantage-antti-tevanlinna/?trackingId=TPlEnQs7RrCmGZfbDheNbw%3D%3D
+🤖 LLM: Analyzing failure and generating improved strategy
+   Failed selectors: {"titles":[{"selector":"h1","found":1,"visible":true,"sample":"Sources of competitive advantage"},{"selector":"h1.break-words","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"title\"]","found":0,"visible":false,"sample":null},{"selector":".article-title","found":0,"visible":false,"sample":null}],"content":[{"selector":".article-content","found":0,"visible":false,"sample":null},{"selector":".break-words","found":7,"visible":true,"sample":"Home"},{"selector":"article .break-words","found":2,"visible":true,"sample":"Consultant & CEO"},{"selector":"[data-test-id*=\"content\"]","found":0,"visible":false,"sample":null}],"authors":[{"selector":".feed-shared-actor__name","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"author\"]","found":0,"visible":false,"sample":null},{"selector":".author-name","found":0,"visible":false,"sample":null}],"editors":[{"selector":".ProseMirror","found":0,"visible":false,"sample":null},{"selector":"[contenteditable]","found":2,"visible":true,"sample":""},{"selector":"[role=\"textbox\"]","found":1,"visible":true,"sample":""}],"inputs":[{"selector":"input[type=\"text\"]","found":1,"visible":true,"sample":""},{"selector":"input[placeholder]","found":1,"visible":true,"sample":""},{"selector":"textarea","found":1,"visible":false,"sample":""}]}
+[36m[7:54:10 PM] INFO    [0m Failure reported to server
+  📊 Data: { message: 'Failure recorded for analysis' }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:10 PM] ERROR   [0m Action failed: scrape (attempt 2)
+  📊 Data: { error: {} }
+  🚨 Error: undefined
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:10 PM] ERROR   [0m Dynamic execution failed for scrape
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:54:10 PM] ERROR   [0m Scraping failed in content script
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:54:10 PM] INFO    [0m Starting dynamic article scraping
+  🌐 URL: /popup.html
+
+[36m[7:54:10 PM] INFO    [0m Status: Requesting scraping code from server...
+  📊 Data: { type: 'info' }
+  🌐 URL: /popup.html
+
+[36m[7:54:10 PM] INFO    [0m Status: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📊 Data: { type: 'error' }
+  🌐 URL: /popup.html
+
+[31m[7:54:10 PM] ERROR   [0m Dynamic scraping failed
+  📊 Data: { error: null }
+  🌐 URL: /popup.html
+
+🤖 Code request: scrape for article (2 failures)
+📝 Serving strategy: LinkedIn Article Scraper v1
+[36m[7:55:00 PM] INFO    [0m Content script received scrapeCurrentArticle request
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:00 PM] INFO    [0m Requesting code for action: scrape on article
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:00 PM] INFO    [0m Received strategy: LinkedIn Article Scraper v1
+  📊 Data: { strategy: 'linkedin_article_v1', version: 1 }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:00 PM] ERROR   [0m Code execution failed for linkedin_article_v1
+  📊 Data: {
+  error: {
+    name: 'EvalError',
+    message: `Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at new Function (<anonymous>)\n' +
+      '    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at new Function (<anonymous>)
+    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🚨 Scraping failure reported: linkedin_article_v1
+   Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+   URL: https://www.linkedin.com/pulse/sources-competitive-advantage-antti-tevanlinna/?trackingId=TPlEnQs7RrCmGZfbDheNbw%3D%3D
+🤖 LLM: Analyzing failure and generating improved strategy
+   Failed selectors: {"titles":[{"selector":"h1","found":1,"visible":true,"sample":"Sources of competitive advantage"},{"selector":"h1.break-words","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"title\"]","found":0,"visible":false,"sample":null},{"selector":".article-title","found":0,"visible":false,"sample":null}],"content":[{"selector":".article-content","found":0,"visible":false,"sample":null},{"selector":".break-words","found":7,"visible":true,"sample":"Home"},{"selector":"article .break-words","found":2,"visible":true,"sample":"Consultant & CEO"},{"selector":"[data-test-id*=\"content\"]","found":0,"visible":false,"sample":null}],"authors":[{"selector":".feed-shared-actor__name","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"author\"]","found":0,"visible":false,"sample":null},{"selector":".author-name","found":0,"visible":false,"sample":null}],"editors":[{"selector":".ProseMirror","found":0,"visible":false,"sample":null},{"selector":"[contenteditable]","found":2,"visible":true,"sample":""},{"selector":"[role=\"textbox\"]","found":1,"visible":true,"sample":""}],"inputs":[{"selector":"input[type=\"text\"]","found":1,"visible":true,"sample":""},{"selector":"input[placeholder]","found":1,"visible":true,"sample":""},{"selector":"textarea","found":1,"visible":false,"sample":""}]}
+[36m[7:55:00 PM] INFO    [0m Failure reported to server
+  📊 Data: { message: 'Failure recorded for analysis' }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:00 PM] ERROR   [0m Action failed: scrape (attempt 3)
+  📊 Data: { error: {} }
+  🚨 Error: undefined
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:00 PM] ERROR   [0m Dynamic execution failed for scrape
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:00 PM] ERROR   [0m Scraping failed in content script
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:00 PM] INFO    [0m Starting dynamic article scraping
+  🌐 URL: /popup.html
+
+[36m[7:55:00 PM] INFO    [0m Status: Requesting scraping code from server...
+  📊 Data: { type: 'info' }
+  🌐 URL: /popup.html
+
+[36m[7:55:01 PM] INFO    [0m Status: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📊 Data: { type: 'error' }
+  🌐 URL: /popup.html
+
+[31m[7:55:01 PM] ERROR   [0m Dynamic scraping failed
+  📊 Data: { error: null }
+  🌐 URL: /popup.html
+
+🤖 Code request: scrape for article (3 failures)
+📝 Serving strategy: LinkedIn Article Scraper v1
+[36m[7:55:03 PM] INFO    [0m Content script received scrapeCurrentArticle request
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:03 PM] INFO    [0m Requesting code for action: scrape on article
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:03 PM] INFO    [0m Received strategy: LinkedIn Article Scraper v1
+  📊 Data: { strategy: 'linkedin_article_v1', version: 1 }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:03 PM] ERROR   [0m Code execution failed for linkedin_article_v1
+  📊 Data: {
+  error: {
+    name: 'EvalError',
+    message: `Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at new Function (<anonymous>)\n' +
+      '    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at new Function (<anonymous>)
+    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🚨 Scraping failure reported: linkedin_article_v1
+   Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+   URL: https://www.linkedin.com/pulse/sources-competitive-advantage-antti-tevanlinna/?trackingId=TPlEnQs7RrCmGZfbDheNbw%3D%3D
+🤖 LLM: Analyzing failure and generating improved strategy
+   Failed selectors: {"titles":[{"selector":"h1","found":1,"visible":true,"sample":"Sources of competitive advantage"},{"selector":"h1.break-words","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"title\"]","found":0,"visible":false,"sample":null},{"selector":".article-title","found":0,"visible":false,"sample":null}],"content":[{"selector":".article-content","found":0,"visible":false,"sample":null},{"selector":".break-words","found":7,"visible":true,"sample":"Home"},{"selector":"article .break-words","found":2,"visible":true,"sample":"Consultant & CEO"},{"selector":"[data-test-id*=\"content\"]","found":0,"visible":false,"sample":null}],"authors":[{"selector":".feed-shared-actor__name","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"author\"]","found":0,"visible":false,"sample":null},{"selector":".author-name","found":0,"visible":false,"sample":null}],"editors":[{"selector":".ProseMirror","found":0,"visible":false,"sample":null},{"selector":"[contenteditable]","found":2,"visible":true,"sample":""},{"selector":"[role=\"textbox\"]","found":1,"visible":true,"sample":""}],"inputs":[{"selector":"input[type=\"text\"]","found":1,"visible":true,"sample":""},{"selector":"input[placeholder]","found":1,"visible":true,"sample":""},{"selector":"textarea","found":1,"visible":false,"sample":""}]}
+[36m[7:55:03 PM] INFO    [0m Failure reported to server
+  📊 Data: { message: 'Failure recorded for analysis' }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:03 PM] ERROR   [0m Action failed: scrape (attempt 4)
+  📊 Data: { error: {} }
+  🚨 Error: undefined
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:03 PM] ERROR   [0m Dynamic execution failed for scrape
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:03 PM] INFO    [0m Starting dynamic article scraping
+  🌐 URL: /popup.html
+
+[36m[7:55:03 PM] INFO    [0m Status: Requesting scraping code from server...
+  📊 Data: { type: 'info' }
+  🌐 URL: /popup.html
+
+[36m[7:55:03 PM] INFO    [0m Status: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📊 Data: { type: 'error' }
+  🌐 URL: /popup.html
+
+[31m[7:55:03 PM] ERROR   [0m Dynamic scraping failed
+  📊 Data: { error: null }
+  🌐 URL: /popup.html
+
+[31m[7:55:03 PM] ERROR   [0m Scraping failed in content script
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🤖 Code request: scrape for article (4 failures)
+📝 Serving strategy: LinkedIn Article Scraper v1
+[36m[7:55:23 PM] INFO    [0m Content script received scrapeCurrentArticle request
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:23 PM] INFO    [0m Requesting code for action: scrape on article
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:23 PM] INFO    [0m Received strategy: LinkedIn Article Scraper v1
+  📊 Data: { strategy: 'linkedin_article_v1', version: 1 }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:23 PM] ERROR   [0m Code execution failed for linkedin_article_v1
+  📊 Data: {
+  error: {
+    name: 'EvalError',
+    message: `Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at new Function (<anonymous>)\n' +
+      '    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at new Function (<anonymous>)
+    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🚨 Scraping failure reported: linkedin_article_v1
+   Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+   URL: https://www.linkedin.com/pulse/sources-competitive-advantage-antti-tevanlinna/?trackingId=TPlEnQs7RrCmGZfbDheNbw%3D%3D
+🤖 LLM: Analyzing failure and generating improved strategy
+   Failed selectors: {"titles":[{"selector":"h1","found":1,"visible":true,"sample":"Sources of competitive advantage"},{"selector":"h1.break-words","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"title\"]","found":0,"visible":false,"sample":null},{"selector":".article-title","found":0,"visible":false,"sample":null}],"content":[{"selector":".article-content","found":0,"visible":false,"sample":null},{"selector":".break-words","found":7,"visible":true,"sample":"Home"},{"selector":"article .break-words","found":2,"visible":true,"sample":"Consultant & CEO"},{"selector":"[data-test-id*=\"content\"]","found":0,"visible":false,"sample":null}],"authors":[{"selector":".feed-shared-actor__name","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"author\"]","found":0,"visible":false,"sample":null},{"selector":".author-name","found":0,"visible":false,"sample":null}],"editors":[{"selector":".ProseMirror","found":0,"visible":false,"sample":null},{"selector":"[contenteditable]","found":2,"visible":true,"sample":""},{"selector":"[role=\"textbox\"]","found":1,"visible":true,"sample":""}],"inputs":[{"selector":"input[type=\"text\"]","found":1,"visible":true,"sample":""},{"selector":"input[placeholder]","found":1,"visible":true,"sample":""},{"selector":"textarea","found":1,"visible":false,"sample":""}]}
+[36m[7:55:23 PM] INFO    [0m Failure reported to server
+  📊 Data: { message: 'Failure recorded for analysis' }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:23 PM] ERROR   [0m Action failed: scrape (attempt 5)
+  📊 Data: { error: {} }
+  🚨 Error: undefined
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:23 PM] ERROR   [0m Dynamic execution failed for scrape
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:23 PM] ERROR   [0m Scraping failed in content script
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:23 PM] INFO    [0m Starting dynamic article scraping
+  🌐 URL: /popup.html
+
+[36m[7:55:23 PM] INFO    [0m Status: Requesting scraping code from server...
+  📊 Data: { type: 'info' }
+  🌐 URL: /popup.html
+
+[36m[7:55:23 PM] INFO    [0m Status: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📊 Data: { type: 'error' }
+  🌐 URL: /popup.html
+
+[31m[7:55:23 PM] ERROR   [0m Dynamic scraping failed
+  📊 Data: { error: null }
+  🌐 URL: /popup.html
+
+🤖 Code request: scrape for article (5 failures)
+📝 Serving strategy: LinkedIn Article Scraper v1
+[36m[7:55:58 PM] INFO    [0m Content script received scrapeCurrentArticle request
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:58 PM] INFO    [0m Requesting code for action: scrape on article
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:58 PM] INFO    [0m Received strategy: LinkedIn Article Scraper v1
+  📊 Data: { strategy: 'linkedin_article_v1', version: 1 }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:58 PM] ERROR   [0m Code execution failed for linkedin_article_v1
+  📊 Data: {
+  error: {
+    name: 'EvalError',
+    message: `Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at new Function (<anonymous>)\n' +
+      '    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at new Function (<anonymous>)
+    at DynamicExecutor.executeCode (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:93:38)
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:32:39)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+🚨 Scraping failure reported: linkedin_article_v1
+   Error: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+   URL: https://www.linkedin.com/pulse/sources-competitive-advantage-antti-tevanlinna/?trackingId=TPlEnQs7RrCmGZfbDheNbw%3D%3D
+🤖 LLM: Analyzing failure and generating improved strategy
+   Failed selectors: {"titles":[{"selector":"h1","found":1,"visible":true,"sample":"Sources of competitive advantage"},{"selector":"h1.break-words","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"title\"]","found":0,"visible":false,"sample":null},{"selector":".article-title","found":0,"visible":false,"sample":null}],"content":[{"selector":".article-content","found":0,"visible":false,"sample":null},{"selector":".break-words","found":7,"visible":true,"sample":"Home"},{"selector":"article .break-words","found":2,"visible":true,"sample":"Consultant & CEO"},{"selector":"[data-test-id*=\"content\"]","found":0,"visible":false,"sample":null}],"authors":[{"selector":".feed-shared-actor__name","found":0,"visible":false,"sample":null},{"selector":"[data-test-id*=\"author\"]","found":0,"visible":false,"sample":null},{"selector":".author-name","found":0,"visible":false,"sample":null}],"editors":[{"selector":".ProseMirror","found":0,"visible":false,"sample":null},{"selector":"[contenteditable]","found":2,"visible":true,"sample":""},{"selector":"[role=\"textbox\"]","found":1,"visible":true,"sample":""}],"inputs":[{"selector":"input[type=\"text\"]","found":1,"visible":true,"sample":""},{"selector":"input[placeholder]","found":1,"visible":true,"sample":""},{"selector":"textarea","found":1,"visible":false,"sample":""}]}
+[36m[7:55:58 PM] INFO    [0m Failure reported to server
+  📊 Data: { message: 'Failure recorded for analysis' }
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:58 PM] ERROR   [0m Action failed: scrape (attempt 6)
+  📊 Data: { error: {} }
+  🚨 Error: undefined
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:58 PM] ERROR   [0m Dynamic execution failed for scrape
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[31m[7:55:58 PM] ERROR   [0m Scraping failed in content script
+  📊 Data: {
+  error: {
+    name: 'Error',
+    message: `Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n`,
+    stack: `Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".\n` +
+      '\n' +
+      '    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)\n' +
+      '    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)\n' +
+      '    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)'
+  }
+}
+  🚨 Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📍 Stack: Error: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+    at DynamicExecutor.executeAction (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:54:23)
+    at async DynamicExecutor.scrapeArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/dynamic-executor.js:216:16)
+    at async BosserLinkedInContent.scrapeCurrentArticle (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:232:33)
+  🌐 URL: /pulse/sources-competitive-advantage-antti-tevanlinna/
+
+[36m[7:55:58 PM] INFO    [0m Starting dynamic article scraping
+  🌐 URL: /popup.html
+
+[36m[7:55:58 PM] INFO    [0m Status: Requesting scraping code from server...
+  📊 Data: { type: 'info' }
+  🌐 URL: /popup.html
+
+[36m[7:55:58 PM] INFO    [0m Status: Action failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://0ff82f8b-f14d-42bc-abb5-6c574edc4f93/".
+
+  📊 Data: { type: 'error' }
+  🌐 URL: /popup.html
+
+[31m[7:55:58 PM] ERROR   [0m Dynamic scraping failed
+  📊 Data: { error: null }
+  🌐 URL: /popup.html
+
+🛑 Log server stopped

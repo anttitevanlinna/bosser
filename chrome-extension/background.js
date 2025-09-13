@@ -248,6 +248,7 @@ class BosserLinkedInBackground {
     }
     
     calculateReadingTime(content) {
+        // Shared logic - extracted from utils/content-utils.js
         if (!content) return '1 min';
         const wordsPerMinute = 250;
         const words = content.split(/\s+/).length;

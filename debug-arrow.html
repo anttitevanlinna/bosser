@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Formation Debug</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            font-family: monospace;
+            color: #ffffff;
+        }
+        
+        .debug-container {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .canvas-container {
+            background: #111;
+            border: 1px solid #333;
+        }
+        
+        .info {
+            width: 300px;
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .particle {
+            position: absolute;
+            background: #ff6b35;
+            border-radius: 50%;
+            width: 3px;
+            height: 3px;
+        }
+        
+        .shaft { background: #00ff00; }
+        .head-upper { background: #ff0000; }
+        .head-lower { background: #0000ff; }
+        
+        #canvas {
+            position: relative;
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arrow Formation Debug v3.0</h1>
+    <p>Last updated: <span id="timestamp"></span></p>
+    <div class="debug-container">
+        <div class="canvas-container">
+            <div id="canvas"></div>
+        </div>
+        <div class="info">
+            <h3>Arrow Parameters</h3>
+            <div id="params"></div>
+            <h3>Particle Distribution</h3>
+            <div id="distribution"></div>
+            <h3>Coordinates</h3>
+            <div id="coordinates"></div>
+        </div>
+    </div>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const particleCount = 300;
+        
+        // Mathematical arrow rotation functions
+        function rotatePoint(x, y, centerX, centerY, angle) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const dx = x - centerX;
+            const dy = y - centerY;
+            return {
+                x: centerX + dx * cos - dy * sin,
+                y: centerY + dx * sin + dy * cos
+            };
+        }
+        
+        // Horizontal arrow formation (original reference)
+        function getHorizontalArrowFormation() {
+            const formations = [];
+            const startX = 350;
+            const startY = 540;
+            const endX = 650;
+            const endY = 540; // Same Y = horizontal
+            
+            let shaftCount = 0;
+            let headUpperCount = 0;
+            let headLowerCount = 0;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const progress = i / particleCount;
+                
+                if (progress < 0.6) {
+                    // Horizontal shaft
+                    const shaftX = startX + (endX - startX) * (progress / 0.6);
+                    const shaftY = startY;
+                    formations.push({
+                        x: shaftX,
+                        y: shaftY,
+                        type: 'shaft'
+                    });
+                    shaftCount++;
+                } else {
+                    // Arrow head - standard horizontal V
+                    const headProgress = (progress - 0.6) / 0.4;
+                    const headTipX = endX;
+                    const headTipY = endY;
+                    
+                    if (headProgress < 0.5) {
+                        // Upper wing: from back-up to tip
+                        const diagProgress = headProgress / 0.5;
+                        const wingBaseX = endX - 80;
+                        const wingBaseY = endY - 60;
+                        formations.push({
+                            x: wingBaseX + diagProgress * 80,
+                            y: wingBaseY + diagProgress * 60,
+                            type: 'head-upper'
+                        });
+                        headUpperCount++;
+                    } else {
+                        // Lower wing: from back-down to tip
+                        const diagProgress = (headProgress - 0.5) / 0.5;
+                        const wingBaseX = endX - 80;
+                        const wingBaseY = endY + 60;
+                        formations.push({
+                            x: wingBaseX + diagProgress * 80,
+                            y: wingBaseY - diagProgress * 60,
+                            type: 'head-lower'
+                        });
+                        headLowerCount++;
+                    }
+                }
+            }
+            
+            return { formations, shaftCount, headUpperCount, headLowerCount };
+        }
+        
+        // 45-degree rotated arrow formation (mathematical transformation)
+        function get45DegreeArrowFormation() {
+            // Start with horizontal arrow, then rotate mathematically
+            const horizontalResult = getHorizontalArrowFormation();
+            const horizontalFormations = horizontalResult.formations;
+            
+            // Rotation parameters
+            const rotationAngle = -Math.PI / 4; // -45 degrees (clockwise to northeast)
+            const centerX = 500; // Rotation center
+            const centerY = 540;
+            
+            // Apply mathematical rotation to each point
+            const rotatedFormations = horizontalFormations.map(point => {
+                const rotated = rotatePoint(point.x, point.y, centerX, centerY, rotationAngle);
+                return {
+                    x: rotated.x,
+                    y: rotated.y,
+                    type: point.type
+                };
+            });
+            
+            // Calculate actual start/end after rotation
+            const startHorizontal = { x: 350, y: 540 };
+            const endHorizontal = { x: 650, y: 540 };
+            const startRotated = rotatePoint(startHorizontal.x, startHorizontal.y, centerX, centerY, rotationAngle);
+            const endRotated = rotatePoint(endHorizontal.x, endHorizontal.y, centerX, centerY, rotationAngle);
+            
+            // Update debug info
+            document.getElementById('params').innerHTML = `
+                Horizontal Start: (${startHorizontal.x}, ${startHorizontal.y})<br>
+                Horizontal End: (${endHorizontal.x}, ${endHorizontal.y})<br>
+                Rotated Start: (${Math.round(startRotated.x)}, ${Math.round(startRotated.y)})<br>
+                Rotated End: (${Math.round(endRotated.x)}, ${Math.round(endRotated.y)})<br>
+                Rotation: ${rotationAngle * 180 / Math.PI}° around (${centerX}, ${centerY})<br>
+                Final Angle: ${Math.atan2(endRotated.y - startRotated.y, endRotated.x - startRotated.x) * 180 / Math.PI}°
+            `;
+            
+            document.getElementById('distribution').innerHTML = `
+                Total: ${particleCount}<br>
+                Shaft: ${horizontalResult.shaftCount}<br>
+                Head Upper: ${horizontalResult.headUpperCount}<br>
+                Head Lower: ${horizontalResult.headLowerCount}<br>
+                Head Total: ${horizontalResult.headUpperCount + horizontalResult.headLowerCount}
+            `;
+            
+            return rotatedFormations;
+        }
+        
+        // Generate both arrow types
+        const horizontalResult = getHorizontalArrowFormation();
+        const horizontalFormations = horizontalResult.formations;
+        const rotatedFormations = get45DegreeArrowFormation();
+        
+        // Render horizontal arrow (cyan particles)
+        horizontalFormations.forEach((pos, i) => {
+            const particle = document.createElement('div');
+            particle.className = `particle ${pos.type}`;
+            particle.style.left = (pos.x - 350) * 0.8 + 'px';
+            particle.style.top = (pos.y - 300) * 0.8 + 'px';
+            particle.style.background = '#00ffff'; // Cyan for horizontal
+            particle.style.opacity = '0.7';
+            particle.title = `Horizontal ${i}: (${Math.round(pos.x)}, ${Math.round(pos.y)}) - ${pos.type}`;
+            canvas.appendChild(particle);
+        });
+        
+        // Render rotated arrow (original colors)
+        rotatedFormations.forEach((pos, i) => {
+            const particle = document.createElement('div');
+            particle.className = `particle ${pos.type}`;
+            particle.style.left = (pos.x - 350) * 0.8 + 'px';
+            particle.style.top = (pos.y - 300) * 0.8 + 'px';
+            particle.title = `Rotated ${i}: (${Math.round(pos.x)}, ${Math.round(pos.y)}) - ${pos.type}`;
+            canvas.appendChild(particle);
+        });
+        
+        // Show coordinate samples from rotated arrow
+        const samples = rotatedFormations.filter(f => f.type.includes('head')).slice(0, 10);
+        document.getElementById('coordinates').innerHTML = samples.map(s => 
+            `${s.type}: (${Math.round(s.x)}, ${Math.round(s.y)})`
+        ).join('<br>');
+        
+        // Set timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>

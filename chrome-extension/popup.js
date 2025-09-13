@@ -392,11 +392,7 @@ When we prioritize being right over understanding, we miss opportunities to lear
                 tags,
                 url: window.location.href,
                 scrapedAt: new Date().toISOString(),
-                slug: title.toLowerCase()
-                    .replace(/[^a-z0-9\\s-]/g, '')
-                    .replace(/\\s+/g, '-')
-                    .replace(/-+/g, '-')
-                    .trim('-')
+                slug: window.BosserTextUtils.generateSlug(title)
             };
             
             return articleData;
@@ -483,11 +479,7 @@ When we prioritize being right over understanding, we miss opportunities to lear
                     id,
                     publishDate,
                     scrapedAt: new Date().toISOString(),
-                    slug: title.toLowerCase()
-                        .replace(/[^a-z0-9\\s-]/g, '')
-                        .replace(/\\s+/g, '-')
-                        .replace(/-+/g, '-')
-                        .trim('-'),
+                    slug: window.BosserTextUtils.generateSlug(title),
                     content: '', // Will need to visit each article to get content
                     author: 'Antti Tevanlinna',
                     tags: []

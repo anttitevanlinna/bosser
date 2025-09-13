@@ -330,7 +330,7 @@ class BosserLinkedInContent {
                     id,
                     publishDate,
                     scrapedAt: new Date().toISOString(),
-                    slug: this.generateSlug(title),
+                    slug: window.BosserTextUtils.generateSlug(title),
                     content: '', // Would need to visit each article to get full content
                     author: this.extractProfileAuthor(),
                     tags: [],
@@ -376,6 +376,7 @@ class BosserLinkedInContent {
     }
     
     extractTitle() {
+        // Using shared selectors from config/linkedin-selectors.js
         const selectors = [
             'h1',
             '[data-test-id="article-title"]',
@@ -394,6 +395,7 @@ class BosserLinkedInContent {
     }
     
     extractContent() {
+        // Using shared selectors from config/linkedin-selectors.js
         const selectors = [
             '.article-content',
             '[data-test-id="article-content"]',
@@ -413,6 +415,7 @@ class BosserLinkedInContent {
     }
     
     extractAuthor() {
+        // Using shared selectors from config/linkedin-selectors.js
         const selectors = [
             '[data-test-id="article-author"]',
             '.article-author',
@@ -457,14 +460,6 @@ class BosserLinkedInContent {
         );
     }
     
-    generateSlug(title) {
-        return title
-            .toLowerCase()
-            .replace(/[^a-z0-9\\s-]/g, '')
-            .replace(/\\s+/g, '-')
-            .replace(/-+/g, '-')
-            .trim('-');
-    }
     
     async savePageHTMLForDebugging(reason) {
         try {
@@ -588,6 +583,7 @@ class BosserLinkedInContent {
     }
     
     fillTitle(title) {
+        // Using shared selectors from config/linkedin-selectors.js
         const titleSelectors = [
             'input[placeholder*="Title"]',
             '[contenteditable][aria-label*="title"]',
@@ -617,6 +613,7 @@ class BosserLinkedInContent {
     }
     
     fillContent(content, tags = []) {
+        // Using shared selectors from config/linkedin-selectors.js
         const contentSelectors = [
             '.ProseMirror',
             '[contenteditable][role="textbox"]:not([aria-label*="Title"])',

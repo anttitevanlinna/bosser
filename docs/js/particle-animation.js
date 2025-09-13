@@ -1,10 +1,17 @@
 /**
  * Bosser Particle Animation System
  * Dynamic particle animation that morphs between symbolic shapes:
- * Cloud (ideas/possibilities) → Brain (intelligence/strategy) → Arrow (direction/momentum)
+ * Cloud (ideas/possibilities) → Constellation (intelligence/strategy) → Arrow (direction/momentum)
  */
-
 class ParticleAnimationSystem {
+    /**
+     * Creates a new ParticleAnimationSystem instance
+     * @param {string} containerId - The ID of the HTML container element
+     * @param {Object} options - Configuration options for the animation
+     * @param {number} options.particleCount - Number of particles to create
+     * @param {number} options.transitionDuration - Duration of shape transitions in ms
+     * @param {number} options.shapeInterval - Interval between shape changes in ms
+     */
     constructor(containerId, options = {}) {
         this.container = document.getElementById(containerId);
         if (!this.container) {
@@ -210,6 +217,10 @@ class ParticleAnimationSystem {
         return positions;
     }
 
+    /**
+     * Morphs all particles to form a specific shape
+     * @param {string} shapeName - Name of the shape to morph to
+     */
     morphToShape(shapeName) {
         const shapes = this.getShapeDefinitions();
         const targetPositions = shapes[shapeName] || this.getRandomPositions(this.particleCount);
@@ -312,23 +323,6 @@ document.addEventListener('DOMContentLoaded', function() {
             transitionDuration: 4000,
             shapeInterval: 10000
         });
-        
-        console.log('Particle system initialized - v2.6');
-        console.log('Shape order:', window.particleSystem.shapeNames);
-        console.log('Starting with shape:', window.particleSystem.shapeNames[0]);
-        
-        // Debug shape generation
-        const shapes = window.particleSystem.getShapeDefinitions();
-        console.log('Available shapes:', Object.keys(shapes));
-        const arrowPositions = shapes.arrow;
-        const constellationPositions = shapes.constellation;
-        console.log(`Arrow particles: ${arrowPositions.length}`);
-        console.log(`Constellation particles: ${constellationPositions.length}`);
-        if (arrowPositions.length > 0) {
-            const maxX = Math.max(...arrowPositions.map(p => p.x));
-            const minX = Math.min(...arrowPositions.map(p => p.x));
-            console.log(`Arrow spans from x=${minX.toFixed(2)} to x=${maxX.toFixed(2)}`);
-        }
     }
 });
 

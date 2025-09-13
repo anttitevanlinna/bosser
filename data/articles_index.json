@@ -8,15 +8,17 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 4094,
-      "processed_at": "2025-08-03T09:37:06.880036"
+      "processed_at": "2025-08-03T09:37:06.880036",
+      "tags": ["AI", "Agile", "Future-Oriented"]
     },
     {
-      "title": "Ai and certainty don’t mix",
+      "title": "Ai and certainty don't mix",
       "slug": "ai-and-certainty-dont-mix",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 4647,
-      "processed_at": "2025-08-03T09:37:07.110471"
+      "processed_at": "2025-08-03T09:37:07.110471",
+      "tags": ["AI", "Uncertainty", "Decision Making", "Strategy"]
     },
     {
       "title": "Checking Assumptions: Knowing more over being right",
@@ -26,7 +28,8 @@
       "content_length": 5022,
       "processed_at": "2025-09-03T16:14:18.583Z",
       "estimated_reading_time": "4 min",
-      "status": "ready-for-review"
+      "status": "ready-for-review",
+      "tags": ["Leadership", "Decision Making"]
     },
     {
       "title": "Evals is the new black",
@@ -34,7 +37,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 3233,
-      "processed_at": "2025-08-03T09:37:06.688725"
+      "processed_at": "2025-08-03T09:37:06.688725",
+      "tags": ["AI", "Product Development", "Uncertainty"]
     },
     {
       "title": "Imagination feeds off on examples",
@@ -42,7 +46,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 3626,
-      "processed_at": "2025-08-03T09:37:06.612087"
+      "processed_at": "2025-08-03T09:37:06.612087",
+      "tags": ["Strategy", "Innovation"]
     },
     {
       "title": "Inputs to Strategy",
@@ -50,7 +55,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 3112,
-      "processed_at": "2025-08-03T09:37:07.185217"
+      "processed_at": "2025-08-03T09:37:07.185217",
+      "tags": ["Strategy", "Decision Making"]
     },
     {
       "title": "Skating where the puck is going",
@@ -58,7 +64,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 5973,
-      "processed_at": "2025-08-03T09:37:07.028311"
+      "processed_at": "2025-08-03T09:37:07.028311",
+      "tags": ["Strategy", "AI", "Future-Oriented"]
     },
     {
       "title": "Time to rethink your knowledge management",
@@ -66,7 +73,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 4878,
-      "processed_at": "2025-08-03T09:37:07.269943"
+      "processed_at": "2025-08-03T09:37:07.269943",
+      "tags": ["AI", "Knowledge Management"]
     },
     {
       "title": "Picturing product ownership",
@@ -78,7 +86,8 @@
       "estimated_reading_time": "2 min",
       "status": "published",
       "cover_image": "/data/images/2023-05-24-picturing-product-ownership-image-0.jpg",
-      "has_images": true
+      "has_images": true,
+      "tags": ["Product Management", "Leadership"]
     },
     {
       "title": "Visioning",
@@ -86,7 +95,8 @@
       "url": "Unknown URL",
       "publish_date": "Unknown date",
       "content_length": 8661,
-      "processed_at": "2025-08-03T09:37:06.765954"
+      "processed_at": "2025-08-03T09:37:06.765954",
+      "tags": ["Strategy", "Leadership", "Future-Oriented"]
     }
   ]
 }

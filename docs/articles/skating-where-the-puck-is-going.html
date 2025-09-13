@@ -3,288 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skating where the puck is going - Antti Tevanlinna</title>
+    <title>Skating where the puck is going - Bosser</title>
     <meta name="description" content="Making bets for future - Proactive positioning. Exploring AI strategy through sports metaphors and Wayne Gretzky's famous quote about skating to where the puck will be.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/skating-where-the-puck-is-going.html">
     
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="article">
+    <!-- Open Graph -->
     <meta property="og:title" content="Skating where the puck is going">
-    <meta property="og:description" content="Making bets for future - Proactive positioning. Exploring AI strategy through sports metaphors and Wayne Gretzky's famous quote.">
-    <meta property="og:author" content="Antti Tevanlinna">
+    <meta property="og:description" content="Making bets for future - Proactive positioning. Exploring AI strategy through sports metaphors and Wayne Gretzky's famous quote about skating to where the puck will be.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anttitevanlinna.github.io/bosser/articles/skating-where-the-puck-is-going.html">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background: #fafafa;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .article {
-            background: white;
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .article-header {
-            margin-bottom: 40px;
-            text-align: center;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 30px;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #0066cc;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 25px;
-        }
-
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            font-size: 0.95rem;
-            color: #666;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .original-article-link {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .original-article-link a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #f8f9fa;
-            color: #0066cc;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border: 1px solid #e9ecef;
-            transition: all 0.2s ease;
-        }
-
-        .original-article-link a:hover {
-            background: #0066cc;
-            color: white;
-            border-color: #0066cc;
-            transform: translateY(-1px);
-        }
-
-        .article-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .article-content h2 {
-            font-size: 1.8rem;
-            margin: 40px 0 20px 0;
-            color: #0066cc;
-            border-left: 4px solid #0066cc;
-            padding-left: 20px;
-        }
-
-        .article-content h3 {
-            font-size: 1.4rem;
-            margin: 30px 0 15px 0;
-            color: #333;
-        }
-
-        .article-content p {
-            margin-bottom: 20px;
-        }
-
-        .article-content blockquote {
-            margin: 30px 0;
-            padding: 20px 30px;
-            background: #f8f9fa;
-            border-left: 5px solid #0066cc;
-            font-style: italic;
-            font-size: 1.05rem;
-        }
-
-        .article-content em {
-            font-style: italic;
-            color: #555;
-        }
-
-        .article-content strong {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: #0066cc;
-            z-index: 1000;
-            transition: width 0.3s ease;
-        }
-
-        .article-footer {
-            margin-top: 50px;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .author-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #0066cc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .author-details h3 {
-            margin: 0 0 5px 0;
-            color: #333;
-        }
-
-        .author-details p {
-            margin: 0;
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .article {
-                padding: 30px 25px;
-            }
-            
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .author-info {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skating where the puck is going">
+    <meta name="twitter:description" content="Making bets for future - Proactive positioning. Exploring AI strategy through sports metaphors and Wayne Gretzky's famous quote about skating to where the puck will be.">
 </head>
 <body>
-    <div class="reading-progress" id="reading-progress"></div>
-    
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Articles</a>
-        
-        <article class="article">
-            <header class="article-header">
-                <h1 class="article-title">Skating where the puck is going</h1>
-                <p class="article-subtitle">Making bets for future - Proactive positioning</p>
-                <div class="article-meta">
-                    <div class="meta-item">
-                        <span>👤</span>
-                        <span>Antti Tevanlinna</span>
-                    </div>
-                    <div class="meta-item">
-                        <span>📅</span>
-                        <span>2025</span>
-                    </div>
-                    <div class="meta-item">
-                        <span>📖</span>
-                        <span>4 min read</span>
-                    </div>
-                    <div class="meta-item">
-                        <span>📝</span>
-                        <span>5,973 chars</span>
-                    </div>
-                </div>
-                
-                <div class="original-article-link">
-                    <a href="#" target="_blank" rel="noopener">
-                        📎 View original article on LinkedIn
-                    </a>
-                </div>
-            </header>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Bosser</a>
+            <a href="../index.html#articles" class="back-link">← Back to Articles</a>
+        </div>
+    </nav>
 
-            <div class="article-content">
+    <article>
+        <header class="article-header">
+            <div class="container">
+                <div class="article-meta">
+                    <span>4 min read</span>
+                    <span>Dec 28, 2024</span>
+                </div>
+                <h1 class="article-title">Skating where the puck is going</h1>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <div class="container">
                 <p>I have been working with AI and grappling with the future of AI. You might have guessed this from the few vision-related articles I've recently written. AI is a great example of trying to work with the future vision without the real control of the events that will unfold.</p>
 
                 <p>I'm sure you see the trend of AI. There is plenty of talk and hype. Most people now believe it is going to change how we do products in the future.</p>
@@ -356,36 +111,19 @@
                 <p>The key is building your thinking and mental models.</p>
 
                 <p><strong>In many ways, those mental models in your memory are still the human foundation of future success.</strong></p>
+                <hr>
+                <p><em>Where do you think the "puck" is going in your industry? What preparations are you making for the future?</em></p>
             </div>
+        </div>
 
-            <footer class="article-footer">
-                <div class="author-info">
-                    <div class="author-avatar">AT</div>
-                    <div class="author-details">
-                        <h3>Antti Tevanlinna</h3>
-                        <p>Insights on AI, Product Management & Business Strategy</p>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/anttitevanlinna/bosser" target="_blank">GitHub</a>
-                </div>
-            </footer>
-        </article>
-    </div>
-
-    <script>
-        // Reading progress indicator
-        window.addEventListener('scroll', () => {
-            const article = document.querySelector('.article-content');
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.offsetHeight;
-            const winHeight = window.innerHeight;
-            const scrollPercent = scrollTop / (docHeight - winHeight);
-            const scrollPercentRounded = Math.round(scrollPercent * 100);
-            
-            document.getElementById('reading-progress').style.width = scrollPercentRounded + '%';
-        });
-    </script>
+        <footer class="article-footer">
+            <div class="container">
+                <a href="../index.html#articles" class="back-to-top">← Back to Articles</a>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">
+                    Published on Bosser
+                </p>
+            </div>
+        </footer>
+    </article>
 </body>
 </html>

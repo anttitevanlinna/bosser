@@ -5,11 +5,7 @@
   "main": "scripts/newsletter-automation.js",
   "scripts": {
     "prepare-newsletter": "node scripts/prepare-newsletter.js",
-    "publish-to-linkedin": "node scripts/publish-to-linkedin.js",
-    "fill-linkedin": "node scripts/linkedin-form-filler.js",
-    "scrape-linkedin": "node scripts/linkedin-articles-scraper.js",
     "sync-articles": "node scripts/sync-scraped-to-site.js",
-    "scrape-and-sync": "node scripts/linkedin-articles-scraper.js && node scripts/sync-scraped-to-site.js",
     "generate-cover": "node scripts/generate-cover.js",
     "record-cover": "node scripts/record-cover-video.js",
     "test-local": "./scripts/test_local.sh",
@@ -22,8 +18,7 @@
     "marked": "^9.1.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1",
-    "playwright": "^1.55.0"
+    "nodemon": "^3.0.1"
   },
   "keywords": [
     "newsletter",
