@@ -1,0 +1,37 @@
+{
+  "name": "bosser-newsletter-automation",
+  "version": "1.0.0",
+  "description": "Automated newsletter publishing system for Bosser with animated covers",
+  "main": "scripts/newsletter-automation.js",
+  "scripts": {
+    "prepare-newsletter": "node scripts/prepare-newsletter.js",
+    "publish-to-linkedin": "node scripts/publish-to-linkedin.js",
+    "fill-linkedin": "node scripts/linkedin-form-filler.js",
+    "scrape-linkedin": "node scripts/linkedin-articles-scraper.js",
+    "sync-articles": "node scripts/sync-scraped-to-site.js",
+    "scrape-and-sync": "node scripts/linkedin-articles-scraper.js && node scripts/sync-scraped-to-site.js",
+    "generate-cover": "node scripts/generate-cover.js",
+    "record-cover": "node scripts/record-cover-video.js",
+    "test-local": "./scripts/test_local.sh",
+    "install-deps": "npm install",
+    "log-server": "node log-server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "front-matter": "^4.0.2",
+    "marked": "^9.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "playwright": "^1.55.0"
+  },
+  "keywords": [
+    "newsletter",
+    "automation",
+    "linkedin",
+    "animation",
+    "publishing"
+  ],
+  "author": "Antti Tevanlinna",
+  "license": "MIT"
+}

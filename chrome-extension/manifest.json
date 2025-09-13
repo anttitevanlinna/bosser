@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Bosser LinkedIn Assistant",
+  "version": "1.2.0",
+  "description": "Chrome extension for publishing and scraping LinkedIn articles for the Bosser newsletter system",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "downloads",
+    "scripting"
+  ],
+  
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://media.licdn.com/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bosser LinkedIn Assistant"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["logger.js", "dynamic-executor.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["https://www.linkedin.com/*"]
+    }
+  ]
+}

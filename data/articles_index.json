@@ -1,14 +1,14 @@
 {
-  "total_articles": 8,
-  "last_updated": "2025-08-03T09:37:07.311009",
+  "total_articles": 10,
+  "last_updated": "2025-09-13T09:27:00.000Z",
   "articles": [
     {
-      "title": "Skating where the puck is going",
-      "slug": "skating-where-the-puck-is-going",
+      "title": "Ai and Agile 2.0",
+      "slug": "ai-and-agile-20",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
-      "content_length": 5973,
-      "processed_at": "2025-08-03T09:37:07.028311"
+      "content_length": 4094,
+      "processed_at": "2025-08-03T09:37:06.880036"
     },
     {
       "title": "Ai and certainty don’t mix",
@@ -19,36 +19,22 @@
       "processed_at": "2025-08-03T09:37:07.110471"
     },
     {
-      "title": "Time to rethink your knowledge management",
-      "slug": "time-to-rethink-your-knowledge-management",
+      "title": "Checking Assumptions: Knowing more over being right",
+      "slug": "checking-assumptions",
       "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 4878,
-      "processed_at": "2025-08-03T09:37:07.269943"
+      "publish_date": "2025-08-31",
+      "content_length": 5022,
+      "processed_at": "2025-09-03T16:14:18.583Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review"
     },
     {
-      "title": "Ai and Agile 2.0",
-      "slug": "ai-and-agile-20",
+      "title": "Evals is the new black",
+      "slug": "evals-is-the-new-black",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
-      "content_length": 4094,
-      "processed_at": "2025-08-03T09:37:06.880036"
-    },
-    {
-      "title": "Visioning",
-      "slug": "visioning",
-      "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 8661,
-      "processed_at": "2025-08-03T09:37:06.765954"
-    },
-    {
-      "title": "Inputs to Strategy",
-      "slug": "inputs-to-strategy",
-      "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 3112,
-      "processed_at": "2025-08-03T09:37:07.185217"
+      "content_length": 3233,
+      "processed_at": "2025-08-03T09:37:06.688725"
     },
     {
       "title": "Imagination feeds off on examples",
@@ -59,12 +45,48 @@
       "processed_at": "2025-08-03T09:37:06.612087"
     },
     {
-      "title": "Evals is the new black",
-      "slug": "evals-is-the-new-black",
+      "title": "Inputs to Strategy",
+      "slug": "inputs-to-strategy",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
-      "content_length": 3233,
-      "processed_at": "2025-08-03T09:37:06.688725"
+      "content_length": 3112,
+      "processed_at": "2025-08-03T09:37:07.185217"
+    },
+    {
+      "title": "Skating where the puck is going",
+      "slug": "skating-where-the-puck-is-going",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 5973,
+      "processed_at": "2025-08-03T09:37:07.028311"
+    },
+    {
+      "title": "Time to rethink your knowledge management",
+      "slug": "time-to-rethink-your-knowledge-management",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 4878,
+      "processed_at": "2025-08-03T09:37:07.269943"
+    },
+    {
+      "title": "Picturing product ownership",
+      "slug": "picturing-product-ownership",
+      "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/",
+      "publish_date": "2023-05-25",
+      "content_length": 1024,
+      "processed_at": "2025-09-13T09:27:00.000Z",
+      "estimated_reading_time": "2 min",
+      "status": "published",
+      "cover_image": "/data/images/2023-05-24-picturing-product-ownership-image-0.jpg",
+      "has_images": true
+    },
+    {
+      "title": "Visioning",
+      "slug": "visioning",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 8661,
+      "processed_at": "2025-08-03T09:37:06.765954"
     }
   ]
 }
