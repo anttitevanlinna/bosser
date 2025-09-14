@@ -338,9 +338,9 @@ class ArticleSystem {
      * @returns {string} HTML string for the article card
      */
     createArticleCard(article) {
-        const excerpt = this.getExcerpt(article.title);
-        const readingTime = this.calculateReadingTime(article.content_length);
-        const formattedDate = this.formatDate(article.publish_date);
+        const excerpt = ArticleDataProcessor.getExcerpt(article.title);
+        const readingTime = ArticleDataProcessor.calculateReadingTime(article.content_length);
+        const formattedDate = ArticleDataProcessor.formatDate(article.publish_date);
         const tags = article.tags || [];
         const primaryTag = tags.length > 0 ? tags[0] : null;
         
@@ -366,49 +366,9 @@ class ArticleSystem {
         `;
     }
 
-    calculateReadingTime(contentLength) {
-        return ArticleDataProcessor.calculateReadingTime(contentLength);
-    }
 
-    getExcerpt(title) {
-        const excerpts = {
-            "checking-assumptions": "Knowing more over being right. Exploring how effective leadership requires challenging assumptions and fostering open communication to drive strategic decision-making.",
-            "ai-and-certainty-dont-mix": "Exploring why the inherent uncertainty in AI systems mirrors the unpredictability that has always existed in product development and business strategy.",
-            "skating-where-the-puck-is-going": "Strategic positioning for the future. Applying Wayne Gretzky's famous insight to AI strategy and business transformation.",
-            "evals-is-the-new-black": "The genie and lion tamer metaphor for embracing uncertainty in AI product development. Not knowing beforehand is perfectly okay.",
-            "visioning": "Strategic planning and future thinking in an uncertain world. Building shared understanding of direction and purpose.",
-            "ai-and-agile-20": "How AI is fundamentally transforming agile methodologies and product development practices for the next decade.",
-            "time-to-rethink-your-knowledge-management": "Modern approaches to organizing and leveraging organizational knowledge in the AI era.",
-            "inputs-to-strategy": "Key inputs and considerations for effective strategic planning in uncertain environments.",
-            "imagination-feeds-off-on-examples": "How concrete examples fuel imagination and strategic thinking in complex problem-solving scenarios.",
-            "picturing-product-ownership": "Visualizing the product owner role through simple diagrams. How a stick-figure drawing helped clarify the position between user needs and company capabilities."
-        };
-        
-        const slug = this.titleToSlug(title);
-        return excerpts[slug] || "Strategic insights for navigating complexity and driving meaningful progress in challenging environments.";
-    }
 
-    titleToSlug(title) {
-        return title.toLowerCase()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/[-\s]+/g, '-');
-    }
 
-    formatDate(dateString) {
-        // Shared logic - extracted from utils/date-utils.js
-        if (!dateString || dateString === 'Unknown date') {
-            return '2025';
-        }
-        
-        try {
-            return new Date(dateString).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short' 
-            });
-        } catch {
-            return dateString;
-        }
-    }
 
 
     /**

@@ -183,6 +183,72 @@ nav {
     background: var(--accent-hover);
 }
 
+.footer-text {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Additional utility classes for content cleanup */
+.article-content ul,
+.article-content ol {
+    margin: 20px 0;
+    padding-left: 24px;
+}
+
+.article-content li {
+    margin-bottom: 8px;
+}
+
+.article-content a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.article-content a:hover {
+    text-decoration: underline;
+}
+
+.article-content code {
+    background: var(--bg-secondary);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.article-content pre {
+    background: var(--bg-secondary);
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.article-content pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Additional utility classes for consistency */
+.article-meta-item {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.article-meta-separator {
+    color: var(--border);
+    margin: 0 4px;
+}
+
+.linkedin-reference {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 16px;
