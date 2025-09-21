@@ -5,7 +5,7 @@ const path = require('path');
 const matter = require('front-matter');
 const { marked } = require('marked');
 const HTMLCoverGenerator = require('./generate-cover-html');
-const { recordCoverVideo } = require('./record-cover-video');
+// Note: Cover video recording disabled - Playwright removed for LinkedIn publishing
 const { formatDateSimple } = require('../utils/date-utils');
 const { estimateReadingTime } = require('../utils/content-utils');
 const { ensureDirectories, ensureDirectory, fileExists } = require('../utils/file-utils');
@@ -38,33 +38,21 @@ class NewsletterPreparer {
         
         console.log(`📄 Processing: ${frontMatter.title}`);
         
-        // Generate animated cover HTML
+        // Generate animated cover HTML (video recording skipped - use browser plugin for LinkedIn)
         const coverGenerator = new HTMLCoverGenerator();
         
         try {
             const coverPath = await coverGenerator.generateCover(frontMatter.title, this.coversDir);
             console.log(`🎨 Cover HTML generated: ${coverPath}`);
-            
-            // Generate cover video
-            try {
-                console.log('🎬 Recording cover video...');
-                const videoPath = path.join(this.coversDir, 'cover.webm');
-                await recordCoverVideo(coverPath, videoPath);
-                console.log('✅ Cover video generated:', videoPath);
-                
-                // Also suggest MP4 conversion
-                console.log('💡 To convert for LinkedIn: ffmpeg -i cover.webm -c:v libx264 -t 30 cover.mp4');
-            } catch (videoError) {
-                console.log('⚠️  Video recording failed:', videoError.message);
-                console.log('📝 You can manually record the cover at:', coverPath);
-            }
+            console.log('📝 Use browser plugin to record and publish to LinkedIn');
         } catch (error) {
             console.error('❌ Cover generation failed:', error.message);
-            // Continue without cover for now
+            // Continue without cover
         }
         
-        // Process content
-        const htmlContent = marked(content);
+        // Process content - remove first H1 since template provides it
+        const contentWithoutFirstH1 = content.replace(/^# .+\n\n/, '');
+        const htmlContent = marked(contentWithoutFirstH1);
         const slug = frontMatter.slug || this.generateSlug(frontMatter.title);
         
         // Create article data structure
@@ -128,7 +116,8 @@ class NewsletterPreparer {
                 processed_at: articleData.processed_at,
                 cover_video: articleData.cover_video,
                 estimated_reading_time: articleData.estimated_reading_time,
-                status: articleData.status
+                status: articleData.status,
+                tags: articleData.tags || []
             });
         }
         
@@ -157,44 +146,61 @@ class NewsletterPreparer {
         const templatePath = path.join(this.docsDir, 'articles');
         ensureDirectory(templatePath);
         
-        // Simple article page template
+        // Article page template matching current site structure
+        const readingTime = Math.ceil(articleData.content_length / 250);
         const articleHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${articleData.title} - Bosser</title>
+    <meta name="description" content="${articleData.title.substring(0, 150)}...">
     <link rel="stylesheet" href="../styles.css">
-    <meta name="description" content="${articleData.title} by ${articleData.author}">
+    <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/${articleData.slug}.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="${articleData.title}">
+    <meta property="og:description" content="${articleData.title.substring(0, 150)}...">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anttitevanlinna.github.io/bosser/articles/${articleData.slug}.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${articleData.title}">
+    <meta name="twitter:description" content="${articleData.title.substring(0, 150)}...">
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="../index.html" class="logo">← Bosser</a>
+            <a href="../index.html" class="logo">Bosser</a>
+            <a href="../index.html#articles" class="back-link">← Back to Articles</a>
         </div>
     </nav>
-    
-    <article class="article-content">
+
+    <article>
         <header class="article-header">
-            ${articleData.cover_video ? `<video autoplay muted loop class="article-cover">
-                <source src="${articleData.cover_video}" type="video/mp4">
-            </video>` : ''}
-            <h1>${articleData.title}</h1>
-            <div class="article-meta">
-                <span>By ${articleData.author}</span>
-                <span>•</span>
-                <span>${articleData.estimated_reading_time}</span>
-                <span>•</span>
-                <span>${formatDateSimple(articleData.publish_date)}</span>
+            <div class="container">
+                <div class="article-meta">
+                    <span>${readingTime} min read</span>
+                    <span>${formatDateSimple(articleData.publish_date)}</span>
+                </div>
+                <h1 class="article-title">${articleData.title}</h1>
             </div>
         </header>
-        
-        <div class="article-body">
-            ${articleData.content_html}
+
+        <div class="article-content">
+            <div class="container">
+                ${articleData.content_html}
+            </div>
         </div>
-        
+
         <footer class="article-footer">
-            <a href="../index.html" class="back-link">← Back to all articles</a>
+            <div class="container">
+                <a href="../index.html#articles" class="back-to-top">← Back to Articles</a>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">
+                    Published on Bosser
+                </p>
+            </div>
         </footer>
     </article>
 </body>
@@ -222,7 +228,8 @@ async function main() {
         
         console.log('\n🎯 Next steps:');
         console.log('1. Review at: https://anttitevanlinna.github.io/bosser/');
-        console.log('2. Run: npm run publish-to-linkedin checking-assumptions');
+        console.log('2. Open covers/cover.html to record video with browser plugin');
+        console.log('3. Use browser plugin to publish to LinkedIn');
     } catch (error) {
         console.error('❌ Error:', error.message);
         process.exit(1);

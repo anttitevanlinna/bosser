@@ -790,5 +790,27 @@
     },
     "url": "https://www.linkedin.com/in/alizadeh/?otpToken=MTAwMjFhZTcxMjI5YzBjZWI1MjkwMGVkNDExZWUxYmQ4N2NiZDQ0ODk5YTQ4ZTY5NzRjMjAwNmE0YjVlNWFmNGZjYmM4MTg5MWFiMmRlYzA0NzZmNjM1ZWI2Yzk3ZmZmMzIyZDkxZDBkN2E5MGY5OGViLDEsMQ%3D%3D&midSig=1mldEn7UIc0HY1&eid=1mvnr-mfh9bczl-4x&midToken=AQGwcqgdYxi9hg&trkEmail=eml-email_m2m_invite_single_01-invitation%7Ecard-0-inviter%7Ename-null-1mvnr%7Emfh9bczl%7E4x-null-null&trk=eml-email_m2m_invite_single_01-invitation%7Ecard-0-inviter%7Ename&originalSubdomain=fi",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-15T14:05:48.958Z",
+    "sessionId": "bosser-mfl75i5a-mf1itn5oc",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mfl75i5a-mf1itn5oc"
+    },
+    "url": "https://www.linkedin.com/mynetwork?skipRedirect=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_notifications%3BkGqmBiNdTXmdi6WcO3wfgw%3D%3D",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-15T14:05:54.547Z",
+    "sessionId": "bosser-mfl75mgj-b9ant4tw7",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mfl75mgj-b9ant4tw7"
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   }
 ]
