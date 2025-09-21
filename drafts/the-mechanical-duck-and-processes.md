@@ -15,6 +15,7 @@ I have been thinking about how teams get trapped in their own processes lately.
 Better prescribed is not better.
 
 ![Vaucanson's Digesting Duck](../data/images/vaucanson-digesting-duck.jpg)
+*Vaucanson's duck (18th-century engraving, French School)*
 
 > Jacques de Vaucanson's Digesting Duck, created in 1738, was an 18th-century automaton that appeared to consume food pellets, digest them, and produce excrement—a mechanical marvel that captivated Enlightenment Europe as it seemed to prove that life's processes could be reduced to purely mechanical operations. Though later revealed to be partly illusion (the "digested" output was pre-loaded green-dyed bread pellets rather than actual processed food), the Duck embodied the era's conviction that living beings were essentially complex machines whose functions could be duplicated through sufficiently clever engineering, challenging the notion of a vital spirit or soul and suggesting instead that even digestion—one of life's most fundamental processes—could be understood as a series of mechanical steps, a philosophy that would profoundly influence both industrial thinking and our modern tendency to decompose complex organic systems into linear, reproducible processes.
 >
