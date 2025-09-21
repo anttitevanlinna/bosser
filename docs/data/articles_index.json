@@ -1,6 +1,6 @@
 {
   "total_articles": 10,
-  "last_updated": "2025-09-21T07:04:42.680Z",
+  "last_updated": "2025-09-21T07:45:42.210Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -77,8 +77,8 @@
       "slug": "the-mechanical-duck-and-processes",
       "url": "Unknown URL",
       "publish_date": "2025-09-21",
-      "content_length": 4370,
-      "processed_at": "2025-09-21T07:04:42.665Z",
+      "content_length": 4446,
+      "processed_at": "2025-09-21T07:45:42.197Z",
       "estimated_reading_time": "6 min",
       "status": "ready-for-review",
       "tags": [
