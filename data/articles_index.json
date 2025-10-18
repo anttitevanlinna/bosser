@@ -1,6 +1,6 @@
 {
-  "total_articles": 10,
-  "last_updated": "2025-09-21T07:49:57.127Z",
+  "total_articles": 11,
+  "last_updated": "2025-10-18T05:33:09.808Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -23,12 +23,12 @@
     {
       "title": "Checking Assumptions: Knowing more over being right",
       "slug": "checking-assumptions",
-      "url": "Unknown URL",
+      "url": "https://www.linkedin.com/pulse/checking-assumptions-knowing-more-over-being-right-antti-tevanlinna-8t5xe/?trackingId=gczQ36jDIgOxw1ZKYMjLaA%3D%3D",
       "publish_date": "2025-08-31",
       "content_length": 5022,
       "processed_at": "2025-09-21T05:51:13.916Z",
       "estimated_reading_time": "4 min",
-      "status": "ready-for-review",
+      "status": "published",
       "tags": [
         "leadership",
         "assumptions",
@@ -96,6 +96,22 @@
       "content_length": 4878,
       "processed_at": "2025-08-03T09:37:07.269943",
       "tags": []
+    },
+    {
+      "title": "Vision prepares for serendipity",
+      "slug": "vision-prepares-for-serendipity",
+      "url": "Unknown URL",
+      "publish_date": "2025-10-18",
+      "content_length": 4241,
+      "processed_at": "2025-10-18T05:33:09.787Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "vision",
+        "leadership",
+        "planning"
+      ]
     },
     {
       "title": "Visioning",
