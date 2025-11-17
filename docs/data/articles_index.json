@@ -1,6 +1,6 @@
 {
   "total_articles": 12,
-  "last_updated": "2025-11-17T17:45:05.105Z",
+  "last_updated": "2025-11-17T17:48:13.992Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -68,8 +68,8 @@
       "slug": "organisational-change-and-cycle-racing",
       "url": "Unknown URL",
       "publish_date": "2025-11-17",
-      "content_length": 4572,
-      "processed_at": "2025-11-17T17:45:05.088Z",
+      "content_length": 4568,
+      "processed_at": "2025-11-17T17:48:13.968Z",
       "estimated_reading_time": "6 min",
       "status": "ready-for-review",
       "tags": [

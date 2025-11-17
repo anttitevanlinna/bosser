@@ -21,7 +21,7 @@ async function createThumbnail() {
     await page.waitForTimeout(2000);
     
     // Take screenshot
-    const thumbnailPath = path.resolve(__dirname, '../covers/vision-serendipity-static-thumbnail.png');
+    const thumbnailPath = path.resolve(__dirname, '../covers/organisational-change-static-thumbnail.png');
     await page.screenshot({
         path: thumbnailPath,
         type: 'png',

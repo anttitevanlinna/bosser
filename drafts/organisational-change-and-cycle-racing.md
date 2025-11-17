@@ -14,7 +14,7 @@ estimated_reading_time: "6 min"
 
 Cycle racing is a tactical sport. On the surface, it is all about endurance and power. But success is both smarts and endurance. Let me tell stories of similarity. It is funny how organisational life and racing share aspects. 
 
-H1. You need to break away to win
+## You need to break away to win
 
 So: sometimes an either one or a group of riders separates themselves from the main pack. This is called a breakaway. The logic is simple. Just go faster than the others and you'll arrive at finish the first. You'll win. 
 
@@ -24,7 +24,7 @@ The peloton of course, is the organisation status quo!
 
 You need to break away to win. But if you break away, you get soon exhausted. 
 
-H1. You need your breakaway companions
+## You need your breakaway companions
 
 The breakaway usually is best achieved with many enough riders to share the load. But then you have to have few enough to have alignment of goals and cohesion. 
 
@@ -34,7 +34,7 @@ Now here is the parallel in making big things happen in a company. You have to f
 
 Now this is textbook Kotter and the steps of leading change. 
 
-H1. The chase and the escape velocity 
+## The chase and the escape velocity 
 
 Once a breakaway group is established, it will try make a separation from the peloton. The more the better. 
 
@@ -46,7 +46,7 @@ And you cross the finish line. The change could not be stopped.
 
 Your breakaway succeeded - most of breakaways never go far. So, the next time you try something new but it does not win, don't worry. Just learn. There will be more races every week. 
 
-H1. All metaphors break
+## All metaphors break
 
 All metaphors break. But I like them nonetheless. Business is not cycling, while cycling nowadays is much a business. 
 
