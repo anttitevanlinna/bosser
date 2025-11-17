@@ -115,7 +115,7 @@ class BosserLinkedInPopup {
         });
         
         document.getElementById('fillFormButton').addEventListener('click', () => {
-            this.fillLinkedInForm();
+            this.startLinkedInPublishing();
         });
         
         // Scraping buttons
@@ -139,6 +139,11 @@ class BosserLinkedInPopup {
         // Debug button
         document.getElementById('sendLogsButton').addEventListener('click', () => {
             this.sendLogsToClaudeCode();
+        });
+        
+        // Test connection button
+        document.getElementById('testConnectionButton').addEventListener('click', () => {
+            this.testContentScriptConnection();
         });
     }
     
@@ -173,86 +178,203 @@ class BosserLinkedInPopup {
                 
             default:
                 loadDraftBtn.disabled = false;  // Can always load draft
-                fillFormBtn.disabled = true;
+                // Enable publish button if we have a draft loaded (server will handle navigation)
+                fillFormBtn.disabled = !this.loadedDraft;
                 scrapeCurrentBtn.disabled = true;
                 scrapeAllBtn.disabled = true;
         }
     }
     
     async loadDraft() {
-        this.logger.info('Loading draft from Bosser project');
+        this.logger.info('Loading latest draft from Bosser project');
         
         try {
-            this.showStatus('Loading draft from Bosser project...', 'info');
+            this.showStatus('Loading latest article from Bosser server...', 'info');
             
-            // This would normally read from the bosser project files
-            // For now, we'll simulate loading the checking-assumptions draft
-            const mockDraft = {
-                title: "Checking Assumptions: Knowing more over being right",
-                content: `# The Cost of Being Right
-                
-When we prioritize being right over understanding, we miss opportunities to learn and grow...`,
-                tags: ['leadership', 'assumptions', 'communication', 'strategy'],
-                slug: 'checking-assumptions'
+            // Get the latest article from the Bosser server
+            const response = await fetch('http://localhost:3001/latest-article');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const articleData = await response.json();
+            
+            if (!articleData || !articleData.title) {
+                throw new Error('No article data received from server');
+            }
+            
+            // Convert the article data to draft format
+            this.loadedDraft = {
+                title: articleData.title,
+                content: articleData.content_markdown || articleData.content,
+                tags: articleData.tags || [],
+                slug: articleData.slug,
+                coverVideo: articleData.coverVideo, // Video file path
+                publishDate: articleData.publish_date
             };
             
-            this.loadedDraft = mockDraft;
-            
             document.getElementById('draftInfo').textContent = 
-                `Loaded: ${mockDraft.title.substring(0, 30)}...`;
+                `Loaded: ${articleData.title.substring(0, 30)}...`;
                 
-            this.showStatus('Draft loaded successfully!', 'success');
+            this.showStatus('Latest article loaded successfully!', 'success');
             this.updateUI();
             
-            this.logger.success('Draft loaded successfully', { 
-                title: mockDraft.title,
-                contentLength: mockDraft.content.length,
-                tags: mockDraft.tags 
+            this.logger.success('Article loaded from server', { 
+                title: articleData.title,
+                contentLength: articleData.content?.length || 0,
+                tags: articleData.tags,
+                slug: articleData.slug,
+                hasCover: !!articleData.coverVideo
             });
             
         } catch (error) {
-            this.logger.error('Failed to load draft', error);
-            this.showStatus(`Error loading draft: ${error.message}`, 'error');
+            this.logger.error('Failed to load article from server', error);
+            this.showStatus(`Error loading article: ${error.message}`, 'error');
+            
+            // Clear any existing draft on failure
+            this.loadedDraft = null;
+            document.getElementById('draftInfo').textContent = 'Failed to load article';
+            this.updateUI();
+            
+            throw error; // Re-throw to ensure calling code knows about the failure
         }
     }
     
-    async fillLinkedInForm() {
+    async startLinkedInPublishing() {
         if (!this.loadedDraft) {
             this.showStatus('No draft loaded. Load a draft first.', 'error');
             return;
         }
         
         try {
-            this.logger.info('Starting dynamic form filling');
-            this.showStatus('Requesting form filling code from server...', 'info');
+            this.logger.info('Starting LinkedIn publishing workflow');
+            this.showStatus('Creating publishing plan...', 'info');
             
-            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-            
-            // Send message to content script to use dynamic executor
-            const response = await chrome.tabs.sendMessage(tab.id, {
-                action: 'fillForm',
-                draftData: this.loadedDraft
+            // Request publishing plan from server
+            const response = await fetch('http://localhost:3001/publish-to-linkedin', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    articleSlug: this.loadedDraft.slug,
+                    uploadCover: !!this.loadedDraft.coverVideo
+                })
             });
             
-            if (response && response.success) {
-                const result = response.data;
-                const statusMsg = `Form filled with dynamic code! Title: ${result.titleFilled ? '✅' : '❌'}, Content: ${result.contentFilled ? '✅' : '❌'}`;
-                this.showStatus(statusMsg, result.titleFilled && result.contentFilled ? 'success' : 'info');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                this.publishingPlan = result.plan;
+                this.currentStep = 0;
                 
-                this.logger.success('Dynamic form filling succeeded', {
-                    strategy: result.strategy,
-                    titleFilled: result.titleFilled,
-                    contentFilled: result.contentFilled
+                this.showStatus(`Publishing plan created with ${result.plan.length} steps. Starting...`, 'success');
+                this.logger.success('Publishing plan created', {
+                    article: result.article.title,
+                    steps: result.plan.length
                 });
+                
+                // Start executing the plan
+                await this.executeNextPublishingStep();
             } else {
-                const errorMsg = response?.error || 'Failed to fill form';
-                this.showStatus(errorMsg, 'error');
-                this.logger.error('Dynamic form filling failed', null, { error: errorMsg });
+                throw new Error(result.error);
             }
             
         } catch (error) {
-            this.logger.error('Error in dynamic form filling', error);
-            this.showStatus(`Error filling form: ${error.message}`, 'error');
+            this.logger.error('Error starting LinkedIn publishing', error);
+            this.showStatus(`Error starting publishing: ${error.message}`, 'error');
+        }
+    }
+    
+    async executeNextPublishingStep() {
+        if (!this.publishingPlan || this.currentStep >= this.publishingPlan.length) {
+            this.showStatus('Publishing workflow complete!', 'success');
+            return;
+        }
+        
+        const step = this.publishingPlan[this.currentStep];
+        
+        try {
+            this.logger.info(`Executing step ${this.currentStep + 1}: ${step.description}`);
+            this.showStatus(`Step ${this.currentStep + 1}/${this.publishingPlan.length}: ${step.description}`, 'info');
+            
+            if (step.manual) {
+                // Manual step - just show instructions
+                this.showStatus(`Manual step: ${step.description}. Click continue when ready.`, 'info');
+                // Could add a continue button here
+                return;
+            }
+            
+            // First, test connection to content script
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            
+            try {
+                const pingResponse = await chrome.tabs.sendMessage(tab.id, {
+                    action: 'getPageInfo'
+                });
+                
+                if (!pingResponse || !pingResponse.success) {
+                    throw new Error('Content script not responding - try refreshing the LinkedIn page');
+                }
+                
+                this.logger.info('Content script connection confirmed', pingResponse.data);
+                
+            } catch (pingError) {
+                this.logger.error('Content script connection failed', pingError);
+                throw new Error('Content script not loaded. Please refresh the LinkedIn page and reload the extension.');
+            }
+            
+            // Request step execution from server
+            const response = await fetch('http://localhost:3001/execute-publishing-step', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    step: step.step,
+                    articleData: step.data || this.loadedDraft,
+                    stepData: step.data || {}
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // Execute the code in the content script
+                const executeResponse = await chrome.tabs.sendMessage(tab.id, {
+                    action: 'executeCode',
+                    code: result.code,
+                    step: result.step
+                });
+                
+                if (executeResponse && executeResponse.success) {
+                    this.showStatus(`✅ Step completed: ${step.description}`, 'success');
+                    this.logger.success(`Step ${step.step} completed`, executeResponse.data);
+                    
+                    // Move to next step
+                    this.currentStep++;
+                    
+                    // Auto-execute next step after a delay (except for manual steps)
+                    if (this.currentStep < this.publishingPlan.length && !this.publishingPlan[this.currentStep].manual) {
+                        setTimeout(() => this.executeNextPublishingStep(), 2000);
+                    } else if (this.currentStep < this.publishingPlan.length) {
+                        this.showStatus(`Ready for manual step: ${this.publishingPlan[this.currentStep].description}`, 'info');
+                    }
+                } else {
+                    throw new Error(executeResponse?.error || 'Step execution failed');
+                }
+            } else {
+                throw new Error(result.error);
+            }
+            
+        } catch (error) {
+            this.logger.error(`Error executing step ${step.step}`, error);
+            this.showStatus(`❌ Step failed: ${error.message}`, 'error');
+            // Don't continue on failure
         }
     }
     
@@ -570,6 +692,47 @@ When we prioritize being right over understanding, we miss opportunities to lear
         
         // Log status messages
         this.logger.info(`Status: ${message}`, { type });
+    }
+    
+    async testContentScriptConnection() {
+        try {
+            this.logger.info('Testing content script connection');
+            this.showStatus('Testing content script connection...', 'info');
+            
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            
+            if (!tab) {
+                throw new Error('No active tab found');
+            }
+            
+            if (!tab.url.includes('linkedin.com')) {
+                throw new Error('Not on LinkedIn domain. Navigate to linkedin.com first.');
+            }
+            
+            const response = await chrome.tabs.sendMessage(tab.id, {
+                action: 'getPageInfo'
+            });
+            
+            if (response && response.success) {
+                this.showStatus('✅ Content script working!', 'success');
+                this.logger.success('Content script connection test passed', {
+                    url: response.data.url,
+                    type: response.data.type,
+                    title: response.data.title
+                });
+            } else {
+                throw new Error('Content script returned invalid response');
+            }
+            
+        } catch (error) {
+            this.logger.error('Content script connection test failed', error);
+            this.showStatus(`❌ Connection failed: ${error.message}`, 'error');
+            
+            // Show troubleshooting steps
+            setTimeout(() => {
+                this.showStatus('Try: 1) Refresh LinkedIn page 2) Reload extension 3) Check if on linkedin.com', 'info');
+            }, 2000);
+        }
     }
     
     async sendLogsToClaudeCode() {

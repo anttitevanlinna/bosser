@@ -1,18 +1,18 @@
 [
   {
-    "timestamp": "2025-09-12T17:19:54.397Z",
-    "sessionId": "bosser-mfh3r65d-0bmxydfxc",
+    "timestamp": "2025-09-21T17:58:19.623Z",
+    "sessionId": "bosser-mftzzvpl-okshzx8vq",
     "level": "INFO",
-    "message": "Starting dynamic article scraping",
+    "message": "Loading latest draft from Bosser project",
     "data": {},
     "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-12T17:19:54.397Z",
-    "sessionId": "bosser-mfh3r65d-0bmxydfxc",
+    "timestamp": "2025-09-21T17:58:19.623Z",
+    "sessionId": "bosser-mftzzvpl-okshzx8vq",
     "level": "INFO",
-    "message": "Status: Requesting scraping code from server...",
+    "message": "Status: Loading latest article from Bosser server...",
     "data": {
       "type": "info"
     },
@@ -20,724 +20,10 @@
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-12T17:19:54.402Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
+    "timestamp": "2025-09-21T17:58:19.638Z",
+    "sessionId": "bosser-mftzzvpl-okshzx8vq",
     "level": "INFO",
-    "message": "Content script received scrapeCurrentArticle request",
-    "data": {},
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.402Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Requesting code for action: scrape on article",
-    "data": {},
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.425Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Received strategy: LinkedIn Article Scraper v1",
-    "data": {
-      "strategy": "linkedin_article_v1",
-      "version": 1
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.428Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Found 36 total images on page",
-    "data": {},
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.428Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 0: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.428Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 1: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.428Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 2: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.428Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 3: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 4: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 5: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 6: https://media.licdn.com/dms/image/v2/C4E03AQH5dXqwPPeLvA/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 7: https://media.licdn.com/dms/image/v2/D4D12AQG93OwD7dRmEA/article-cover_image-shrink_720_1280/article...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "SUCCESS",
-    "message": "Found article image: https://media.licdn.com/dms/image/v2/D4D12AQG93OwD7dRmEA/art...",
-    "data": {
-      "alt": "Picturing product ownership",
-      "caption": "Picturing product ownership",
-      "dimensions": "1280x720",
-      "className": "reader-cover-image__img evi-image lazy-image ember-view"
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 8: https://media.licdn.com/dms/image/v2/C4E03AQH5dXqwPPeLvA/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 9: https://media.licdn.com/dms/image/v2/D4D12AQFpOeHqPw7AvA/article-inline_image-shrink_1500_2232/artic...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "SUCCESS",
-    "message": "Found article image: https://media.licdn.com/dms/image/v2/D4D12AQFpOeHqPw7AvA/art...",
-    "data": {
-      "alt": "No alt text provided for this image",
-      "caption": "Picturing product owner work",
-      "dimensions": "965x634",
-      "className": "ivm-view-attr__img--centered  reader-image-block__img evi-image lazy-image ember-view"
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 10: https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 11: https://media.licdn.com/dms/image/v2/C4E03AQH5dXqwPPeLvA/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 12: https://media.licdn.com/dms/image/v2/C4E03AQH5dXqwPPeLvA/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.429Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 13: https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 14: https://media.licdn.com/dms/image/v2/C4E03AQGE7PLIAqK-hw/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 15: https://static.licdn.com/aero-v1/sc/h/cpho5fghnpme8epox8rdcds22...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 16: https://media.licdn.com/dms/image/v2/C4E03AQH5dXqwPPeLvA/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 17: https://media.licdn.com/dms/image/v2/D4D2CAQFfOF8DHWQrow/comment-image-shrink_8192_480/comment-image...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "SUCCESS",
-    "message": "Found article image: https://media.licdn.com/dms/image/v2/D4D2CAQFfOF8DHWQrow/com...",
-    "data": {
-      "alt": "Comment image, no alternative text available",
-      "caption": "",
-      "dimensions": "480x315",
-      "className": "ivm-view-attr__img--centered  comments-display-content__image evi-image lazy-image ember-view"
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 18: https://static.licdn.com/aero-v1/sc/h/cpho5fghnpme8epox8rdcds22...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 19: https://media.licdn.com/dms/image/v2/C4D03AQFFBIkV6TSuNg/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 20: https://media.licdn.com/dms/image/v2/C4E03AQH5dXqwPPeLvA/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 21: https://media.licdn.com/dms/image/v2/C4E12AQEn88c_jJvSuA/article-cover_image-shrink_600_2000/article...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "SUCCESS",
-    "message": "Found article image: https://media.licdn.com/dms/image/v2/C4E12AQEn88c_jJvSuA/art...",
-    "data": {
-      "alt": "Article cover image",
-      "caption": "",
-      "dimensions": "800x600",
-      "className": "ivm-view-attr__img--centered EntityPhoto-square-1  reader-nba-carousel__carousel-item-image evi-image lazy-image ember-view"
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 22: https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 23: https://static.licdn.com/aero-v1/sc/h/cwu3sh78mgifnv29qwc5x2m5f...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 24: https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 25: https://media.licdn.com/dms/image/v2/D5612AQFtpI2zfir9bw/article-cover_image-shrink_720_1280/article...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "SUCCESS",
-    "message": "Found article image: https://media.licdn.com/dms/image/v2/D5612AQFtpI2zfir9bw/art...",
-    "data": {
-      "alt": "Article cover image",
-      "caption": "",
-      "dimensions": "764x720",
-      "className": "ivm-view-attr__img--centered EntityPhoto-square-1  reader-nba-carousel__carousel-item-image evi-image lazy-image ember-view"
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.430Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 26: https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 27: https://media.licdn.com/dms/image/v2/D5612AQECAsEJb56qew/article-cover_image-shrink_600_2000/article...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "SUCCESS",
-    "message": "Found article image: https://media.licdn.com/dms/image/v2/D5612AQECAsEJb56qew/art...",
-    "data": {
-      "alt": "Article cover image",
-      "caption": "",
-      "dimensions": "744x600",
-      "className": "ivm-view-attr__img--centered EntityPhoto-square-1  reader-nba-carousel__carousel-item-image evi-image lazy-image ember-view"
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 28: https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 29: https://media.licdn.com/dms/image/v2/C4E03AQH5dXqwPPeLvA/profile-displayphoto-shrink_100_100/profile...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": true,
-      "isArticleImage": true
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 30: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": true,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 31: https://px.ads.linkedin.com/collect/?pid=6883&fmt=gif&_t=1757697576253...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": true,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 32: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 33: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 34: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Image 35: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7...",
-    "data": {
-      "visible": false,
-      "hasLinkedIn": false,
-      "isArticleImage": false
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Extracted 6 article images",
-    "data": {},
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Scraping executed successfully",
-    "data": {
-      "strategy": "linkedin_article_v1",
-      "title": "Picturing product ownership"
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "SUCCESS",
-    "message": "Action succeeded: scrape",
-    "data": {
-      "strategy": "linkedin_article_v1",
-      "result": {
-        "title": "Picturing product ownership",
-        "content": "Picturing product ownership\nPicturing product ownership\nAntti Tevanlinna \nConsultant & CEO\nMay 25, 2023\n\nThe first time I coached product owners is about 10 years ago. One of the first things I did when starting to get into product owner competence was to draw a picture of it. \n\nI used to work at F-Secure and I was visiting our Kuala Lumpur (KL) development center. This is how I pictured product ownership in that setting.\n\nPicturing product owner work\n\nThe important bits are:\n\nThe world on the left Note the speech bubbles telling about the key needs of users (it was actually pretty much our brand promise at the time)\n\"Our company\" on the right with all the people and their skills. I wanted to show that people in our company have differing opinions and drives. \nThe Product Owner (aka. Technical product manager) in the middle. Notice the signage \"value\".\n\nWell... is there anything else to specify....?\n\nPS: This kind of stick-figure picture is quite quick to draw. Even by someone like me who has absolutely no skill at drawing.",
-        "author": "",
-        "publishDate": "May 25, 2023",
-        "tags": [],
-        "images": [
-          {
-            "src": "https://media.licdn.com/dms/image/v2/D4D12AQG93OwD7dRmEA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1685010608059?e=1760572800&v=beta&t=QI0uLTC7Z3s9cny34mRgkWKg4cy04ZWK7s0HvpzKds0",
-            "alt": "Picturing product ownership",
-            "title": "",
-            "width": 1280,
-            "height": 720,
-            "caption": "Picturing product ownership",
-            "position": 0,
-            "className": "reader-cover-image__img evi-image lazy-image ember-view",
-            "parentText": "\n          \n        "
-          },
-          {
-            "src": "https://media.licdn.com/dms/image/v2/D4D12AQFpOeHqPw7AvA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1685010690554?e=1760572800&v=beta&t=NTVc5fTfKIZqtFRxfydKN_AEvv2paReZYcVTISvW5KQ",
-            "alt": "No alt text provided for this image",
-            "title": "",
-            "width": 965,
-            "height": 634,
-            "caption": "Picturing product owner work",
-            "position": 1,
-            "className": "ivm-view-attr__img--centered  reader-image-block__img evi-image lazy-image ember-view",
-            "parentText": "\n\n          \n    "
-          },
-          {
-            "src": "https://media.licdn.com/dms/image/v2/D4D2CAQFfOF8DHWQrow/comment-image-shrink_8192_480/comment-image-shrink_8192_480/0/1685011290725?e=1758304800&v=beta&t=TuCnUYimwe-Xuii7h7_55UloDUnZ9LBwAofcistE9u8",
-            "alt": "Comment image, no alternative text available",
-            "title": "",
-            "width": 480,
-            "height": 315,
-            "caption": "",
-            "position": 2,
-            "className": "ivm-view-attr__img--centered  comments-display-content__image evi-image lazy-image ember-view",
-            "parentText": "\n\n          \n    "
-          },
-          {
-            "src": "https://media.licdn.com/dms/image/v2/C4E12AQEn88c_jJvSuA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520188348340?e=1760572800&v=beta&t=WYjO08JKgFsVaiMIYax3ZrGVyKOYJ-uWJLtsbfWhujw",
-            "alt": "Article cover image",
-            "title": "",
-            "width": 800,
-            "height": 600,
-            "caption": "",
-            "position": 3,
-            "className": "ivm-view-attr__img--centered EntityPhoto-square-1  reader-nba-carousel__carousel-item-image evi-image lazy-image ember-view",
-            "parentText": "\n\n          \n    "
-          },
-          {
-            "src": "https://media.licdn.com/dms/image/v2/D5612AQFtpI2zfir9bw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1703142837875?e=1760572800&v=beta&t=BObS1bZvpiiSRpQIou4encVWXTlhQdaqOUNhAtC1PL8",
-            "alt": "Article cover image",
-            "title": "",
-            "width": 764,
-            "height": 720,
-            "caption": "",
-            "position": 4,
-            "className": "ivm-view-attr__img--centered EntityPhoto-square-1  reader-nba-carousel__carousel-item-image evi-image lazy-image ember-view",
-            "parentText": "\n\n          \n    "
-          },
-          {
-            "src": "https://media.licdn.com/dms/image/v2/D5612AQECAsEJb56qew/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1707212890759?e=1760572800&v=beta&t=TBooqM8IXFsuyoj4CELmVo7iZTMv4hOaErRXva0d6Ug",
-            "alt": "Article cover image",
-            "title": "",
-            "width": 744,
-            "height": 600,
-            "caption": "",
-            "position": 5,
-            "className": "ivm-view-attr__img--centered EntityPhoto-square-1  reader-nba-carousel__carousel-item-image evi-image lazy-image ember-view",
-            "parentText": "\n\n          \n    "
-          }
-        ],
-        "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-        "scrapedAt": "2025-09-12T17:19:54.426Z",
-        "strategy": "csp_safe_scraper",
-        "slug": "picturingproductownership"
-      }
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:54.431Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
-    "level": "INFO",
-    "message": "Sending scraped data to server",
-    "data": {
-      "title": "Picturing product ownership",
-      "images": 6
-    },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
-  },
-  {
-    "timestamp": "2025-09-12T17:19:56.226Z",
-    "sessionId": "bosser-mfh3r65d-0bmxydfxc",
-    "level": "INFO",
-    "message": "Status: Article scraped successfully with dynamic code!",
+    "message": "Status: Latest article loaded successfully!",
     "data": {
       "type": "success"
     },
@@ -745,72 +31,2737 @@
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-12T17:19:56.226Z",
-    "sessionId": "bosser-mfh3r65d-0bmxydfxc",
+    "timestamp": "2025-09-21T17:58:19.638Z",
+    "sessionId": "bosser-mftzzvpl-okshzx8vq",
     "level": "SUCCESS",
-    "message": "Dynamic scraping succeeded",
+    "message": "Article loaded from server",
     "data": {
-      "strategy": "csp_safe_scraper",
-      "title": "Picturing product ownership"
+      "title": "Checking Assumptions: Knowing more over being right",
+      "contentLength": 5022,
+      "tags": [
+        "leadership",
+        "assumptions",
+        "communication",
+        "strategy"
+      ],
+      "slug": "checking-assumptions",
+      "hasCover": true
     },
     "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-12T17:19:56.223Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
+    "timestamp": "2025-09-21T17:59:34.399Z",
+    "sessionId": "bosser-mfu0588v-0dkfxvxm9",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mfu0588v-0dkfxvxm9"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T17:59:34.400Z",
+    "sessionId": "bosser-mfu0588v-0dkfxvxm9",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-09-21T17:59:34.400Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T17:59:34.427Z",
+    "sessionId": "bosser-mfu0588v-0dkfxvxm9",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.0",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T17:59:34.428Z",
+    "sessionId": "bosser-mfu0588v-0dkfxvxm9",
     "level": "SUCCESS",
-    "message": "Data saved to server",
+    "message": "Popup initialized successfully",
     "data": {
-      "filename": "2023-05-24-picturing-product-ownership.json",
-      "imagesDownloaded": 0,
-      "message": "Saved article and 0 images"
+      "pageType": "profile_articles",
+      "scrapedCount": 2
     },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-12T17:19:56.224Z",
-    "sessionId": "bosser-mfh3r5rz-9tq7yiyms",
+    "timestamp": "2025-09-21T17:59:45.153Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mfu05gjl-ibkm0jnpv"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T17:59:45.154Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-09-21T17:59:45.154Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T17:59:45.180Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.0",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T17:59:45.180Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
     "level": "SUCCESS",
-    "message": "Scraping completed in content script",
+    "message": "Popup initialized successfully",
     "data": {
-      "title": "Picturing product ownership"
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
     },
-    "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/?trackingId=bvPIJ%2FP6SuaPosBOghKnMg%3D%3D",
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-13T06:51:51.238Z",
-    "sessionId": "bosser-mfhwrpza-nif3gqscn",
+    "timestamp": "2025-09-21T17:59:46.707Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
     "level": "INFO",
-    "message": "Logger initialized",
-    "data": {
-      "sessionId": "bosser-mfhwrpza-nif3gqscn"
-    },
-    "url": "https://www.linkedin.com/in/alizadeh/?otpToken=MTAwMjFhZTcxMjI5YzBjZWI1MjkwMGVkNDExZWUxYmQ4N2NiZDQ0ODk5YTQ4ZTY5NzRjMjAwNmE0YjVlNWFmNGZjYmM4MTg5MWFiMmRlYzA0NzZmNjM1ZWI2Yzk3ZmZmMzIyZDkxZDBkN2E5MGY5OGViLDEsMQ%3D%3D&midSig=1mldEn7UIc0HY1&eid=1mvnr-mfh9bczl-4x&midToken=AQGwcqgdYxi9hg&trkEmail=eml-email_m2m_invite_single_01-invitation%7Ecard-0-inviter%7Ename-null-1mvnr%7Emfh9bczl%7E4x-null-null&trk=eml-email_m2m_invite_single_01-invitation%7Ecard-0-inviter%7Ename&originalSubdomain=fi",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-15T14:05:48.958Z",
-    "sessionId": "bosser-mfl75i5a-mf1itn5oc",
+    "timestamp": "2025-09-21T17:59:46.708Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
     "level": "INFO",
-    "message": "Logger initialized",
+    "message": "Status: Loading latest article from Bosser server...",
     "data": {
-      "sessionId": "bosser-mfl75i5a-mf1itn5oc"
+      "type": "info"
     },
-    "url": "https://www.linkedin.com/mynetwork?skipRedirect=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_notifications%3BkGqmBiNdTXmdi6WcO3wfgw%3D%3D",
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   },
   {
-    "timestamp": "2025-09-15T14:05:54.547Z",
-    "sessionId": "bosser-mfl75mgj-b9ant4tw7",
+    "timestamp": "2025-09-21T17:59:46.722Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T17:59:46.722Z",
+    "sessionId": "bosser-mfu05gjl-ibkm0jnpv",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:00:59.359Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
     "level": "INFO",
     "message": "Logger initialized",
     "data": {
-      "sessionId": "bosser-mfl75mgj-b9ant4tw7"
+      "sessionId": "bosser-mfu071sv-pb8okofdb"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:00:59.360Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-09-21T18:00:59.360Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:00:59.391Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.1",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:00:59.391Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:01.773Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:01.774Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:01.788Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:01.788Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.389Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.389Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.396Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.396Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.397Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.397Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.402Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:01:04.402Z",
+    "sessionId": "bosser-mfu071sv-pb8okofdb",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:00.299Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mfu09n4b-mz2hhxhxj"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:00.301Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-09-21T18:03:00.300Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:00.335Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.1",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:00.335Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:01.906Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:01.906Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:01.920Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:01.920Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.089Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.089Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.095Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.095Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.095Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.095Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.100Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:04.101Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.672Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.673Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.681Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.681Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.681Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.682Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.686Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:10.686Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.373Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.373Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.380Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.380Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.380Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.380Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.383Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-21T18:03:18.383Z",
+    "sessionId": "bosser-mfu09n4b-mz2hhxhxj",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-27T07:00:36.091Z",
+    "sessionId": "bosser-mg1x8waj-17fiv45y0",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mg1x8waj-17fiv45y0"
+    },
+    "url": "https://www.linkedin.com/jobs/view/4299981538/?trackingId=I0aShxrxRM2O7yFlFcaxKg%3D%3D&refId=w6g90EidTg6cztcbGd28uw%3D%3D&midToken=AQGwcqgdYxi9hg&midSig=1PHoonBnwzkXY1&trk=eml-jobs_jymbii_digest-job_card-0-jobcard_body&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-1mvnr~mg1uwv7b~sk-null-null&eid=1mvnr-mg1uwv7b-sk&otpToken=MTAwMjFhZTcxMjI5YzBjZWI1MjkwMGUyNGYxYmU1YjE4ZWM4ZDE0MjlkYTQ4ZTY5NzRjMjAwNmE0YjVlNWFmNGZjODk4MmUzMTJmMmIxYzg0Mjc0MzBhZDg0MDNmZGQxNTc2NTY0NzcwZTYwNzhiZTJhLDEsMQ%3D%3D",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-09-28T14:23:45.441Z",
+    "sessionId": "bosser-mg3sinfl-cenzrvot7",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mg3sinfl-cenzrvot7"
+    },
+    "url": "https://www.linkedin.com/mynetwork?skipRedirect=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_notifications%3BjOq4D5lTRdCDRkAQi8J%2FQQ%3D%3D",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-03T18:01:10.335Z",
+    "sessionId": "bosser-mgb5hi9r-at37j37nz",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgb5hi9r-at37j37nz"
     },
     "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-04T16:51:28.953Z",
+    "sessionId": "bosser-mgcifqk8-mxgqzwhhe",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgcifqk8-mxgqzwhhe"
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:45:31.100Z",
+    "sessionId": "bosser-mgd7xzrw-ao9nuyva2",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd7xzrw-ao9nuyva2"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:45:31.102Z",
+    "sessionId": "bosser-mgd7xzrw-ao9nuyva2",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:45:31.102Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:45:31.133Z",
+    "sessionId": "bosser-mgd7xzrw-ao9nuyva2",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.1",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:45:31.133Z",
+    "sessionId": "bosser-mgd7xzrw-ao9nuyva2",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:27.725Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd7z7gt-er6m9w5ba"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:27.727Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:46:27.727Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:27.754Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.1",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:27.754Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:29.213Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:29.213Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:29.236Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:29.236Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.447Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.448Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.457Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.457Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.457Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.457Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.462Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:33.463Z",
+    "sessionId": "bosser-mgd7z7gt-er6m9w5ba",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:43.253Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd7zjg5-svxelzhm5"
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:43.594Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd7zjpm-j9s1f8kkh"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:43.595Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:46:43.595Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:43.617Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.1",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:43.617Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:45.809Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:45.809Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:45.822Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:45.822Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.276Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.276Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.285Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.285Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.285Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.285Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.293Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+        "stack": "Error: Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n\n    at BosserLinkedInPopup.executeNextPublishingStep (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:346:27)\n    at async BosserLinkedInPopup.startLinkedInPublishing (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:275:17)"
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.293Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "ERROR",
+    "message": "Code execution failed in content script",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+        "stack": "Error: Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n\n    at BosserLinkedInContent.executeCodeFromServer (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:614:19)\n    at BosserLinkedInContent.handleMessage (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:211:22)\n    at chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:25:18"
+      }
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.290Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "INFO",
+    "message": "Content script received executeCode request",
+    "data": {
+      "step": "navigate_to_editor"
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.291Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "INFO",
+    "message": "Executing server code for step: navigate_to_editor",
+    "data": {},
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.292Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "ERROR",
+    "message": "Failed to execute step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "EvalError",
+        "message": "Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+        "stack": "EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n\n    at new Function (<anonymous>)\n    at BosserLinkedInContent.executeCodeFromServer (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:605:37)\n    at BosserLinkedInContent.handleMessage (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:211:22)\n    at chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:25:18"
+      }
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:47.294Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.525Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.526Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.536Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.536Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.536Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.536Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.543Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+        "stack": "Error: Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n\n    at BosserLinkedInPopup.executeNextPublishingStep (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:346:27)\n    at async BosserLinkedInPopup.startLinkedInPublishing (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:275:17)"
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.542Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "ERROR",
+    "message": "Code execution failed in content script",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+        "stack": "Error: Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n\n    at BosserLinkedInContent.executeCodeFromServer (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:614:19)\n    at BosserLinkedInContent.handleMessage (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:211:22)\n    at chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:25:18"
+      }
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.542Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "INFO",
+    "message": "Content script received executeCode request",
+    "data": {
+      "step": "navigate_to_editor"
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.542Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "INFO",
+    "message": "Executing server code for step: navigate_to_editor",
+    "data": {},
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.542Z",
+    "sessionId": "bosser-mgd7zjg5-svxelzhm5",
+    "level": "ERROR",
+    "message": "Failed to execute step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "EvalError",
+        "message": "Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+        "stack": "EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n\n    at new Function (<anonymous>)\n    at BosserLinkedInContent.executeCodeFromServer (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:605:37)\n    at BosserLinkedInContent.handleMessage (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:211:22)\n    at chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/content.js:25:18"
+      }
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:46:59.544Z",
+    "sessionId": "bosser-mgd7zjpm-j9s1f8kkh",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Code execution failed: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://30f5f3db-9d84-4d16-aafe-fae8d6912f9e/\".\n",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:20.702Z",
+    "sessionId": "bosser-mgd8478e-tj5p3a8ad",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd8478e-tj5p3a8ad"
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:20.922Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd847ei-8dxxz71jr"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:20.923Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:50:20.923Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:20.951Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.3",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:20.952Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:22.392Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:22.392Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:22.416Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:22.416Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.909Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.909Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.936Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.936Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.937Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.937Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.942Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:23.942Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.094Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.094Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.103Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.103Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.103Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.103Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.108Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:50:32.109Z",
+    "sessionId": "bosser-mgd847ei-8dxxz71jr",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:28.422Z",
+    "sessionId": "bosser-mgd86xs6-ds0rm22ku",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd86xs6-ds0rm22ku"
+    },
+    "url": "https://www.linkedin.com/feed/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:28.654Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd86xym-g2zq5oe6i"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:28.658Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:52:28.658Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:28.690Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.4",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:28.690Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:30.910Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:30.910Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:30.934Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:30.935Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.609Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.609Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.618Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.618Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.618Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.618Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.621Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "ERROR",
+    "message": "Content script connection failed",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.622Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Content script not loaded. Please refresh the LinkedIn page and reload the extension.",
+        "stack": "Error: Content script not loaded. Please refresh the LinkedIn page and reload the extension.\n    at BosserLinkedInPopup.executeNextPublishingStep (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:326:23)\n    at async BosserLinkedInPopup.startLinkedInPublishing (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:280:17)"
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:32.622Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Content script not loaded. Please refresh the LinkedIn page and reload the extension.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:43.242Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:43.242Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:43.262Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:43.262Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.476Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.477Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.487Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.488Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.488Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.488Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.489Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "ERROR",
+    "message": "Content script connection failed",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.490Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Content script not loaded. Please refresh the LinkedIn page and reload the extension.",
+        "stack": "Error: Content script not loaded. Please refresh the LinkedIn page and reload the extension.\n    at BosserLinkedInPopup.executeNextPublishingStep (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:326:23)\n    at async BosserLinkedInPopup.startLinkedInPublishing (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:280:17)"
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:52:47.490Z",
+    "sessionId": "bosser-mgd86xym-g2zq5oe6i",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Content script not loaded. Please refresh the LinkedIn page and reload the extension.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:14.148Z",
+    "sessionId": "bosser-mgd87x2c-9de1qa4or",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd87x2c-9de1qa4or"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:14.150Z",
+    "sessionId": "bosser-mgd87x2c-9de1qa4or",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:53:14.150Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:14.168Z",
+    "sessionId": "bosser-mgd87x2c-9de1qa4or",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.4",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:14.168Z",
+    "sessionId": "bosser-mgd87x2c-9de1qa4or",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "profile_articles",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:25.808Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd88628-7om754e1z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:25.809Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:53:25.809Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:25.830Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.4",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:25.830Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.061Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.061Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.102Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.102Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.794Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.794Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.800Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.801Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.801Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.801Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.803Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "ERROR",
+    "message": "Content script connection failed",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.804Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Content script not loaded. Please refresh the LinkedIn page and reload the extension.",
+        "stack": "Error: Content script not loaded. Please refresh the LinkedIn page and reload the extension.\n    at BosserLinkedInPopup.executeNextPublishingStep (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:326:23)\n    at async BosserLinkedInPopup.startLinkedInPublishing (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:280:17)"
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:27.804Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Content script not loaded. Please refresh the LinkedIn page and reload the extension.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:45.376Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Testing content script connection",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:45.376Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Testing content script connection...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:45.378Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "ERROR",
+    "message": "Content script connection test failed",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:45.379Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: ❌ Connection failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:47.380Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Try: 1) Refresh LinkedIn page 2) Reload extension 3) Check if on linkedin.com",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:53.858Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Testing content script connection",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:53.858Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Testing content script connection...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:53.860Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "ERROR",
+    "message": "Content script connection test failed",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Could not establish connection. Receiving end does not exist.",
+        "stack": "Error: Could not establish connection. Receiving end does not exist."
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:53.861Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: ❌ Connection failed: Could not establish connection. Receiving end does not exist.",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:53:55.862Z",
+    "sessionId": "bosser-mgd88628-7om754e1z",
+    "level": "INFO",
+    "message": "Status: Try: 1) Refresh LinkedIn page 2) Reload extension 3) Check if on linkedin.com",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:45.867Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Logger initialized",
+    "data": {
+      "sessionId": "bosser-mgd89vu3-y509dv6hs"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:45.868Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Popup initializing",
+    "data": {
+      "timestamp": "2025-10-05T04:54:45.868Z"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:45.894Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Version info updated",
+    "data": {
+      "pluginVersion": "2.0.5",
+      "codeVersion": "3.0.0"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:45.894Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "SUCCESS",
+    "message": "Popup initialized successfully",
+    "data": {
+      "pageType": "linkedin_other",
+      "scrapedCount": 2
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:49.076Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Loading latest draft from Bosser project",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:49.076Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Loading latest article from Bosser server...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:49.102Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Latest article loaded successfully!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:49.102Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "SUCCESS",
+    "message": "Article loaded from server",
+    "data": {
+      "title": "The mechanical duck and processes",
+      "contentLength": 4505,
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "slug": "the-mechanical-duck-and-processes",
+      "hasCover": true
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.575Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.575Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.581Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.581Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.581Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.581Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.584Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Content script connection confirmed",
+    "data": {
+      "url": "https://www.linkedin.com/feed/",
+      "title": "Feed | LinkedIn",
+      "type": "test"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.588Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Unknown action in test mode",
+        "stack": "Error: Unknown action in test mode\n    at BosserLinkedInPopup.executeNextPublishingStep (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:368:27)\n    at async BosserLinkedInPopup.startLinkedInPublishing (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:280:17)"
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:50.589Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Unknown action in test mode",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:53.858Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Testing content script connection",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:53.858Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Testing content script connection...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:53.861Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: ✅ Content script working!",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:54:53.861Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "SUCCESS",
+    "message": "Content script connection test passed",
+    "data": {
+      "url": "https://www.linkedin.com/feed/",
+      "type": "test",
+      "title": "Feed | LinkedIn"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.560Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Starting LinkedIn publishing workflow",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.560Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Creating publishing plan...",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.569Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Publishing plan created with 4 steps. Starting...",
+    "data": {
+      "type": "success"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.569Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "SUCCESS",
+    "message": "Publishing plan created",
+    "data": {
+      "article": "The mechanical duck and processes",
+      "steps": 4
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.569Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Executing step 1: Navigate to LinkedIn article editor",
+    "data": {},
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.569Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: Step 1/4: Navigate to LinkedIn article editor",
+    "data": {
+      "type": "info"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.571Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Content script connection confirmed",
+    "data": {
+      "url": "https://www.linkedin.com/feed/",
+      "title": "Feed | LinkedIn",
+      "type": "test"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.576Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "ERROR",
+    "message": "Error executing step navigate_to_editor",
+    "data": {
+      "error": {
+        "name": "Error",
+        "message": "Unknown action in test mode",
+        "stack": "Error: Unknown action in test mode\n    at BosserLinkedInPopup.executeNextPublishingStep (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:368:27)\n    at async BosserLinkedInPopup.startLinkedInPublishing (chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.js:280:17)"
+      }
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
+  },
+  {
+    "timestamp": "2025-10-05T04:55:00.576Z",
+    "sessionId": "bosser-mgd89vu3-y509dv6hs",
+    "level": "INFO",
+    "message": "Status: ❌ Step failed: Unknown action in test mode",
+    "data": {
+      "type": "error"
+    },
+    "url": "chrome-extension://cncljpnpiahclmolijhohegkaehaeoal/popup.html",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0."
   }
 ]

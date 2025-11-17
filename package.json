@@ -10,12 +10,14 @@
     "record-cover": "node scripts/record-cover-video.js",
     "test-local": "./scripts/test_local.sh",
     "install-deps": "npm install",
-    "log-server": "node log-server.js"
+    "plugin-commander": "node plugin-commander.js",
+    "log-server": "node plugin-commander.js"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
     "front-matter": "^4.0.2",
-    "marked": "^9.1.2"
+    "marked": "^9.1.2",
+    "playwright": "^1.55.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

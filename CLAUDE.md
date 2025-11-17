@@ -42,6 +42,13 @@ A professional article showcase site with Chrome extension for LinkedIn automati
 
 ## Development Commands
 
+### Chrome Extension Versioning
+**IMPORTANT**: Always bump the plugin version in `chrome-extension/manifest.json` and `chrome-extension/popup.html` when making ANY changes to the Chrome extension code. This ensures users get the latest functionality and helps with debugging.
+
+- Patch version (x.y.Z): Bug fixes, minor tweaks
+- Minor version (x.Y.0): New features, significant changes  
+- Major version (X.0.0): Breaking changes, major feature overhauls
+
 ### Local Testing
 ```bash
 # Quick local server
@@ -61,7 +68,10 @@ npm run sync-articles
 # Generate animated cover only
 npm run generate-cover
 
-# (Note: Video recording disabled - use browser plugin for LinkedIn)
+# Record cover animation (webm format works on LinkedIn)
+node scripts/record-cover-video.js covers/cover.html covers/cover.webm
+
+# (Note: Video recording with Playwright works fine - LinkedIn publishing disabled)
 ```
 
 ## Article Creation Workflow
@@ -111,14 +121,22 @@ This automated process will:
 - Use recorded video for LinkedIn and other social media posts
 
 #### 4. Publishing Workflow
-**Browser Plugin Approach** (Recommended):
-1. Review generated article at: `https://anttitevanlinna.github.io/bosser/articles/your-slug.html`
-2. Open `/covers/cover.html` in browser
-3. Use browser plugin to record cover animation video
-4. Use browser plugin to publish to LinkedIn with recorded cover
-5. Deploy to site via git commit and push
+**Optimized LinkedIn Publishing Process**:
+1. **Publish to Bosser site**: Deploy article via git commit and push to GitHub Pages
+2. **Generate cover assets**: Create animated cover video and static thumbnail
+3. **Copy-paste to LinkedIn**: Copy content directly from published Bosser article (only 2 clicks)
+   - Navigate to: `https://anttitevanlinna.github.io/bosser/articles/your-slug.html`
+   - Select and copy the article content
+   - Paste into LinkedIn article editor
+   - Upload generated cover video/thumbnail
 
-**Note**: Playwright automation for LinkedIn publishing was removed due to compatibility issues. The browser plugin approach provides more reliable LinkedIn publishing while maintaining the excellent cover generation system.
+**Benefits of this approach**:
+- **Simplest workflow**: Copy-paste is faster and more reliable than automation
+- **Consistent formatting**: Published HTML ensures proper LinkedIn formatting
+- **Asset ready**: Cover materials generated and available for immediate use
+- **No browser extension dependency**: Works with standard browser functionality
+
+**Note**: This replaces previous browser plugin automation. The copy-paste approach from the published site is the most efficient method, requiring only 2 clicks and eliminating technical complexity while maintaining excellent cover generation capabilities.
 
 #### 5. Article Structure & Requirements
 - **Tags**: Essential for category filtering system - ensure all articles have relevant tags
@@ -130,8 +148,11 @@ This automated process will:
 #### 6. Data Flow Integration
 ```
 Draft Markdown → Processing Script → Article JSON → Site Index → GitHub Pages
-                                ↓
-                        Animated Cover HTML → Browser Plugin → LinkedIn
+                                ↓                                    ↓
+                        Animated Cover Assets              Published Article
+                        (Video + Thumbnail)                      ↓
+                                ↓                         Copy-Paste (2 clicks)
+                           LinkedIn Upload  ←──────────────── LinkedIn Editor
 ```
 
 The system maintains article metadata in `/data/articles_index.json` and copies to `/docs/data/` for the live site, ensuring category filtering and article discovery work correctly.

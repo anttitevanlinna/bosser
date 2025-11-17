@@ -1,6 +1,6 @@
 {
-  "total_articles": 11,
-  "last_updated": "2025-10-18T05:33:09.808Z",
+  "total_articles": 12,
+  "last_updated": "2025-11-17T17:45:05.105Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -62,6 +62,22 @@
       "content_length": 3112,
       "processed_at": "2025-08-03T09:37:07.185217",
       "tags": []
+    },
+    {
+      "title": "Organisational change and cycle racing",
+      "slug": "organisational-change-and-cycle-racing",
+      "url": "Unknown URL",
+      "publish_date": "2025-11-17",
+      "content_length": 4572,
+      "processed_at": "2025-11-17T17:45:05.088Z",
+      "estimated_reading_time": "6 min",
+      "status": "ready-for-review",
+      "tags": [
+        "leadership",
+        "change",
+        "strategy",
+        "management"
+      ]
     },
     {
       "title": "Skating where the puck is going",

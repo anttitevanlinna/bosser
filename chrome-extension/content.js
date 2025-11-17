@@ -12,22 +12,35 @@ class BosserLinkedInContent {
         if (this.isInitialized) return;
         this.isInitialized = true;
         
-        console.log('Bosser LinkedIn Assistant loaded on:', window.location.href);
+        console.log('🚀 Bosser LinkedIn Assistant loaded on:', window.location.href);
         
-        // Initialize dynamic executor
-        this.executor = new window.DynamicExecutor();
+        // Initialize dynamic executor (optional - not required for basic functionality)
+        try {
+            if (window.DynamicExecutor) {
+                this.executor = new window.DynamicExecutor();
+                console.log('✅ Dynamic executor initialized');
+            } else {
+                console.warn('⚠️ Dynamic executor not available, using fallback methods');
+            }
+        } catch (error) {
+            console.warn('⚠️ Failed to initialize dynamic executor:', error);
+        }
         
         // Add visual indicators for Bosser functionality
         this.addBosserIndicators();
         
         // Listen for messages from popup
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+            console.log('📨 Content script received message:', request.action);
             this.handleMessage(request, sender, sendResponse);
             return true; // Keep message channel open
         });
         
         // Monitor page changes (LinkedIn is a SPA)
         this.observePageChanges();
+        
+        // Send initialization signal to help with debugging
+        console.log('✅ Bosser content script fully initialized');
     }
     
     addBosserIndicators() {
@@ -204,6 +217,19 @@ class BosserLinkedInContent {
                         type: this.detectPageType()
                     }
                 });
+                break;
+                
+            case 'executeCode':
+                logger?.info('Content script received executeCode request', { step: request.step });
+                this.executeCodeFromServer(request.code, request.step)
+                    .then(result => {
+                        logger?.success('Code execution completed in content script', result);
+                        sendResponse({ success: true, data: result });
+                    })
+                    .catch(error => {
+                        logger?.error('Code execution failed in content script', error);
+                        sendResponse({ success: false, error: error.message });
+                    });
                 break;
                 
             default:
@@ -579,6 +605,109 @@ class BosserLinkedInContent {
         } catch (error) {
             console.error('Error filling form:', error);
             throw error;
+        }
+    }
+    
+    async executeCodeFromServer(codeString, stepName) {
+        try {
+            const logger = window.BosserLogger;
+            logger?.info(`Executing server code for step: ${stepName}`);
+            
+            // Parse the server response as JSON instead of executing as code (CSP-safe)
+            let instructions;
+            try {
+                instructions = JSON.parse(codeString);
+            } catch (parseError) {
+                // Fallback: treat as a simple action name
+                instructions = { action: stepName, data: codeString };
+            }
+            
+            const result = await this.executeInstructions(instructions, stepName);
+            
+            logger?.success(`Step ${stepName} executed successfully`, result);
+            return result;
+            
+        } catch (error) {
+            const logger = window.BosserLogger;
+            logger?.error(`Failed to execute step ${stepName}`, error);
+            throw new Error(`Code execution failed: ${error.message}`);
+        }
+    }
+    
+    async executeInstructions(instructions, stepName) {
+        const logger = window.BosserLogger;
+        
+        switch (instructions.action || stepName) {
+            case 'navigate_to_editor':
+                logger?.info('Executing navigate_to_editor step');
+                if (!window.location.href.includes('/article/new')) {
+                    window.location.href = 'https://www.linkedin.com/article/new/';
+                    return { success: true, message: 'Navigating to editor...' };
+                }
+                return { success: true, message: 'Already on editor page' };
+                
+            case 'fill_title':
+                logger?.info('Executing fill_title step');
+                const title = instructions.title || instructions.data?.title;
+                if (!title) throw new Error('No title provided in instructions');
+                const titleSuccess = this.fillTitle(title);
+                return { success: titleSuccess, message: titleSuccess ? 'Title filled' : 'Title field not found' };
+                
+            case 'fill_content':
+                logger?.info('Executing fill_content step');
+                const title = instructions.title;
+                const content = instructions.content || instructions.data?.content;
+                const tags = instructions.tags || instructions.data?.tags || [];
+                
+                let results = { titleFilled: false, contentFilled: false, errors: [] };
+                
+                // Fill title first if provided
+                if (title) {
+                    results.titleFilled = this.fillTitle(title);
+                    if (!results.titleFilled) {
+                        results.errors.push('Title field not found');
+                    }
+                }
+                
+                // Fill content if provided
+                if (content) {
+                    results.contentFilled = this.fillContent(content, tags);
+                    if (!results.contentFilled) {
+                        results.errors.push('Content field not found');
+                    }
+                }
+                
+                const success = results.titleFilled || results.contentFilled;
+                return { 
+                    success, 
+                    message: success ? 'Form filled successfully' : 'No fields could be filled',
+                    details: results
+                };
+                
+            case 'upload_cover':
+                logger?.info('Executing upload_cover step');
+                return { success: true, message: 'Cover upload step - manual action required' };
+                
+            case 'click_element':
+                logger?.info('Executing click_element step');
+                const selector = instructions.selector;
+                if (!selector) throw new Error('No selector provided for click action');
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.click();
+                    return { success: true, message: `Clicked element: ${selector}` };
+                } else {
+                    return { success: false, message: `Element not found: ${selector}` };
+                }
+                
+            case 'wait':
+                logger?.info('Executing wait step');
+                const duration = instructions.duration || 1000;
+                await new Promise(resolve => setTimeout(resolve, duration));
+                return { success: true, message: `Waited ${duration}ms` };
+                
+            default:
+                throw new Error(`Unknown action: ${instructions.action || stepName}`);
         }
     }
     
