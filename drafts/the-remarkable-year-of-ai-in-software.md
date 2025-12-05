@@ -17,9 +17,9 @@ Year 2025 has been a remarkable year. December 2024 we propeller heads were gene
 
 SWEBench is one of the benchmarks of agent-based code generation. This is the most cited score among	many benchmarks of coding abilities of LLMs. 
 
-At December 2024 we were at 63%
-At December 2025 we are 81%
-At October 2024 we were at 49% !
+At October 2024 we were at 49%  
+At December 2024 we were at 63%  
+At December 2025 we are at 81%!
 
 To put these into context 49% is comparable to novice or early career software engineer. 80% can be considered a fluent professional. 
 
