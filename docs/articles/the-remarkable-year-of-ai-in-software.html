@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/the-remarkable-year-of-ai-in-software.html">
     
+    <style>
+        .enlargeable-image {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .enlargeable-image:hover {
+            opacity: 0.9;
+        }
+        
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: calc(100vw - 40px);
+            max-height: calc(100vh - 40px);
+            width: auto;
+            height: auto;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .close-modal:hover {
+            color: #ccc;
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #f1f1f1;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+    
     <!-- Open Graph -->
     <meta property="og:title" content="The remarkable year of Ai in Software">
     <meta property="og:description" content="The remarkable year of Ai in Software...">
@@ -50,7 +110,7 @@
 <p>I wanted to make the argument to “make your own projection” at summer. I realised there is huge scaling at hand. </p>
 <p>So I coded a small app that both researches the scaling and plots it nicely. That became the site at: <a href="https://anttitevanlinna.github.io/swe-bench-progression/">https://anttitevanlinna.github.io/swe-bench-progression/</a></p>
 <p>Here&#39;s the main picture of the site:</p>
-<p><img src="../data/images/swe-bench-progression-chart.png" alt="SWE-Bench Progression Chart"></p>
+<p><img src="../data/images/swe-bench-progression-chart.png" alt="SWE-Bench Progression Chart" class="enlargeable-image" onclick="openImageModal(this)"></p>
 <p>Compute has scaled non-linearly. It is on “roadmap” with Nvidia that compute scales from current 15 PFlops to 100 PFlops by end of 2027. Context lengths have gone from 100K to 200K to 1M and now up to 2M. </p>
 <p>I can only see that code generation quality has scaled linearly over the last 18 months. We went from curiosity to deploy to main operations in months. </p>
 <p>Make your own prediction - However much I talk, I will not convince you. Eventually you have to make your own evaluation. </p>
@@ -73,5 +133,48 @@
             </div>
         </footer>
     </article>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+        <span class="close-modal" onclick="closeImageModal()">&times;</span>
+        <img id="modalImage" class="modal-content" alt="">
+        <div id="modalCaption" class="image-caption"></div>
+    </div>
+
+    <script>
+        function openImageModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            caption.innerHTML = img.alt;
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+        
+        // Prevent modal from closing when clicking on the image
+        document.getElementById('modalImage').onclick = function(event) {
+            event.stopPropagation();
+        };
+    </script>
 </body>
 </html>
