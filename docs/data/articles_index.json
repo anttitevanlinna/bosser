@@ -1,6 +1,6 @@
 {
-  "total_articles": 12,
-  "last_updated": "2025-11-22T05:39:26.502Z",
+  "total_articles": 13,
+  "last_updated": "2025-12-05T17:52:01.046Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -87,6 +87,22 @@
       "content_length": 5973,
       "processed_at": "2025-08-03T09:37:07.028311",
       "tags": []
+    },
+    {
+      "title": "The remarkable year of Ai in Software",
+      "slug": "the-remarkable-year-of-ai-in-software",
+      "url": "Unknown URL",
+      "publish_date": "2025-12-05",
+      "content_length": 2639,
+      "processed_at": "2025-12-05T17:52:01.024Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "software",
+        "technology",
+        "strategy"
+      ]
     },
     {
       "title": "The mechanical duck and processes",
