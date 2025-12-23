@@ -46,7 +46,7 @@ A professional article showcase site with Chrome extension for LinkedIn automati
 **IMPORTANT**: Always bump the plugin version in `chrome-extension/manifest.json` and `chrome-extension/popup.html` when making ANY changes to the Chrome extension code. This ensures users get the latest functionality and helps with debugging.
 
 - Patch version (x.y.Z): Bug fixes, minor tweaks
-- Minor version (x.Y.0): New features, significant changes  
+- Minor version (x.Y.0): New features, significant changes
 - Major version (X.0.0): Breaking changes, major feature overhauls
 
 ### Local Testing
@@ -191,7 +191,7 @@ Articles stored in `data/articles_index.json` with structure:
   "total_articles": 10,
   "articles": [{
     "title": "Article Title",
-    "slug": "article-slug", 
+    "slug": "article-slug",
     "tags": ["Category1", "Category2"],
     "content_length": 4094,
     "publish_date": "2025-08-31"
