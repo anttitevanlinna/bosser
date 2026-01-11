@@ -1,6 +1,6 @@
 {
-  "total_articles": 14,
-  "last_updated": "2025-12-23T03:24:15.534Z",
+  "total_articles": 15,
+  "last_updated": "2026-01-11T15:42:45.606Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -87,6 +87,21 @@
       "content_length": 5973,
       "processed_at": "2025-08-03T09:37:07.028311",
       "tags": []
+    },
+    {
+      "title": "The flywheel",
+      "slug": "the-flywheel",
+      "url": "Unknown URL",
+      "publish_date": "2026-01-11",
+      "content_length": 6956,
+      "processed_at": "2026-01-11T15:42:45.585Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ]
     },
     {
       "title": "The ceiling",
