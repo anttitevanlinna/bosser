@@ -16,7 +16,7 @@ Subtitle: Verge of anything is possible
 The flywheel is a business strategy and growth concept. Basically, you find a virtuous cycle that just keeps going. Like having a super-great product. Then more customers means more referrals to next customers. See how that just by itself. I suppose the most famous is the Amazon flywheel where more retailers means better selection. Better selection means better experience which brings in traffic (customers). That in turn means more retailers coming for the traffic. The Amazon is actually a double flywheel where the second flywheel is the growth-cost-lower-prices. 
 
 
-#Agents that build agents
+## Agents that build agents
 
 The simplest way to build an agent is to take on agentic coding tool. The famous ones are Claude Code, Codex and Cursor. 
 
@@ -32,7 +32,7 @@ Let’s assume you are building something simple enough. Like an email manager a
 
 Code generating agents build other agents. How meta? 
 
-#The agent flywheel
+## The agent flywheel
 
 See how this is kind of starting to get closer to a flywheel. But a flywheel really needs the feedback from success to initial drivers to really start compounding growth. 
 
@@ -51,7 +51,7 @@ Create X. While you create X, you must create structured learning and accumulate
 Periodically, as part of all session to create agents:
 Reflect on the current session. What is working and what is not. Ensure the next sessions are better by memorising the learnings. Change your definition to improve for the next round.  
 
-#The current limits to the flywheel
+## The current limits to the flywheel
 
 I have done my share of trying to make agents that learn. The cutting edge code generating agents are very close to something that can learn. 
 
@@ -63,7 +63,7 @@ The other limit is the ceiling of meaning and correctness. Right and wrong are u
 
 The third ceiling is the processing. The more complex problem you give, then more computation is needed. Simple email triage can be simple and quick per email. But anything beyond gets exponentially slower. The more data, then more dimensions, the more possibilities. The more it will take for the Agent (LLM) to answer. The more it will thereafter still take to check if the agent made any sense. 
 
-#The Ralph Wiggum loop of learning
+## The Ralph Wiggum loop of learning
 
 People have been raving about the Claude Code Ralph Wiggum loop over the last weeks online. This loop is basically telling the LLM-based Claude Code to keep going when it is trying to call something done and dusted. Often it really not yet is. The Ralph Wiggum loop basically urges the LLM to keep going until the goal has been met. 
 
