@@ -3,7 +3,7 @@ title: "Scenario play - Everybody builds software"
 slug: "scenario-play-everybody-builds-software"
 author: "Antti Tevanlinna"
 created_at: "2026-01-11"
-tags: ["strategy", "leadership", "ai"]
+tags: ["strategy", "leadership"]
 newsletter: false
 estimated_reading_time: "5 min"
 ---
@@ -57,6 +57,24 @@ Stretch the thought just a bit more. If you have B2B customers, they are certain
 
 Consumers…. They can speak things into existence. Just prompt. The person has an agent. It likely will be valuable. Some fail. Some succeed. 
 
-Consumers will create their own software. 
+Consumers will create their own software.
 
 Missing enablers? Your arena of innovation
+
+## Epilogue after checking in with Claude - Thinking only is not enough
+
+I used Ai to publish the article on my own site. I was not certain I had all the angles yet in my mind. My hunch turned out right. I was missing acting on the future.
+
+I have had the fortune of acting on the Ai-future over the last months. I have acted on the trends. I have tried my best at affecting the future as it has unfolded. I have learned more than half what this is all about by my mistakes and attempts.
+
+Acting creates the visceral proof whether or not something is real. You can read up on the internet all you like. You can follow the academia. You might develop anticipation. You don't develop data in your own domain and your own world with that.
+
+Acting based on the scenario is the test whether or not what you predicted is real.
+
+Predict, act accordingly, observe, understand. Keep teaching your brain.
+
+---
+
+**Further reading:**
+- [Risto Siilasmaa: Developing Strategic Foresight](https://www.nbforum.com/newsroom/blog/risto-siilasmaa-developing-strategic-foresight/) - Nordic Business Forum
+- [Scenario Planning: A Tool for Strategic Planning](https://www.nbforum.com/newsroom/blog/scenario-planning-tool-for-strategic-planning/) - Nordic Business Forum
