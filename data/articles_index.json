@@ -1,6 +1,6 @@
 {
-  "total_articles": 16,
-  "last_updated": "2026-01-24T18:16:51.780Z",
+  "total_articles": 17,
+  "last_updated": "2026-02-07T16:07:38.691Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -64,18 +64,32 @@
       "tags": []
     },
     {
-      "title": "Scenario play - Everybody builds software",
-      "slug": "scenario-play-everybody-builds-software",
+      "title": "Selling agents?",
+      "slug": "selling-agents",
       "url": "Unknown URL",
-      "publish_date": "2026-01-11",
-      "content_length": 3833,
-      "processed_at": "2026-01-24T18:16:51.758Z",
+      "publish_date": "2026-01-25",
+      "content_length": 2712,
+      "processed_at": "2026-02-07T16:07:38.667Z",
       "estimated_reading_time": "5 min",
       "status": "ready-for-review",
       "tags": [
         "strategy",
         "leadership",
         "ai"
+      ]
+    },
+    {
+      "title": "Scenario play - Everybody builds software",
+      "slug": "scenario-play-everybody-builds-software",
+      "url": "Unknown URL",
+      "publish_date": "2026-01-11",
+      "content_length": 5081,
+      "processed_at": "2026-01-25T07:36:21.182Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership"
       ]
     },
     {
@@ -150,6 +164,22 @@
       "tags": []
     },
     {
+      "title": "Vision prepares for serendipity",
+      "slug": "vision-prepares-for-serendipity",
+      "url": "Unknown URL",
+      "publish_date": "2025-10-18",
+      "content_length": 4241,
+      "processed_at": "2025-10-18T05:33:09.787Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "vision",
+        "leadership",
+        "planning"
+      ]
+    },
+    {
       "title": "The mechanical duck and processes",
       "slug": "the-mechanical-duck-and-processes",
       "url": "Unknown URL",
@@ -173,22 +203,6 @@
       "content_length": 4878,
       "processed_at": "2025-08-03T09:37:07.269943",
       "tags": []
-    },
-    {
-      "title": "Vision prepares for serendipity",
-      "slug": "vision-prepares-for-serendipity",
-      "url": "Unknown URL",
-      "publish_date": "2025-10-18",
-      "content_length": 4241,
-      "processed_at": "2025-10-18T05:33:09.787Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "vision",
-        "leadership",
-        "planning"
-      ]
     },
     {
       "title": "Visioning",
