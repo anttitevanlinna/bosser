@@ -1,6 +1,6 @@
 {
-  "total_articles": 17,
-  "last_updated": "2026-02-07T16:07:38.691Z",
+  "total_articles": 18,
+  "last_updated": "2026-02-22T14:35:05.269Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -64,6 +64,21 @@
       "tags": []
     },
     {
+      "title": "Shifting toward customers - finding the truth",
+      "slug": "shifting-toward-customers-finding-the-truth",
+      "url": "Unknown URL",
+      "publish_date": "2026-02-08",
+      "content_length": 3859,
+      "processed_at": "2026-02-22T14:35:05.250Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ]
+    },
+    {
       "title": "Selling agents?",
       "slug": "selling-agents",
       "url": "Unknown URL",
@@ -108,6 +123,31 @@
       ]
     },
     {
+      "title": "Organisational change and cycle racing",
+      "slug": "organisational-change-and-cycle-racing",
+      "url": "Unknown URL",
+      "publish_date": "2025-11-17",
+      "content_length": 4705,
+      "processed_at": "2025-11-22T05:39:26.480Z",
+      "estimated_reading_time": "6 min",
+      "status": "ready-for-review",
+      "tags": [
+        "leadership",
+        "change",
+        "strategy",
+        "management"
+      ]
+    },
+    {
+      "title": "Skating where the puck is going",
+      "slug": "skating-where-the-puck-is-going",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 5973,
+      "processed_at": "2025-08-03T09:37:07.028311",
+      "tags": []
+    },
+    {
       "title": "The ceiling",
       "slug": "the-ceiling",
       "url": "Unknown URL",
@@ -137,31 +177,6 @@
         "technology",
         "strategy"
       ]
-    },
-    {
-      "title": "Organisational change and cycle racing",
-      "slug": "organisational-change-and-cycle-racing",
-      "url": "Unknown URL",
-      "publish_date": "2025-11-17",
-      "content_length": 4705,
-      "processed_at": "2025-11-22T05:39:26.480Z",
-      "estimated_reading_time": "6 min",
-      "status": "ready-for-review",
-      "tags": [
-        "leadership",
-        "change",
-        "strategy",
-        "management"
-      ]
-    },
-    {
-      "title": "Skating where the puck is going",
-      "slug": "skating-where-the-puck-is-going",
-      "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 5973,
-      "processed_at": "2025-08-03T09:37:07.028311",
-      "tags": []
     },
     {
       "title": "Vision prepares for serendipity",
