@@ -1,6 +1,6 @@
 {
-  "total_articles": 18,
-  "last_updated": "2026-02-22T14:35:05.269Z",
+  "total_articles": 19,
+  "last_updated": "2026-03-05T17:40:44.752Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -44,6 +44,22 @@
       "content_length": 3233,
       "processed_at": "2025-08-03T09:37:06.688725",
       "tags": []
+    },
+    {
+      "title": "For innovators",
+      "slug": "for-innovators",
+      "url": "Unknown URL",
+      "publish_date": "2026-02-22",
+      "content_length": 3641,
+      "processed_at": "2026-03-05T17:40:44.723Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "future",
+        "ai"
+      ]
     },
     {
       "title": "Imagination feeds off on examples",
@@ -123,6 +139,22 @@
       ]
     },
     {
+      "title": "The remarkable year of Ai in Software",
+      "slug": "the-remarkable-year-of-ai-in-software",
+      "url": "Unknown URL",
+      "publish_date": "2025-12-05",
+      "content_length": 2645,
+      "processed_at": "2025-12-05T17:56:10.844Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "software",
+        "technology",
+        "strategy"
+      ]
+    },
+    {
       "title": "Organisational change and cycle racing",
       "slug": "organisational-change-and-cycle-racing",
       "url": "Unknown URL",
@@ -160,22 +192,6 @@
         "strategy",
         "leadership",
         "ai"
-      ]
-    },
-    {
-      "title": "The remarkable year of Ai in Software",
-      "slug": "the-remarkable-year-of-ai-in-software",
-      "url": "Unknown URL",
-      "publish_date": "2025-12-05",
-      "content_length": 2645,
-      "processed_at": "2025-12-05T17:56:10.844Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "ai",
-        "software",
-        "technology",
-        "strategy"
       ]
     },
     {
