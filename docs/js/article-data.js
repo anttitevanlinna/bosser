@@ -92,9 +92,19 @@ class ArticleDataProcessor {
             "time-to-rethink-your-knowledge-management": "Modern approaches to organizing and leveraging organizational knowledge in the AI era.",
             "inputs-to-strategy": "Key inputs and considerations for effective strategic planning in uncertain environments.",
             "imagination-feeds-off-on-examples": "How concrete examples fuel imagination and strategic thinking in complex problem-solving scenarios.",
-            "picturing-product-ownership": "Visualizing the product owner role through simple diagrams. How a stick-figure drawing helped clarify the position between user needs and company capabilities."
+            "picturing-product-ownership": "Visualizing the product owner role through simple diagrams. How a stick-figure drawing helped clarify the position between user needs and company capabilities.",
+            "the-ceiling": "GenAI removes coding as the limiting factor. Two new ceilings emerge: knowing what to build and doing it right. The frontiers that leaders will pursue.",
+            "the-flywheel": "Agents that build agents create compounding context. The flywheel accelerates until hitting three ceilings: memory, meaning, and processing. Ralph Wiggum loop included.",
+            "scenario-play-everybody-builds-software": "Playing with the future through scenarios. When everyone builds agents, what shifts? From CISOs to customers creating software. Prepared minds see patterns unfold.",
+            "selling-agents": "If everyone builds agents, who sells them? The death of bloated SaaS, consultants as agents, and finding business opportunities in human activities turned digital.",
+            "shifting-toward-customers-finding-the-truth": "Building with AI is easy. Finding customer truth is hard. Truth is subjective and segmented. Turn outward with evals and customer feedback.",
+            "for-innovators": "12 months immersed in agentic AI. The isolation of being ahead, the frustration when others don't see it, the vindication when the future catches up. Portfolio play.",
+            "the-mechanical-duck-and-processes": "Exploring how processes can create the illusion of capability while hiding fundamental limitations, like Vaucanson's famous mechanical duck.",
+            "vision-prepares-for-serendipity": "How a clear vision creates the conditions for recognizing and acting on unexpected opportunities when they arise.",
+            "organisational-change-and-cycle-racing": "Lessons from competitive cycling applied to organizational transformation. Pacing, momentum, and knowing when to sprint.",
+            "the-remarkable-year-of-ai-in-software": "Reflecting on a transformative year in AI and software development. The acceleration of capabilities and what it means for builders."
         };
-        
+
         const slug = this.titleToSlug(title);
         return excerpts[slug] || "Strategic insights for navigating complexity and driving meaningful progress in challenging environments.";
     }
@@ -116,8 +126,10 @@ class ArticleDataProcessor {
      * @returns {number} Reading time in minutes
      */
     static calculateReadingTime(contentLength) {
+        const averageWordLength = 6; // ~5 chars per word + 1 space
         const wordsPerMinute = 250;
-        return Math.max(1, Math.round((contentLength || 0) / wordsPerMinute));
+        const estimatedWords = (contentLength || 0) / averageWordLength;
+        return Math.max(1, Math.round(estimatedWords / wordsPerMinute));
     }
 
     /**

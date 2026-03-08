@@ -122,16 +122,28 @@ class ArticleSystem {
 
         // Add event listeners to category badges
         this.categoriesCloud.querySelectorAll('.category-badge').forEach(badge => {
+            // Click to toggle filter
+            badge.addEventListener('click', () => {
+                const category = badge.dataset.category;
+                if (this.activeCategory === category) {
+                    this.clearCategoryFiltering();
+                } else {
+                    this.applyCategoryFilter(category);
+                }
+            });
+
+            // Hover preview (optional, enhances discoverability)
             badge.addEventListener('mouseenter', () => {
                 const category = badge.dataset.category;
-                // Clear any existing timeout
-                if (this.filterTimeout) {
-                    clearTimeout(this.filterTimeout);
+                // Only show hover preview if no filter is active
+                if (!this.activeCategory) {
+                    if (this.filterTimeout) {
+                        clearTimeout(this.filterTimeout);
+                    }
+                    this.filterTimeout = setTimeout(() => {
+                        this.applyCategoryFilter(category);
+                    }, 200);
                 }
-                // Apply filter after short delay to prevent rapid filtering
-                this.filterTimeout = setTimeout(() => {
-                    this.applyCategoryFilter(category);
-                }, 200);
             });
 
             badge.addEventListener('mouseleave', () => {
@@ -224,22 +236,23 @@ class ArticleSystem {
      * Renders the filtered articles to the DOM with pagination
      */
     renderArticles() {
-        const totalPages = Math.ceil(this.filteredArticles.length / this.articlesPerPage);
-        const startIndex = (this.currentPage - 1) * this.articlesPerPage;
-        const endIndex = startIndex + this.articlesPerPage;
-        const articlesToShow = this.filteredArticles.slice(0, endIndex);
+        // Use helper function for pagination logic
+        const paginationInfo = ArticleDataProcessor.getPaginationInfo(
+            this.filteredArticles,
+            this.currentPage,
+            this.articlesPerPage
+        );
 
-        
         // Clear container and add articles with staggered animation
         this.container.innerHTML = '';
-        
-        articlesToShow.forEach((article, index) => {
+
+        paginationInfo.articlesToShow.forEach((article, index) => {
             const articleElement = this.createArticleElement(article, index);
             this.container.appendChild(articleElement);
         });
 
         // Update pagination visibility
-        this.updatePagination(totalPages);
+        this.updatePagination(paginationInfo.totalPages);
         this.updateStats();
     }
 
@@ -259,11 +272,15 @@ class ArticleSystem {
     }
 
     loadMoreArticles() {
-        const totalPages = Math.ceil(this.filteredArticles.length / this.articlesPerPage);
-        
-        if (this.currentPage < totalPages) {
+        const paginationInfo = ArticleDataProcessor.getPaginationInfo(
+            this.filteredArticles,
+            this.currentPage,
+            this.articlesPerPage
+        );
+
+        if (paginationInfo.hasMore) {
             this.showLoadingSpinner(true);
-            
+
             // Simulate loading delay for smooth UX
             setTimeout(() => {
                 this.currentPage++;
@@ -303,11 +320,16 @@ class ArticleSystem {
     updateStats() {
         if (!this.statsElement) return;
 
-        const showing = Math.min(this.currentPage * this.articlesPerPage, this.filteredArticles.length);
+        const paginationInfo = ArticleDataProcessor.getPaginationInfo(
+            this.filteredArticles,
+            this.currentPage,
+            this.articlesPerPage
+        );
+
         const total = this.filteredArticles.length;
         const totalArticles = this.articles.length;
 
-        let statsText = `${showing} of ${total} articles`;
+        let statsText = `${paginationInfo.showing} of ${total} articles`;
         if (total !== totalArticles) {
             statsText += ` (filtered from ${totalArticles})`;
         }
