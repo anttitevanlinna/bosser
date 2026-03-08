@@ -120,25 +120,6 @@ class ArticleSystem {
 
         this.categoriesCloud.innerHTML = categoryBadges;
 
-        // Add mouseleave event to categories container to clear filter
-        this.categoriesCloud.addEventListener('mouseleave', () => {
-            // Clear timeout if exists
-            if (this.filterTimeout) {
-                clearTimeout(this.filterTimeout);
-            }
-            // Clear filter after small delay
-            this.clearFilterTimeout = setTimeout(() => {
-                this.clearCategoryFiltering();
-            }, 300);
-        });
-
-        // Cancel clear filter when mouse enters categories area
-        this.categoriesCloud.addEventListener('mouseenter', () => {
-            if (this.clearFilterTimeout) {
-                clearTimeout(this.clearFilterTimeout);
-            }
-        });
-
         // Add event listeners to category badges
         this.categoriesCloud.querySelectorAll('.category-badge').forEach(badge => {
             badge.addEventListener('mouseenter', () => {
@@ -265,10 +246,12 @@ class ArticleSystem {
     createArticleElement(article, index) {
         const div = document.createElement('div');
         div.className = 'article-card';
-        
-        // Linear timing - each article starts 0.3s after the previous
-        const delay = index * 0.3;
-        
+
+        // Calculate delay based on position on current page, not absolute position
+        const articlesOnPreviousPages = (this.currentPage - 1) * this.articlesPerPage;
+        const relativeIndex = index - articlesOnPreviousPages;
+        const delay = relativeIndex * 0.3;
+
         div.style.animationDelay = `${delay}s`;
         div.style.setProperty('--delay', `${delay}s`);
         div.innerHTML = this.createArticleCard(article);
