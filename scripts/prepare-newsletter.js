@@ -86,7 +86,7 @@ class NewsletterPreparer {
         
         console.log(`✅ Newsletter prepared successfully!`);
         console.log(`📁 Article saved: ${articlePath}`);
-        console.log(`🌐 Review at: https://anttitevanlinna.github.io/bosser/articles/${slug}.html`);
+        console.log(`🌐 Review at: https://bosser.consulting/articles/${slug}.html`);
         
         return articleData;
     }
@@ -148,26 +148,52 @@ class NewsletterPreparer {
         
         // Article page template matching current site structure
         const readingTime = Math.ceil(articleData.content_length / 250);
+        const articleUrl = `https://bosser.consulting/articles/${articleData.slug}.html`;
+
+        // Extract first meaningful paragraph for description
+        const plainContent = articleData.content_html.replace(/<[^>]+>/g, '').trim();
+        const firstSentences = plainContent.substring(0, 155).replace(/"/g, '&quot;');
+        const description = plainContent.length > 155 ? firstSentences + '...' : firstSentences;
+
+        const jsonLd = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": articleData.title,
+            "description": description,
+            "author": { "@type": "Person", "name": "Antti Tevanlinna" },
+            "publisher": { "@type": "Organization", "name": "Bosser" },
+            "url": articleUrl,
+            "mainEntityOfPage": articleUrl,
+            "datePublished": articleData.publish_date
+        }, null, 4).replace(/\n/g, '\n    ');
+
         const articleHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${articleData.title} - Bosser</title>
-    <meta name="description" content="${articleData.title.substring(0, 150)}...">
+    <meta name="description" content="${description}">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/${articleData.slug}.html">
-    
+    <link rel="canonical" href="${articleUrl}">
+
     <!-- Open Graph -->
     <meta property="og:title" content="${articleData.title}">
-    <meta property="og:description" content="${articleData.title.substring(0, 150)}...">
+    <meta property="og:description" content="${description}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://anttitevanlinna.github.io/bosser/articles/${articleData.slug}.html">
-    
+    <meta property="og:url" content="${articleUrl}">
+    <meta property="og:site_name" content="Bosser">
+    <meta property="article:author" content="Antti Tevanlinna">
+    <meta property="article:published_time" content="${articleData.publish_date}">
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${articleData.title}">
-    <meta name="twitter:description" content="${articleData.title.substring(0, 150)}...">
+    <meta name="twitter:description" content="${description}">
+
+    <script type="application/ld+json">
+    ${jsonLd}
+    </script>
 </head>
 <body>
     <nav>
@@ -227,7 +253,7 @@ async function main() {
         await preparer.prepareDraft(draftName);
         
         console.log('\n🎯 Next steps:');
-        console.log('1. Review at: https://anttitevanlinna.github.io/bosser/');
+        console.log('1. Review at: https://bosser.consulting/');
         console.log('2. Open covers/cover.html to record video with browser plugin');
         console.log('3. Use browser plugin to publish to LinkedIn');
     } catch (error) {
