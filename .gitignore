@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+
+# Temporary files
+temp/
+*.log
+extension-logs.json
+
+# Business ideas (private, not for publication)
+business-ideas/
+
+# OS files
+.DS_Store
