@@ -154,6 +154,7 @@ class NewsletterPreparer {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${articleData.title} - Bosser</title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
     <meta name="description" content="${articleData.title.substring(0, 150)}...">
     <link rel="stylesheet" href="../styles.css">
     <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/${articleData.slug}.html">
