@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anttitevanlinna.github.io/bosser/sitemap.xml

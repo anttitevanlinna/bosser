@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bosser - AI Strategy Starts When People Build</title>
     <meta name="description" content="AI transformation advisory by Antti Tevanlinna. Creator of Claude Code 101 and Agents 102. Led F-Secure's agentic transformation.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Bosser",
+        "url": "https://anttitevanlinna.github.io/bosser/",
+        "description": "AI agent competence and transformation for organizations. Training, change advisory, and continuous platform intelligence.",
+        "founder": {
+            "@type": "Person",
+            "name": "Antti Tevanlinna",
+            "jobTitle": "AI Transformation Lead",
+            "url": "https://www.linkedin.com/in/anttitevanlinna/",
+            "worksFor": [
+                { "@type": "Organization", "name": "Bosser" },
+                { "@type": "Organization", "name": "F-Secure" }
+            ]
+        },
+        "knowsAbout": ["AI agents", "AI transformation", "agentic coding", "organizational change", "Claude Code"],
+        "areaServed": "Nordic countries"
+    }
+    </script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
     <style>
         :root {
@@ -156,6 +177,26 @@
         .statements {
             padding: 120px 0;
             background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-video {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            min-width: 100%;
+            transform: translateX(-50%);
+            opacity: 0.06;
+            filter: grayscale(100%);
+            object-fit: cover;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .experience > .container {
+            position: relative;
+            z-index: 1;
         }
 
         .statement {
@@ -1294,6 +1335,13 @@
                 </div>
 
                 <div class="service-card">
+                    <h3 class="service-title">Change Alchemy</h3>
+                    <p class="service-description">
+                        Training gets people started. What happens next is harder. Change strategy labs. Champions who carry it forward. Mentoring leaders through the messy middle. Building the systems, removing the blockers, doing whatever it takes to conjure momentum. From first cohort to company-wide transformation.
+                    </p>
+                </div>
+
+                <div class="service-card">
                     <h3 class="service-title">Transformation Advisor Engine</h3>
                     <p class="service-description">
                         A continuously running research system that tracks the agent platform landscape across Microsoft, Google, OpenAI and Anthropic. Context building, platform selection and deployment guidance. Done the agentic way: agents do the comparative heavy lifting, people drive the decisions. Deployed on your side. You keep it.
@@ -1303,7 +1351,10 @@
         </div>
     </section>
 
-    <section class="experience" id="experience">
+    <section class="experience" id="experience" style="position: relative; overflow: hidden; min-height: 600px;">
+        <video class="guide-video" autoplay muted playsinline>
+            <source src="./video/conference-clip.mp4" type="video/mp4">
+        </video>
         <div class="container">
             <div style="max-width: 640px;">
                 <h2 class="section-title">The Guide</h2>
