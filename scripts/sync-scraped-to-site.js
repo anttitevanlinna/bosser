@@ -159,7 +159,7 @@ class ScrapedArticlesSiteSync {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${article.title} - Bosser</title>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="eb766906-49ac-4f5c-941c-b107cf0e7c4f"></script>
     <meta name="description" content="${this.createMetaDescription(article)}">
     <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/${article.slug}.html">
     
