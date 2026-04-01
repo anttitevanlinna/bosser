@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Strategy — Newsletter Cover</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 300px;
+            height: 300px;
+            background: #0a0a0a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cover {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            z-index: 10;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .title-main {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .title-accent {
+            color: #ff6b35;
+        }
+
+        .author {
+            color: #666666;
+            font-size: 11px;
+            font-weight: 400;
+            margin-top: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .particle-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 300px;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .particle {
+            position: absolute;
+            background: #ff6b35;
+            border-radius: 50%;
+            transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .particle.small { width: 1.5px; height: 1.5px; }
+        .particle.medium { width: 2.5px; height: 2.5px; }
+        .particle.large { width: 3.5px; height: 3.5px; box-shadow: 0 0 6px #ff6b3540; }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <div class="particle-container" id="particles"></div>
+        <div class="content">
+            <div class="title-main"><span class="title-accent">Agentic</span><br>Strategy</div>
+            <div class="author">Antti Tevanlinna</div>
+        </div>
+    </div>
+
+    <script>
+        const particleContainer = document.getElementById('particles');
+        const particleCount = 120;
+        const particles = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle ' + ['small', 'medium', 'large'][Math.floor(Math.random() * 3)];
+            particle.style.left = Math.random() * 300 + 'px';
+            particle.style.top = Math.random() * 300 + 'px';
+            particleContainer.appendChild(particle);
+            particles.push(particle);
+        }
+
+        function getCloudFormation() {
+            const formations = [];
+            const cx = 150, cy = 150;
+            for (let i = 0; i < particleCount; i++) {
+                const angle = (i / particleCount) * Math.PI * 2 * 3;
+                const radius = 90 + Math.sin(angle * 2) * 30;
+                formations.push({
+                    x: cx + Math.cos(angle) * radius + (Math.random() - 0.5) * 60,
+                    y: cy + Math.sin(angle) * radius * 0.9 + (Math.random() - 0.5) * 50
+                });
+            }
+            return formations;
+        }
+
+        function getConstellationFormation() {
+            const formations = [];
+            const cx = 150, cy = 150;
+            for (let i = 0; i < particleCount; i++) {
+                const cluster = Math.floor(i / (particleCount / 6));
+                const clusterAngle = (cluster / 6) * Math.PI * 2;
+                const clusterX = cx + Math.cos(clusterAngle) * 70;
+                const clusterY = cy + Math.sin(clusterAngle) * 50;
+                formations.push({
+                    x: clusterX + (Math.random() - 0.5) * 50,
+                    y: clusterY + (Math.random() - 0.5) * 40
+                });
+            }
+            return formations;
+        }
+
+        function rotatePoint(x, y, cx, cy, angle) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            return {
+                x: cx + (x - cx) * cos - (y - cy) * sin,
+                y: cy + (x - cx) * sin + (y - cy) * cos
+            };
+        }
+
+        function getArrowFormation() {
+            const formations = [];
+            const cx = 150, cy = 150;
+            const len = 160, startX = cx - len / 2, endX = cx + len / 2;
+            for (let i = 0; i < particleCount; i++) {
+                const p = i / particleCount;
+                let point;
+                if (p < 0.6) {
+                    point = { x: startX + (endX - startX) * (p / 0.6), y: cy };
+                } else {
+                    const hp = (p - 0.6) / 0.4;
+                    const hs = 60, hh = 45;
+                    if (hp < 0.5) {
+                        const d = hp / 0.5;
+                        point = { x: endX - hs + d * hs, y: cy - hh + d * hh };
+                    } else {
+                        const d = (hp - 0.5) / 0.5;
+                        point = { x: endX - hs + d * hs, y: cy + hh - d * hh };
+                    }
+                }
+                const rot = rotatePoint(point.x, point.y, cx, cy, -Math.PI / 4);
+                formations.push({
+                    x: rot.x + (Math.random() - 0.5) * 4,
+                    y: rot.y + (Math.random() - 0.5) * 4
+                });
+            }
+            return formations;
+        }
+
+        const formations = [getCloudFormation(), getConstellationFormation(), getArrowFormation()];
+        let idx = 0;
+
+        function animate() {
+            const f = formations[idx];
+            particles.forEach((p, i) => {
+                p.style.left = f[i].x + 'px';
+                p.style.top = f[i].y + 'px';
+            });
+            idx = (idx + 1) % formations.length;
+        }
+
+        animate();
+        setInterval(animate, 4000);
+    </script>
+</body>
+</html>

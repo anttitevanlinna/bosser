@@ -100,7 +100,7 @@ class HTMLCoverGenerator {
 <body>
     <div class="cover-container">
         <div class="content">
-            <div class="subtitle">On Product Leadership Newsletter</div>
+            <div class="subtitle">Agentic Strategy Newsletter</div>
             <h1 class="title">${title}</h1>
             <div class="author">Antti Tevanlinna</div>
         </div>

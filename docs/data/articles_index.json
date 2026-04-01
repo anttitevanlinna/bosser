@@ -1,6 +1,6 @@
 {
-  "total_articles": 19,
-  "last_updated": "2026-03-05T17:40:44.752Z",
+  "total_articles": 20,
+  "last_updated": "2026-04-01T06:39:13.830Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -19,6 +19,21 @@
       "content_length": 4647,
       "processed_at": "2025-08-03T09:37:07.110471",
       "tags": []
+    },
+    {
+      "title": "Rebranding: Agentic Strategy",
+      "slug": "rebranding-agentic-strategy",
+      "url": "Unknown URL",
+      "publish_date": "2026-04-01",
+      "content_length": 4903,
+      "processed_at": "2026-04-01T06:39:13.808Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ]
     },
     {
       "title": "Checking Assumptions: Knowing more over being right",
