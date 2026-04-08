@@ -26,16 +26,34 @@ class NewsletterPreparer {
     
     async prepareDraft(draftName) {
         console.log(`📝 Preparing newsletter: ${draftName}`);
-        
-        // Read draft file
-        const draftPath = path.join(this.draftsDir, `${draftName}.md`);
+
+        // Support external paths: if it looks like a path, use it directly
+        let draftPath;
+        if (path.isAbsolute(draftName) || draftName.includes('/')) {
+            draftPath = path.resolve(draftName);
+            // Strip .md extension if present for display
+            if (!draftPath.endsWith('.md')) draftPath += '.md';
+        } else {
+            draftPath = path.join(this.draftsDir, `${draftName}.md`);
+        }
+
         if (!fileExists(draftPath)) {
             throw new Error(`Draft not found: ${draftPath}`);
         }
         
         const draftContent = fs.readFileSync(draftPath, 'utf8');
         const { attributes: frontMatter, body: content } = matter(draftContent);
-        
+
+        // Derive title from first H1 if not in frontmatter
+        if (!frontMatter.title) {
+            const h1Match = content.match(/^# (.+)$/m);
+            if (h1Match) {
+                frontMatter.title = h1Match[1];
+            } else {
+                frontMatter.title = path.basename(draftPath, '.md').replace(/[-_]/g, ' ');
+            }
+        }
+
         console.log(`📄 Processing: ${frontMatter.title}`);
         
         // Generate animated cover HTML (video recording skipped - use browser plugin for LinkedIn)
@@ -66,7 +84,7 @@ class NewsletterPreparer {
             content_markdown: content,
             content_length: content.length,
             processed_at: new Date().toISOString(),
-            source_file: `${draftName}.md`,
+            source_file: path.basename(draftPath),
             newsletter: frontMatter.newsletter || false,
             tags: frontMatter.tags || [],
             cover_html: `../covers/cover.html`,
@@ -147,7 +165,9 @@ class NewsletterPreparer {
         ensureDirectory(templatePath);
         
         // Article page template matching current site structure
-        const readingTime = Math.ceil(articleData.content_length / 250);
+        const readingTime = articleData.estimated_reading_time
+            ? parseInt(articleData.estimated_reading_time)
+            : Math.ceil(articleData.content_length / 1500);
         const articleHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -218,8 +238,10 @@ class NewsletterPreparer {
 async function main() {
     const draftName = process.argv[2];
     if (!draftName) {
-        console.error('Usage: node prepare-newsletter.js <draft-name>');
-        console.error('Example: node prepare-newsletter.js checking-assumptions');
+        console.error('Usage: node prepare-newsletter.js <draft-name-or-path>');
+        console.error('Examples:');
+        console.error('  node prepare-newsletter.js checking-assumptions');
+        console.error('  node prepare-newsletter.js /path/to/external/draft.md');
         process.exit(1);
     }
     
