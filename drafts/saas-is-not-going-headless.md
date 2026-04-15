@@ -118,17 +118,17 @@ None of these mentioned companies went "headless" in the old sense of headless. 
 
 The delegation style and granularity are different in each case. Three use MCP as the transport. But the protocol is the least interesting part of what they built — the delegation pattern on top is what differentiates them. There is no single "right" architecture. But there is a clear wrong one: doing nothing and hoping the API wrapper is enough.
 
-Three classes are forming fast:
+SaaS vendors are splitting into three classes based on how they respond to the agentic future:
 
 1. **Redefined their role** — Snowflake, Figma, Linear, Shopify. Agent as peer, not consumer.
 2. **Shipping wrappers** — API in MCP clothing. Functional. Agent does all the thinking.
-3. **Will be dragged** — Legacy UI-first SaaS. Computer Use as the ugly bridge.
+3. **Head in the sand** — Legacy UI-first SaaS. Computer Use as the ugly bridge.
 
 Finally: let's talk about the knowledge. The step between tier 1 and tier 2 is where the meetings should disappear. A system with wrapper MCPs still needs someone — human or agent — who understands both systems. A domain brain, a shared canvas, a dispatch hub — these understand themselves.
 
 Your integration team, your Zapier configs, your Monday morning sync where finance explains the numbers to product — all of it exists because your tools can't participate in coordination. When they can, that layer dissolves.
 
-The SaaS vendors will get there. Nobody rebuilds commodity from scratch — that's why Jira won ticket tracking. But Jira's value is tracking work status. Its head and web UI? That's the friction for your agents. We've yet not found the right way to put work tracking into an agentic commodity. Linear is trying. Nobody has won.
+The SaaS vendors will get there. Commodity rarely gets rebuilt because they have efficiencies of scale in the structure — that's why Jira has kept its place in ticket tracking. But Jira's value is tracking work status. Its head and web UI? That's the friction for your agents. We've yet not found the right way to put work tracking into an agentic commodity. Linear is trying. Nobody has won.
 
 The world is not even half ready for agents and agentic. 
 
