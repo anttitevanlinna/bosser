@@ -1,5 +1,5 @@
 ---
-title: "SaaS Is Going Headless — But Not Like You Think"
+title: "SaaS Is Going Headless — But Not How You Think"
 slug: "saas-is-not-going-headless"
 author: "Antti Tevanlinna"
 created_at: "2026-04-15"
@@ -10,7 +10,7 @@ estimated_reading_time: "7 min"
 
 **Antti Tevanlinna, Bosser**
 
-# SaaS Is Going Headless — But Not Like You Think
+# SaaS Is Going Headless — But Not How You Think
 
 SaaS is dead. Stocks on decline. Everyone making their own business systems. I'm one of those rooting for a revolution. The more I think, death is not what I see. Headless (not death) is what we need. 
 

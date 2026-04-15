@@ -1,6 +1,6 @@
 {
   "total_articles": 22,
-  "last_updated": "2026-04-15T07:13:19.718Z",
+  "last_updated": "2026-04-15T07:18:45.776Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -95,12 +95,12 @@
       "tags": []
     },
     {
-      "title": "SaaS Is Going Headless — But Not Like You Think",
+      "title": "SaaS Is Going Headless — But Not How You Think",
       "slug": "saas-is-not-going-headless",
       "url": "Unknown URL",
       "publish_date": "2026-04-15",
-      "content_length": 12014,
-      "processed_at": "2026-04-15T07:13:19.697Z",
+      "content_length": 12013,
+      "processed_at": "2026-04-15T07:18:45.753Z",
       "estimated_reading_time": "7 min",
       "status": "ready-for-review",
       "tags": [
