@@ -40,13 +40,13 @@ All of these — the iPaaS, the scripts, the person moving data between systems 
 
 ## Pattern 1: The Domain Agent
 
-Snowflake didn't expose an API wrapper. They shipped a specialist AI agent — Cortex Code — trained on their entire technical stack. Metadata views, dynamic tables, Cortex Search semantics.
+Snowflake didn't expose an API wrapper. They shipped a specialist AI agent — Cortex Code — with deep access to their entire technical stack. Metadata views, dynamic tables, Cortex Search semantics.
 
 When Claude Code hits a Snowflake problem, it doesn't call an API. It delegates to something like a colleague agent who knows Snowflake better than it does. Two specialists, one conversation.
 
 What used to be meetings, tickets or custom code is now agent-to-agent conversation. Question: what is the protocol of this conversation? 
 
-Had to look this up: It's Claude Code's subagent protocol. Cortex Code runs in headless mode via --input-format stream-json. Claude Code sends structured requests, Cortex Code streams back results. It's not MCP. It's not A2A. It's a proprietary CLI-based delegation — one agent invoking another agent's CLI in programmatic mode.
+Had to look this up: It's MCP — but the interesting bit isn't the protocol. Cortex Code runs as a skill inside Claude Code, routing Snowflake questions to a specialist agent that executes autonomously and streams results back. Claude Code sends structured requests, Cortex Code does the thinking. The protocol is standard. The delegation pattern is not.
                                           
 The SaaS vendor shipped a *colleague*, not a connector.
 
@@ -58,13 +58,13 @@ Originally the intended flow was: Design in Figma, replicate in code. In the new
 
 The SaaS vendor became a *collaboration surface*, not a data source. Agents collaborating on the surface. 
 
-Figma's protocol is MCP. The Figma MCP server is what Claude Code talks to. But the interesting part — the Code to Canvas bit where a rendered UI gets reconstructed as native Figma layers — that's Figma's AI doing the translation, not MCP. MCP handles the read/write. The magic stays with Figma's proprietary layer.   
+Figma's protocol is MCP. The Figma MCP server is what Claude Code talks to. But the interesting part — the Code to Canvas bit where a rendered UI gets reconstructed as native Figma layers — that's Figma's proprietary engineering doing the translation, not MCP. A capture script walks the live DOM, extracts computed styles and layout, and maps each element to native Figma frames. No AI involved in the conversion — just clever structural mapping. MCP handles the read/write. The magic stays with Figma's proprietary layer.   
 
 ## Pattern 3: The Dispatch Hub
 
 Linear's CEO declared issue tracking dead. Coding agents are in 75% of their enterprise workspaces. Agent-driven work up 5x in three months.
 
-Linear doesn't track what humans do anymore. It assigns work to Cursor, Claude Code, etc — and monitors execution. The project management tool became an agent orchestrator.
+Linear is shifting from tracking what humans do to assigning work to coding agents — Cursor natively, others through its Agent SDK — and monitoring execution. The project management tool is becoming an agent orchestrator.
 
 The SaaS vendor became the *control plane*, not the tracking layer.
 
@@ -76,7 +76,7 @@ Good play I think.
 
 ## Pattern 4: The Transaction Protocol
 
-Shopify shipped four MCP servers — dev, storefront, catalog, checkout. Every Shopify "Hydrogen" storefront can now expose an agent-ready endpoint with zero custom setup.
+Shopify shipped four MCP servers — dev, storefront, customer account, checkout. Every Shopify "Hydrogen" storefront can now expose an agent-ready endpoint with zero custom setup.
 
 Then Shopify went further. Shopify and Google co-developed the Universal Commerce Protocol — a standard for the full commerce journey from discovery to purchase to order management. Endorsed by Etsy, Walmart, Target, Stripe, Visa, Mastercard, Zalando. Twenty-plus companies agreed on how agents buy things. The SaaS vendor became *infrastructure agents transact through*, not a storefront humans browse.
 
@@ -116,7 +116,7 @@ None of these mentioned companies went "headless" in the old sense of headless. 
 - Linear: the dispatcher that assigns work to agents
 - Shopify: the protocol agents transact through
 
-The delegation style and granularity are different in each case. Two are actually leveraging MCP. Two are not. There is no single "right" architecture. But there is a clear wrong one: doing nothing and hoping the API wrapper is enough.
+The delegation style and granularity are different in each case. Three use MCP as the transport. But the protocol is the least interesting part of what they built — the delegation pattern on top is what differentiates them. There is no single "right" architecture. But there is a clear wrong one: doing nothing and hoping the API wrapper is enough.
 
 Three classes are forming fast:
 
@@ -132,7 +132,7 @@ The SaaS vendors will get there. Nobody rebuilds commodity from scratch — that
 
 The world is not even half ready for agents and agentic. 
 
-This closes nicely to "protocol debate is premature". The most sophisticated integration pattern in the article doesn't use MCP at all. It uses stdin/stdout. The pattern matters, not the pipe. 
+This closes nicely to "protocol debate is premature". Three of the four patterns use MCP — but what they built on top of MCP couldn't be more different. A colleague, a canvas, a transaction protocol. Same pipe, wildly different patterns. The pattern matters, not the pipe. 
 
 
 ---

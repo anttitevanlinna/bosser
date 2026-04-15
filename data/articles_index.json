@@ -1,6 +1,6 @@
 {
   "total_articles": 22,
-  "last_updated": "2026-04-15T06:37:31.093Z",
+  "last_updated": "2026-04-15T07:05:37.815Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -99,8 +99,8 @@
       "slug": "saas-is-not-going-headless",
       "url": "Unknown URL",
       "publish_date": "2026-04-15",
-      "content_length": 11391,
-      "processed_at": "2026-04-15T06:37:31.064Z",
+      "content_length": 11884,
+      "processed_at": "2026-04-15T07:05:37.796Z",
       "estimated_reading_time": "7 min",
       "status": "ready-for-review",
       "tags": [

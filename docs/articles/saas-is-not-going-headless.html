@@ -57,25 +57,25 @@
 <p>All of these — the iPaaS, the scripts, the person moving data between systems — are tackling the same problem. Most SaaS tools don&#39;t talk to each other out of the box, so something has to sit in between. Something has to glue these together. Something has to force your SaaS-systems to work in concert as needed by your business outcome. </p>
 <h1>Four companies just showed four different ways to rethink integration</h1>
 <h2>Pattern 1: The Domain Agent</h2>
-<p>Snowflake didn&#39;t expose an API wrapper. They shipped a specialist AI agent — Cortex Code — trained on their entire technical stack. Metadata views, dynamic tables, Cortex Search semantics.</p>
+<p>Snowflake didn&#39;t expose an API wrapper. They shipped a specialist AI agent — Cortex Code — with deep access to their entire technical stack. Metadata views, dynamic tables, Cortex Search semantics.</p>
 <p>When Claude Code hits a Snowflake problem, it doesn&#39;t call an API. It delegates to something like a colleague agent who knows Snowflake better than it does. Two specialists, one conversation.</p>
 <p>What used to be meetings, tickets or custom code is now agent-to-agent conversation. Question: what is the protocol of this conversation? </p>
-<p>Had to look this up: It&#39;s Claude Code&#39;s subagent protocol. Cortex Code runs in headless mode via --input-format stream-json. Claude Code sends structured requests, Cortex Code streams back results. It&#39;s not MCP. It&#39;s not A2A. It&#39;s a proprietary CLI-based delegation — one agent invoking another agent&#39;s CLI in programmatic mode.</p>
+<p>Had to look this up: It&#39;s MCP — but the interesting bit isn&#39;t the protocol. Cortex Code runs as a skill inside Claude Code, routing Snowflake questions to a specialist agent that executes autonomously and streams results back. Claude Code sends structured requests, Cortex Code does the thinking. The protocol is standard. The delegation pattern is not.</p>
 <p>The SaaS vendor shipped a <em>colleague</em>, not a connector.</p>
 <h2>Pattern 2: The Shared Canvas</h2>
 <p>Figma built Code to Canvas. Claude Code builds UI, pushes to Figma as editable native Figma layers. Designer then refines. Pull changes back to code. Keep iterating.</p>
 <p>Originally the intended flow was: Design in Figma, replicate in code. In the new model, none of the sides of the integration is read-only. Neither is write-only. A two-way loop where agent and human are peers on the two surfaces.</p>
 <p>The SaaS vendor became a <em>collaboration surface</em>, not a data source. Agents collaborating on the surface. </p>
-<p>Figma&#39;s protocol is MCP. The Figma MCP server is what Claude Code talks to. But the interesting part — the Code to Canvas bit where a rendered UI gets reconstructed as native Figma layers — that&#39;s Figma&#39;s AI doing the translation, not MCP. MCP handles the read/write. The magic stays with Figma&#39;s proprietary layer.   </p>
+<p>Figma&#39;s protocol is MCP. The Figma MCP server is what Claude Code talks to. But the interesting part — the Code to Canvas bit where a rendered UI gets reconstructed as native Figma layers — that&#39;s Figma&#39;s proprietary engineering doing the translation, not MCP. A capture script walks the live DOM, extracts computed styles and layout, and maps each element to native Figma frames. No AI involved in the conversion — just clever structural mapping. MCP handles the read/write. The magic stays with Figma&#39;s proprietary layer.   </p>
 <h2>Pattern 3: The Dispatch Hub</h2>
 <p>Linear&#39;s CEO declared issue tracking dead. Coding agents are in 75% of their enterprise workspaces. Agent-driven work up 5x in three months.</p>
-<p>Linear doesn&#39;t track what humans do anymore. It assigns work to Cursor, Claude Code, etc — and monitors execution. The project management tool became an agent orchestrator.</p>
+<p>Linear is shifting from tracking what humans do to assigning work to coding agents — Cursor natively, others through its Agent SDK — and monitoring execution. The project management tool is becoming an agent orchestrator.</p>
 <p>The SaaS vendor became the <em>control plane</em>, not the tracking layer.</p>
 <p>In this case, it was the Claude Code who became headless. Linear still retains its head. I hazard a guess the head is worth a lot in the strategic race. </p>
 <p>This means &quot;headless&quot; isn&#39;t a property of SaaS. It&#39;s a property of whichever side of the integration has less strategic value. Snowflake&#39;s UI was never the value — the data and domain knowledge was. So Snowflake goes headless comfortably. But Linear&#39;s UI IS the strategic asset — the place where humans see, steer, and decide. Linear keeps its head and makes the agents lose theirs.  </p>
 <p>Good play I think. </p>
 <h2>Pattern 4: The Transaction Protocol</h2>
-<p>Shopify shipped four MCP servers — dev, storefront, catalog, checkout. Every Shopify &quot;Hydrogen&quot; storefront can now expose an agent-ready endpoint with zero custom setup.</p>
+<p>Shopify shipped four MCP servers — dev, storefront, customer account, checkout. Every Shopify &quot;Hydrogen&quot; storefront can now expose an agent-ready endpoint with zero custom setup.</p>
 <p>Then Shopify went further. Shopify and Google co-developed the Universal Commerce Protocol — a standard for the full commerce journey from discovery to purchase to order management. Endorsed by Etsy, Walmart, Target, Stripe, Visa, Mastercard, Zalando. Twenty-plus companies agreed on how agents buy things. The SaaS vendor became <em>infrastructure agents transact through</em>, not a storefront humans browse.</p>
 <p>Standardisation is a play for commodization as well as ease of building on top. Shopify makes it easier for everyone to build stores. They of course get to stay in the value chain and get their fair share. Shopify is deliberately pushing the commerce layer toward commodity. Make it commodity, make it easy, make it standard — and sit in the value chain collecting rent. Classic &quot;commoditise the complement.&quot;</p>
 <p>This is the strongest ending of the four patterns because it shows the endgame. The others are evolving. Shopify feels like already playing the position.</p>
@@ -98,7 +98,7 @@
 <li>Linear: the dispatcher that assigns work to agents</li>
 <li>Shopify: the protocol agents transact through</li>
 </ul>
-<p>The delegation style and granularity are different in each case. Two are actually leveraging MCP. Two are not. There is no single &quot;right&quot; architecture. But there is a clear wrong one: doing nothing and hoping the API wrapper is enough.</p>
+<p>The delegation style and granularity are different in each case. Three use MCP as the transport. But the protocol is the least interesting part of what they built — the delegation pattern on top is what differentiates them. There is no single &quot;right&quot; architecture. But there is a clear wrong one: doing nothing and hoping the API wrapper is enough.</p>
 <p>Three classes are forming fast:</p>
 <ol>
 <li><strong>Redefined their role</strong> — Snowflake, Figma, Linear, Shopify. Agent as peer, not consumer.</li>
@@ -109,7 +109,7 @@
 <p>Your integration team, your Zapier configs, your Monday morning sync where finance explains the numbers to product — all of it exists because your tools can&#39;t participate in coordination. When they can, that layer dissolves.</p>
 <p>The SaaS vendors will get there. Nobody rebuilds commodity from scratch — that&#39;s why Jira won ticket tracking. But Jira&#39;s value is tracking work status. Its head and web UI? That&#39;s the friction for your agents. We&#39;ve yet not found the right way to put work tracking into an agentic commodity. Linear is trying. Nobody has won.</p>
 <p>The world is not even half ready for agents and agentic. </p>
-<p>This closes nicely to &quot;protocol debate is premature&quot;. The most sophisticated integration pattern in the article doesn&#39;t use MCP at all. It uses stdin/stdout. The pattern matters, not the pipe. </p>
+<p>This closes nicely to &quot;protocol debate is premature&quot;. Three of the four patterns use MCP — but what they built on top of MCP couldn&#39;t be more different. A colleague, a canvas, a transaction protocol. Same pipe, wildly different patterns. The pattern matters, not the pipe. </p>
 <hr>
 <p><em>Antti Tevanlinna builds agent competence for companies navigating the agentic transformation. Trained 200+ people at F-Secure, Neste, and Posti.</em></p>
 <p><em>agents102.bosser.consulting</em></p>
