@@ -1,6 +1,6 @@
 {
-  "total_articles": 21,
-  "last_updated": "2026-04-08T07:31:08.951Z",
+  "total_articles": 22,
+  "last_updated": "2026-04-15T06:37:31.093Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -95,6 +95,22 @@
       "tags": []
     },
     {
+      "title": "SaaS Is Going Headless — But Not Like You Think",
+      "slug": "saas-is-not-going-headless",
+      "url": "Unknown URL",
+      "publish_date": "2026-04-15",
+      "content_length": 11391,
+      "processed_at": "2026-04-15T06:37:31.064Z",
+      "estimated_reading_time": "7 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "ai",
+        "technology",
+        "software"
+      ]
+    },
+    {
       "title": "Skills-First AI Transformation Strategy",
       "slug": "skills-first-ai-transformation-strategy",
       "url": "Unknown URL",
@@ -155,31 +171,6 @@
       ]
     },
     {
-      "title": "Organisational change and cycle racing",
-      "slug": "organisational-change-and-cycle-racing",
-      "url": "Unknown URL",
-      "publish_date": "2025-11-17",
-      "content_length": 4705,
-      "processed_at": "2025-11-22T05:39:26.480Z",
-      "estimated_reading_time": "6 min",
-      "status": "ready-for-review",
-      "tags": [
-        "leadership",
-        "change",
-        "strategy",
-        "management"
-      ]
-    },
-    {
-      "title": "Skating where the puck is going",
-      "slug": "skating-where-the-puck-is-going",
-      "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 5973,
-      "processed_at": "2025-08-03T09:37:07.028311",
-      "tags": []
-    },
-    {
       "title": "The flywheel",
       "slug": "the-flywheel",
       "url": "Unknown URL",
@@ -208,6 +199,31 @@
         "leadership",
         "ai"
       ]
+    },
+    {
+      "title": "Organisational change and cycle racing",
+      "slug": "organisational-change-and-cycle-racing",
+      "url": "Unknown URL",
+      "publish_date": "2025-11-17",
+      "content_length": 4705,
+      "processed_at": "2025-11-22T05:39:26.480Z",
+      "estimated_reading_time": "6 min",
+      "status": "ready-for-review",
+      "tags": [
+        "leadership",
+        "change",
+        "strategy",
+        "management"
+      ]
+    },
+    {
+      "title": "Skating where the puck is going",
+      "slug": "skating-where-the-puck-is-going",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 5973,
+      "processed_at": "2025-08-03T09:37:07.028311",
+      "tags": []
     },
     {
       "title": "The remarkable year of Ai in Software",
