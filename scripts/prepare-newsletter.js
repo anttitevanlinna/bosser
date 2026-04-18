@@ -55,23 +55,24 @@ class NewsletterPreparer {
         }
 
         console.log(`📄 Processing: ${frontMatter.title}`);
-        
+
+        const slug = frontMatter.slug || this.generateSlug(frontMatter.title);
+
         // Generate animated cover HTML (video recording skipped - use browser plugin for LinkedIn)
         const coverGenerator = new HTMLCoverGenerator();
-        
+
         try {
-            const coverPath = await coverGenerator.generateCover(frontMatter.title, this.coversDir);
+            const coverPath = await coverGenerator.generateCover(frontMatter.title, this.coversDir, slug);
             console.log(`🎨 Cover HTML generated: ${coverPath}`);
             console.log('📝 Use browser plugin to record and publish to LinkedIn');
         } catch (error) {
             console.error('❌ Cover generation failed:', error.message);
             // Continue without cover
         }
-        
+
         // Process content - remove first H1 since template provides it
         const contentWithoutFirstH1 = content.replace(/^# .+\n\n/, '');
         const htmlContent = marked(contentWithoutFirstH1);
-        const slug = frontMatter.slug || this.generateSlug(frontMatter.title);
         
         // Create article data structure
         const articleData = {
@@ -87,7 +88,7 @@ class NewsletterPreparer {
             source_file: path.basename(draftPath),
             newsletter: frontMatter.newsletter || false,
             tags: frontMatter.tags || [],
-            cover_html: `../covers/cover.html`,
+            cover_html: `../covers/cover-${slug}.html`,
             estimated_reading_time: frontMatter.estimated_reading_time || estimateReadingTime(content),
             status: 'ready-for-review'
         };

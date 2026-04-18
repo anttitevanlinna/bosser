@@ -6,13 +6,26 @@ const path = require('path');
 
 async function recordCoverVideo(coverHtmlPath, outputVideoPath) {
     console.log('🎬 Starting automated video recording...');
-    
+
+    const coverUrl = `file://${path.resolve(coverHtmlPath)}`;
+
+    // Generate PNG thumbnail first (headless)
+    const pngPath = outputVideoPath.replace(/\.\w+$/, '.png');
+    const thumbBrowser = await chromium.launch();
+    const thumbPage = await thumbBrowser.newPage({ viewport: { width: 1920, height: 1080 } });
+    await thumbPage.goto(coverUrl, { waitUntil: 'networkidle' });
+    await thumbPage.waitForSelector('.particle');
+    await thumbPage.waitForTimeout(2500);
+    await thumbPage.screenshot({ path: pngPath });
+    await thumbBrowser.close();
+    console.log(`📸 Thumbnail saved: ${pngPath}`);
+
     // Launch browser with video recording enabled
     const browser = await chromium.launch({
-        headless: false, // Show browser for debugging
+        headless: false,
         args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream']
     });
-    
+
     const context = await browser.newContext({
         viewport: { width: 1920, height: 1080 },
         recordVideo: {
@@ -20,45 +33,57 @@ async function recordCoverVideo(coverHtmlPath, outputVideoPath) {
             size: { width: 1920, height: 1080 }
         }
     });
-    
+
     const page = await context.newPage();
-    
+
     try {
-        // Load the cover HTML file
-        const coverUrl = `file://${path.resolve(coverHtmlPath)}`;
         console.log(`📖 Loading cover: ${coverUrl}`);
-        
+
         await page.goto(coverUrl, { waitUntil: 'networkidle' });
-        
+
         // Wait for particles to be created
         await page.waitForSelector('.particle');
         console.log('✅ Particles loaded');
-        
+
         // Record for 3 full animation cycles (12 seconds total)
         // Each cycle is 4 seconds: cloud -> brain -> arrow -> repeat
         console.log('🔴 Recording 12 seconds of animation...');
         await page.waitForTimeout(12000);
-        
+
         console.log('🎬 Recording complete');
-        
+
     } finally {
         await context.close();
         await browser.close();
     }
-    
+
     // Find the recorded video file
     const videoDir = path.dirname(outputVideoPath);
     const videoFiles = fs.readdirSync(videoDir).filter(f => f.endsWith('.webm'));
-    
+
     if (videoFiles.length > 0) {
         const recordedVideoPath = path.join(videoDir, videoFiles[0]);
         const finalVideoPath = outputVideoPath;
-        
-        // Rename to desired output name
-        fs.renameSync(recordedVideoPath, finalVideoPath);
-        console.log(`✅ Video saved: ${finalVideoPath}`);
-        console.log('📝 Note: Convert .webm to .mp4 for LinkedIn compatibility');
-        
+
+        // Rename raw recording
+        fs.renameSync(recordedVideoPath, finalVideoPath + '.raw');
+
+        // Trim white first frame(s) from webm and convert to mp4
+        const { execSync } = require('child_process');
+        const mp4Path = finalVideoPath.replace('.webm', '.mp4');
+        try {
+            execSync(`ffmpeg -ss 1 -i "${finalVideoPath}.raw" -c:v libvpx-vp9 "${finalVideoPath}" -y`, { stdio: 'pipe' });
+            execSync(`ffmpeg -ss 1 -i "${finalVideoPath}.raw" -c:v libx264 -pix_fmt yuv420p "${mp4Path}" -y`, { stdio: 'pipe' });
+            fs.unlinkSync(finalVideoPath + '.raw');
+            console.log(`✅ Trimmed webm saved: ${finalVideoPath}`);
+            console.log(`✅ Trimmed MP4 saved: ${mp4Path}`);
+        } catch (e) {
+            // Fallback: keep raw if ffmpeg fails
+            fs.renameSync(finalVideoPath + '.raw', finalVideoPath);
+            console.log(`✅ Video saved: ${finalVideoPath}`);
+            console.log('⚠️  ffmpeg not available — skipping trim/conversion');
+        }
+
         return finalVideoPath;
     } else {
         throw new Error('No video file was recorded');

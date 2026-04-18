@@ -114,18 +114,8 @@ class HTMLCoverGenerator {
         const particleContainer = document.getElementById('particles');
         const particleCount = 300;
         const particles = [];
-        
-        // Create particles
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle ' + ['small', 'medium', 'large'][Math.floor(Math.random() * 3)];
-            particle.style.left = Math.random() * 800 + 'px';
-            particle.style.top = Math.random() * ${this.height} + 'px';
-            particleContainer.appendChild(particle);
-            particles.push(particle);
-        }
-        
-        // Shape formations
+
+        // Shape formations (defined before particle creation so we can place them at first position)
         function getCloudFormation() {
             const formations = [];
             const centerX = 500;
@@ -247,39 +237,51 @@ class HTMLCoverGenerator {
         // Animation loop
         const formations = [getCloudFormation(), getBrainFormation(), getArrowFormation()];
         let currentFormationIndex = 0;
-        
+
+        // Create particles at first formation position (no white first frame)
+        const initialFormation = formations[0];
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle ' + ['small', 'medium', 'large'][Math.floor(Math.random() * 3)];
+            particle.style.left = initialFormation[i].x + 'px';
+            particle.style.top = initialFormation[i].y + 'px';
+            particleContainer.appendChild(particle);
+            particles.push(particle);
+        }
+        currentFormationIndex = 1;
+
         function animateParticles() {
             const currentFormation = formations[currentFormationIndex];
-            
+
             particles.forEach((particle, i) => {
                 const target = currentFormation[i];
                 particle.style.left = target.x + 'px';
                 particle.style.top = target.y + 'px';
             });
-            
+
             currentFormationIndex = (currentFormationIndex + 1) % formations.length;
         }
-        
-        // Start animation
-        animateParticles();
+
+        // Start animation from second formation
         setInterval(animateParticles, 4000);
     </script>
 </body>
 </html>`;
     }
     
-    async generateCover(title, outputDir) {
+    async generateCover(title, outputDir, slug) {
         console.log(`🎨 Generating HTML cover for: ${title}`);
-        
+
         const coverHTML = this.generateCoverHTML(title);
-        const htmlPath = path.join(outputDir, 'cover.html');
-        
+        const filename = slug ? `cover-${slug}.html` : 'cover.html';
+        const htmlPath = path.join(outputDir, filename);
+
         fs.writeFileSync(htmlPath, coverHTML);
-        
+
         console.log(`✅ HTML cover generated: ${htmlPath}`);
         console.log(`📖 Open ${htmlPath} in browser to view animated cover`);
         console.log(`🎬 Use browser screen recording to create MP4 for LinkedIn`);
-        
+
         return htmlPath;
     }
 }
