@@ -1,6 +1,6 @@
 {
-  "total_articles": 22,
-  "last_updated": "2026-04-15T07:24:46.076Z",
+  "total_articles": 23,
+  "last_updated": "2026-07-08T06:11:23.074Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -21,18 +21,19 @@
       "tags": []
     },
     {
-      "title": "Rebranding: Agentic Strategy",
-      "slug": "rebranding-agentic-strategy",
+      "title": "SaaS Is Going Headless — But Not How You Think",
+      "slug": "saas-is-not-going-headless",
       "url": "Unknown URL",
-      "publish_date": "2026-04-01",
-      "content_length": 4903,
-      "processed_at": "2026-04-01T06:39:13.808Z",
-      "estimated_reading_time": "4 min",
+      "publish_date": "2026-04-15",
+      "content_length": 12013,
+      "processed_at": "2026-04-15T07:24:46.043Z",
+      "estimated_reading_time": "7 min",
       "status": "ready-for-review",
       "tags": [
         "strategy",
-        "leadership",
-        "ai"
+        "ai",
+        "technology",
+        "software"
       ]
     },
     {
@@ -59,6 +60,20 @@
       "content_length": 3233,
       "processed_at": "2025-08-03T09:37:06.688725",
       "tags": []
+    },
+    {
+      "title": "Focus and Renewal",
+      "slug": "focus-and-renewal",
+      "url": "Unknown URL",
+      "publish_date": "2026-07-08",
+      "content_length": 3308,
+      "processed_at": "2026-07-08T06:11:23.053Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership"
+      ]
     },
     {
       "title": "For innovators",
@@ -95,22 +110,6 @@
       "tags": []
     },
     {
-      "title": "SaaS Is Going Headless — But Not How You Think",
-      "slug": "saas-is-not-going-headless",
-      "url": "Unknown URL",
-      "publish_date": "2026-04-15",
-      "content_length": 12013,
-      "processed_at": "2026-04-15T07:24:46.043Z",
-      "estimated_reading_time": "7 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "ai",
-        "technology",
-        "software"
-      ]
-    },
-    {
       "title": "Skills-First AI Transformation Strategy",
       "slug": "skills-first-ai-transformation-strategy",
       "url": "Unknown URL",
@@ -124,6 +123,21 @@
         "ai",
         "transformation",
         "skills"
+      ]
+    },
+    {
+      "title": "Rebranding: Agentic Strategy",
+      "slug": "rebranding-agentic-strategy",
+      "url": "Unknown URL",
+      "publish_date": "2026-04-01",
+      "content_length": 4903,
+      "processed_at": "2026-04-01T06:39:13.808Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
       ]
     },
     {
