@@ -1,6 +1,6 @@
 {
-  "total_articles": 23,
-  "last_updated": "2026-07-08T06:11:23.074Z",
+  "total_articles": 24,
+  "last_updated": "2026-08-05T16:31:11.313Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -21,19 +21,19 @@
       "tags": []
     },
     {
-      "title": "SaaS Is Going Headless — But Not How You Think",
-      "slug": "saas-is-not-going-headless",
+      "title": "Autonomous Agents Are Not the Place to Start",
+      "slug": "autonomous-agents-not-the-place-to-start",
       "url": "Unknown URL",
-      "publish_date": "2026-04-15",
-      "content_length": 12013,
-      "processed_at": "2026-04-15T07:24:46.043Z",
-      "estimated_reading_time": "7 min",
+      "publish_date": "2026-08-05",
+      "content_length": 6211,
+      "processed_at": "2026-08-05T16:31:11.280Z",
+      "estimated_reading_time": "6 min",
       "status": "ready-for-review",
       "tags": [
         "strategy",
         "ai",
-        "technology",
-        "software"
+        "leadership",
+        "technology"
       ]
     },
     {
@@ -108,6 +108,22 @@
       "content_length": 3112,
       "processed_at": "2025-08-03T09:37:07.185217",
       "tags": []
+    },
+    {
+      "title": "SaaS Is Going Headless — But Not How You Think",
+      "slug": "saas-is-not-going-headless",
+      "url": "Unknown URL",
+      "publish_date": "2026-04-15",
+      "content_length": 12013,
+      "processed_at": "2026-04-15T07:24:46.043Z",
+      "estimated_reading_time": "7 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "ai",
+        "technology",
+        "software"
+      ]
     },
     {
       "title": "Skills-First AI Transformation Strategy",
