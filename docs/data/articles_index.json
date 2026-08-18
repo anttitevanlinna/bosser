@@ -1,6 +1,6 @@
 {
-  "total_articles": 24,
-  "last_updated": "2026-08-05T16:31:11.313Z",
+  "total_articles": 25,
+  "last_updated": "2026-08-18T16:57:45.908Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -108,6 +108,22 @@
       "content_length": 3112,
       "processed_at": "2025-08-03T09:37:07.185217",
       "tags": []
+    },
+    {
+      "title": "Stop Chatting. Build a System",
+      "slug": "stop-chatting-build-a-system",
+      "url": "Unknown URL",
+      "publish_date": "2026-08-10",
+      "content_length": 4688,
+      "processed_at": "2026-08-18T16:57:45.887Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "processes",
+        "strategy",
+        "leadership"
+      ]
     },
     {
       "title": "SaaS Is Going Headless — But Not How You Think",
@@ -272,22 +288,6 @@
       ]
     },
     {
-      "title": "Vision prepares for serendipity",
-      "slug": "vision-prepares-for-serendipity",
-      "url": "Unknown URL",
-      "publish_date": "2025-10-18",
-      "content_length": 4241,
-      "processed_at": "2025-10-18T05:33:09.787Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "vision",
-        "leadership",
-        "planning"
-      ]
-    },
-    {
       "title": "The mechanical duck and processes",
       "slug": "the-mechanical-duck-and-processes",
       "url": "Unknown URL",
@@ -311,6 +311,22 @@
       "content_length": 4878,
       "processed_at": "2025-08-03T09:37:07.269943",
       "tags": []
+    },
+    {
+      "title": "Vision prepares for serendipity",
+      "slug": "vision-prepares-for-serendipity",
+      "url": "Unknown URL",
+      "publish_date": "2025-10-18",
+      "content_length": 4241,
+      "processed_at": "2025-10-18T05:33:09.787Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "vision",
+        "leadership",
+        "planning"
+      ]
     },
     {
       "title": "Visioning",
