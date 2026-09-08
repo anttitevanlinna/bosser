@@ -1,6 +1,6 @@
 {
-  "total_articles": 25,
-  "last_updated": "2026-08-18T16:57:45.908Z",
+  "total_articles": 26,
+  "last_updated": "2026-09-08T11:20:50.471Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -19,6 +19,21 @@
       "content_length": 4647,
       "processed_at": "2025-08-03T09:37:07.110471",
       "tags": []
+    },
+    {
+      "title": "Outcome Orientation and Scaling AI",
+      "slug": "outcome-orientation-scaling-ai",
+      "url": "Unknown URL",
+      "publish_date": "2026-09-08",
+      "content_length": 4805,
+      "processed_at": "2026-09-08T11:20:50.455Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "strategy",
+        "leadership"
+      ]
     },
     {
       "title": "Autonomous Agents Are Not the Place to Start",
