@@ -1,6 +1,6 @@
 {
   "total_articles": 27,
-  "last_updated": "2026-09-19T12:57:26.218Z",
+  "last_updated": "2026-09-19T13:16:48.901Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -129,8 +129,8 @@
       "slug": "the-next-hard-thing",
       "url": "Unknown URL",
       "publish_date": "2026-09-19",
-      "content_length": 2985,
-      "processed_at": "2026-09-19T12:57:26.161Z",
+      "content_length": 3351,
+      "processed_at": "2026-09-19T13:16:48.874Z",
       "estimated_reading_time": "3 min",
       "status": "ready-for-review",
       "tags": [

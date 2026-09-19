@@ -10,8 +10,6 @@ estimated_reading_time: ""
 
 # The Next Hard Thing About Working With LLMs
 
-A few musings about what is going to be the next hard thing about working with LLMs.
-
 I've been wondering about what happens after semi heavy lifting is solved. Now coding in some ways starts to be solved. Then composition of products starts to be solved.
 
 But surely, once we are all there, the world will not work so that everyone is happy and everything is solved.
@@ -30,9 +28,9 @@ Now that is of course the same as the saturation of the market. So once problem 
 
 The point is that the LLM will give you averages. It will give you many plausible things, but the LLM still, without grounding to customers, cannot determine what is optimal and what is not optimal.
 
-It can make a guess, but still it's a guess.
-
 ![Everything converges into the average](../data/images/next-hard-thing-converging.png)
+
+The LLM can make a guess, but still it's a guess.
 
 And we come back to differentiation, choosing your battles and being yourself, curating, choosing where we are going to be the absolute best in our chosen field. So back to the notion of Playing to Win, differentiation by Porter, and these kinds of things.
 
@@ -42,9 +40,11 @@ I named the distinctiveness, or uniqueness, as the first axis. The second one is
 
 Doing precisely right for the chosen customer, in the chosen situation, on the chosen job to be done.
 
-The precision of rightness is again something that the LLM cannot figure out on its own. However much you hypothetically ask for solutions and ask for the LLM to do the right thing.
+The precision of rightness is again something that the LLM cannot figure out on its own. However much you hypothetically ask for solutions and ask for the LLM to do the right thing, you will not get there with just more prompting.
 
-The third is creativity. And this is from me, in my humble opinion. Again, a third similar axis that defeats the "anything is plausible."
+Precision does not come from more prompting. Precision comes from more iterations with the customers. Precision is back and forth. Precision is adapting to the customer outcomes.
+
+The third is creativity. And this is for me, in my humble opinion, the biggest one. With people, the rational is not always the right. The possible is not the optimal. The optimal is a tradeoff. Best solutions often times are flukes of circumstance and snappy thinking coming together. Again, a third similar axis that defeats the "anything is plausible."
 
 What happens with LLMs is that it gives the most fitting answer. You really have to force the LLM to become creative.
 
