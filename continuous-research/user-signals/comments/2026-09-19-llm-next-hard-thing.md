@@ -27,10 +27,21 @@ candidate_slug: llm-next-hard-thing
 - Doing *precisely* right for the chosen customer, in the chosen situation, on the chosen job-to-be-done.
 - The precision of rightness is again something the LLM cannot figure out on its own — however hard you hypothetically ask it to "do the right thing."
 
-## Open
+## Axis 3: Creativity
 
-- Antti flagged a possible third axis, coming later. Do not draft the arc until it lands (or he says two is the set).
+- Antti's own take ("in my humble opinion") — a third thing that defeats "anything is plausible."
+- The LLM gives the *most fitting* answer. Creativity is possible, but you have to force it — twist the LLM's arm to get it out of average behavior.
+- Getting out of the average is not the default; it's work.
+
+## The thesis (Antti, verbatim intent)
+
+This is the point of the whole post: the LLM gives you the average, the common. **You have to do the work to steer it to be distinctive, differentiated, precise, and creative — all at the same time.**
+
+The three axes are the three directions of that steering:
+1. Distinctiveness — which battle (strategy-level departure from average)
+2. Precision — exactly right for the chosen customer/job (execution-level departure from average)
+3. Creativity — out of the most-fitting answer (idea-level departure from average)
 
 ## Article potential
 
-Strong. Natural arc: solution abundance → market saturation → strategy fundamentals return → the two (three?) axes LLMs can't supply → what to do about it. Fits the practitioner/strategy lane (Playing to Win, Porter, JTBD references already in Antti's vocabulary).
+Strong. Natural arc: solution abundance → market saturation → strategy fundamentals return → the three axes LLMs default away from → the work of steering is the new hard thing. Fits the practitioner/strategy lane (Playing to Win, Porter, JTBD references already in Antti's vocabulary).
