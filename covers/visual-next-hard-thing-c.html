@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Next Hard Thing — Visual C</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px; height: 1080px;
+    background: #f6f2ea;
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+  }
+  .stage { position: relative; width: 1920px; height: 1080px; }
+</style>
+</head>
+<body>
+<div class="stage">
+<svg width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <marker id="ink" viewBox="0 0 14 14" refX="10" refY="7" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1,2 L13,7 L1,12 L4.5,7 Z" fill="#141414"/>
+    </marker>
+  </defs>
+
+  <!-- gravity circle, sketchy dashes -->
+  <circle cx="960" cy="560" r="140" fill="none" stroke="#141414" stroke-width="2.5" stroke-dasharray="2 14" stroke-linecap="round" opacity="0.55"/>
+  <circle cx="960" cy="560" r="240" fill="none" stroke="#141414" stroke-width="2" stroke-dasharray="2 20" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- the average -->
+  <circle cx="960" cy="560" r="30" fill="#141414"/>
+  <text x="900" y="660" text-anchor="end" fill="#141414" font-size="38" font-style="italic">the average</text>
+
+  <!-- distinctiveness: curved up-left -->
+  <path d="M 915,530 Q 700,420 480,330" fill="none" stroke="#141414" stroke-width="6" stroke-linecap="round" marker-end="url(#ink)"/>
+  <text x="430" y="270" text-anchor="middle" fill="#141414" font-size="46" font-style="italic">distinctiveness</text>
+  <line x1="290" y1="292" x2="570" y2="292" stroke="#ff6b35" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- creativity: curved up-right -->
+  <path d="M 1005,530 Q 1220,420 1440,330" fill="none" stroke="#141414" stroke-width="6" stroke-linecap="round" marker-end="url(#ink)"/>
+  <text x="1490" y="270" text-anchor="middle" fill="#141414" font-size="46" font-style="italic">creativity</text>
+  <line x1="1390" y1="292" x2="1590" y2="292" stroke="#ff6b35" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- precision: straight down, ruler-true -->
+  <path d="M 960,605 L 960,880" fill="none" stroke="#141414" stroke-width="6" stroke-linecap="round" marker-end="url(#ink)"/>
+  <text x="960" y="960" text-anchor="middle" fill="#141414" font-size="46" font-style="italic">precision</text>
+  <line x1="860" y1="982" x2="1060" y2="982" stroke="#ff6b35" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- footnote -->
+  <text x="960" y="80" text-anchor="middle" fill="#141414" font-size="30" font-style="italic" opacity="0.6">the work is pulling away from the middle</text>
+</svg>
+</div>
+</body>
+</html>
