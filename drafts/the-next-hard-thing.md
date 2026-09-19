@@ -25,6 +25,10 @@ It will give you many plausible things, but the LLM still, without grounding to 
 
 It can make a guess, but still it's a guess.
 
+[IMAGE — opening: everything converges on the average.
+Site (dark): covers/visual-next-hard-thing-b-square-inverse-dark.png
+LinkedIn (light): covers/visual-next-hard-thing-b-square-inverse-light.png]
+
 And we come back to differentiation, choosing your battles and being yourself, curating, choosing where we are going to be the absolute best in our chosen field.
 
 So back to the notion of Playing to Win, differentiation by Porter, and these kinds of things.
@@ -58,6 +62,10 @@ And that's the point, actually, of the whole blog post.
 It is a classic good old: LLM gives you the average, LLM gives you the common.
 
 But you have to do the work to actually steer it to become distinctive, differentiated, precise, and creative all at the same time.
+
+[IMAGE — closing / call to action: the three named vectors pulling out of the average.
+Site (dark): covers/visual-next-hard-thing-b-square-dark.png
+LinkedIn (light): covers/visual-next-hard-thing-b-square-light.png]
 
 ---
 ---
