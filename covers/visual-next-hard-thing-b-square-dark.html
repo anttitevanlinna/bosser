@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Next Hard Thing — B square dark</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 1200px;
+    background: #0a0a0a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+  }
+  .stage { position: relative; width: 1200px; height: 1200px;
+    background: radial-gradient(circle 700px at 50% 50%, #121212 0%, #0a0a0a 75%);
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+<svg id="viz" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <marker id="arrowO" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 L4,6 Z" fill="#ff6b35"/>
+    </marker>
+    <marker id="arrowT" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 L4,6 Z" fill="#4ecdc4"/>
+    </marker>
+    <marker id="arrowV" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 L4,6 Z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <!-- cluster of plausible answers, injected by script -->
+  <g id="cluster"></g>
+
+  <text x="520" y="845" text-anchor="middle" fill="#666666" font-size="24" font-weight="500" letter-spacing="5">THE AVERAGE — EVERYTHING PLAUSIBLE</text>
+
+  <!-- distinctiveness: left, slightly up (as in original B) -->
+  <line x1="495" y1="530" x2="175" y2="442" stroke="#ff6b35" stroke-width="6" marker-end="url(#arrowO)"/>
+  <circle cx="148" cy="435" r="11" fill="#ff6b35"/>
+  <circle cx="148" cy="435" r="22" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.4"/>
+  <text x="255" y="368" text-anchor="middle" fill="#ff6b35" font-size="36" font-weight="700" letter-spacing="5">DISTINCTIVENESS</text>
+
+  <!-- creativity: up-right (as in original B) -->
+  <line x1="690" y1="500" x2="965" y2="335" stroke="#a78bfa" stroke-width="6" marker-end="url(#arrowV)"/>
+  <circle cx="992" cy="320" r="11" fill="#a78bfa"/>
+  <circle cx="992" cy="320" r="22" fill="none" stroke="#a78bfa" stroke-width="2" opacity="0.4"/>
+  <text x="965" y="258" text-anchor="middle" fill="#a78bfa" font-size="36" font-weight="700" letter-spacing="5">CREATIVITY</text>
+
+  <!-- precision: down-right (as in original B) -->
+  <line x1="675" y1="645" x2="935" y2="852" stroke="#4ecdc4" stroke-width="6" marker-end="url(#arrowT)"/>
+  <circle cx="960" cy="872" r="11" fill="#4ecdc4"/>
+  <circle cx="960" cy="872" r="22" fill="none" stroke="#4ecdc4" stroke-width="2" opacity="0.4"/>
+  <text x="950" y="955" text-anchor="middle" fill="#4ecdc4" font-size="36" font-weight="700" letter-spacing="5">PRECISION</text>
+</svg>
+
+<script>
+  function mulberry32(a) {
+    return function() {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  const rand = mulberry32(42);
+  const g = document.getElementById('cluster');
+  const cx = 600, cy = 560;
+  for (let i = 0; i < 170; i++) {
+    const gx = (rand() + rand() + rand() + rand() - 2) / 2;
+    const gy = (rand() + rand() + rand() + rand() - 2) / 2;
+    const x = cx + gx * 200;
+    const y = cy + gy * 190;
+    const d = Math.hypot(x - cx, y - cy);
+    const r = 2 + rand() * 4;
+    const opacity = Math.max(0.12, 0.85 - d / 230);
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', x.toFixed(1));
+    c.setAttribute('cy', y.toFixed(1));
+    c.setAttribute('r', r.toFixed(1));
+    c.setAttribute('fill', '#9a9a9a');
+    c.setAttribute('opacity', opacity.toFixed(2));
+    g.appendChild(c);
+  }
+  const core = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  core.setAttribute('cx', cx); core.setAttribute('cy', cy);
+  core.setAttribute('r', 16); core.setAttribute('fill', '#c0c0c0');
+  g.appendChild(core);
+</script>
+</div>
+</body>
+</html>
