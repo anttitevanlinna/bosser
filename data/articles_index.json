@@ -1,6 +1,6 @@
 {
-  "total_articles": 26,
-  "last_updated": "2026-09-08T11:20:50.471Z",
+  "total_articles": 27,
+  "last_updated": "2026-09-19T12:57:26.218Z",
   "articles": [
     {
       "title": "Ai and Agile 2.0",
@@ -123,6 +123,21 @@
       "content_length": 3112,
       "processed_at": "2025-08-03T09:37:07.185217",
       "tags": []
+    },
+    {
+      "title": "The Next Hard Thing About Working With LLMs",
+      "slug": "the-next-hard-thing",
+      "url": "Unknown URL",
+      "publish_date": "2026-09-19",
+      "content_length": 2985,
+      "processed_at": "2026-09-19T12:57:26.161Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "strategy",
+        "differentiation"
+      ]
     },
     {
       "title": "Stop Chatting. Build a System",
@@ -262,6 +277,22 @@
       ]
     },
     {
+      "title": "The remarkable year of Ai in Software",
+      "slug": "the-remarkable-year-of-ai-in-software",
+      "url": "Unknown URL",
+      "publish_date": "2025-12-05",
+      "content_length": 2645,
+      "processed_at": "2025-12-05T17:56:10.844Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "software",
+        "technology",
+        "strategy"
+      ]
+    },
+    {
       "title": "Organisational change and cycle racing",
       "slug": "organisational-change-and-cycle-racing",
       "url": "Unknown URL",
@@ -285,22 +316,6 @@
       "content_length": 5973,
       "processed_at": "2025-08-03T09:37:07.028311",
       "tags": []
-    },
-    {
-      "title": "The remarkable year of Ai in Software",
-      "slug": "the-remarkable-year-of-ai-in-software",
-      "url": "Unknown URL",
-      "publish_date": "2025-12-05",
-      "content_length": 2645,
-      "processed_at": "2025-12-05T17:56:10.844Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "ai",
-        "software",
-        "technology",
-        "strategy"
-      ]
     },
     {
       "title": "The mechanical duck and processes",
