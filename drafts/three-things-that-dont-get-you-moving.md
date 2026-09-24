@@ -12,7 +12,7 @@ estimated_reading_time: ""
 
 I have now been privileged to be leading three transformations in two companies. One company had two different areas. One of the three transformations is ongoing right now. And I'm seeing a few others as well on the side. Here's what doesn't work. So do more of the stuff that works.
 
-## The idea workshop
+## The agent idea workshop
 
 The first one that doesn't work, plainly, is to get a workshop going, collect agent ideas, and then put them in a grid of easy and hard, high impact and low impact. Then discuss the merits, drawbacks and complexities of each and every agent. You know the classic: let's list the ideas, let's choose the best one, and then somehow magically the best one gets going.
 
