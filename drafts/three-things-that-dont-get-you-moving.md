@@ -10,7 +10,7 @@ estimated_reading_time: ""
 
 # Three Things That Don't Get You Moving in AI Transformation
 
-I have transformation going. I have now been privileged to be leading two, and I'm seeing a few others as well on the side. Here's what doesn't work. So do more of the stuff that works.
+I have transformation going. I have now been privileged to be leading three transformations in two companies. One company had two different areas. And I'm seeing a few others as well on the side. Here's what doesn't work. So do more of the stuff that works.
 
 ## The idea workshop
 
@@ -71,3 +71,7 @@ By now, I would claim that 90% of people know that agentic AI will be a transfor
 And people have been waiting. They have been waiting for the platform. They have been waiting for the use case. Just about everybody has been waiting for the freedom to act, and the freedom to act on something they believe they have a chance at achieving.
 
 If you enable that and simply set people free, all of a sudden you have a lot of movement. And as the management saying goes, you can't steer what's not moving. You steer something that is moving.
+
+---
+
+*P.S. The article is written with absolute claims about those things not getting people moving. I think smart managers will notice that the minimum needs to be in place for all. Some tools need to be available. Some governance about the absolutes of where not to fail needs to be in place. But that can be just the bare minimum.*
