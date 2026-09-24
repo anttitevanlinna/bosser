@@ -1,6 +1,6 @@
 ---
-title: "You Can't Steer What's Not Moving"
-slug: "you-cant-steer-whats-not-moving"
+title: "Three Things That Don't Get You Moving in AI Transformation"
+slug: "three-things-that-dont-get-you-moving"
 author: "Antti Tevanlinna"
 created_at: "2026-09-24"
 tags: ["ai", "transformation", "leadership"]
@@ -8,7 +8,7 @@ newsletter: false
 estimated_reading_time: ""
 ---
 
-# You Can't Steer What's Not Moving
+# Three Things That Don't Get You Moving in AI Transformation
 
 I have transformation going. I have now been privileged to be leading two, and I'm seeing a few others as well on the side. Here's what doesn't work. So do more of the stuff that works.
 
