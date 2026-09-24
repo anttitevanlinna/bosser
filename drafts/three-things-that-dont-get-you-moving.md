@@ -10,13 +10,15 @@ estimated_reading_time: ""
 
 # Three Things That Don't Get You Moving in AI Transformation
 
-I have transformation going. I have now been privileged to be leading three transformations in two companies. One company had two different areas. And I'm seeing a few others as well on the side. Here's what doesn't work. So do more of the stuff that works.
+I have now been privileged to be leading three transformations in two companies. One company had two different areas. One of the three transformations is ongoing right now. And I'm seeing a few others as well on the side. Here's what doesn't work. So do more of the stuff that works.
 
 ## The idea workshop
 
 The first one that doesn't work, plainly, is to get a workshop going, collect agent ideas, and then put them in a grid of easy and hard, high impact and low impact. Then discuss the merits, drawbacks and complexities of each and every agent. You know the classic: let's list the ideas, let's choose the best one, and then somehow magically the best one gets going.
 
 Now, it's very logical to do this activity. But it always seems to fail with the "what next". Because the what next is the hard part.
+
+After a use case selection, what is hard is actually to get people taking the time and using the tools, understanding what happened and what they learned, and to rinse and repeat. And that learning, as we will notice, is the core.
 
 You end up with a logical idea that is well defended. It might take one month with the process. I've never seen anybody do this in a week in a real organization, because this involves people.
 
@@ -28,7 +30,7 @@ As you're starting with AI and agents and the transformation in general, you sim
 
 All the time goes into this conversation between humans about things that are kind of plausible, could be done, should be done.
 
-You can claim that this selection is the first step in getting things going. I'll come to that at the end, but in my humble opinion, it is not.
+You can claim that this selection is the first step in getting things going. In my humble opinion, overdoing this step is one of the worst stalls in making your transformation work.
 
 ## What is AI native?
 
@@ -50,13 +52,13 @@ If the first two were meta discussions, now we are in the second-level rabbit ho
 
 Now it's funny. As I dictate and write this, it all has the same shape. We have people getting together and trying to figure out the unknown future. And then it just ends up with conversation, conversation, and more conversation.
 
-Some companies are lucky that they simply throw a dart at the board, knowing that it will not land right, but whatever lands, they act on it. I suppose that's the right way. That might be the only way.
+Some companies know that they cannot analyze their way into the right selection. They take an educated guess. They simply throw a dart at the board, knowing that it will not land right, but whatever lands, they act on it. I suppose that's the right way. That might be the only way.
 
 ## What works
 
-So then, what works? I have now, in a way, lived through three such cases. All of them have been in a mood where we don't know, and I don't know, what is the right action. And still, the feeling has been that acting is the thing that teaches us what we really need to know.
+So then, what works? I have now, in a way, lived through three such cases. All of them have been in a mood where we don't know, and I don't know, what is the right action. And still, the first pillar has been the feeling that acting is the thing that teaches us what we really need to know.
 
-The second, I would even call it a pillar, has been a deliberate choice that this acting is something that everybody has to do. It's not only management, it's not only team leaders, it's not only the seniors or the architects that need to figure it out first. No, the other way around: everybody needs to act on something. And it's pretty much anything.
+The second pillar has been a deliberate choice that this acting is something that everybody has to do. It's not only management, it's not only team leaders, it's not only the seniors or the architects that need to figure it out first. No, the other way around: everybody needs to act on something. And it's pretty much anything.
 
 That action creates the set of outcomes, the set of learnings. Half of them will be right and half of them will be wrong, and there are gradients to rightness and wrongness. But if you really think about it, you have created a huge set of knowledge within a month, as compared to mulling over the first use case to maybe try when you have time.
 
