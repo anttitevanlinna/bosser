@@ -32,7 +32,7 @@ I haven't actually spent the time describing the outcome I'm seeking. And then I
 
 # Organisations drowning in plausible-but-not-optimal
 
-I so see it in front of me. Plausible solutions for any claimed problem are just one prompt away. Any agent can start charting out organisational life and those agents will hundreds of problems. Anybody can prompt for their preferred solution. 
+I so see it in front of me. Plausible solutions for any claimed problem are just one prompt away. Any agent can start charting out organisational life and those agents will find hundreds of problems. Anybody can prompt for their preferred solution. 
 
 The conversation is stuck in my solution vs your solution. My idea is better than yours. But all these solutions are plausible. We can even ask agents to compare plusses and minuses. 
 
