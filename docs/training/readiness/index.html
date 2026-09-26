@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Readiness Check — Agents 102</title>
+    <meta name="description" content="5 questions. 2 minutes. How ready is your domain for AI agents? Based on research across 1,100+ sources in 9 business domains.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Domain Readiness Check — Agents 102">
+    <meta property="og:description" content="5 questions. 2 minutes. How ready is your domain for AI agents? Based on research across 1,100+ sources in 9 business domains.">
+    <meta property="og:url" content="https://anttitevanlinna.github.io/agents-102/readiness/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Domain Readiness Check — Agents 102">
+    <meta name="twitter:description" content="5 questions. 2 minutes. How ready is your domain for AI agents? Based on research across 1,100+ sources in 9 business domains.">
+</head>
+<body>
+
+    <section class="intro" id="intro">
+        <div class="container">
+            <div class="intro-label">Domain Readiness Check</div>
+            <h1>How ready is your domain for AI agents?</h1>
+            <p class="intro-description">5 questions. 2 minutes. Based on research across 1,100+ sources in 9 business domains.</p>
+            <button class="start-button" id="start-button">Check your readiness</button>
+        </div>
+    </section>
+
+    <section class="domain-section" id="domain-section">
+        <div class="container">
+            <div class="domain-label">Step 1</div>
+            <div class="domain-title">Pick your primary domain:</div>
+            <div class="domain-grid" id="domain-grid"></div>
+        </div>
+    </section>
+
+    <section class="questions-section" id="questions-section">
+        <div class="container">
+            <div class="progress" id="progress"></div>
+            <div class="question-area" id="question-area"></div>
+        </div>
+    </section>
+
+    <section class="results-section" id="results-section">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-label">Your Readiness Profile</div>
+                <h2 class="results-profile-name" id="results-profile-name"></h2>
+                <div class="results-score" id="results-score"></div>
+                <div class="results-subtitle" id="results-subtitle"></div>
+            </div>
+
+            <div class="radar-container" id="radar-container">
+                <canvas id="radar-canvas" width="720" height="720"></canvas>
+                <div class="radar-legend">
+                    <div class="radar-legend-item">
+                        <div class="radar-legend-swatch radar-legend-swatch--user"></div>
+                        <span>Your scores</span>
+                    </div>
+                    <div class="radar-legend-item">
+                        <div class="radar-legend-swatch radar-legend-swatch--benchmark"></div>
+                        <span>Coding benchmark</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benchmark-section" id="benchmark-section"></div>
+
+            <div class="profile-copy" id="profile-copy"></div>
+
+            <div class="shareable-insight" id="shareable-insight">
+                <div class="shareable-insight-label">Your biggest gap vs. coding</div>
+                <div class="shareable-insight-text" id="shareable-insight-text"></div>
+            </div>
+
+            <div class="cta-section" id="cta-section">
+                <a class="cta-button" id="cta-dm" href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank" rel="noopener">Send me a DM on LinkedIn</a>
+                <a class="cta-button cta-button--secondary" id="cta-article" href="../article.html?slug=spillover">Read the full analysis</a>
+                <a class="cta-button cta-button--secondary" href="https://www.linkedin.com/newsletters/7117916803816693760/" target="_blank" rel="noopener">Follow the newsletter</a>
+                <p class="cta-note">Or if you know me, just call me.</p>
+            </div>
+
+            <div class="share-section">
+                <h3>Share your results</h3>
+                <p>Send the link to a colleague. They will see your results directly.</p>
+                <button class="share-button" id="share-button">Copy link to clipboard</button>
+                <div class="share-copied" id="share-copied">Link copied.</div>
+            </div>
+
+            <div id="crowd-section"></div>
+
+            <div class="feedback-meter" id="feedback-meter">
+                <p class="feedback-question">Was this insightful?</p>
+                <div class="feedback-buttons">
+                    <button class="feedback-btn" id="feedback-down" aria-label="Not insightful" data-value="fluff">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17" transform="rotate(180 12 12)"/></svg>
+                        <span>Fluff</span>
+                    </button>
+                    <button class="feedback-btn" id="feedback-up" aria-label="Insightful" data-value="insight">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                        <span>Insight</span>
+                    </button>
+                </div>
+                <div class="feedback-thanks" id="feedback-thanks">Thanks. That helps us improve.</div>
+            </div>
+
+            <div class="crosslink-card">
+                <div class="crosslink-card-label">Also available</div>
+                <h3>Agentic Readiness Check</h3>
+                <p>What is your organization actually betting on? Seven strategic dilemmas that reveal where you stand.</p>
+                <a href="../check/">Take the check →</a>
+            </div>
+
+            <div class="retake">
+                <a href="?" id="retake-link">Take the check again</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bosser Oy &middot; All analytics anonymous &middot; <a href="../privacy.html">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

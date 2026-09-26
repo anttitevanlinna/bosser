@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover: When Will Agentic Coding Spill to Other Functions?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1920px;
+            height: 1080px;
+            background: #0a0a0a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cover-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 80px;
+            box-sizing: border-box;
+        }
+
+        .content {
+            max-width: 70%;
+            z-index: 10;
+            position: relative;
+        }
+
+        .series-label {
+            color: #ff6b35;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .title {
+            color: #ffffff;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+
+        .byline {
+            color: #b3b3b3;
+            font-size: 20px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .particle-container {
+            position: absolute;
+            left: 300px;
+            top: 0;
+            width: 800px;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .particle {
+            position: absolute;
+            background: #ff6b35;
+            border-radius: 50%;
+            transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .particle.small { width: 2px; height: 2px; }
+        .particle.medium { width: 4px; height: 4px; }
+        .particle.large { width: 6px; height: 6px; box-shadow: 0 0 12px #ff6b3540; }
+    </style>
+</head>
+<body>
+    <div class="cover-container">
+        <div class="content">
+            <div class="series-label">Deploying Agents</div>
+            <h1 class="title">When Will Agentic Coding Spill to Other Functions?</h1>
+            <div class="byline">Written by Claude Opus. Steered by Antti Tevanlinna.</div>
+        </div>
+
+        <div class="particle-container" id="particles"></div>
+    </div>
+
+    <script>
+        const particleContainer = document.getElementById('particles');
+        const particleCount = 300;
+        const particles = [];
+        const HEIGHT = 1080;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle ' + ['small', 'medium', 'large'][Math.floor(Math.random() * 3)];
+            particle.style.left = Math.random() * 800 + 'px';
+            particle.style.top = Math.random() * HEIGHT + 'px';
+            particleContainer.appendChild(particle);
+            particles.push(particle);
+        }
+
+        function getCloudFormation() {
+            const formations = [];
+            const centerX = 500;
+            const centerY = HEIGHT / 2;
+            for (let i = 0; i < particleCount; i++) {
+                const angle = (i / particleCount) * Math.PI * 2 * 3;
+                const radius = 225 + Math.sin(angle * 2) * 75;
+                formations.push({
+                    x: centerX + Math.cos(angle) * radius + (Math.random() - 0.5) * 150,
+                    y: centerY + Math.sin(angle) * radius * 0.9 + (Math.random() - 0.5) * 120
+                });
+            }
+            return formations;
+        }
+
+        function getBrainFormation() {
+            const formations = [];
+            const centerX = 500;
+            const centerY = HEIGHT / 2;
+            for (let i = 0; i < particleCount; i++) {
+                const cluster = Math.floor(i / (particleCount / 6));
+                const clusterAngle = (cluster / 6) * Math.PI * 2;
+                const clusterX = centerX + Math.cos(clusterAngle) * 180;
+                const clusterY = centerY + Math.sin(clusterAngle) * 120;
+                formations.push({
+                    x: clusterX + (Math.random() - 0.5) * 120,
+                    y: clusterY + (Math.random() - 0.5) * 90
+                });
+            }
+            return formations;
+        }
+
+        function rotatePoint(x, y, centerX, centerY, angle) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const dx = x - centerX;
+            const dy = y - centerY;
+            return {
+                x: centerX + dx * cos - dy * sin,
+                y: centerY + dx * sin + dy * cos
+            };
+        }
+
+        function getHorizontalArrowFormation() {
+            const formations = [];
+            const centerX = 500;
+            const arrowLength = 400;
+            const startX = centerX - arrowLength / 2;
+            const endX = centerX + arrowLength / 2;
+            const startY = HEIGHT / 2;
+            const endY = HEIGHT / 2;
+            for (let i = 0; i < particleCount; i++) {
+                const progress = i / particleCount;
+                if (progress < 0.6) {
+                    const shaftX = startX + (endX - startX) * (progress / 0.6);
+                    formations.push({ x: shaftX, y: startY });
+                } else {
+                    const headProgress = (progress - 0.6) / 0.4;
+                    const headSize = 160;
+                    const headHeight = 120;
+                    if (headProgress < 0.5) {
+                        const diagProgress = headProgress / 0.5;
+                        formations.push({
+                            x: endX - headSize + diagProgress * headSize,
+                            y: endY - headHeight + diagProgress * headHeight
+                        });
+                    } else {
+                        const diagProgress = (headProgress - 0.5) / 0.5;
+                        formations.push({
+                            x: endX - headSize + diagProgress * headSize,
+                            y: endY + headHeight - diagProgress * headHeight
+                        });
+                    }
+                }
+            }
+            return formations;
+        }
+
+        function getArrowFormation() {
+            const horizontal = getHorizontalArrowFormation();
+            const angle = -Math.PI / 4;
+            const centerX = 500;
+            const centerY = HEIGHT / 2;
+            return horizontal.map(point => {
+                const rotated = rotatePoint(point.x, point.y, centerX, centerY, angle);
+                return {
+                    x: rotated.x + (Math.random() - 0.5) * 8,
+                    y: rotated.y + (Math.random() - 0.5) * 8
+                };
+            });
+        }
+
+        const formations = [getCloudFormation(), getBrainFormation(), getArrowFormation()];
+        let currentFormationIndex = 0;
+
+        function animateParticles() {
+            const currentFormation = formations[currentFormationIndex];
+            particles.forEach((particle, i) => {
+                const target = currentFormation[i];
+                particle.style.left = target.x + 'px';
+                particle.style.top = target.y + 'px';
+            });
+            currentFormationIndex = (currentFormationIndex + 1) % formations.length;
+        }
+
+        animateParticles();
+        setInterval(animateParticles, 4000);
+    </script>
+</body>
+</html>

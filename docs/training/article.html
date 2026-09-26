@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading... — Agents 102</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Layout switcher: ?layout=logbook|folio|spine|deck|kide|tuoli|strata|strata2|strata3|selka|kompassi
+        (function() {
+            var layout = new URLSearchParams(window.location.search).get('layout');
+            if (layout && /^(logbook|folio|spine|deck|kide|tuoli|strata|strata2|strata3|selka|kompassi)$/.test(layout)) {
+                document.write('<link rel="stylesheet" href="layouts/' + layout + '.css">');
+                window.__wpLayout = layout;
+            }
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Agents 102">
+    <meta property="og:description" content="Research and analysis on AI agent deployment in business">
+    <meta property="og:url" content="https://anttitevanlinna.github.io/agents-102/article.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Agents 102">
+    <meta name="twitter:description" content="Research and analysis on AI agent deployment in business">
+</head>
+<body>
+    <nav>
+        <div class="article-nav">
+            <a href="index.html" class="logo">Agents 102</a>
+            <a href="index.html" class="back-link">&larr; Back</a>
+        </div>
+    </nav>
+
+    <div class="read-progress" id="read-progress"></div>
+
+    <article class="article-container" id="article-standard">
+        <div id="article-content" class="loading">Loading article...</div>
+    </article>
+
+    <div class="article-with-toc" id="article-longform" style="display:none">
+        <aside class="toc-sidebar" id="toc-sidebar"></aside>
+        <div class="article-body-wrap" id="article-content-longform"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><a href="index.html" class="back-link">&larr; Back to Agents 102</a></p>
+            <p>&copy; 2026 Bosser Oy &middot; All analytics anonymous &middot; <a href="privacy.html">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+            const container = document.getElementById('article-content');
+
+            if (!slug) {
+                container.className = 'error';
+                container.textContent = 'No article specified. Use ?slug=filename (without .md)';
+                return;
+            }
+
+            const mdPath = 'content/' + slug + '.md';
+
+            fetch(mdPath)
+                .then(function(res) {
+                    if (!res.ok) throw new Error('Article not found: ' + slug);
+                    return res.text();
+                })
+                .then(function(md) {
+                    var byline = '';
+                    var intro = '';
+                    var body = md;
+                    var lines = md.split('\n');
+                    var cursor = 0;
+
+                    // Strip front matter (--- block)
+                    if (lines[0] && lines[0].trim() === '---') {
+                        for (var i = 1; i < lines.length; i++) {
+                            if (lines[i].trim() === '---') {
+                                cursor = i + 1;
+                                // Skip blank line after front matter
+                                if (lines[cursor] === '') cursor++;
+                                break;
+                            }
+                        }
+                    }
+
+                    // Byline (bold)
+                    if (lines[cursor] && lines[cursor].startsWith('**') && lines[cursor].endsWith('**')) {
+                        byline = lines[cursor].replace(/\*\*/g, '');
+                        cursor += 2; // skip blank line
+                    }
+
+                    // Next: intro (blockquote)
+                    if (lines[cursor] && lines[cursor].startsWith('> ')) {
+                        intro = lines[cursor].replace(/^> /, '');
+                        cursor += 2; // skip blank line
+                    }
+
+                    body = lines.slice(cursor).join('\n');
+
+                    // Reading time — count all body words
+                    var words = body.split(/\s+/).length;
+                    var readTime = Math.ceil(words / 200) + ' min read';
+
+                    // Render
+                    var html = '';
+                    if (byline) html += '<p class="article-byline">' + byline + '</p>';
+                    html += '<div class="article-body">' + marked.parse(body) + '</div>';
+
+                    container.className = '';
+                    container.innerHTML = html;
+
+                    // Insert intro and meta after h1
+                    var h1 = container.querySelector('h1');
+                    if (h1) {
+                        document.title = h1.textContent + ' — Agents 102';
+
+                        var meta = document.createElement('div');
+                        meta.className = 'article-meta';
+                        meta.innerHTML = '<span>' + readTime + '</span>';
+                        h1.after(meta);
+
+                        if (intro) {
+                            var introEl = document.createElement('p');
+                            introEl.className = 'article-intro';
+                            introEl.textContent = intro;
+                            meta.after(introEl);
+                        }
+                    }
+                    // ── Whitepaper enhancements (only for long-form content) ──
+                    var h1s = container.querySelectorAll('.article-body h1');
+                    var isLongform = h1s.length >= 3;
+
+                    if (isLongform) {
+                        // ── Activate light theme for longform ──
+                        document.body.classList.add('light-article');
+
+                        // ── Cover letter mode (?cover=true) ──
+                        if (params.get('cover') === 'true') {
+                            document.querySelector('.article-with-toc').classList.add('cover-strata2');
+                        }
+
+                        // ── Compact mode (?compact=true) — same style, no TOC ──
+                        if (params.get('compact') === 'true') {
+                            document.body.classList.add('compact-mode');
+                        }
+
+
+                        // Switch to longform layout with TOC sidebar
+                        document.getElementById('article-standard').style.display = 'none';
+                        var lf = document.getElementById('article-longform');
+                        lf.style.display = '';
+                        document.getElementById('article-content-longform').appendChild(container);
+
+                        // ── Classify blockquotes ──
+                        container.querySelectorAll('blockquote').forEach(function(bq) {
+                            var text = bq.textContent;
+                            if (text.indexOf('The thesis:') !== -1) bq.classList.add('thesis');
+                            else if (text.indexOf('research later confirmed') !== -1 ||
+                                     text.indexOf('What others are finding') !== -1 ||
+                                     text.indexOf('What research has shown') !== -1 ||
+                                     text.indexOf('predictions are aging') !== -1) bq.classList.add('confirmed');
+                        });
+
+                        // ── Author card detection ──
+                        container.querySelectorAll('em').forEach(function(em) {
+                            if (em.textContent.indexOf('Antti') === 0 && em.parentElement && em.parentElement.tagName === 'P') {
+                                var p = em.parentElement;
+                                var credentialsText = em.textContent.replace(/^Antti\s+Tevanlinna\s*/, '').replace(/^[,.:—–-]\s*/, '');
+                                var card = document.createElement('div');
+                                card.className = 'author-card';
+                                card.innerHTML = '<div class="author-initial">AT</div>' +
+                                    '<div class="author-info">' +
+                                    '<div class="author-name">Antti Tevanlinna</div>' +
+                                    '<div>' + (credentialsText || em.textContent.replace(/^Antti\s+Tevanlinna\s*/, '')) + '</div>' +
+                                    '</div>';
+                                p.parentNode.replaceChild(card, p);
+                            }
+                        });
+
+                        // ── Assign phase colors ──
+                        var phaseMap = { '1': 'phase-1', '2': 'phase-2', '3': 'phase-3', '4': 'phase-4' };
+                        var currentPhase = null;
+                        var articleBody = container.querySelector('.article-body');
+                        if (articleBody) {
+                            Array.from(articleBody.children).forEach(function(el) {
+                                if (el.tagName === 'H1') {
+                                    var m = el.textContent.match(/Phase\s+(\d)/);
+                                    currentPhase = m ? phaseMap[m[1]] : null;
+                                }
+                                if (currentPhase && (el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'BLOCKQUOTE')) {
+                                    el.classList.add(currentPhase);
+                                }
+                            });
+                        }
+
+                        // ── Essay card wrapping ──
+                        if (articleBody) {
+                            var h2s = articleBody.querySelectorAll('h2');
+                            h2s.forEach(function(h2) {
+                                var card = document.createElement('div');
+                                card.className = 'essay-card';
+                                h2.parentNode.insertBefore(card, h2);
+                                card.appendChild(h2);
+                                // Collect siblings until next h2 or h1
+                                while (card.nextSibling) {
+                                    var sib = card.nextSibling;
+                                    if (sib.nodeType === 1 && (sib.tagName === 'H2' || sib.tagName === 'H1' || sib.classList.contains('essay-card'))) break;
+                                    card.appendChild(sib);
+                                }
+                                // Propagate phase class to essay-card
+                                for (var c = 0; c < h2.classList.length; c++) {
+                                    if (h2.classList[c].indexOf('phase-') === 0) {
+                                        card.classList.add(h2.classList[c]);
+                                        break;
+                                    }
+                                }
+                            });
+                        }
+
+                        // ── Date pill extraction ──
+                        var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                        container.querySelectorAll('.article-body h2').forEach(function(h2) {
+                            var dateMatch = h2.textContent.match(/^(\d{4})-(\d{2})-(\d{2})\s*—\s*/);
+                            if (dateMatch) {
+                                var monthIdx = parseInt(dateMatch[2], 10) - 1;
+                                var day = parseInt(dateMatch[3], 10);
+                                var shortDate = monthNames[monthIdx] + ' ' + day;
+                                var pill = document.createElement('span');
+                                pill.className = 'essay-date';
+                                pill.textContent = shortDate;
+                                h2.parentNode.insertBefore(pill, h2);
+                                h2.textContent = h2.textContent.replace(/^\d{4}-\d{2}-\d{2}\s*—\s*/, '');
+                            }
+                        });
+
+                        // ── Build TOC ──
+                        var toc = document.getElementById('toc-sidebar');
+                        var tocHtml = '';
+                        var mobileHtml = '';
+                        container.querySelectorAll('.article-body h1, .article-body h2').forEach(function(heading, i) {
+                            var id = 'section-' + i;
+                            heading.id = id;
+                            var title = heading.textContent;
+                            if (heading.tagName === 'H1') {
+                                var phaseClass = '';
+                                for (var c = 0; c < heading.classList.length; c++) {
+                                    if (heading.classList[c].indexOf('phase-') === 0) phaseClass = heading.classList[c];
+                                }
+                                tocHtml += '<div class="toc-phase ' + phaseClass + '">' + title + '</div>';
+                                mobileHtml += '<div style="margin-top:0.5rem;font-weight:600;font-size:0.85rem;color:var(--text-secondary)">' + title + '</div>';
+                            } else {
+                                // Title already cleaned of date prefix by date pill extraction
+                                var short = title;
+                                tocHtml += '<a href="#' + id + '">' + short + '</a>';
+                                mobileHtml += '<a href="#' + id + '">' + short + '</a>';
+                            }
+                        });
+                        toc.innerHTML = tocHtml;
+
+                        // Mobile TOC
+                        var mobileToc = document.createElement('details');
+                        mobileToc.className = 'toc-mobile';
+                        mobileToc.innerHTML = '<summary>Contents</summary><nav>' + mobileHtml + '</nav>';
+                        var firstChild = container.querySelector('.article-body');
+                        if (firstChild) firstChild.prepend(mobileToc);
+
+                        // ── TOC active state + smooth scroll ──
+                        var tocLinks = toc.querySelectorAll('a');
+                        var mobileTocLinks = mobileToc.querySelectorAll('a');
+                        var headings = container.querySelectorAll('.article-body h1[id], .article-body h2[id]');
+
+                        // Smooth scroll for TOC links
+                        var allTocLinks = Array.prototype.slice.call(tocLinks).concat(Array.prototype.slice.call(mobileTocLinks));
+                        allTocLinks.forEach(function(tocLink) {
+                            tocLink.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            });
+                        });
+
+                        window.addEventListener('scroll', function() {
+                            var scrollPos = window.scrollY + 120;
+                            var current = '';
+                            headings.forEach(function(h) {
+                                if (h.offsetTop <= scrollPos) current = h.id;
+                            });
+                            tocLinks.forEach(function(a) {
+                                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+                            });
+                        });
+                    }
+
+                    // ── Progress bar (all articles) ──
+                    var bar = document.getElementById('read-progress');
+                    var phaseColors = { 'phase-1': '#5b9bd5', 'phase-2': '#e0a458', 'phase-3': '#d94f4f', 'phase-4': '#ff6b35' };
+                    var phaseH1s = isLongform ? Array.prototype.slice.call(container.querySelectorAll('.article-body h1')) : [];
+                    window.addEventListener('scroll', function() {
+                        var h = document.documentElement.scrollHeight - window.innerHeight;
+                        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+
+                        // Phase-colored progress bar for longform
+                        if (isLongform && phaseH1s.length > 0) {
+                            var scrollPos = window.scrollY + 120;
+                            var activePhaseColor = '#5b9bd5'; // default
+                            for (var p = phaseH1s.length - 1; p >= 0; p--) {
+                                if (phaseH1s[p].offsetTop <= scrollPos) {
+                                    for (var key in phaseColors) {
+                                        if (phaseH1s[p].classList.contains(key)) {
+                                            activePhaseColor = phaseColors[key];
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                }
+                            }
+                            bar.style.background = activePhaseColor;
+                        }
+                    });
+                })
+                .catch(function(err) {
+                    container.className = 'error';
+                    container.textContent = err.message;
+                });
+        })();
+    </script>
+    <script src="whitepaper-particles.js"></script>
+    <script>
+        // Load layout-specific JS if a layout variant is active
+        if (window.__wpLayout) {
+            var s = document.createElement('script');
+            var layoutScript = window.__wpLayout === 'strata3' ? 'strata2' : window.__wpLayout;
+            s.src = 'layouts/' + layoutScript + '.js';
+            document.body.appendChild(s);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wardley Map — SaaS Delegation Patterns</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 24px; }
+  .controls { margin-bottom: 12px; }
+  .controls button { padding: 8px 20px; font-size: 14px; cursor: pointer; border: 1px solid #999; background: #f5f5f5; border-radius: 4px; }
+  .controls button:hover { background: #e8e8e8; }
+  canvas { border: 1px solid #ddd; }
+</style>
+</head>
+<body>
+<div class="controls">
+  <button onclick="downloadPNG()">Download PNG</button>
+</div>
+<canvas id="map" width="1200" height="820"></canvas>
+<script>
+(function() {
+  var canvas = document.getElementById('map');
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width;
+  var H = canvas.height;
+
+  // Margins
+  var ml = 60, mr = 40, mt = 70, mb = 50;
+  var pw = W - ml - mr;  // plot width
+  var ph = H - mt - mb;  // plot height
+
+  // Coordinate system: visibility (1=top, 0=bottom), evolution (0=left/genesis, 1=right/commodity)
+  function x(evo) { return ml + evo * pw; }
+  function y(vis) { return mt + (1 - vis) * ph; }
+
+  // === COMPONENTS ===
+  var components = [
+    { name: 'Business Process\nOutcome',       vis: 0.97, evo: 0.30, anchor: true, labelPos: 'right' },
+    { name: 'Novel Competitive\nThinking',     vis: 0.88, evo: 0.08, labelPos: 'below' },
+    { name: 'Generic Domain\nKnowledge',      vis: 0.88, evo: 0.48, evolve: 0.68, evolveLabel: 'absorbed into integration', labelPos: 'below' },
+    { name: 'Agentic\nProcessing',             vis: 0.73, evo: 0.25, evolve: 0.62, labelPos: 'left' },
+    { name: 'Integration',             vis: 0.46, evo: 0.12, evolve: 0.78, labelPos: 'below-left' },
+    { name: 'Your SaaS\n(logic + data)',         vis: 0.30, evo: 0.65, labelPos: 'right' },
+    { name: 'Cloud',                           vis: 0.15, evo: 0.92, labelPos: 'right' },
+  ];
+
+  // Pipeline: Process Knowledge spans from genesis (novel) to custom (generic)
+  var pipelines = [
+    { label: 'Process Knowledge', vis: 0.88, evoFrom: 0.05, evoTo: 0.52 }
+  ];
+
+  // === LINKS ===
+  var links = [
+    [0, 1], // outcome -> novel competitive thinking
+    [0, 2], // outcome -> generic domain knowledge
+    [0, 3], // outcome -> agentic processing
+    [3, 4], // agentic processing -> integration
+    [2, 4], // generic domain knowledge -> integration (absorbed)
+    [4, 5], // integration -> SaaS logic
+    [5, 6], // SaaS logic -> cloud
+  ];
+
+  // === EVOLUTION ANNOTATIONS (positioned along the integration evolve arrow) ===
+  var evoStages = [
+    { label: 'Meetings, human work\n& custom artifacts',  evo: 0.06, side: 'below' },
+    { label: 'Custom integration\ncode & scripts',      evo: 0.20, side: 'above' },
+    { label: 'iPaaS\nZapier / MuleSoft',                evo: 0.34, side: 'above' },
+    { label: 'API wrappers\nin MCP',                    evo: 0.48, side: 'above' },
+    { label: 'Domain Brain\nSnowflake',                 evo: 0.56, side: 'below' },
+    { label: 'Shared Canvas\nFigma',                    evo: 0.64, side: 'below' },
+    { label: 'Dispatch Hub\nLinear',                    evo: 0.72, side: 'below' },
+    { label: 'Transaction Protocol\nShopify / UCP',     evo: 0.84, side: 'below' },
+  ];
+
+  // === DRAW ===
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Background
+    ctx.fillStyle = '#fafaf8';
+    ctx.fillRect(0, 0, W, H);
+
+    // === EVOLUTION AXIS ZONES (subtle background bands) ===
+    var zones = [
+      { from: 0, to: 0.25, color: 'rgba(180,140,100,0.06)' },
+      { from: 0.25, to: 0.50, color: 'rgba(140,160,120,0.06)' },
+      { from: 0.50, to: 0.75, color: 'rgba(100,140,170,0.06)' },
+      { from: 0.75, to: 1.0,  color: 'rgba(80,120,80,0.06)' },
+    ];
+    zones.forEach(function(z) {
+      ctx.fillStyle = z.color;
+      ctx.fillRect(x(z.from), mt, x(z.to) - x(z.from), ph);
+    });
+
+    // === AXES ===
+    ctx.strokeStyle = '#bbb';
+    ctx.lineWidth = 1;
+
+    // Evolution axis (bottom)
+    ctx.beginPath();
+    ctx.moveTo(ml, H - mb);
+    ctx.lineTo(W - mr, H - mb);
+    ctx.stroke();
+
+    // Visibility axis (left)
+    ctx.beginPath();
+    ctx.moveTo(ml, mt);
+    ctx.lineTo(ml, H - mb);
+    ctx.stroke();
+
+    // Evolution labels
+    ctx.fillStyle = '#888';
+    ctx.font = '11px Helvetica Neue, Helvetica, sans-serif';
+    ctx.textAlign = 'center';
+    var evoLabels = ['Genesis', 'Custom Built', 'Product (+rental)', 'Commodity (+utility)'];
+    var evoPositions = [0.125, 0.375, 0.625, 0.875];
+    evoLabels.forEach(function(label, i) {
+      ctx.fillText(label, x(evoPositions[i]), H - mb + 18);
+    });
+
+    // Evolution dividers (dashed)
+    ctx.setLineDash([3, 4]);
+    ctx.strokeStyle = '#d0d0d0';
+    [0.25, 0.50, 0.75].forEach(function(evo) {
+      ctx.beginPath();
+      ctx.moveTo(x(evo), mt);
+      ctx.lineTo(x(evo), H - mb);
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+
+    // Visibility label
+    ctx.save();
+    ctx.translate(18, mt + ph / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = '#888';
+    ctx.font = '11px Helvetica Neue, Helvetica, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Visibility', 0, 0);
+    ctx.restore();
+
+    // Evolution arrow label
+    ctx.fillStyle = '#888';
+    ctx.font = '11px Helvetica Neue, Helvetica, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Evolution', ml + pw / 2, H - mb + 36);
+
+    // Small arrows at axis ends
+    ctx.fillStyle = '#888';
+    // Right arrow on evolution
+    ctx.beginPath();
+    ctx.moveTo(W - mr, H - mb - 4);
+    ctx.lineTo(W - mr + 8, H - mb);
+    ctx.lineTo(W - mr, H - mb + 4);
+    ctx.fill();
+
+    // === TITLE ===
+    ctx.fillStyle = '#222';
+    ctx.font = 'bold 18px Helvetica Neue, Helvetica, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('SaaS Is Going Headless — But Not Like You Think', ml, 30);
+    ctx.font = '12px Helvetica Neue, Helvetica, sans-serif';
+    ctx.fillStyle = '#888';
+    ctx.fillText('Wardley Map — Integration is evolving, April 2026', ml, 50);
+
+    // === PIPELINES (bracket spanning evolution range) ===
+    if (typeof pipelines !== 'undefined') {
+      pipelines.forEach(function(p) {
+        var py = y(p.vis);
+        var px1 = x(p.evoFrom);
+        var px2 = x(p.evoTo);
+        var bracketH = 12;
+
+        ctx.strokeStyle = '#888';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([]);
+
+        // Top bracket
+        ctx.beginPath();
+        ctx.moveTo(px1, py - bracketH);
+        ctx.lineTo(px1, py - bracketH - 6);
+        ctx.lineTo(px2, py - bracketH - 6);
+        ctx.lineTo(px2, py - bracketH);
+        ctx.stroke();
+
+        // Label above bracket
+        ctx.fillStyle = '#666';
+        ctx.font = 'italic 11px Helvetica Neue, Helvetica, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(p.label, (px1 + px2) / 2, py - bracketH - 12);
+      });
+    }
+
+    // === LINKS ===
+    ctx.strokeStyle = '#aaa';
+    ctx.lineWidth = 1.5;
+    links.forEach(function(link) {
+      var a = components[link[0]];
+      var b = components[link[1]];
+      ctx.beginPath();
+      ctx.moveTo(x(a.evo), y(a.vis));
+      ctx.lineTo(x(b.evo), y(b.vis));
+      ctx.stroke();
+    });
+
+    // === EVOLVE ARROWS ===
+    components.forEach(function(c) {
+      if (c.evolve !== undefined) {
+        var x1 = x(c.evo);
+        var x2 = x(c.evolve);
+        var cy = y(c.vis);
+
+        // Dashed line from current to evolved position
+        ctx.setLineDash([6, 4]);
+        ctx.strokeStyle = '#c44';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(x1, cy);
+        ctx.lineTo(x2, cy);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Arrowhead
+        ctx.fillStyle = '#c44';
+        ctx.beginPath();
+        ctx.moveTo(x2, cy - 5);
+        ctx.lineTo(x2 + 10, cy);
+        ctx.lineTo(x2, cy + 5);
+        ctx.fill();
+
+        // Ghost dot at evolved position
+        ctx.beginPath();
+        ctx.arc(x2, cy, 5, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(204, 68, 68, 0.25)';
+        ctx.fill();
+        ctx.strokeStyle = '#c44';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    });
+
+    // === EVOLUTION STAGE MARKERS (tick marks + labels along integration evolve arrow) ===
+    var delY = y(0.46);
+    ctx.strokeStyle = '#c44';
+    ctx.lineWidth = 1;
+    evoStages.forEach(function(s) {
+      var sx = x(s.evo);
+
+      // Tick mark
+      ctx.beginPath();
+      ctx.moveTo(sx, delY - 6);
+      ctx.lineTo(sx, delY + 6);
+      ctx.stroke();
+
+      // Small dot
+      ctx.beginPath();
+      ctx.arc(sx, delY, 3, 0, Math.PI * 2);
+      ctx.fillStyle = s.side === 'above' ? 'rgba(160,120,80,0.6)' : 'rgba(70,130,180,0.7)';
+      ctx.fill();
+
+      // Label
+      ctx.fillStyle = s.side === 'above' ? '#8a6a3a' : '#3a6a8a';
+      ctx.font = '10px Helvetica Neue, Helvetica, sans-serif';
+      ctx.textAlign = 'center';
+      var lines = s.label.split('\n');
+      var ly = s.side === 'above' ? delY - 16 : delY + 18;
+      var lineHeight = 12;
+      if (s.side === 'above') {
+        // Draw bottom-up
+        for (var i = lines.length - 1; i >= 0; i--) {
+          ctx.fillText(lines[i], sx, ly - (lines.length - 1 - i) * lineHeight);
+        }
+      } else {
+        lines.forEach(function(line, i) {
+          ctx.fillText(line, sx, ly + i * lineHeight);
+        });
+      }
+    });
+
+    // === COMPONENTS ===
+    components.forEach(function(c) {
+      var cx = x(c.evo);
+      var cy = y(c.vis);
+
+      // Dot
+      ctx.beginPath();
+      ctx.arc(cx, cy, c.anchor ? 7 : 6, 0, Math.PI * 2);
+      ctx.fillStyle = c.anchor ? '#333' : '#444';
+      ctx.fill();
+
+      // White ring for anchor
+      if (c.anchor) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, 7, 0, Math.PI * 2);
+        ctx.strokeStyle = '#222';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // Label — position based on labelPos
+      ctx.fillStyle = '#222';
+      ctx.font = c.anchor ? 'bold 13px Helvetica Neue, Helvetica, sans-serif' : '12px Helvetica Neue, Helvetica, sans-serif';
+      var labelLines = c.name.split('\n');
+      var lh = 14;
+      var lx, ly;
+      switch (c.labelPos || 'right') {
+        case 'right':
+          ctx.textAlign = 'left';
+          lx = cx + 12;
+          ly = cy - (labelLines.length * lh) / 2 + 4;
+          break;
+        case 'below':
+          ctx.textAlign = 'center';
+          lx = cx;
+          ly = cy + 18;
+          break;
+        case 'above':
+          ctx.textAlign = 'center';
+          lx = cx;
+          ly = cy - 14 - (labelLines.length - 1) * lh;
+          break;
+        case 'left':
+          ctx.textAlign = 'right';
+          lx = cx - 12;
+          ly = cy - (labelLines.length * lh) / 2 + 4;
+          break;
+        case 'below-left':
+          ctx.textAlign = 'left';
+          lx = cx + 12;
+          ly = cy + 18;
+          break;
+        default:
+          ctx.textAlign = 'left';
+          lx = cx + 12;
+          ly = cy - (labelLines.length * lh) / 2 + 4;
+      }
+      labelLines.forEach(function(line, i) {
+        ctx.fillText(line, lx, ly + i * lh);
+      });
+    });
+
+    // === INSIGHT NOTE ===
+    ctx.fillStyle = 'rgba(70,130,180,0.08)';
+    var noteX = x(0.02);
+    var noteY = y(0.38);
+    var noteW = 340;
+    var noteH = 36;
+    ctx.fillRect(noteX - 8, noteY - 14, noteW, noteH);
+    ctx.fillStyle = '#3a6a8a';
+    ctx.font = 'italic 11px Helvetica Neue, Helvetica, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('Generic domain knowledge is absorbed into', noteX, noteY);
+    ctx.fillText('integration as it evolves. Novel thinking stays genesis.', noteX, noteY + 14);
+
+    // === SAAS DATA NOTE ===
+    var note2X = x(0.52);
+    var note2Y = y(0.22);
+    ctx.fillStyle = 'rgba(100,80,60,0.08)';
+    ctx.fillRect(note2X - 8, note2Y - 14, 330, 50);
+    ctx.fillStyle = '#6a5a3a';
+    ctx.font = 'italic 11px Helvetica Neue, Helvetica, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('Your data lives here. Salesforce, Snowflake, Workday...', note2X, note2Y);
+    ctx.fillText('For your own map, split into real systems at their real', note2X, note2Y + 14);
+    ctx.fillText('evolutions. This is a simplification.', note2X, note2Y + 28);
+
+    // === CREDIT ===
+    ctx.fillStyle = '#bbb';
+    ctx.font = '10px Helvetica Neue, Helvetica, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('bosser.consulting — April 2026', W - mr, H - 8);
+  }
+
+  draw();
+
+  // === DOWNLOAD ===
+  window.downloadPNG = function() {
+    var link = document.createElement('a');
+    link.download = 'wardley-saas-integration.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  };
+})();
+</script>
+</body>
+</html>
