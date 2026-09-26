@@ -6,31 +6,19 @@
  * Used by: docs/js/articles.js, scripts/sync-scraped-to-site.js
  */
 function formatDate(dateString) {
-    if (!dateString || dateString === 'Unknown date') {
-        return '2025';
-    }
-    
-    try {
-        return new Date(dateString).toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'short',
-            day: 'numeric'
-        });
-    } catch {
-        return dateString;
-    }
+    const date = new Date(dateString);
+    if (!dateString || !Number.isFinite(date.getTime())) return '';
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC'
+    });
 }
 
 /**
  * Simple date formatting for prepare-newsletter.js 
- * (different from formatDate - uses default locale)
+ * Uses the same publication date format as the other publisher.
  */
 function formatDateSimple(dateString) {
-    try {
-        return new Date(dateString).toLocaleDateString();
-    } catch {
-        return dateString;
-    }
+    return formatDate(dateString);
 }
 
 module.exports = {

@@ -7,7 +7,8 @@ const { marked } = require('marked');
 const HTMLCoverGenerator = require('./generate-cover-html');
 // Note: Cover video recording disabled - Playwright removed for LinkedIn publishing
 const { formatDateSimple } = require('../utils/date-utils');
-const { estimateReadingTime } = require('../utils/content-utils');
+const { estimateReadingTime, createExcerpt } = require('../utils/content-utils');
+const ArticleDataProcessor = require('../docs/js/article-data');
 const { ensureDirectories, ensureDirectory, fileExists } = require('../utils/file-utils');
 
 class NewsletterPreparer {
@@ -89,7 +90,9 @@ class NewsletterPreparer {
             newsletter: frontMatter.newsletter || false,
             tags: frontMatter.tags || [],
             cover_html: `../covers/cover-${slug}.html`,
-            estimated_reading_time: frontMatter.estimated_reading_time || estimateReadingTime(content),
+            estimated_reading_time: estimateReadingTime(htmlContent),
+            reading_minutes: parseInt(estimateReadingTime(htmlContent), 10),
+            excerpt: frontMatter.excerpt || createExcerpt(htmlContent),
             status: 'ready-for-review'
         };
         
@@ -105,7 +108,7 @@ class NewsletterPreparer {
         
         console.log(`✅ Newsletter prepared successfully!`);
         console.log(`📁 Article saved: ${articlePath}`);
-        console.log(`🌐 Review at: https://anttitevanlinna.github.io/bosser/articles/${slug}.html`);
+        console.log(`🌐 Review at: https://bosser.consulting/articles/${slug}.html`);
         
         return articleData;
     }
@@ -135,19 +138,21 @@ class NewsletterPreparer {
                 processed_at: articleData.processed_at,
                 cover_video: articleData.cover_video,
                 estimated_reading_time: articleData.estimated_reading_time,
+                reading_minutes: articleData.reading_minutes,
+                excerpt: articleData.excerpt,
                 status: articleData.status,
                 tags: articleData.tags || []
             });
         }
         
         // Sort by publish date
-        articles.sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));
+        const sortedArticles = ArticleDataProcessor.sortByDate(articles);
         
         // Save updated index
         const indexData = {
             total_articles: articles.length,
             last_updated: new Date().toISOString(),
-            articles: articles
+            articles: sortedArticles
         };
         
         const indexPath = path.join(this.dataDir, 'articles_index.json');
@@ -166,9 +171,7 @@ class NewsletterPreparer {
         ensureDirectory(templatePath);
         
         // Article page template matching current site structure
-        const readingTime = articleData.estimated_reading_time
-            ? parseInt(articleData.estimated_reading_time)
-            : Math.ceil(articleData.content_length / 1500);
+        const readingTime = parseInt(estimateReadingTime(articleData.content_html), 10);
         const articleHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,24 +181,30 @@ class NewsletterPreparer {
     <script defer src="https://cloud.umami.is/script.js" data-website-id="eb766906-49ac-4f5c-941c-b107cf0e7c4f"></script>
     <meta name="description" content="${articleData.title.substring(0, 150)}...">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/${articleData.slug}.html">
+    <link rel="canonical" href="https://bosser.consulting/articles/${articleData.slug}.html">
     
     <!-- Open Graph -->
     <meta property="og:title" content="${articleData.title}">
     <meta property="og:description" content="${articleData.title.substring(0, 150)}...">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://anttitevanlinna.github.io/bosser/articles/${articleData.slug}.html">
+    <meta property="og:url" content="https://bosser.consulting/articles/${articleData.slug}.html">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${articleData.title}">
     <meta name="twitter:description" content="${articleData.title.substring(0, 150)}...">
+    <link rel="stylesheet" href="../site.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="../index.html" class="logo">Bosser</a>
-            <a href="../index.html#articles" class="back-link">← Back to Articles</a>
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-nav-inner">
+            <a class="site-brand" href="../">Bosser</a>
+            <ul class="site-links">
+                <li><a href="../training/">Training</a></li>
+                <li><a href="../#proof">Approach</a></li>
+                <li><a href="../#articles" aria-current="true">Thinking</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -251,7 +260,7 @@ async function main() {
         await preparer.prepareDraft(draftName);
         
         console.log('\n🎯 Next steps:');
-        console.log('1. Review at: https://anttitevanlinna.github.io/bosser/');
+        console.log('1. Review at: https://bosser.consulting/');
         console.log('2. Open covers/cover.html to record video with browser plugin');
         console.log('3. Use browser plugin to publish to LinkedIn');
     } catch (error) {

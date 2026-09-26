@@ -600,8 +600,6 @@
             // High-DPI support
             var dpr = window.devicePixelRatio || 1;
             var displaySize = 360;
-            canvas.style.width = displaySize + 'px';
-            canvas.style.height = displaySize + 'px';
             canvas.width = displaySize * dpr;
             canvas.height = displaySize * dpr;
             ctx.scale(dpr, dpr);

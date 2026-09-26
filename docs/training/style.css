@@ -1481,7 +1481,7 @@ footer p {
 /* ── What comes after (mini stepper) ── */
 .cur-after-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; }
 .cur-after-desc { margin-bottom: 2rem; }
-.cur-steps { grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem; }
+.cur-steps { grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem; }
 .cur-step { padding: 1.75rem 1.5rem; background: var(--bg-card); }
 .cur-step-num { font-size: 0.75rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; }
 .cur-step-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.3; }

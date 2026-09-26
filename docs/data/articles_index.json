@@ -1,62 +1,308 @@
 {
-  "total_articles": 27,
+  "total_articles": 28,
   "last_updated": "2026-09-19T13:16:48.901Z",
   "articles": [
     {
-      "title": "Ai and Agile 2.0",
-      "slug": "ai-and-agile-20",
+      "title": "The Next Hard Thing About Working With LLMs",
+      "slug": "the-next-hard-thing",
       "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 4094,
-      "processed_at": "2025-08-03T09:37:06.880036",
-      "tags": []
-    },
-    {
-      "title": "Ai and certainty don’t mix",
-      "slug": "ai-and-certainty-dont-mix",
-      "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 4647,
-      "processed_at": "2025-08-03T09:37:07.110471",
-      "tags": []
+      "publish_date": "2026-09-19",
+      "content_length": 3076,
+      "processed_at": "2026-09-19T13:16:48.874Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "strategy",
+        "differentiation"
+      ],
+      "reading_minutes": 3
     },
     {
       "title": "Outcome Orientation and Scaling AI",
       "slug": "outcome-orientation-scaling-ai",
       "url": "Unknown URL",
       "publish_date": "2026-09-08",
-      "content_length": 4805,
+      "content_length": 4708,
       "processed_at": "2026-09-08T11:20:50.455Z",
-      "estimated_reading_time": "5 min",
+      "estimated_reading_time": "4 min",
       "status": "ready-for-review",
       "tags": [
         "ai",
         "strategy",
         "leadership"
-      ]
+      ],
+      "reading_minutes": 4
+    },
+    {
+      "title": "Stop Chatting. Build a System",
+      "slug": "stop-chatting-build-a-system",
+      "url": "Unknown URL",
+      "publish_date": "2026-08-10",
+      "content_length": 4574,
+      "processed_at": "2026-08-18T16:57:45.887Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "processes",
+        "strategy",
+        "leadership"
+      ],
+      "reading_minutes": 4
     },
     {
       "title": "Autonomous Agents Are Not the Place to Start",
       "slug": "autonomous-agents-not-the-place-to-start",
       "url": "Unknown URL",
       "publish_date": "2026-08-05",
-      "content_length": 6211,
+      "content_length": 6101,
       "processed_at": "2026-08-05T16:31:11.280Z",
-      "estimated_reading_time": "6 min",
+      "estimated_reading_time": "5 min",
       "status": "ready-for-review",
       "tags": [
         "strategy",
         "ai",
         "leadership",
         "technology"
-      ]
+      ],
+      "reading_minutes": 5
+    },
+    {
+      "title": "Focus and Renewal",
+      "slug": "focus-and-renewal",
+      "url": "Unknown URL",
+      "publish_date": "2026-07-08",
+      "content_length": 3238,
+      "processed_at": "2026-07-08T06:11:23.053Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership"
+      ],
+      "reading_minutes": 3
+    },
+    {
+      "title": "SaaS Is Going Headless — But Not How You Think",
+      "slug": "saas-is-not-going-headless",
+      "url": "Unknown URL",
+      "publish_date": "2026-04-15",
+      "content_length": 11672,
+      "processed_at": "2026-04-15T07:24:46.043Z",
+      "estimated_reading_time": "8 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "ai",
+        "technology",
+        "software"
+      ],
+      "reading_minutes": 8
+    },
+    {
+      "title": "Skills-First AI Transformation Strategy",
+      "slug": "skills-first-ai-transformation-strategy",
+      "url": "Unknown URL",
+      "publish_date": "2026-04-08",
+      "content_length": 9387,
+      "processed_at": "2026-04-08T07:31:08.929Z",
+      "estimated_reading_time": "7 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "ai",
+        "transformation",
+        "skills"
+      ],
+      "reading_minutes": 7
+    },
+    {
+      "title": "Rebranding: Agentic Strategy",
+      "slug": "rebranding-agentic-strategy",
+      "url": "Unknown URL",
+      "publish_date": "2026-04-01",
+      "content_length": 4809,
+      "processed_at": "2026-04-01T06:39:13.808Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ],
+      "reading_minutes": 4
+    },
+    {
+      "title": "For innovators",
+      "slug": "for-innovators",
+      "url": "Unknown URL",
+      "publish_date": "2026-02-22",
+      "content_length": 3567,
+      "processed_at": "2026-03-05T17:40:44.723Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "future",
+        "ai"
+      ],
+      "reading_minutes": 3
+    },
+    {
+      "title": "Shifting toward customers - finding the truth",
+      "slug": "shifting-toward-customers-finding-the-truth",
+      "url": "Unknown URL",
+      "publish_date": "2026-02-08",
+      "content_length": 3756,
+      "processed_at": "2026-02-22T14:35:05.250Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ],
+      "reading_minutes": 3
+    },
+    {
+      "title": "Selling agents?",
+      "slug": "selling-agents",
+      "url": "Unknown URL",
+      "publish_date": "2026-01-25",
+      "content_length": 2644,
+      "processed_at": "2026-02-07T16:07:38.667Z",
+      "estimated_reading_time": "2 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ],
+      "reading_minutes": 2
+    },
+    {
+      "title": "Scenario play - Everybody builds software",
+      "slug": "scenario-play-everybody-builds-software",
+      "url": "Unknown URL",
+      "publish_date": "2026-01-11",
+      "content_length": 4781,
+      "processed_at": "2026-01-25T07:36:21.182Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership"
+      ],
+      "reading_minutes": 4
+    },
+    {
+      "title": "The flywheel",
+      "slug": "the-flywheel",
+      "url": "Unknown URL",
+      "publish_date": "2026-01-11",
+      "content_length": 6892,
+      "processed_at": "2026-01-11T15:45:26.345Z",
+      "estimated_reading_time": "5 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ],
+      "reading_minutes": 5
+    },
+    {
+      "title": "The ceiling",
+      "slug": "the-ceiling",
+      "url": "Unknown URL",
+      "publish_date": "2025-12-22",
+      "content_length": 3933,
+      "processed_at": "2025-12-23T03:24:15.521Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "leadership",
+        "ai"
+      ],
+      "reading_minutes": 3
+    },
+    {
+      "title": "The remarkable year of Ai in Software",
+      "slug": "the-remarkable-year-of-ai-in-software",
+      "url": "Unknown URL",
+      "publish_date": "2025-12-05",
+      "content_length": 2480,
+      "processed_at": "2025-12-05T17:56:10.844Z",
+      "estimated_reading_time": "2 min",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "software",
+        "technology",
+        "strategy"
+      ],
+      "reading_minutes": 2
+    },
+    {
+      "title": "Organisational change and cycle racing",
+      "slug": "organisational-change-and-cycle-racing",
+      "url": "Unknown URL",
+      "publish_date": "2025-11-17",
+      "content_length": 4542,
+      "processed_at": "2025-11-22T05:39:26.480Z",
+      "estimated_reading_time": "4 min",
+      "status": "ready-for-review",
+      "tags": [
+        "leadership",
+        "change",
+        "strategy",
+        "management"
+      ],
+      "reading_minutes": 4
+    },
+    {
+      "title": "Vision prepares for serendipity",
+      "slug": "vision-prepares-for-serendipity",
+      "url": "Unknown URL",
+      "publish_date": "2025-10-18",
+      "content_length": 4156,
+      "processed_at": "2025-10-18T05:33:09.787Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "strategy",
+        "vision",
+        "leadership",
+        "planning"
+      ],
+      "reading_minutes": 3
+    },
+    {
+      "title": "The mechanical duck and processes",
+      "slug": "the-mechanical-duck-and-processes",
+      "url": "Unknown URL",
+      "publish_date": "2025-09-21",
+      "content_length": 4341,
+      "processed_at": "2025-09-21T07:49:57.110Z",
+      "estimated_reading_time": "3 min",
+      "status": "ready-for-review",
+      "tags": [
+        "processes",
+        "management",
+        "efficiency",
+        "automation"
+      ],
+      "reading_minutes": 3
     },
     {
       "title": "Checking Assumptions: Knowing more over being right",
       "slug": "checking-assumptions",
       "url": "https://www.linkedin.com/pulse/checking-assumptions-knowing-more-over-being-right-antti-tevanlinna-8t5xe/?trackingId=gczQ36jDIgOxw1ZKYMjLaA%3D%3D",
       "publish_date": "2025-08-31",
-      "content_length": 5022,
+      "content_length": 4910,
       "processed_at": "2025-09-21T05:51:13.916Z",
       "estimated_reading_time": "4 min",
       "status": "published",
@@ -65,273 +311,86 @@
         "assumptions",
         "communication",
         "strategy"
-      ]
+      ],
+      "reading_minutes": 4
+    },
+    {
+      "title": "Ai and certainty don’t mix",
+      "slug": "ai-and-certainty-dont-mix",
+      "url": "Unknown URL",
+      "publish_date": "2025-01-12",
+      "content_length": 4639,
+      "processed_at": "2025-08-03T09:37:07.110471",
+      "tags": [],
+      "reading_minutes": 4,
+      "estimated_reading_time": "4 min"
     },
     {
       "title": "Evals is the new black",
       "slug": "evals-is-the-new-black",
       "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 3233,
+      "publish_date": "2025-01-05",
+      "content_length": 3293,
       "processed_at": "2025-08-03T09:37:06.688725",
-      "tags": []
+      "tags": [],
+      "reading_minutes": 3,
+      "estimated_reading_time": "3 min"
     },
     {
-      "title": "Focus and Renewal",
-      "slug": "focus-and-renewal",
+      "title": "Skating where the puck is going",
+      "slug": "skating-where-the-puck-is-going",
       "url": "Unknown URL",
-      "publish_date": "2026-07-08",
-      "content_length": 3308,
-      "processed_at": "2026-07-08T06:11:23.053Z",
-      "estimated_reading_time": "4 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "leadership"
-      ]
+      "publish_date": "2024-12-28",
+      "content_length": 6032,
+      "processed_at": "2025-08-03T09:37:07.028311",
+      "tags": [],
+      "reading_minutes": 5,
+      "estimated_reading_time": "5 min"
     },
     {
-      "title": "For innovators",
-      "slug": "for-innovators",
-      "url": "Unknown URL",
-      "publish_date": "2026-02-22",
-      "content_length": 3641,
-      "processed_at": "2026-03-05T17:40:44.723Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
+      "title": "Picturing product ownership",
+      "slug": "picturing-product-ownership",
+      "url": "https://www.linkedin.com/pulse/picturing-product-ownership-antti-tevanlinna/",
+      "publish_date": "2023-05-25",
       "tags": [
-        "strategy",
-        "leadership",
-        "future",
-        "ai"
-      ]
+        "product leadership"
+      ],
+      "reading_minutes": 1,
+      "estimated_reading_time": "1 min",
+      "content_length": 980
+    },
+    {
+      "title": "Ai and Agile 2.0",
+      "slug": "ai-and-agile-20",
+      "url": "Unknown URL",
+      "publish_date": "Unknown date",
+      "content_length": 4094,
+      "processed_at": "2025-08-03T09:37:06.880036",
+      "tags": [],
+      "reading_minutes": 3,
+      "estimated_reading_time": "3 min"
     },
     {
       "title": "Imagination feeds off on examples",
       "slug": "imagination-feeds-off-on-examples",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
-      "content_length": 3626,
+      "content_length": 3625,
       "processed_at": "2025-08-03T09:37:06.612087",
-      "tags": []
+      "tags": [],
+      "reading_minutes": 3,
+      "estimated_reading_time": "3 min"
     },
     {
       "title": "Inputs to Strategy",
       "slug": "inputs-to-strategy",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
-      "content_length": 3112,
+      "content_length": 3114,
       "processed_at": "2025-08-03T09:37:07.185217",
-      "tags": []
-    },
-    {
-      "title": "The Next Hard Thing About Working With LLMs",
-      "slug": "the-next-hard-thing",
-      "url": "Unknown URL",
-      "publish_date": "2026-09-19",
-      "content_length": 3351,
-      "processed_at": "2026-09-19T13:16:48.874Z",
-      "estimated_reading_time": "3 min",
-      "status": "ready-for-review",
-      "tags": [
-        "ai",
-        "strategy",
-        "differentiation"
-      ]
-    },
-    {
-      "title": "Stop Chatting. Build a System",
-      "slug": "stop-chatting-build-a-system",
-      "url": "Unknown URL",
-      "publish_date": "2026-08-10",
-      "content_length": 4688,
-      "processed_at": "2026-08-18T16:57:45.887Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "ai",
-        "processes",
-        "strategy",
-        "leadership"
-      ]
-    },
-    {
-      "title": "SaaS Is Going Headless — But Not How You Think",
-      "slug": "saas-is-not-going-headless",
-      "url": "Unknown URL",
-      "publish_date": "2026-04-15",
-      "content_length": 12013,
-      "processed_at": "2026-04-15T07:24:46.043Z",
-      "estimated_reading_time": "7 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "ai",
-        "technology",
-        "software"
-      ]
-    },
-    {
-      "title": "Skills-First AI Transformation Strategy",
-      "slug": "skills-first-ai-transformation-strategy",
-      "url": "Unknown URL",
-      "publish_date": "2026-04-08",
-      "content_length": 9553,
-      "processed_at": "2026-04-08T07:31:08.929Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "ai",
-        "transformation",
-        "skills"
-      ]
-    },
-    {
-      "title": "Rebranding: Agentic Strategy",
-      "slug": "rebranding-agentic-strategy",
-      "url": "Unknown URL",
-      "publish_date": "2026-04-01",
-      "content_length": 4903,
-      "processed_at": "2026-04-01T06:39:13.808Z",
-      "estimated_reading_time": "4 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "leadership",
-        "ai"
-      ]
-    },
-    {
-      "title": "Shifting toward customers - finding the truth",
-      "slug": "shifting-toward-customers-finding-the-truth",
-      "url": "Unknown URL",
-      "publish_date": "2026-02-08",
-      "content_length": 3859,
-      "processed_at": "2026-02-22T14:35:05.250Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "leadership",
-        "ai"
-      ]
-    },
-    {
-      "title": "Selling agents?",
-      "slug": "selling-agents",
-      "url": "Unknown URL",
-      "publish_date": "2026-01-25",
-      "content_length": 2712,
-      "processed_at": "2026-02-07T16:07:38.667Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "leadership",
-        "ai"
-      ]
-    },
-    {
-      "title": "Scenario play - Everybody builds software",
-      "slug": "scenario-play-everybody-builds-software",
-      "url": "Unknown URL",
-      "publish_date": "2026-01-11",
-      "content_length": 5081,
-      "processed_at": "2026-01-25T07:36:21.182Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "leadership"
-      ]
-    },
-    {
-      "title": "The flywheel",
-      "slug": "the-flywheel",
-      "url": "Unknown URL",
-      "publish_date": "2026-01-11",
-      "content_length": 6964,
-      "processed_at": "2026-01-11T15:45:26.345Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "leadership",
-        "ai"
-      ]
-    },
-    {
-      "title": "The ceiling",
-      "slug": "the-ceiling",
-      "url": "Unknown URL",
-      "publish_date": "2025-12-22",
-      "content_length": 4115,
-      "processed_at": "2025-12-23T03:24:15.521Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "leadership",
-        "ai"
-      ]
-    },
-    {
-      "title": "The remarkable year of Ai in Software",
-      "slug": "the-remarkable-year-of-ai-in-software",
-      "url": "Unknown URL",
-      "publish_date": "2025-12-05",
-      "content_length": 2645,
-      "processed_at": "2025-12-05T17:56:10.844Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "ai",
-        "software",
-        "technology",
-        "strategy"
-      ]
-    },
-    {
-      "title": "Organisational change and cycle racing",
-      "slug": "organisational-change-and-cycle-racing",
-      "url": "Unknown URL",
-      "publish_date": "2025-11-17",
-      "content_length": 4705,
-      "processed_at": "2025-11-22T05:39:26.480Z",
-      "estimated_reading_time": "6 min",
-      "status": "ready-for-review",
-      "tags": [
-        "leadership",
-        "change",
-        "strategy",
-        "management"
-      ]
-    },
-    {
-      "title": "Skating where the puck is going",
-      "slug": "skating-where-the-puck-is-going",
-      "url": "Unknown URL",
-      "publish_date": "Unknown date",
-      "content_length": 5973,
-      "processed_at": "2025-08-03T09:37:07.028311",
-      "tags": []
-    },
-    {
-      "title": "The mechanical duck and processes",
-      "slug": "the-mechanical-duck-and-processes",
-      "url": "Unknown URL",
-      "publish_date": "2025-09-21",
-      "content_length": 4505,
-      "processed_at": "2025-09-21T07:49:57.110Z",
-      "estimated_reading_time": "6 min",
-      "status": "ready-for-review",
-      "tags": [
-        "processes",
-        "management",
-        "efficiency",
-        "automation"
-      ]
+      "tags": [],
+      "reading_minutes": 3,
+      "estimated_reading_time": "3 min"
     },
     {
       "title": "Time to rethink your knowledge management",
@@ -340,32 +399,20 @@
       "publish_date": "Unknown date",
       "content_length": 4878,
       "processed_at": "2025-08-03T09:37:07.269943",
-      "tags": []
-    },
-    {
-      "title": "Vision prepares for serendipity",
-      "slug": "vision-prepares-for-serendipity",
-      "url": "Unknown URL",
-      "publish_date": "2025-10-18",
-      "content_length": 4241,
-      "processed_at": "2025-10-18T05:33:09.787Z",
-      "estimated_reading_time": "5 min",
-      "status": "ready-for-review",
-      "tags": [
-        "strategy",
-        "vision",
-        "leadership",
-        "planning"
-      ]
+      "tags": [],
+      "reading_minutes": 4,
+      "estimated_reading_time": "4 min"
     },
     {
       "title": "Visioning",
       "slug": "visioning",
       "url": "Unknown URL",
       "publish_date": "Unknown date",
-      "content_length": 8661,
+      "content_length": 8660,
       "processed_at": "2025-08-03T09:37:06.765954",
-      "tags": []
+      "tags": [],
+      "reading_minutes": 7,
+      "estimated_reading_time": "7 min"
     }
   ]
 }

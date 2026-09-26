@@ -8,7 +8,7 @@
  */
 function calculateReadingTimeFromLength(contentLength) {
     const wordsPerMinute = 250;
-    return Math.max(1, Math.round((contentLength || 0) / wordsPerMinute));
+    return Math.max(1, Math.round((contentLength || 0) / 6 / wordsPerMinute));
 }
 
 /**
@@ -19,25 +19,33 @@ function calculateReadingTimeFromLength(contentLength) {
 function calculateReadingTimeFromContent(content) {
     if (!content) return '1 min';
     const wordsPerMinute = 250;
-    const words = content.split(/\s+/).length;
-    const minutes = Math.max(1, Math.round(words / wordsPerMinute));
+    const text = content.replace(/<[^>]*>/g, ' ').trim();
+    const words = text ? text.split(/\s+/).length : 0;
+    const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
     return `${minutes} min`;
 }
 
 /**
- * Estimate reading time from content (string) with different WPM
+ * Estimate reading time from content (string)
  * Used by: scripts/prepare-newsletter.js
- * Note: Uses 200 words per minute (different from above)
+ * Note: Uses the same 250 words per minute as published articles
  */
 function estimateReadingTime(content) {
-    const wordsPerMinute = 200;
-    const wordCount = content.split(/\s+/).length;
-    const minutes = Math.ceil(wordCount / wordsPerMinute);
-    return `${minutes} min`;
+    return calculateReadingTimeFromContent(content);
+}
+
+/** Use the opening paragraph when a publisher has no supplied summary. */
+function createExcerpt(content = '') {
+    const paragraphs = content.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || content.split(/\n\s*\n/);
+    const plain = paragraphs.map(paragraph => paragraph.replace(/<[^>]*>/g, ' ')
+        .replace(/\s+/g, ' ').trim()).filter(Boolean);
+    const opening = plain.find(paragraph => paragraph.length >= 60 && !paragraph.startsWith('#')) || plain[0] || '';
+    return opening.length <= 240 ? opening : opening.slice(0, 237).replace(/\s+\S*$/, '') + '…';
 }
 
 module.exports = {
     calculateReadingTimeFromLength,
     calculateReadingTimeFromContent,
-    estimateReadingTime
+    estimateReadingTime,
+    createExcerpt
 };

@@ -3,7 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const { formatDate } = require('../utils/date-utils');
-const { calculateReadingTimeFromLength } = require('../utils/content-utils');
+const { calculateReadingTimeFromContent, createExcerpt } = require('../utils/content-utils');
+const ArticleDataProcessor = require('../docs/js/article-data');
 const { ensureDirectories, fileExists } = require('../utils/file-utils');
 
 class ScrapedArticlesSiteSync {
@@ -34,9 +35,6 @@ class ScrapedArticlesSiteSync {
             
             // Update articles index
             this.updateArticlesIndex(allArticles);
-            
-            // Update the main articles.js with new excerpts
-            this.updateArticlesJS(scrapedArticles);
             
             console.log(`✅ Sync complete! ${allArticles.length} total articles available`);
             console.log(`📊 Manual: ${manualArticles.length}, Scraped: ${scrapedArticles.length}`);
@@ -151,7 +149,7 @@ class ScrapedArticlesSiteSync {
 
     generateArticleHTML(article) {
         const formattedDate = formatDate(article.publish_date || article.scraped_at);
-        const readingTime = calculateReadingTimeFromLength(article.content_length);
+        const readingTime = article.reading_minutes || parseInt(calculateReadingTimeFromContent(article.content_html || article.content_markdown || article.content || ''), 10);
         
         return `<!DOCTYPE html>
 <html lang="en">
@@ -161,13 +159,13 @@ class ScrapedArticlesSiteSync {
     <title>${article.title} - Bosser</title>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="eb766906-49ac-4f5c-941c-b107cf0e7c4f"></script>
     <meta name="description" content="${this.createMetaDescription(article)}">
-    <link rel="canonical" href="https://anttitevanlinna.github.io/bosser/articles/${article.slug}.html">
+    <link rel="canonical" href="https://bosser.consulting/articles/${article.slug}.html">
     
     <!-- Open Graph -->
     <meta property="og:title" content="${article.title}">
     <meta property="og:description" content="${this.createMetaDescription(article)}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://anttitevanlinna.github.io/bosser/articles/${article.slug}.html">
+    <meta property="og:url" content="https://bosser.consulting/articles/${article.slug}.html">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -366,12 +364,18 @@ class ScrapedArticlesSiteSync {
             }
         }
     </style>
+    <link rel="stylesheet" href="../site.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="../index.html" class="logo">Bosser</a>
-            <a href="../index.html#articles" class="back-link">← Back to Articles</a>
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-nav-inner">
+            <a class="site-brand" href="../">Bosser</a>
+            <ul class="site-links">
+                <li><a href="../training/">Training</a></li>
+                <li><a href="../#proof">Approach</a></li>
+                <li><a href="../#articles" aria-current="true">Thinking</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -435,13 +439,15 @@ class ScrapedArticlesSiteSync {
         const indexData = {
             total_articles: allArticles.length,
             last_updated: new Date().toISOString(),
-            articles: allArticles.map(article => ({
+            articles: ArticleDataProcessor.sortByDate(allArticles).map(article => ({
                 title: article.title,
                 slug: article.slug,
                 url: article.linkedin_url || "Unknown URL",
                 publish_date: article.publish_date || article.scraped_at || "Unknown date",
                 content_length: article.content_length || 0,
-                estimated_reading_time: article.estimated_reading_time || `${calculateReadingTimeFromLength(article.content_length)} min`,
+                estimated_reading_time: article.reading_minutes ? `${article.reading_minutes} min` : calculateReadingTimeFromContent(article.content_html || article.content_markdown || article.content || ''),
+                reading_minutes: article.reading_minutes || parseInt(calculateReadingTimeFromContent(article.content_html || article.content_markdown || article.content || ''), 10),
+                excerpt: article.excerpt || ArticleDataProcessor.getExcerpt(article) || createExcerpt(article.content_html || article.content_markdown || article.content || ''),
                 status: article.status || "published",
                 source: article.source,
                 processed_at: article.processed_at || article.scraped_at,
@@ -454,54 +460,6 @@ class ScrapedArticlesSiteSync {
         console.log(`📚 Updated articles index: ${allArticles.length} articles`);
     }
 
-    updateArticlesJS(scrapedArticles) {
-        // Add excerpts for new scraped articles to the articles.js excerpts object
-        const articlesJSPath = path.join(this.docsDir, 'js', 'articles.js');
-        
-        if (!fileExists(articlesJSPath)) {
-            console.log('⚠️  articles.js not found, skipping excerpt updates');
-            return;
-        }
-
-        let articlesJS = fs.readFileSync(articlesJSPath, 'utf8');
-        
-        // Extract new excerpts from scraped articles
-        const newExcerpts = {};
-        scrapedArticles.forEach(article => {
-            if (article.content) {
-                const excerpt = this.createExcerpt(article.content);
-                newExcerpts[article.slug] = excerpt;
-            }
-        });
-
-        if (Object.keys(newExcerpts).length > 0) {
-            console.log(`📝 Adding ${Object.keys(newExcerpts).length} new excerpts to articles.js`);
-            
-            // Find the excerpts object and add new entries
-            const excerptRegex = /(const excerpts = \{[^}]*)(}\s*;)/s;
-            const match = articlesJS.match(excerptRegex);
-            
-            if (match) {
-                const existingExcerpts = match[1];
-                const newExcerptEntries = Object.entries(newExcerpts)
-                    .map(([slug, excerpt]) => `            "${slug}": "${excerpt}"`)
-                    .join(',\n');
-                
-                const updatedExcerpts = existingExcerpts.replace(/,$/, '') + ',\n' + newExcerptEntries;
-                articlesJS = articlesJS.replace(excerptRegex, updatedExcerpts + match[2]);
-                
-                fs.writeFileSync(articlesJSPath, articlesJS);
-                console.log('✅ Updated articles.js with new excerpts');
-            }
-        }
-    }
-
-    createExcerpt(content) {
-        // Create excerpt from article content
-        const text = content.replace(/[#*]/g, '').replace(/\n/g, ' ').trim();
-        const sentences = text.split('. ');
-        return sentences.slice(0, 2).join('. ').substring(0, 150) + '...';
-    }
 
 
 }

@@ -31,10 +31,6 @@ class ArticleSystem {
         this.activeCategory = null;
         this.categories = new Map(); // category -> count
         
-        // Timeout references for hover filtering
-        this.filterTimeout = null;
-        this.clearFilterTimeout = null;
-        
         if (!this.container) {
             console.warn(`Articles container '${containerId}' not found`);
             return;
@@ -89,14 +85,14 @@ class ArticleSystem {
      * @returns {Promise<void>}
      */
     async loadArticles() {
-        const response = await fetch(this.dataPath);
+        const response = await fetch(this.dataPath, { cache: 'no-cache' });
         
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         
         const data = await response.json();
-        this.articles = data.articles || [];
+        this.articles = ArticleDataProcessor.sortByDate(data.articles || []);
     }
 
     extractCategories() {
@@ -111,10 +107,10 @@ class ArticleSystem {
 
         const categoryBadges = sortedCategories.map(([category, count]) => {
             return `
-                <div class="category-badge" data-category="${category}">
+                <button type="button" class="category-badge" data-category="${category}" aria-pressed="false">
                     ${category}
                     <span class="category-badge-count">${count}</span>
-                </div>
+                </button>
             `;
         }).join('');
 
@@ -132,26 +128,7 @@ class ArticleSystem {
                 }
             });
 
-            // Hover preview (optional, enhances discoverability)
-            badge.addEventListener('mouseenter', () => {
-                const category = badge.dataset.category;
-                // Only show hover preview if no filter is active
-                if (!this.activeCategory) {
-                    if (this.filterTimeout) {
-                        clearTimeout(this.filterTimeout);
-                    }
-                    this.filterTimeout = setTimeout(() => {
-                        this.applyCategoryFilter(category);
-                    }, 200);
-                }
-            });
 
-            badge.addEventListener('mouseleave', () => {
-                // Clear timeout if user leaves before delay
-                if (this.filterTimeout) {
-                    clearTimeout(this.filterTimeout);
-                }
-            });
         });
     }
 
@@ -186,8 +163,11 @@ class ArticleSystem {
         this.categoriesCloud.querySelectorAll('.category-badge').forEach(badge => {
             if (badge.dataset.category === category) {
                 badge.classList.add('active');
+                badge.style.opacity = '';
+                badge.setAttribute('aria-pressed', 'true');
             } else {
                 badge.classList.remove('active');
+            badge.setAttribute('aria-pressed', 'false');
                 badge.style.opacity = '0.5';
             }
         });
@@ -210,6 +190,7 @@ class ArticleSystem {
         // Reset category badges
         this.categoriesCloud.querySelectorAll('.category-badge').forEach(badge => {
             badge.classList.remove('active');
+            badge.setAttribute('aria-pressed', 'false');
             badge.style.opacity = '';
         });
 
@@ -343,8 +324,8 @@ class ArticleSystem {
      * @returns {string} HTML string for the article card
      */
     createArticleCard(article) {
-        const excerpt = ArticleDataProcessor.getExcerpt(article.title);
-        const readingTime = ArticleDataProcessor.calculateReadingTime(article.content_length);
+        const excerpt = ArticleDataProcessor.getExcerpt(article);
+        const readingTime = article.reading_minutes || ArticleDataProcessor.calculateReadingTime(article.content_length);
         const formattedDate = ArticleDataProcessor.formatDate(article.publish_date);
         const tags = article.tags || [];
         const primaryTag = tags.length > 0 ? tags[0] : null;
@@ -354,9 +335,7 @@ class ArticleSystem {
                 <div class="article-meta-item">
                     <span>${readingTime} min read</span>
                 </div>
-                <div class="article-meta-item">
-                    <span>${formattedDate}</span>
-                </div>
+                ${formattedDate ? `<div class="article-meta-item"><span>${formattedDate}</span></div>` : ''}
                 ${primaryTag ? `<div class="article-tag">${primaryTag}</div>` : ''}
             </div>
             <a href="./articles/${article.slug}.html" class="article-title">

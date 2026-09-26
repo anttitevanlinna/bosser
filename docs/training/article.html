@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading... — Agents 102</title>
+    <title>Loading... — Bosser</title>
     <link rel="stylesheet" href="style.css">
     <script>
         // Layout switcher: ?layout=logbook|folio|spine|deck|kide|tuoli|strata|strata2|strata3|selka|kompassi
@@ -19,20 +19,32 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Agents 102">
+    <meta property="og:title" content="Bosser">
     <meta property="og:description" content="Research and analysis on AI agent deployment in business">
-    <meta property="og:url" content="https://anttitevanlinna.github.io/agents-102/article.html">
+    <meta property="og:url" content="https://bosser.consulting/training/article.html">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Agents 102">
+    <meta name="twitter:title" content="Bosser">
     <meta name="twitter:description" content="Research and analysis on AI agent deployment in business">
+    <link rel="stylesheet" href="../site.css">
 </head>
 <body>
-    <nav>
-        <div class="article-nav">
-            <a href="index.html" class="logo">Agents 102</a>
-            <a href="index.html" class="back-link">&larr; Back</a>
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-nav-inner">
+            <a class="site-brand" href="../">Bosser</a>
+            <ul class="site-links">
+                <li><a href="../training/" aria-current="true">Training</a></li>
+                <li><a href="../#proof">Approach</a></li>
+                <li><a href="../#articles">Thinking</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
+    <div class="training-links" aria-label="Training resources">
+        <a href="../training/">All training</a>
+        <a href="../training/curriculum/">Agents 101 curriculum</a>
+        <a href="../training/check/">Strategic check</a>
+        <a href="../training/readiness/">Domain check</a>
+    </div>
 
     <div class="read-progress" id="read-progress"></div>
 
@@ -47,7 +59,7 @@
 
     <footer>
         <div class="container">
-            <p><a href="index.html" class="back-link">&larr; Back to Agents 102</a></p>
+            <p><a href="index.html" class="back-link">&larr; Back to training</a></p>
             <p>&copy; 2026 Bosser Oy &middot; All analytics anonymous &middot; <a href="privacy.html">Privacy</a></p>
         </div>
     </footer>
@@ -72,6 +84,13 @@
                     return res.text();
                 })
                 .then(function(md) {
+                    const articleUrl = new URL('https://bosser.consulting/training/article.html');
+                    articleUrl.searchParams.set('slug', slug);
+                    const canonical = document.createElement('link');
+                    canonical.rel = 'canonical';
+                    canonical.href = articleUrl.href;
+                    document.head.appendChild(canonical);
+                    document.querySelector('meta[property="og:url"]').content = articleUrl.href;
                     var byline = '';
                     var intro = '';
                     var body = md;
@@ -119,7 +138,7 @@
                     // Insert intro and meta after h1
                     var h1 = container.querySelector('h1');
                     if (h1) {
-                        document.title = h1.textContent + ' — Agents 102';
+                        document.title = h1.textContent + ' — Bosser';
 
                         var meta = document.createElement('div');
                         meta.className = 'article-meta';

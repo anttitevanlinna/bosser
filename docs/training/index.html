@@ -3,32 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agents 102 — Build AI Agent Competence</title>
-    <meta name="description" content="Hands-on AI agent training for CTOs and digital leaders. Build real agents with your data, your policies, your people.">
+    <title>AI training | Bosser</title>
+    <meta name="description" content="Agents 101 for business builders and Agentic Engineering 101 for software engineers. Hands-on AI training with Antti Tevanlinna.">
     <link rel="stylesheet" href="style.css">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Agents 102 — Build AI Agent Competence">
-    <meta property="og:description" content="Hands-on AI agent training for CTOs and digital leaders. Build real agents with your data, your policies, your people.">
-    <meta property="og:url" content="https://anttitevanlinna.github.io/agents-102/">
+    <meta property="og:title" content="AI training | Bosser">
+    <meta property="og:description" content="Agents 101 for business builders and Agentic Engineering 101 for software engineers. Hands-on AI training with Antti Tevanlinna.">
+    <meta property="og:url" content="https://bosser.consulting/training/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Agents 102 — Build AI Agent Competence">
-    <meta name="twitter:description" content="Hands-on AI agent training for CTOs and digital leaders. Build real agents with your data, your policies, your people.">
+    <meta name="twitter:title" content="AI training | Bosser">
+    <meta name="twitter:description" content="Agents 101 for business builders and Agentic Engineering 101 for software engineers. Hands-on AI training with Antti Tevanlinna.">
+    <link rel="stylesheet" href="../site.css">
+    <link rel="canonical" href="https://bosser.consulting/training/">
 </head>
-<body>
+<body class="training-overview">
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-nav-inner">
+            <a class="site-brand" href="../">Bosser</a>
+            <ul class="site-links">
+                <li><a href="../training/" aria-current="page">Training</a></li>
+                <li><a href="../#proof">Approach</a></li>
+                <li><a href="../#articles">Thinking</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="training-links" aria-label="Training resources">
+        <a href="../training/">All training</a>
+        <a href="../training/curriculum/">Agents 101 curriculum</a>
+        <a href="../training/check/">Strategic check</a>
+        <a href="../training/readiness/">Domain check</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-subtitle">Agents 102 by Bosser</div>
-                <h1 class="hero-title">Build the thing your strategy is missing.</h1>
-                <p class="hero-description">AI strategy starts with competence. Your people, building real agents, with your real policies. That is where the vision comes from.</p>
+                <div class="hero-subtitle">Training with Antti Tevanlinna</div>
+                <h1 class="hero-title">Get your people building with agents.</h1>
+                <p class="hero-description">Your people build agents on real work. They learn to catch mistakes, improve the system, and make the next run better. Then you have something to scale: people who can build and systems that keep improving.</p>
                 <div class="hero-actions">
-                    <a href="#contact" class="cta-button">Start a conversation</a>
-                    <a href="curriculum/" class="cta-button cta-button--secondary">See the curriculum</a>
-                    <a href="#journey" class="cta-button cta-button--secondary">See the journey</a>
+                    <a href="#contact" class="cta-button">Get it moving</a>
+                    <a href="#courses" class="cta-button cta-button--secondary">What your people will build</a>
                 </div>
             </div>
 
@@ -41,10 +59,38 @@
         </div>
     </section>
 
-    <!-- Secret Sauce -->
-    <section class="secret-sauce" id="secret-sauce">
+    <section class="course-section" id="courses">
         <div class="container">
-            <p class="secret-sauce-text">The secret sauce is generalist builder agents. Claude Code, Codex, and what comes next. They are the tools that make the flywheel possible: agents that build agents, systems that improve themselves. Everything else is linear. This is not.</p>
+            <div class="course-heading">
+                <h2>Build something worth scaling.</h2>
+                <p>Agents 101 gets business people building agents. Agentic Engineering 101 takes engineers further with coding agents. Both build the habits that make the work repeatable.</p>
+            </div>
+            <div class="course-grid">
+                <article class="course-card" id="agents-101">
+                    <p class="course-audience">For business builders and leaders</p>
+                    <h3>Agents 101</h3>
+                    <p>Go from conversations with an LLM to building an agent system for your own work. Your project grows as you learn to give agents context, coordinate their work, and judge the results.</p>
+                    <ul>
+                        <li>Build a working system with memory and useful sources.</li>
+                        <li>Set security boundaries and check the quality of its output.</li>
+                        <li>Extend into team use and agents building agents.</li>
+                    </ul>
+                    <p class="course-format">Six core modules, with two optional extensions. No coding background needed.</p>
+                    <a class="course-link" href="curriculum/">See the Agents 101 curriculum</a>
+                </article>
+                <article class="course-card" id="agentic-engineering-101">
+                    <p class="course-audience">For software engineers</p>
+                    <h3>Agentic Engineering 101</h3>
+                    <p>Build on your experience with coding agents. Work on real software, develop reliable engineering habits, and turn successful approaches into reusable skills for your team.</p>
+                    <ul>
+                        <li>Shape tasks and context so agents can work effectively.</li>
+                        <li>Use tests and review to earn trust in the result.</li>
+                        <li>Manage longer tasks and preserve what you learn for the next run.</li>
+                    </ul>
+                    <p class="course-format">For engineers already using coding agents. Bring your own engineering work.</p>
+                    <a class="course-link" href="mailto:antti@bosser.consulting?subject=Agentic%20Engineering%20101">Get your engineers going</a>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -62,8 +108,8 @@
                     </div>
                     <a href="curriculum/" class="quiz-card">
                         <div class="quiz-card-label">Curriculum</div>
-                        <h3 class="quiz-card-title">Eight Modules from Chat to Agent Builder</h3>
-                        <p class="quiz-card-desc">From first agent to agents building agents. See exactly what your team will build.</p>
+                        <h3 class="quiz-card-title">Agents 101: from chat to agent builder</h3>
+                        <p class="quiz-card-desc">Build a working agent system, learn to trust it, and choose how far to take it.</p>
                         <span class="quiz-card-link">See the curriculum →</span>
                     </a>
                 </div>
@@ -143,66 +189,11 @@
         </div>
     </section>
 
-    <!-- What We Do: Train, Curate, Connect, Advise -->
-    <section class="what-we-do" id="what-we-do">
-        <div class="container">
-            <h2 class="section-label">What We Do</h2>
-            <p class="section-intro">Three things.</p>
-
-            <div class="pillars-grid">
-                <!-- Train -->
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M24 4L6 14v20l18 10 18-10V14L24 4z"/>
-                            <path d="M24 24v20"/>
-                            <path d="M6 14l18 10 18-10"/>
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">Train</h3>
-                    <p class="pillar-description">Hands on. Your people build working agents with your security policies, your systems, your processes. Not a vendor demo. Your reality.</p>
-                    <div class="pillar-detail">The output is not a certificate. It is twenty people who have built something real. And can show the rest of the organization what is possible.</div>
-                </div>
-
-                <!-- Curate -->
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="18"/>
-                            <path d="M24 6v18l12 12"/>
-                            <circle cx="24" cy="24" r="4"/>
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">Curate</h3>
-                    <p class="pillar-description">We track the frontier so you do not have to. The best public research, distilled. What actually works in production. And what does not.</p>
-                    <div class="pillar-detail">Vendors track their own platform. Consultancies track their own clients. The landscape is wider than either. We are building that wider picture.</div>
-                </div>
-
-                <!-- Advise -->
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="18"/>
-                            <path d="M24 6v4"/>
-                            <path d="M24 38v4"/>
-                            <path d="M6 24h4"/>
-                            <path d="M38 24h4"/>
-                            <path d="M24 16l-4 8h8l-4 8"/>
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">Advise</h3>
-                    <p class="pillar-description">Agent Platform Advisory. Context building, platform selection, and deployment. Done the agentic way. The platform landscape moves too fast for any individual to maintain comparative expertise. So people drive the context, and agents do the comparative heavy lifting.</p>
-                    <div class="pillar-detail">The advisory system is deployed on your side. You keep it. The medium is the message. The advisory itself demonstrates what agentic work looks like.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Journey: 5 Steps -->
+    <!-- The Journey: 4 Steps -->
     <section class="journey" id="journey">
         <div class="container">
             <h2 class="section-label">The Journey</h2>
-            <p class="section-intro">From first agent to full capability. Five steps.</p>
+            <p class="section-intro">Build the competence. Put it to work. Carry it across the organization.</p>
 
             <div class="journey-stepper">
                 <div class="journey-line">
@@ -216,26 +207,9 @@
                             <span class="journey-step-number">1</span>
                         </div>
                         <div class="journey-step-content">
-                            <h3 class="journey-step-title">Agents 101</h3>
+                            <h3 class="journey-step-title">Get people building</h3>
                             <p class="journey-step-subtitle">Everyone builds a real agent</p>
-                            <p class="journey-step-text">In our experience, this is where skeptics start asking different questions. The door is open. Anyone can walk in. <a href="curriculum/" style="color: var(--accent, #ff6b35);">See the curriculum&nbsp;&rarr;</a></p>
-                        </div>
-                        <div class="journey-step-arrow" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Make Your Own -->
-                    <div class="journey-step" data-step="2">
-                        <div class="journey-step-marker">
-                            <span class="journey-step-number">2</span>
-                        </div>
-                        <div class="journey-step-content">
-                            <h3 class="journey-step-title">Make Your Own</h3>
-                            <p class="journey-step-subtitle">4&ndash;6 weeks &middot; Change strategy lab</p>
-                            <p class="journey-step-text">A cohort of your change leaders designs the rollout. Not just &ldquo;we learned agents&rdquo; but &ldquo;we have a plan to transform.&rdquo; Change strategy lab with mentoring.</p>
+                            <p class="journey-step-text">Start with Agents 101 for business teams or Agentic Engineering 101 for engineers already using coding agents. Build on work that matters to your team.</p>
                         </div>
                         <div class="journey-step-arrow" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -245,14 +219,14 @@
                     </div>
 
                     <!-- Step 3: Champions -->
-                    <div class="journey-step" data-step="3">
+                    <div class="journey-step" data-step="2">
                         <div class="journey-step-marker">
-                            <span class="journey-step-number">3</span>
+                            <span class="journey-step-number">2</span>
                         </div>
                         <div class="journey-step-content">
                             <h3 class="journey-step-title">Champions</h3>
                             <p class="journey-step-subtitle">Train-the-trainer</p>
-                            <p class="journey-step-text">The strongest people from Agents 101 learn to facilitate, adapt, and carry it forward. The multiplier.</p>
+                            <p class="journey-step-text">Your champions learn to facilitate, adapt, and carry the work forward. More people can build because your own people can teach them.</p>
                         </div>
                         <div class="journey-step-arrow" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -262,14 +236,14 @@
                     </div>
 
                     <!-- Step 4: Scale -->
-                    <div class="journey-step" data-step="4">
+                    <div class="journey-step" data-step="3">
                         <div class="journey-step-marker">
-                            <span class="journey-step-number">4</span>
+                            <span class="journey-step-number">3</span>
                         </div>
                         <div class="journey-step-content">
                             <h3 class="journey-step-title">Scale</h3>
                             <p class="journey-step-subtitle">Your structure, your pace</p>
-                            <p class="journey-step-text">Champions run it inside your organization. With your priorities. No external dependency. No ongoing fees.</p>
+                            <p class="journey-step-text">Champions bring the work to more teams, with your priorities and your ways of working.</p>
                         </div>
                         <div class="journey-step-arrow" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -279,14 +253,14 @@
                     </div>
 
                     <!-- Step 5: Drive into Value Chains -->
-                    <div class="journey-step" data-step="5">
+                    <div class="journey-step" data-step="4">
                         <div class="journey-step-marker">
-                            <span class="journey-step-number">5</span>
+                            <span class="journey-step-number">4</span>
                         </div>
                         <div class="journey-step-content">
                             <h3 class="journey-step-title">Put Agents to Work</h3>
                             <p class="journey-step-subtitle">Real processes, real value</p>
-                            <p class="journey-step-text">Your people can build agents. Now: where do they create real value? Map your processes. Rework them with agents.</p>
+                            <p class="journey-step-text">Keep improving the real processes your teams work on. Carry useful agents, skills, and lessons from one team to the next.</p>
                         </div>
                         <!-- No arrow after the last step -->
                     </div>
@@ -294,8 +268,8 @@
             </div>
 
             <div class="journey-cta">
-                <p class="journey-cta-text">All materials come with full usage, modification and further development rights for your organization. If you stop working with us, you keep everything.</p>
-                <a href="#contact" class="cta-button">Start a conversation</a>
+                <p class="journey-cta-text">The agents, workflows, and skills your team builds stay with you. Training material usage is covered by your agreement.</p>
+                <a href="#contact" class="cta-button">Make it happen</a>
             </div>
         </div>
     </section>
@@ -305,10 +279,10 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-content">
-                    <h2 class="section-label">Antti Tevanlinna</h2>
-                    <h3 class="about-title">I built this because nobody else would.</h3>
-                    <p class="about-text">Twenty-five years of training and transformation work at F-Secure, Nitor, Neste, Posti Group, Kone, S-Group, W&auml;rtsil&auml;, Elisa and Finnair. The topic used to be product leadership, agile and transformation. Now it is agents. I kept seeing the same gap: everyone talks about AI agents, nobody teaches people to build them. So I built a training program and started delivering it. First fifty people through. NPS above 80. Pretty much everyone gets it and starts building with agents.</p>
-                    <p class="about-text">All materials come with full usage, modification and further development rights. You keep everything, even if we stop working together.</p>
+                    <h2 class="profile-title">Antti Tevanlinna</h2>
+                    <p class="about-text">I’m Antti Tevanlinna. I bring twenty-five years of training and transformation work at F-Secure, Neste, Posti Group and others. Agents 101 and Agentic Engineering 101 bring that experience into practical work with agents, for business teams and software engineers.</p>
+                    <p class="about-text">Around 500 people have been through my training programmes. I’ve personally trained about 100 of them.</p>
+                    <p class="about-text">The systems you build during training are yours to develop further with your team.</p>
                     <p class="about-text">Build first. Strategize from what you learn.</p>
                     <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank" rel="noopener" class="about-linkedin">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -317,20 +291,6 @@
                         Connect on LinkedIn
                     </a>
                 </div>
-                <div class="about-stats">
-                    <div class="about-stat">
-                        <div class="about-stat-number">50+</div>
-                        <div class="about-stat-label">People trained</div>
-                    </div>
-                    <div class="about-stat">
-                        <div class="about-stat-number">&gt;80</div>
-                        <div class="about-stat-label">NPS</div>
-                    </div>
-                    <div class="about-stat">
-                        <div class="about-stat-number">Live</div>
-                        <div class="about-stat-label">Already being delivered</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -338,11 +298,11 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="contact-title">Ready to start building?</h2>
-            <p class="contact-description">If you are thinking seriously about agent competence, send me a message. I will walk you through what twenty people can build. And what it has changed for the organizations already doing it.</p>
-            <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank" rel="noopener" class="cta-button">Send me a DM on LinkedIn</a>
+            <h2 class="contact-title">What do you want to make happen?</h2>
+            <p class="contact-description">Tell me where you want to go and who you want moving. We work out the first cohort, the real work they will build on, and how you carry it forward.</p>
+            <a href="mailto:antti@bosser.consulting" class="cta-button">Let’s get it moving</a>
             <a href="https://www.linkedin.com/newsletters/7117916803816693760/" target="_blank" rel="noopener" class="cta-button cta-button--secondary">Follow the newsletter</a>
-            <p class="cta-note">Or if you know me, just call me.</p>
+            <p class="cta-note">Or call <a href="tel:+358503300832">+358 50 3300832</a>.</p>
         </div>
     </section>
 

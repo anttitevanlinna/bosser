@@ -65,7 +65,7 @@ class ArticleDataProcessor {
             filtered = filtered.filter(article => {
                 const searchableText = [
                     article.title,
-                    article.excerpt || this.getExcerpt(article.title),
+                    this.getExcerpt(article),
                     ...(article.tags || [])
                 ].join(' ').toLowerCase();
 
@@ -81,8 +81,18 @@ class ArticleDataProcessor {
      * @param {string} title - Article title
      * @returns {string} Article excerpt
      */
-    static getExcerpt(title) {
+    static getExcerpt(article) {
+        if (typeof article === 'string') article = { title: article };
+        if (article.excerpt) return article.excerpt;
         const excerpts = {
+            "outcome-orientation-scaling-ai": "Still babysitting your agents? Define the outcome and how to measure it. A scoreboard gives the agent something better to work toward than another plausible solution.",
+            "autonomous-agents-not-the-place-to-start": "Interactive work is how you accumulate control. Start by building together, learn the failure modes, then decide what can run without you.",
+            "focus-and-renewal": "Making the training happen meant putting other work aside. Focus feels like sacrifice. Renewal means deciding what goes below the line.",
+            "the-next-hard-thing": "When everyone can build plausible solutions, what remains hard? Being distinctive, precise for the customer, and creative enough to escape the average.",
+            "stop-chatting-build-a-system": "Build for the next hundred sessions. Turn corrections into rules, run retrospectives, and make sure the agent carries the learning forward.",
+            "saas-is-not-going-headless": "Snowflake, Figma, Linear, and Shopify show four ways SaaS can work with agents. The delegation pattern matters more than the protocol.",
+            "skills-first-ai-transformation-strategy": "Get people building on real problems. The right initiatives, governance needs, and platform choices become clearer once your people can see what agents do.",
+            "rebranding-agentic-strategy": "Product Leadership becomes Agentic Strategy. What changes when the question moves from which AI tool to use to what your company needs to become?",
             "checking-assumptions": "Knowing more over being right. Exploring how effective leadership requires challenging assumptions and fostering open communication to drive strategic decision-making.",
             "ai-and-certainty-dont-mix": "Exploring why the inherent uncertainty in AI systems mirrors the unpredictability that has always existed in product development and business strategy.",
             "skating-where-the-puck-is-going": "Strategic positioning for the future. Applying Wayne Gretzky's famous insight to AI strategy and business transformation.",
@@ -105,8 +115,8 @@ class ArticleDataProcessor {
             "the-remarkable-year-of-ai-in-software": "Reflecting on a transformative year in AI and software development. The acceleration of capabilities and what it means for builders."
         };
 
-        const slug = this.titleToSlug(title);
-        return excerpts[slug] || "Strategic insights for navigating complexity and driving meaningful progress in challenging environments.";
+        const slug = article.slug || this.titleToSlug(article.title);
+        return excerpts[slug] || '';
     }
 
     /**
@@ -138,18 +148,15 @@ class ArticleDataProcessor {
      * @returns {string} Formatted date
      */
     static formatDate(dateString) {
-        if (!dateString || dateString === 'Unknown date') {
-            return '2025';
-        }
-        
-        try {
-            return new Date(dateString).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short' 
-            });
-        } catch {
-            return dateString;
-        }
+        const date = new Date(dateString);
+        if (!dateString || !Number.isFinite(date.getTime())) return '';
+        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' });
+    }
+
+    static sortByDate(articles) {
+        const timestamp = article => Number.isFinite(Date.parse(article.publish_date))
+            ? Date.parse(article.publish_date) : -Infinity;
+        return [...articles].sort((a, b) => timestamp(b) - timestamp(a));
     }
 
     /**
