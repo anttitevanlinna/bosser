@@ -2,6 +2,7 @@
 # Live check of bosser.consulting/training/ (moved from agents102.bosser.consulting).
 # Article pages fetch raw markdown, so content/*.md must come back as markdown, not Jekyll HTML.
 set -u
+cd "$(dirname "$0")/.."
 B=https://bosser.consulting/training
 fail=0
 ok() { printf 'ok   %s\n' "$1"; }
