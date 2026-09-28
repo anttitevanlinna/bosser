@@ -4,10 +4,12 @@ from pathlib import Path
 import json
 import re
 import unittest
+import xml.etree.ElementTree as ET
 from urllib.parse import urljoin, urlparse, unquote
 
 ROOT = Path(__file__).resolve().parents[1] / 'docs'
 PAGES = ['index.html', 'training/index.html', 'training/curriculum/index.html',
+         'training/engineering/index.html', 'cases/f-secure/index.html',
          'training/check/index.html', 'training/readiness/index.html',
          'training/article.html', 'training/privacy.html']
 
@@ -23,10 +25,26 @@ class Page(HTMLParser):
 
 
 class SiteIntegration(unittest.TestCase):
+    def test_sitemap_exposes_public_landing_pages_on_current_domain(self):
+        sitemap = ET.parse(ROOT / 'sitemap.xml')
+        urls = [node.text for node in sitemap.findall('.//{*}loc')]
+        self.assertTrue(all(url.startswith('https://bosser.consulting/') for url in urls))
+        for path in ['', 'training/', 'training/curriculum/', 'training/engineering/', 'cases/f-secure/']:
+            self.assertIn('https://bosser.consulting/' + path, urls)
+        self.assertIn('Sitemap: https://bosser.consulting/sitemap.xml', (ROOT / 'robots.txt').read_text())
+
     def test_every_published_article_is_discoverable(self):
         index = json.loads((ROOT / 'data/articles_index.json').read_text())
         self.assertEqual({a['slug'] for a in index['articles']},
                          {p.stem for p in (ROOT / 'articles').glob('*.html')})
+
+    def test_sitemap_includes_every_published_article_once(self):
+        urls = [node.text for node in ET.parse(ROOT / 'sitemap.xml').findall('.//{*}loc')]
+        article_urls = [url for url in urls if '/articles/' in url]
+        expected = {'https://bosser.consulting/articles/' + path.name
+                    for path in (ROOT / 'articles').glob('*.html')}
+        self.assertEqual(set(article_urls), expected)
+        self.assertEqual(len(article_urls), len(expected))
 
     def test_article_reading_times_match_the_library(self):
         index = json.loads((ROOT / 'data/articles_index.json').read_text())

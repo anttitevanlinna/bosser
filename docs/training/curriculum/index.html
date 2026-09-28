@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agents 101 — From chat to agent builder</title>
-    <meta name="description" content="Agents 101: hands-on AI agent training. Six core modules and two optional extensions, from chat to agent builder. Built by Bosser.">
+    <title>Agents 101 | Antti Tevanlinna — Bosser</title>
+    <meta name="description" content="Build agents for real business work. Grow a system with memory, security checks, measured output quality, and a plan for team use. Training by Antti Tevanlinna.">
     <link rel="stylesheet" href="../style.css">
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
+    <link rel="stylesheet" href="../../site.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://bosser.consulting/training/curriculum/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Agents 101 — From chat to agent builder">
-    <meta property="og:description" content="Agents 101: hands-on AI agent training. Six core modules and two optional extensions, from chat to agent builder. Built by Bosser.">
+    <meta property="og:title" content="Agents 101 | Bosser">
+    <meta property="og:description" content="Build agents for real business work. Grow a system with memory, security checks, measured output quality, and a plan for team use. Training by Antti Tevanlinna.">
     <meta property="og:url" content="https://bosser.consulting/training/curriculum/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Agents 101 — From chat to agent builder">
-    <meta name="twitter:description" content="Agents 101: hands-on AI agent training. Six core modules and two optional extensions, from chat to agent builder. Built by Bosser.">
-    <link rel="stylesheet" href="../../site.css">
-    <link rel="canonical" href="https://bosser.consulting/training/curriculum/">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e7541ca0-f7cb-4adb-ac15-b2f0f8b3a4b9"></script>
 </head>
-<body>
-
-    <!-- Nav -->
+<body class="course-detail">
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav class="site-nav" aria-label="Main navigation">
         <div class="site-nav-inner">
             <a class="site-brand" href="../../">Bosser</a>
@@ -32,346 +29,121 @@
             </ul>
         </div>
     </nav>
-    <div class="training-links" aria-label="Training resources">
-        <a href="../../training/">All training</a>
-        <a href="../../training/curriculum/">Agents 101 curriculum</a>
-        <a href="../../training/check/">Strategic check</a>
-        <a href="../../training/readiness/">Domain check</a>
-    </div>
-
-    <!-- Hero -->
-    <section class="cur-hero">
-        <div class="cur-hero-particles">
-            <div class="particle-container" id="particle-container"></div>
-        </div>
-        <div class="cur-hero-content">
-            <div class="cur-hero-label">Agents 101 curriculum</div>
-            <h1>From chat to agent builder</h1>
-            <p class="cur-hero-desc">For leaders who believe competence comes before strategy. Your people build real agents. With your data, your policies, your systems. Working systems they can show the rest of the organization.</p>
-            <div class="cur-hero-stats">
-                <div class="cur-hero-stat">
-                    <strong>6 + 2</strong>
-                    <span>core + optional modules</span>
-                </div>
-                <div class="cur-hero-stat">
-                    <strong>Your work</strong>
-                    <span>the basis for your project</span>
-                </div>
-                <div class="cur-hero-stat">
-                    <strong>No code</strong>
-                    <span>background required</span>
-                </div>
+    <nav class="training-links" aria-label="Training resources">
+        <a href="../">Training overview</a>
+        <a href="../curriculum/">Agents 101</a>
+        <a href="../engineering/">Agentic Engineering 101</a>
+    </nav>
+    <main id="main">
+        <header class="cur-hero">
+            <h1>Agents 101</h1>
+            <p class="course-promise">Turn your people into agent builders.</p>
+            <p class="cur-hero-desc">Eight modules. Your people bring a real challenge and build a system that remembers, finds sources, checks its work, and improves through use. Then they work out how to put it in someone else’s hands.</p>
+            <a class="course-link" href="#modules">See what your people build</a>
+        </header>
+        <div class="cur-page">
+            <div class="cur-format">
+                <div class="cur-format-item"><h2 class="detail-label">Who it’s for</h2><p class="cur-format-text">Business builders and leaders in product, operations, sales, and other functions. No coding background needed.</p></div>
+                <div class="cur-format-item"><h2 class="detail-label">Bring real work</h2><p class="cur-format-text">A live challenge, your knowledge of the business, and company material you can use in the exercises.</p></div>
+                <div class="cur-format-item"><h2 class="detail-label">Before we start</h2><p class="cur-format-text">About 50 minutes of setup and prework: Claude Code or Cowork, the training folder, two small builds, and a short read.</p></div>
             </div>
-        </div>
-    </section>
-
-    <div class="cur-page">
-
-        <!-- Format bar -->
-        <div class="cur-format">
-            <div class="cur-format-item">
-                <div class="cur-format-label">Format</div>
-                <div class="cur-format-text">Building is thinking. Every concept emerges from doing it first.</div>
-            </div>
-            <div class="cur-format-item">
-                <div class="cur-format-label">Who it's for</div>
-                <div class="cur-format-text">Mixed groups. CTOs, product leads, practitioners. Anyone who's had a real conversation with an LLM and wants to see what happens next.</div>
-            </div>
-            <div class="cur-format-item">
-                <div class="cur-format-label">What you need</div>
-                <div class="cur-format-text">A laptop and a real challenge from your work. No coding background needed.</div>
-            </div>
-        </div>
-
-        <!-- Phase 1 -->
+            <section class="course-result" id="modules">
+                <h2>One system. Built up through real work.</h2>
+                <p>The memory, agents, rules, and checks accumulate in one working folder. Between sessions, participants put the system to use and bring back what happened. The next module builds on that evidence.</p>
+            </section>
         <section class="cur-phase">
-            <div class="cur-phase-header">
-                <div class="cur-phase-label">Modules 1&ndash;3</div>
-                <h2 class="cur-phase-title">Build, Break, Understand</h2>
-                <p class="cur-phase-desc">Your first agent in the morning. A multi-agent system by the end. One project that keeps growing. Not throwaway exercises.</p>
-            </div>
-
+            <div class="cur-phase-header"><h2 class="cur-phase-title">Build it. Put it to work.</h2><p class="cur-phase-desc">Start with output you can judge yourself. Move into a live challenge and a system with memory.</p></div>
             <div class="cur-modules">
-
-                <!-- Module 1 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">01</div>
-                        <h3 class="cur-module-title">Getting Going</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">You build your first agent. A real one, with your real data.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What you build</div>
-                            <div class="cur-callout-text">A personal site agent from your LinkedIn profile. Not copy-paste. Genuinely better, with guardrails that enforce differentiation and storytelling.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--insight">
-                            <div class="cur-callout-label">The teaching moment</div>
-                            <div class="cur-callout-text">You use best-in-class positioning frameworks as guardrails. The agent steers toward something you could not write yourself. That is the first insight: with the right constraints, the output is higher quality than what you would produce alone.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/imagination-feeds-off-on-examples.html">"Imagination feeds off on examples"</a></div>
-                    </div>
-                </article>
-
-                <!-- Module 2 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">02</div>
-                        <h3 class="cur-module-title">Building Agent Systems</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">One prompt got you started. Now you design a system. Multiple steps, each with a job.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What you build</div>
-                            <div class="cur-callout-text">A memory around a real challenge, built from your sources and working knowledge. Create an agent that uses it, and preserve useful lessons for future sessions.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--insight">
-                            <div class="cur-callout-label">Why this matters</div>
-                            <div class="cur-callout-text">This is the leap. From chatbot user to system builder. The shift from a single prompt to a designed pipeline changes how people think about AI.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/the-ceiling.html">"The ceiling"</a></div>
-                    </div>
-                </article>
-
-                <!-- Module 3 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">03</div>
-                        <h3 class="cur-module-title">Multi-Agent Systems</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">One agent, multiple steps. Useful. Multiple agents coordinating. Powerful. And fragile.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What you build</div>
-                            <div class="cur-callout-text">Source-finding agents and a synthesizer that brings different perspectives to your challenge. Compare their results and learn when splitting the work helps.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--insight">
-                            <div class="cur-callout-label">Why this matters</div>
-                            <div class="cur-callout-text">Coordination is where agent projects succeed or die. You experience both: the power of specialization and the pain of agents that don't understand each other.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/the-mechanical-duck-and-processes.html">"The mechanical duck and processes"</a></div>
-                    </div>
-                </article>
-
-
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">01</span><h3 class="cur-module-title">Getting going</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Build a personal HTML one-pager and steer it with positioning, strengths, and guardrails. Check the claims against what you know about yourself. Push back on generic answers and save the rules that made the result yours.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A working one-pager and reusable generation rules, with a first practice in checking the agent’s claims.</p>
+                </div>
+            </article>
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">02</span><h3 class="cur-module-title">Building agent systems</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Bring a live business challenge. Curate useful sources from company knowledge, recent work, and practitioner methods. Build a memory the agent can use, review its plan, and put a custom agent to work. Observe a scheduled agent between sessions.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A working agent, a curated memory, and operating rules you can improve from actual use.</p>
+                </div>
+            </article>
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">03</span><h3 class="cur-module-title">Multi-agent systems</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Build source-finding agents for different bodies of knowledge, then coordinate distinct viewpoints to answer a strategic question. Inspect disagreements and handoffs. Decide when splitting the work helps and when one agent is enough.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A research and synthesis workflow tied to your challenge, with sources you can trace and an answer you can challenge.</p>
+                </div>
+            </article>
             </div>
         </section>
-
-        <!-- Phase 2 -->
         <section class="cur-phase">
-            <div class="cur-phase-header">
-                <div class="cur-phase-label">Modules 4&ndash;6</div>
-                <h2 class="cur-phase-title">Discipline</h2>
-                <p class="cur-phase-desc">You built something that works. Now make it something you can trust.</p>
-            </div>
-
+            <div class="cur-phase-header"><h2 class="cur-phase-title">Make the checks part of the work.</h2><p class="cur-phase-desc">Inspect risk, measure whether claims hold up, and run the checks repeatedly.</p></div>
             <div class="cur-modules">
-
-                <!-- Module 4 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">04</div>
-                        <h3 class="cur-module-title">Security</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">An agent that works but isn't secure is worse than no agent.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What happens</div>
-                            <div class="cur-callout-text">Your agent breaks your organization's compliance rules. You watch it happen in real time. Then you build the guardrails to fix it.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--plug">
-                            <div class="cur-callout-label">Your organization goes in here</div>
-                            <div class="cur-callout-text">Your security policies, your data classification, your compliance requirements. Not our defaults. Yours.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/ai-and-certainty-dont-mix.html">"AI and certainty don't mix"</a></div>
-                    </div>
-                </article>
-
-                <!-- Module 5 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">05</div>
-                        <h3 class="cur-module-title">Grounded Output</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">Test whether your agent’s claims are supported by its sources.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What you build</div>
-                            <div class="cur-callout-text">A benchmark that compares different ways to detect unsupported claims. Measure them against the same sources and save a judge whose limits you understand.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--insight">
-                            <div class="cur-callout-label">Why this matters</div>
-                            <div class="cur-callout-text">A convincing answer can still be wrong. Checking claims against evidence gives you a basis for deciding what to trust.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/evals-is-the-new-black.html">"Evals is the new black"</a></div>
-                    </div>
-                </article>
-
-                <!-- Module 6 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">06</div>
-                        <h3 class="cur-module-title">Evaluations</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">Individual evals catch problems. Evaluation systems catch patterns.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What you build</div>
-                            <div class="cur-callout-text">A systematic evaluation pipeline. Automated checks that run every time the agent produces output. Same discipline software teams apply to code, applied to agent output.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--insight">
-                            <div class="cur-callout-label">Why this matters</div>
-                            <div class="cur-callout-text">Repeated checks help you notice when output quality changes. You define the standards and decide which actions still need your judgment.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/shifting-toward-customers-finding-the-truth.html">"Shifting toward customers, finding the truth"</a></div>
-                    </div>
-                </article>
-
-
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">04</span><h3 class="cur-module-title">Security</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Check your system against policy and agent risks. Look at access, untrusted instructions, sensitive context, and tool use. Apply a mitigation, run the check again, and name what is still uncertain.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A reusable security check, a mitigation you have tested, and a record of the risks that remain.</p>
+                </div>
+            </article>
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">05</span><h3 class="cur-module-title">Grounded output</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Compare four methods for checking claims against sources. Score them on a 30-claim benchmark from your work, then save the strongest method as a reusable judge. Record what it catches and what it cannot assess.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A benchmark, a comparison of the checks, and a judge with a measured scope and explicit limits.</p>
+                </div>
+            </article>
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">06</span><h3 class="cur-module-title">Evaluations</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Turn the one-off check into a repeatable loop. Separate generation from judging. Keep the judge fixed while the generator changes its approach in response to feedback. Inspect the results and the changes between rounds.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A runnable evaluation loop and a record showing how the work changed under the same quality standard.</p>
+                </div>
+            </article>
             </div>
         </section>
-
-        <!-- Phase 3 -->
         <section class="cur-phase">
-            <div class="cur-phase-header">
-                <div class="cur-phase-label">Optional modules 7&ndash;8</div>
-                <h2 class="cur-phase-title">From personal to team. Then further.</h2>
-                <p class="cur-phase-desc">The core course ends with a working evaluation loop. Continue by sharing useful parts of your system with your team and exploring agents that build agents.</p>
-            </div>
-
+            <div class="cur-phase-header"><h2 class="cur-phase-title">Make it useful beyond you.</h2><p class="cur-phase-desc">Carry the system into team use and build the next agents from what you have learned.</p></div>
             <div class="cur-modules">
-
-                <!-- Module 7 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">07</div>
-                        <h3 class="cur-module-title">From Personal to Team</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">Your agent works for you. Decide which parts would help someone else.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What you learn</div>
-                            <div class="cur-callout-text">A plan for sharing useful skills, context, and workflows with your team. Test what another person needs to use them, including ownership and maintenance.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--insight">
-                            <div class="cur-callout-label">Why this matters</div>
-                            <div class="cur-callout-text">Something that works for you depends on your context and judgment. Sharing it means making those assumptions visible and deciding who will keep it useful.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/skating-where-the-puck-is-going.html">"Skating where the puck is going"</a></div>
-                    </div>
-                </article>
-
-                <!-- Module 8 -->
-                <article class="cur-module">
-                    <div class="cur-module-head">
-                        <div class="cur-module-num">08</div>
-                        <h3 class="cur-module-title">Agents Building Agents. The Flywheel</h3>
-                    </div>
-                    <div class="cur-module-body">
-                        <p class="cur-module-desc">The flywheel. The insight that changes how you think about scale.</p>
-                        <div class="cur-callout cur-callout--build">
-                            <div class="cur-callout-label">What you build</div>
-                            <div class="cur-callout-text">An agent that builds other agents. Multiplication, self-improvement, and the shift from project to capability. This isn't a one-time thing. It's a new way of working.</div>
-                        </div>
-                        <div class="cur-callout cur-callout--insight">
-                            <div class="cur-callout-label">The deliverable</div>
-                            <div class="cur-callout-text">An executive recommendation, co-created live by the group. Not a report about what you learned. A concrete proposal for what to do next.</div>
-                        </div>
-                        <div class="cur-module-read">Read more: <a href="../../articles/the-flywheel.html">"The flywheel"</a></div>
-                    </div>
-                </article>
-
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">07</span><h3 class="cur-module-title">From personal to team</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Start with a teammate’s job and the outcome they need. Decide whether to share context, a skill, the output, or an interface. Plan for ownership and everyday use, then test the assumptions behind adoption.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A sharing plan with technical and people decisions, plus a concrete next move with a teammate.</p>
+                </div>
+            </article>
+            <article class="cur-module">
+                <div class="cur-module-head"><span class="cur-module-num">08</span><h3 class="cur-module-title">Agents building agents</h3></div>
+                <div class="cur-module-body">
+                    <p class="cur-module-desc">Use an agent to extend the system you have built. Then bring the group’s systems together around a real company question: find the crux, test assumptions, and challenge proposals before choosing a direction.</p>
+                    <p class="module-outcome"><strong>Take back to work</strong> A strategy grounded in your files, a proposed set of agents, and a two-week action plan.</p>
+                </div>
+            </article>
             </div>
         </section>
-
-        <!-- Mid-page CTA -->
-        <div class="cur-mid-cta">
-            <h3>The best strategies emerge from action, not analysis</h3>
-            <p>We adapt everything to your organization. What your team builds stays yours.</p>
-            <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank" rel="noopener" class="cta-button">Send me a DM on LinkedIn</a>
-            <p class="cta-note">Or call <a href="tel:+358503300832">+358 50 3300832</a>.</p>
-        </div>
-
-        <!-- What comes after -->
-        <section class="cur-after">
-            <h2 class="cur-after-title">What Comes After</h2>
-            <p class="cur-after-desc">Agents 101 is Step 1. After the modules, your people have built working agents. The next steps:</p>
-
-            <div class="cur-steps">
-
-                <div class="cur-step">
-                    <div class="cur-step-num">Step 2</div>
-                    <div class="cur-step-title">Champions</div>
-                    <div class="cur-step-text">The strongest people from Step 1 learn to facilitate and carry it forward. Train-the-trainer.</div>
-                </div>
-                <div class="cur-step">
-                    <div class="cur-step-num">Step 3</div>
-                    <div class="cur-step-title">Scale</div>
-                    <div class="cur-step-text">Champions run it inside your organization. Your priorities, your pace. Carry the lessons from one team to the next.</div>
-                </div>
-                <div class="cur-step">
-                    <div class="cur-step-num">Step 4</div>
-                    <div class="cur-step-title">Put Agents to Work</div>
-                    <div class="cur-step-text">Map your processes. Rework them with agents.</div>
-                </div>
-            </div>
-
-            <p class="cur-after-note">The goal is no external dependency. Your people carry it forward.</p>
-        </section>
-
-        <!-- Design principles -->
-        <section class="cur-principles">
-            <h2 class="cur-principles-title">What We Believe</h2>
-            <div class="cur-principles-grid">
-                <div class="cur-principle">
-                    <strong>Building is thinking</strong>
-                    <span>Concepts emerge from doing. We never explain something before the exercise that demonstrates it.</span>
-                </div>
-                <div class="cur-principle">
-                    <strong>Your data, not toy data</strong>
-                    <span>Your profiles, your policies, your domain. Not sample_data.csv.</span>
-                </div>
-                <div class="cur-principle">
-                    <strong>Show the failure mode</strong>
-                    <span>For every capability, you see what goes wrong without the discipline. The violation. The undetected fabrication.</span>
-                </div>
-                <div class="cur-principle">
-                    <strong>Your reality replaces our defaults</strong>
-                    <span>Security policies, evaluation criteria, domain knowledge. Clearly marked places where your organization goes in.</span>
-                </div>
-                <div class="cur-principle">
-                    <strong>One new thing at a time</strong>
-                    <span>Each exercise adds one concept. Never two at once.</span>
-                </div>
-                <div class="cur-principle">
-                    <strong>You keep what you build</strong>
-                    <span>The agents, workflows, and skills you build stay yours. Training material usage is covered by your agreement.</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="cur-final">
-            <h2>If this is how you think, let's talk</h2>
-            <p>Your initiative, your policies, your systems. Your people leave with working agents and a concrete plan for what to do next.</p>
-            <a href="https://www.linkedin.com/in/anttitevanlinna/" target="_blank" rel="noopener" class="cta-button">Send me a DM on LinkedIn</a>
-            <a href="https://www.linkedin.com/newsletters/7117916803816693760/" target="_blank" rel="noopener" class="cta-button cta-button--secondary cur-final-newsletter">Follow the newsletter</a>
-            <p class="cta-note">Or call <a href="tel:+358503300832">+358 50 3300832</a>.</p>
-        </section>
-
-        <!-- About -->
+            <section class="course-result">
+                <h2>Keep building after the training.</h2>
+                <p>Participants keep their working system and get an HTML workbook, a theory handbook, and practical references to return to. The agents, workflows, and skills they build stay theirs. Training material usage is covered by your agreement.</p>
+            </section>
         <section class="cur-about">
             <h2 class="profile-title">Antti Tevanlinna</h2>
-            <p>I'm Antti Tevanlinna. Twenty-five years at F-Secure, WithSecure, Nitor, Neste, Posti Group, Kone, S-Group, W&auml;rtsil&auml;, Elisa and Finnair. Around 500 people have been through my training programmes. I’ve personally trained about 100 of them.</p>
-            <p><a href="../index.html">Back to <strong>Bosser training</strong> &rarr;</a></p>
+            <p>I built the engineering and business training tracks at F-Secure, trained leaders personally, and developed internal trainers to carry the work forward. Today I’m AI Transformation Lead at WithSecure.</p>
+            <p>Around 500 people have been through my training programmes. I’ve personally trained about 100 of them.</p>
+            <p><a href="../../cases/f-secure/">Read the F-Secure case</a></p>
         </section>
-
-        <footer class="cur-footer">
-            <p>&copy; 2026 Bosser Oy &middot; All analytics anonymous &middot; <a href="../privacy.html">Privacy</a></p>
-        </footer>
-
+        <section class="cur-final" id="contact">
+            <h2>Make it happen. Then scale.</h2>
+            <p>Start with a cohort working on real problems. Then get your champions teaching and carry the practice across teams.</p>
+            <a class="cta-button" href="mailto:antti@bosser.consulting?subject=Agents%20101">Get your people building</a>
+            <div class="cur-final-links"><a href="../engineering/">Agentic Engineering 101 for engineers</a><a href="../#journey">How we scale it</a></div>
+        </section>
+        </div>
+    </main>
+    <div class="cur-page">
+    <footer class="cur-footer">
+        <p>&copy; 2026 Bosser Oy · <a href="../../training/">Training</a> · <a href="../../training/privacy.html">Privacy</a></p>
+    </footer>
     </div>
-
-    <script src="../animation.js"></script>
 </body>
 </html>
