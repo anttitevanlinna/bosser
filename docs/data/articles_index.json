@@ -1,7 +1,24 @@
 {
-  "total_articles": 28,
-  "last_updated": "2026-09-19T13:16:48.901Z",
+  "total_articles": 29,
+  "last_updated": "2026-10-05T15:53:28.690Z",
   "articles": [
+    {
+      "title": "Three Things That Don't Get You Moving in AI Transformation",
+      "slug": "three-things-that-dont-get-you-moving",
+      "url": "Unknown URL",
+      "publish_date": "2026-10-05",
+      "content_length": 7143,
+      "processed_at": "2026-10-05T15:53:28.690Z",
+      "estimated_reading_time": "6 min",
+      "reading_minutes": 6,
+      "excerpt": "I have now been privileged to be leading three transformations in two companies. One of the three transformations is ongoing right now. And I&#39;m seeing a few others as well on the side. Here&#39;s what doesn&#39;t work. So you can do…",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "transformation",
+        "leadership"
+      ]
+    },
     {
       "title": "The Next Hard Thing About Working With LLMs",
       "slug": "the-next-hard-thing",
