@@ -223,7 +223,7 @@
             agentReady: {
                 name: 'Agent-Ready',
                 range: '12\u201315',
-                description: 'Your domain has the structural ingredients for agents. The verification loops exist. The tools are accessible. The structural ingredients are in place \u2014 the same ones that made coding the proving ground for agents. Deployment speed is now the variable.'
+                description: 'Your answers suggest you have a useful starting point. Pick one task and test whether the tools and checks hold up in practice.'
             },
             infrastructureGap: {
                 name: 'Infrastructure Gap',
@@ -233,12 +233,12 @@
             verificationDesert: {
                 name: 'Verification Desert',
                 range: '4\u20137',
-                description: 'Your domain\u2019s structural infrastructure for agents is yours to build. In our Q1 2026 research across 9 domain tracks (1,100+ sources classified by type and tested against three editorial gates), vendor announcements outnumbered verified deployments in every domain except coding. The path forward: build your verification loop first.'
+                description: 'Your answers point to gaps in the tools and checks agents would need for this work. In our Q1 2026 research across 9 domain tracks (1,100+ sources classified by type and tested against three editorial gates), vendor announcements outnumbered verified deployments in every domain except coding. The path forward: build your verification loop first.'
             },
             preAgent: {
                 name: 'Pre-Agent',
                 range: '0\u20133',
-                description: 'Your domain needs its own test suite before agents can work here. Not the technology \u2014 the ability to verify output fast. You get to define what \u201Ccorrect\u201D means. Focus on: making it measurable, and creating fast feedback loops.'
+                description: 'Start with one task where someone can check the result. Learn what goes wrong before handing over more.'
             }
         };
 
@@ -581,13 +581,13 @@
             var allMax = answerScores.every(function(s) { return s === 3; });
 
             if (allMax) {
-                el.innerHTML = 'You matched the coding benchmark on every dimension. Your domain is structurally ready.';
+                el.innerHTML = 'You rated all five conditions highly. Test those ratings on one task before relying on them for a wider rollout.';
                 return;
             }
 
             var gap = getLowestIngredient();
             var solution = ingredientSolutions[gap.name];
-            el.innerHTML = 'Your biggest gap vs. coding: <strong>' + gap.name + '</strong>. In software, this was solved by <strong>' + solution + '</strong>. What\u2019s the equivalent in your domain?';
+            el.innerHTML = 'Your biggest gap vs. coding: <strong>' + gap.name + '</strong>. Software teams use <strong>' + solution + '</strong> to help with this. What could serve that purpose in your work?';
         }
 
         // ==========================

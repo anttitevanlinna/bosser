@@ -13,7 +13,7 @@
             number: 1, topic: 'roadmap',
             text: "Your board asks for an AI agent roadmap. Your first move is\u2026",
             answers: [
-                { label: "Get 20 people building agents. The roadmap writes itself after that.", tag: 'build_first', short: 'Train 20 people', competence: 2, act: 2 },
+                { label: "Get 20 people building agents. Use what they learn to shape the roadmap.", tag: 'build_first', short: 'Train 20 people', competence: 2, act: 2 },
                 { label: "Hire a consultancy who has done this before.", tag: 'hire_consultancy', short: 'Hire consultancy', competence: -2, act: 1 },
                 { label: "Define the roadmap internally, then invest in capability.", tag: 'define_internally', short: 'Define internally', competence: -1, act: 1 },
                 { label: "Talk to companies who are already doing it. Learn from their experience.", tag: 'learn_from_peers', short: 'Learn from peers', competence: 1, act: -1 }
@@ -88,46 +88,46 @@
         pioneer: {
             name: "Bias to Action",
             subtitle: "Competence-first. Act now.",
-            headline: "Speed is your learning engine.",
-            body: `<p>Your instinct is to put tools in people\u2019s hands and see what they build. You believe that the best way to understand what agents can do for your organization is to start building them. The roadmap emerges from the doing.</p>
-            <p>This is how Scania approached it: they dissolved the separate digitalisation team and embedded capability into every team. Novo Nordisk scaled to 20,000 users by building champion networks from the inside. SOK\u2019s transformation officer said it plainly: \u201CYou can\u2019t buy a transformation.\u201D</p>
-            <p>The strength of this position is real-time learning. Every week of building produces data that no strategy document can. Your people develop intuition, not just knowledge. And in a field moving this fast, intuition may be the most durable asset.</p>`,
-            bet: "Learning by doing produces deeper understanding than learning by planning. The organizations that build now are developing intuitions and patterns that are hard to acquire later by reading about them.",
-            risk: "Speed without direction can scatter energy. Twenty people building agents in twenty directions is expensive exploration. The capability is real, but without a framework for where it matters most, the organization may struggle to turn experiments into business impact.",
-            question: "Where in your organization would agent capability create the most value? If you are not sure yet \u2014 is that a reason to explore, or a reason to find out first?"
+            headline: "Start building. Learn from what happens.",
+            body: `<p>Your answers favour putting tools in people's hands and seeing what they build. You want experience with agents to inform the decisions about where to use them.</p>
+            <p>A working attempt gives people something to inspect. They can see what the agent got wrong, which information it lacked, and how much checking the result needed. Those observations help shape the next attempt.</p>
+            <p>The learning needs somewhere to go. Save the useful rules and checks, show colleagues what happened, and make it easier for the next person to try.</p>`,
+            bet: "Building on actual work will reveal useful possibilities and problems you would otherwise miss.",
+            risk: "Experiments can stay isolated. People may learn a lot individually while the rest of the organisation keeps repeating the same mistakes.",
+            question: "What did the last experiment teach your team, and where will the next person find that learning?"
         },
         methodical: {
             name: "Deliberate Builder",
             subtitle: "Competence-first. Assess first.",
-            headline: "You build once, and you build right.",
-            body: `<p>You believe your people need hands-on agent experience. You also believe that understanding the landscape before committing resources produces better outcomes. You are studying what early movers got right and wrong so your investment lands where it matters.</p>
-            <p>This is the Toyota Kata stance: understand the current condition deeply before designing the next experiment. In enterprise technology, this approach has a strong track record. The companies that invested in cloud migration after studying the early movers\u2019 mistakes often deployed faster and more effectively than the first wave.</p>
-            <p>Your commitment, when it comes, will be informed. Your people will learn with better tools, clearer goals, and proven approaches. The preparation makes the execution sharper.</p>`,
-            bet: "Informed commitment produces better outcomes than early commitment. The early movers are generating lessons \u2014 about which tools last, which approaches scale, which governance works. You are positioned to benefit from all of it.",
-            risk: "Preparation can become its own comfort zone. The landscape may not converge to a clear \u2018right moment\u2019 \u2014 it may keep evolving. And some kinds of understanding only come from building, not from studying builders.",
-            question: "What would your first move look like if you decided to start next month? Having an answer ready \u2014 even if you do not act on it yet \u2014 is itself a form of readiness."
+            headline: "You want to understand the options before committing.",
+            body: `<p>Your answers suggest you want people to build agent skills, with some preparation before they start. You want to know what others have tried and which conditions helped them.</p>
+            <p>That preparation can help you choose a useful first task. You can check access to the necessary information, decide how to judge the result, and give the group enough time to learn.</p>
+            <p>The risk is waiting for certainty that building would give you sooner.</p>`,
+            bet: "Studying earlier attempts will help you avoid some mistakes and choose a better first experiment.",
+            risk: "There will still be things you can only learn in your own setting. More preparation can become a way to postpone finding them.",
+            question: "Which unanswered question could you resolve by having a few people try the work?"
         },
         planner: {
             name: "Directed Momentum",
             subtitle: "Strategy-first. Act now.",
-            headline: "Direction multiplies every investment.",
-            body: `<p>You believe that capability without direction is waste. Training 50 people is only valuable if you know where those agents will be deployed, which processes they will transform, and how the organization will govern them. You want the roadmap before you build the muscle.</p>
-            <p>This mirrors how many successful large-scale transformations have worked. McKinsey\u2019s agentic enterprise framework, IBM\u2019s \u201Cmanage agents as workers\u201D model, Deloitte\u2019s governance architecture \u2014 they all start with strategic clarity. For good reason: in practice, undirected capability-building has burned more enterprise budgets than technology shortfalls.</p>
-            <p>Your training, when it happens, has a target. Your agents are designed to solve specific business problems from day one. Every euro invested has a clear line to value.</p>`,
-            bet: "Direction is the multiplier. The same investment in capability produces far more impact when people know exactly where to apply it. Strategy-first ensures the organization does not just learn \u2014 it learns for a purpose.",
-            risk: "Strategy requires information, and some of that information only exists on the other side of building. A roadmap written before anyone has built an agent may optimize for the wrong things. The map is useful \u2014 but is it drawn from experience or from assumption?",
+            headline: "You want a business purpose for the work.",
+            body: `<p>Your answers favour choosing where to apply agents before investing broadly in skills. You want to connect the work to outcomes your company cares about.</p>
+            <p>You want each experiment to have a business purpose. You still have to test whether it produces the outcome you expect.</p>
+            <p>Write down what should change, how you will notice, and which assumptions the experiment needs to test. Then use what happens to revise the plan.</p>`,
+            bet: "A clear purpose will help people choose useful work and judge whether it is worth continuing.",
+            risk: "A plan made before anyone has built an agent may assume too much about what is possible and what will be difficult. Leave room to change it.",
             question: "What would your strategy look like if ten people on the strategy team had already built a working agent? Would the roadmap be different?"
         },
         evaluator: {
             name: "Strategic Timing",
             subtitle: "Strategy-first. Assess first.",
-            headline: "You commit when you can commit fully.",
-            body: `<p>The AI agent landscape is shifting fast. Platforms, tools, and best practices evolve quarterly. You believe that premature commitment \u2014 whether to a training approach, a platform, or a consultancy \u2014 risks investing in something built on infrastructure that is still evolving quarterly.</p>
-            <p>Enterprise technology history validates this stance. Blockchain and early RPA rewarded patience because the underlying infrastructure was immature. Whether AI agents are at that stage \u2014 or past it \u2014 is the judgment you are making. Timing is itself a strategic capability.</p>
-            <p>You are gathering intelligence. Watching what Equinor, Nordea, IKEA, and Novo Nordisk are doing with AI. Learning from their deployments. When you move, you will move with clarity about what works, what does not, and where your specific opportunity lies.</p>`,
-            bet: "Timing is underrated. The landscape is maturing, tools are improving, and governance frameworks are solidifying. Your investment, when it comes, should benefit from all of that. Second-mover advantage is real in enterprise technology.",
-            risk: "If agentic capability compounds \u2014 meaning the act of building creates understanding that accelerates future building \u2014 then the early movers are not just ahead, they are accelerating. The gap may not be static. The question is whether this is a linear adoption curve or an exponential one.",
-            question: "If a competitor who started building twelve months ago offered to show you what they have learned, would you want to see it? What does your answer reveal about what you value?"
+            headline: "You want more evidence before committing.",
+            body: `<p>Your answers favour watching how agents develop and understanding the options before making a larger investment.</p>
+            <p>Other people's experience can help you identify questions to ask. It will still leave gaps about your own data, work, and organisation.</p>
+            <p>Decide what evidence would change your mind and how you could get it. A small experiment can help you answer a specific question while keeping the larger commitment open.</p>`,
+            bet: "Waiting and studying will make the eventual choice better informed.",
+            risk: "Tools may improve while your organisation gains little experience using them. You could face the same practical learning when you eventually start.",
+            question: "What would you need to see to decide to act, and could you test for it now?"
         }
     };
 
