@@ -15,3 +15,7 @@ One story about my work. It was actually about 20 years ago. Close enough. I use
 ---
 
 So this is my prime example of caution-driven development. Maybe that's not the right word, even. That is a case where the human analyzes through it fully. And then since you know it works, there is a good likelihood that it will work, whatever the change is. The thing is that, of course, that sets the upper limit to how much a single mind can crunch through and analyze in breadth and depth. And traditionally, we've known the limits, and the limit is pretty fixed. And now LLMs and agentic development changes the whole landscape. And that is, of course, where we're going. And where we're going is the outcome-driven development, that you specify the outcome as measurable things, properties of the resulting system, and then you leave the agent to build it against those criteria and metrics and outcomes, and the agent will get there.
+
+---
+
+And I know that you know this, but the more I look at this, you can't really scale agentic coding beyond beyond what you can check as human, as long as you're working in the old style, where it's caution driven, and human checks and human spot checking and human evaluation based. It is not that much different than the traditional way, where you first thought through it and then you code it. Now you first have the LLM code it, and then you need to still think through it to be able to evaluate it as human, that is the resulting code, right?
