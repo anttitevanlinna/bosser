@@ -27,3 +27,7 @@ So the moral of the story is that this caution-driven and qualitative definition
 ---
 
 quite interesting as I talk through this. It just kind of means that the traditional, let's write a few acceptance criteria down and let's then get coding, and maybe talk to humans in the meanwhile. That paradigm is just now dead.
+
+---
+
+Good questions. Let me frame this a bit more. Now, I think the modern software engineering killed the original craft, the unit testing, BDD, automated system testing became, well, not the exact norm, but it allowed us to maintain velocity at scale much better than like this meticulous checking, like and manual testing and the like very traditional approaches that we had at the like around year 2000. So in the sense that original developer was dead in 2010. That method no longer was acceptable. Now, the method that kind of has been prevailing by now has been the method where we do actually do a semi-good job with acceptance criteria. We write system tests, we write integration tests, we write unit tests, we have our test pyramid at hand. So it's not like black and white in that way. But I still think the missing piece is getting more and more one level upwards. It's to go into definitions of architecture, definitions of latency of responses, definitions of reliability of services. And once we have those one level upwards outcomes from simple binary acceptance criteria, then what happens is that your agents start to define acceptance criteria and these binary checks, and then that scales.
