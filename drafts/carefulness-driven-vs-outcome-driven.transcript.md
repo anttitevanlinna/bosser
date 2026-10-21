@@ -19,3 +19,7 @@ So this is my prime example of caution-driven development. Maybe that's not the 
 ---
 
 And I know that you know this, but the more I look at this, you can't really scale agentic coding beyond beyond what you can check as human, as long as you're working in the old style, where it's caution driven, and human checks and human spot checking and human evaluation based. It is not that much different than the traditional way, where you first thought through it and then you code it. Now you first have the LLM code it, and then you need to still think through it to be able to evaluate it as human, that is the resulting code, right?
+
+---
+
+So the moral of the story is that this caution-driven and qualitative definitions and checks by human is pretty much bound to the 2x or 4x that we're seeing quite a lot now. And the only way to get beyond that ceiling is to start writing down the actual outcomes, the actual properties of the software that you need. And only when you can define those properties, only once you can have your agent check against those and double check and triple check, and only when you have calibrated and found trust on those checks, only then you get past this 2x, 4x.
