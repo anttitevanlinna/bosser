@@ -20,6 +20,10 @@ async function recordCoverVideo(coverHtmlPath, outputVideoPath) {
     await thumbBrowser.close();
     console.log(`📸 Thumbnail saved: ${pngPath}`);
 
+    // Snapshot the covers dir so we can tell the new recording apart from existing cover videos
+    const videoDir = path.dirname(outputVideoPath);
+    const filesBefore = fs.readdirSync(videoDir);
+
     // Launch browser with video recording enabled
     const browser = await chromium.launch({
         headless: false,
@@ -58,11 +62,8 @@ async function recordCoverVideo(coverHtmlPath, outputVideoPath) {
     }
 
     // Find the recorded video file
-    const videoDir = path.dirname(outputVideoPath);
-    const videoFiles = fs.readdirSync(videoDir).filter(f => f.endsWith('.webm'));
-
-    if (videoFiles.length > 0) {
-        const recordedVideoPath = path.join(videoDir, videoFiles[0]);
+    {
+        const recordedVideoPath = pickRecordedVideo(videoDir, filesBefore);
         const finalVideoPath = outputVideoPath;
 
         // Rename raw recording
@@ -85,9 +86,18 @@ async function recordCoverVideo(coverHtmlPath, outputVideoPath) {
         }
 
         return finalVideoPath;
-    } else {
+    }
+}
+
+// Playwright writes the recording under a random hash name next to the other covers.
+// Pick the webm that was not there before recording, never an existing cover-*.webm.
+function pickRecordedVideo(videoDir, filesBefore) {
+    const before = new Set(filesBefore);
+    const newVideos = fs.readdirSync(videoDir).filter(f => f.endsWith('.webm') && !before.has(f));
+    if (newVideos.length === 0) {
         throw new Error('No video file was recorded');
     }
+    return path.join(videoDir, newVideos[0]);
 }
 
 // Command line usage
@@ -112,4 +122,4 @@ if (require.main === module) {
         });
 }
 
-module.exports = { recordCoverVideo };
+module.exports = { recordCoverVideo, pickRecordedVideo };
