@@ -1,7 +1,24 @@
 {
-  "total_articles": 30,
-  "last_updated": "2026-10-17T14:31:18.083Z",
+  "total_articles": 31,
+  "last_updated": "2026-10-28T18:35:02.526Z",
   "articles": [
+    {
+      "title": "Steering Without Reading All Text",
+      "slug": "steering-without-reading-all-text",
+      "url": "Unknown URL",
+      "publish_date": "2026-10-28",
+      "content_length": 4063,
+      "processed_at": "2026-10-28T18:35:02.526Z",
+      "estimated_reading_time": "3 min",
+      "reading_minutes": 3,
+      "excerpt": "A friend of mine described today the act of steering Ai as steering without reading (all) the text. It was so well said that it just flows.",
+      "status": "ready-for-review",
+      "tags": [
+        "ai",
+        "quality",
+        "agents"
+      ]
+    },
     {
       "title": "The Red Queen",
       "slug": "red-queen",
