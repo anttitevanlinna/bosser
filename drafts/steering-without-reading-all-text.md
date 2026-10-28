@@ -55,7 +55,15 @@ Grounding is that a claim is based on something. "I worked at Nitor" is a claim.
 
 Dreams and make-believe are not grounded. They just appear from thin air. 
 
-The basic technique with Claude is: "Hey Claude: take text XXX, find right grounding, check all claims for validity".  
+The basic technique with Claude is: "Hey Claude: take text XXX, find right grounding, check all claims for validity".
+
+# Matching mental models
+
+Matt Pocock has once said: the plan (with LLM) is ready when you notice your mental model matches the LLM's "mental model". I had to use quotation marks as LLMs don't quite hold mental models, but close enough. When the LLM answers congruently with your own assumptions given the context, then you can notice a higher level alignment. Single sentences may not match stylistically or in all detail. 
+
+But you know you are aligned. In some different way: you sample on higher abstraction level. The exact text is not the point. 
+
+Now capture the alignment. Make it into ground and guardrails. Compound your context.   
 
 # The agent supercharges your sampling. And steering is the capability you get 
 
